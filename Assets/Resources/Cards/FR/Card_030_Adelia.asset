@@ -1,0 +1,88 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: baa3cfc011ceea542b4a6e2212c058c1, type: 3}
+  m_Name: Card_030_Adelia
+  m_EditorClassIdentifier: Assembly-CSharp::Astraleum.CardData
+  cardName: Adelia
+  cardTitle: Maitresse du Vent
+  cardNumber: 30
+  element: 3
+  rarity: 2
+  artwork: {fileID: 21300000, guid: b39c7152d3f58854cb7db8e66421d618, type: 3}
+  maxHP: 180
+  armorPoints: 3
+  bonusActionsGranted: 0
+  skillOne:
+    skillType: 2
+    skillName: Vent Revigorant
+    description: "R\xE9duit le temps de recharge d'une carte alli\xE9e de 2 Tours,
+      et lui donne 1 Action bonus. "
+    damage: 0
+    cooldownTurns: 4
+    targetType: 1
+    adjacentDamagePercent: 0
+    effects:
+    - type: 11
+      value: 2
+      durationTurns: 0
+      effectTarget: 0
+    - type: 15
+      value: 1
+      durationTurns: 0
+      effectTarget: 0
+    branches: []
+    attackVFXPrefab: {fileID: 0}
+    impactVFXPrefab: {fileID: 0}
+    vfxTravelTime: 0.35
+    vfxImpactDuration: 0.2
+  skillTwo:
+    skillType: 0
+    skillName: Vent Atrophiant
+    description: "Augmente la dur\xE9e de recharge d'une carte adverse d'1 Tour.
+      Lui inflige 9 DGT."
+    damage: 9
+    cooldownTurns: 2
+    targetType: 0
+    adjacentDamagePercent: 0
+    effects:
+    - type: 12
+      value: 1
+      durationTurns: 0
+      effectTarget: 0
+    branches: []
+    attackVFXPrefab: {fileID: 0}
+    impactVFXPrefab: {fileID: 0}
+    vfxTravelTime: 0.35
+    vfxImpactDuration: 0.2
+  passive:
+    passiveName: Vent Ascendant
+    passiveDescription: "Si vous avez 5 ou + dans l'\xE9l\xE9ment Air, r\xE9duit
+      les DGT subis de TOUT les alli\xE9s de 10%, et augmente les DGT subis de TOUT
+      les adversaires de 5%. "
+    trigger: 5
+    triggerElement: 3
+    passiveColor: {r: 1, g: 0.84, b: 0, a: 1}
+    stacksPerTrigger: 0
+    maxTriggerStacks: 4
+    effects:
+    - type: 2
+      value: 0.1
+      durationTurns: 0
+      effectTarget: 2
+    - type: 1
+      value: 0.05
+      durationTurns: 0
+      effectTarget: 3
+  loreText: "Adelia est une sorci\xE8re des Vents. Depuis petite, elle a su montrer
+    ses dons exceptionnels de la maitrise du Vent, au point que de nombreux fermiers
+    et soldats de l'Aurore requierent son aide. "
+  loreQuote: "\"Au del\xE0 de la nature, je contr\u020Fle les vents\""

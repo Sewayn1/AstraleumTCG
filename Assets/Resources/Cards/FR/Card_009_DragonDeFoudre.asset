@@ -1,0 +1,70 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: baa3cfc011ceea542b4a6e2212c058c1, type: 3}
+  m_Name: Card_009_DragonDeFoudre
+  m_EditorClassIdentifier: Assembly-CSharp::Astraleum.CardData
+  cardName: Dragon de Foudre
+  cardTitle: 
+  cardNumber: 9
+  element: 3
+  rarity: 2
+  artwork: {fileID: 21300000, guid: cad9f673d1bdb304eb6fbf72d27d52cd, type: 3}
+  maxHP: 180
+  armorPoints: 4
+  bonusActionsGranted: 0
+  skillOne:
+    skillType: 0
+    skillName: Foudroiement
+    description: "Inflige 15DGT. L'\xE9clair se propage aux cibles adjacentes (40%
+      des d\xE9g\xE2ts)."
+    damage: 15
+    cooldownTurns: 2
+    targetType: 4
+    adjacentDamagePercent: 0.4
+    effects: []
+    branches: []
+    attackVFXPrefab: {fileID: 0}
+    impactVFXPrefab: {fileID: 0}
+    vfxTravelTime: 0.35
+    vfxImpactDuration: 0.2
+  skillTwo:
+    skillType: 0
+    skillName: "Temp\xEAte \xC9lectrique"
+    description: "10 DGT \xE0 toutes les cartes adverses et Etourdie une cible adverse
+      al\xE9atoire pendant 1 Tour."
+    damage: 10
+    cooldownTurns: 4
+    targetType: 2
+    adjacentDamagePercent: 0
+    effects:
+    - type: 16
+      value: 1
+      durationTurns: 1
+      effectTarget: 5
+    branches: []
+    attackVFXPrefab: {fileID: 0}
+    impactVFXPrefab: {fileID: 0}
+    vfxTravelTime: 0.35
+    vfxImpactDuration: 0.2
+  passive:
+    passiveName: 
+    passiveDescription: 
+    trigger: 0
+    triggerElement: 0
+    passiveColor: {r: 1, g: 0.84, b: 0, a: 1}
+    stacksPerTrigger: 0
+    maxTriggerStacks: 4
+    effects: []
+  loreText: "Nul ne sait o\xF9 naissent les Dragons de Foudre. Ils apparaissent dans
+    les temp\xEAtes et disparaissent avec elles. Certains pensent qu'ils sont les
+    temp\xEAtes elles-m\xEAmes, prises forme pour un instant."
+  loreQuote: '"Je ne suis pas dans l''orage. Je suis l''orage."'

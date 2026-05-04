@@ -1,0 +1,3705 @@
+fileFormatVersion: 2
+guid: ce4e266e6ad4d124d862d43e5c5ac6a1
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -7664540976074984463
+    second: Arthurios 027_E_2048_0
+  - first:
+      213: 8204226655792262409
+    second: Arthurios 027_E_2048_1
+  - first:
+      213: 1829982804044453926
+    second: Arthurios 027_E_2048_2
+  - first:
+      213: 652142640683278443
+    second: Arthurios 027_E_2048_3
+  - first:
+      213: 698294689039804520
+    second: Arthurios 027_E_2048_4
+  - first:
+      213: -6504202297763428270
+    second: Arthurios 027_E_2048_5
+  - first:
+      213: 5914027452642093369
+    second: Arthurios 027_E_2048_6
+  - first:
+      213: -5029807887512942528
+    second: Arthurios 027_E_2048_7
+  - first:
+      213: 3290428297876377106
+    second: Arthurios 027_E_2048_8
+  - first:
+      213: -7403781499010447733
+    second: Arthurios 027_E_2048_9
+  - first:
+      213: 8078318050852227182
+    second: Arthurios 027_E_2048_10
+  - first:
+      213: -2750355043845381635
+    second: Arthurios 027_E_2048_11
+  - first:
+      213: -152702533349694004
+    second: Arthurios 027_E_2048_12
+  - first:
+      213: 8081673624523258047
+    second: Arthurios 027_E_2048_13
+  - first:
+      213: 6137467388230531379
+    second: Arthurios 027_E_2048_14
+  - first:
+      213: 8531603210036329990
+    second: Arthurios 027_E_2048_15
+  - first:
+      213: 797590721233487978
+    second: Arthurios 027_E_2048_16
+  - first:
+      213: 3113593017512155668
+    second: Arthurios 027_E_2048_17
+  - first:
+      213: 2218868949696906765
+    second: Arthurios 027_E_2048_18
+  - first:
+      213: -9014773345479612094
+    second: Arthurios 027_E_2048_19
+  - first:
+      213: -2326507586666065072
+    second: Arthurios 027_E_2048_20
+  - first:
+      213: 2574207902142244824
+    second: Arthurios 027_E_2048_21
+  - first:
+      213: 5522757815628444370
+    second: Arthurios 027_E_2048_22
+  - first:
+      213: -3168154285032677071
+    second: Arthurios 027_E_2048_23
+  - first:
+      213: 7611422752045654099
+    second: Arthurios 027_E_2048_24
+  - first:
+      213: 1589788554335572193
+    second: Arthurios 027_E_2048_25
+  - first:
+      213: 2398117951348614454
+    second: Arthurios 027_E_2048_26
+  - first:
+      213: -2353019481809841124
+    second: Arthurios 027_E_2048_27
+  - first:
+      213: -1900386755024710156
+    second: Arthurios 027_E_2048_28
+  - first:
+      213: 3649343816588769853
+    second: Arthurios 027_E_2048_29
+  - first:
+      213: 7850348476030276970
+    second: Arthurios 027_E_2048_30
+  - first:
+      213: -2214754341643599539
+    second: Arthurios 027_E_2048_31
+  - first:
+      213: -2393060144706466574
+    second: Arthurios 027_E_2048_32
+  - first:
+      213: 7474972818267042636
+    second: Arthurios 027_E_2048_33
+  - first:
+      213: -8266036042639022778
+    second: Arthurios 027_E_2048_34
+  - first:
+      213: -2389593816579088421
+    second: Arthurios 027_E_2048_35
+  - first:
+      213: -6276793289777108775
+    second: Arthurios 027_E_2048_36
+  - first:
+      213: -5137828104685365869
+    second: Arthurios 027_E_2048_37
+  - first:
+      213: -6784778783762473600
+    second: Arthurios 027_E_2048_38
+  - first:
+      213: 6672140850370297178
+    second: Arthurios 027_E_2048_39
+  - first:
+      213: -6954006876025840743
+    second: Arthurios 027_E_2048_40
+  - first:
+      213: -7576853026967063804
+    second: Arthurios 027_E_2048_41
+  - first:
+      213: -5896909335504785186
+    second: Arthurios 027_E_2048_42
+  - first:
+      213: -9194562709039650978
+    second: Arthurios 027_E_2048_43
+  - first:
+      213: 6028964137702856153
+    second: Arthurios 027_E_2048_44
+  - first:
+      213: -5285983666026592119
+    second: Arthurios 027_E_2048_45
+  - first:
+      213: 2675459160622014198
+    second: Arthurios 027_E_2048_46
+  - first:
+      213: 3731755336821043566
+    second: Arthurios 027_E_2048_47
+  - first:
+      213: 5309526874725119209
+    second: Arthurios 027_E_2048_48
+  - first:
+      213: -8631037622081251828
+    second: Arthurios 027_E_2048_49
+  - first:
+      213: 8472111554501786412
+    second: Arthurios 027_E_2048_50
+  - first:
+      213: -3952772415839848415
+    second: Arthurios 027_E_2048_51
+  - first:
+      213: -5039410058797196395
+    second: Arthurios 027_E_2048_52
+  - first:
+      213: -5801441079342398441
+    second: Arthurios 027_E_2048_53
+  - first:
+      213: -2420018673158639796
+    second: Arthurios 027_E_2048_54
+  - first:
+      213: -2521629822716570526
+    second: Arthurios 027_E_2048_55
+  - first:
+      213: -4239750055831611442
+    second: Arthurios 027_E_2048_56
+  - first:
+      213: -1213680220128794168
+    second: Arthurios 027_E_2048_57
+  - first:
+      213: -2824500226035253541
+    second: Arthurios 027_E_2048_58
+  - first:
+      213: -7419357138880406172
+    second: Arthurios 027_E_2048_59
+  - first:
+      213: 419973795447732630
+    second: Arthurios 027_E_2048_60
+  - first:
+      213: -1924806928647967696
+    second: Arthurios 027_E_2048_61
+  - first:
+      213: -595542884064945123
+    second: Arthurios 027_E_2048_62
+  - first:
+      213: 3815784828658568997
+    second: Arthurios 027_E_2048_63
+  - first:
+      213: -1995337782950754873
+    second: Arthurios 027_E_2048_64
+  - first:
+      213: 3407625759921181609
+    second: Arthurios 027_E_2048_65
+  - first:
+      213: -4275572278080944680
+    second: Arthurios 027_E_2048_66
+  - first:
+      213: -2551932341490824882
+    second: Arthurios 027_E_2048_67
+  - first:
+      213: 5046177088767957995
+    second: Arthurios 027_E_2048_68
+  - first:
+      213: -769214016928410723
+    second: Arthurios 027_E_2048_69
+  - first:
+      213: -3743074617382024188
+    second: Arthurios 027_E_2048_70
+  - first:
+      213: -7548493870320487677
+    second: Arthurios 027_E_2048_71
+  - first:
+      213: -4897262081758011173
+    second: Arthurios 027_E_2048_72
+  - first:
+      213: 4653886045490469944
+    second: Arthurios 027_E_2048_73
+  - first:
+      213: -6068055657462590160
+    second: Arthurios 027_E_2048_74
+  - first:
+      213: -2841295199306073522
+    second: Arthurios 027_E_2048_75
+  - first:
+      213: -673484416782303757
+    second: Arthurios 027_E_2048_76
+  - first:
+      213: 4496145130961413189
+    second: Arthurios 027_E_2048_77
+  - first:
+      213: -3725099748716620853
+    second: Arthurios 027_E_2048_78
+  - first:
+      213: 3059791639941245964
+    second: Arthurios 027_E_2048_79
+  - first:
+      213: -3761177841740309877
+    second: Arthurios 027_E_2048_80
+  - first:
+      213: -8162040480683563577
+    second: Arthurios 027_E_2048_81
+  - first:
+      213: -1927517069343246916
+    second: Arthurios 027_E_2048_82
+  - first:
+      213: 5331361046250125530
+    second: Arthurios 027_E_2048_83
+  - first:
+      213: 7748722384447564704
+    second: Arthurios 027_E_2048_84
+  - first:
+      213: -5948649344880412638
+    second: Arthurios 027_E_2048_85
+  - first:
+      213: -3376170433010366763
+    second: Arthurios 027_E_2048_86
+  - first:
+      213: 572109609733190958
+    second: Arthurios 027_E_2048_87
+  - first:
+      213: 4133095330310589509
+    second: Arthurios 027_E_2048_88
+  - first:
+      213: 6057264569760781732
+    second: Arthurios 027_E_2048_89
+  - first:
+      213: 2524124295375871224
+    second: Arthurios 027_E_2048_90
+  - first:
+      213: -5899714928911316652
+    second: Arthurios 027_E_2048_91
+  - first:
+      213: 2621616009658550382
+    second: Arthurios 027_E_2048_92
+  - first:
+      213: 7805865861376106625
+    second: Arthurios 027_E_2048_93
+  - first:
+      213: -6307071484564460869
+    second: Arthurios 027_E_2048_94
+  - first:
+      213: -47342224290701776
+    second: Arthurios 027_E_2048_95
+  - first:
+      213: 8389004563998880646
+    second: Arthurios 027_E_2048_96
+  - first:
+      213: 3938560351434262635
+    second: Arthurios 027_E_2048_97
+  - first:
+      213: 5669999568791536417
+    second: Arthurios 027_E_2048_98
+  - first:
+      213: -5385878290590698810
+    second: Arthurios 027_E_2048_99
+  - first:
+      213: -1621724270197512137
+    second: Arthurios 027_E_2048_100
+  - first:
+      213: -6431965599682579114
+    second: Arthurios 027_E_2048_101
+  - first:
+      213: 4776136415140539163
+    second: Arthurios 027_E_2048_102
+  - first:
+      213: 4926996433276653249
+    second: Arthurios 027_E_2048_103
+  - first:
+      213: -2282494622845345107
+    second: Arthurios 027_E_2048_104
+  - first:
+      213: -2641286881923787068
+    second: Arthurios 027_E_2048_105
+  - first:
+      213: 3096749879532443081
+    second: Arthurios 027_E_2048_106
+  - first:
+      213: -6101536972703886553
+    second: Arthurios 027_E_2048_107
+  - first:
+      213: -1637979852006953185
+    second: Arthurios 027_E_2048_108
+  - first:
+      213: -2233717417969368285
+    second: Arthurios 027_E_2048_109
+  - first:
+      213: -7904805879535465748
+    second: Arthurios 027_E_2048_110
+  - first:
+      213: -1571218043873886515
+    second: Arthurios 027_E_2048_111
+  - first:
+      213: -4438318367570019764
+    second: Arthurios 027_E_2048_112
+  - first:
+      213: -6654308185849101116
+    second: Arthurios 027_E_2048_113
+  - first:
+      213: 4049334470907190948
+    second: Arthurios 027_E_2048_114
+  - first:
+      213: -3689257203477854968
+    second: Arthurios 027_E_2048_115
+  - first:
+      213: -3619405925267083618
+    second: Arthurios 027_E_2048_116
+  - first:
+      213: 6006450278627068635
+    second: Arthurios 027_E_2048_117
+  - first:
+      213: 7875156501524039502
+    second: Arthurios 027_E_2048_118
+  - first:
+      213: -8188279983582996360
+    second: Arthurios 027_E_2048_119
+  - first:
+      213: -4299614933116978775
+    second: Arthurios 027_E_2048_120
+  - first:
+      213: 5588896277776536654
+    second: Arthurios 027_E_2048_121
+  - first:
+      213: 581813240472267989
+    second: Arthurios 027_E_2048_122
+  - first:
+      213: -1920999463157316852
+    second: Arthurios 027_E_2048_123
+  - first:
+      213: -5903052369906564146
+    second: Arthurios 027_E_2048_124
+  - first:
+      213: 8199435368175124250
+    second: Arthurios 027_E_2048_125
+  - first:
+      213: -3534854925886940498
+    second: Arthurios 027_E_2048_126
+  - first:
+      213: -5273461617732274076
+    second: Arthurios 027_E_2048_127
+  - first:
+      213: -1528731617103947910
+    second: Arthurios 027_E_2048_128
+  - first:
+      213: -2856437537425665200
+    second: Arthurios 027_E_2048_129
+  - first:
+      213: -8089891471510520760
+    second: Arthurios 027_E_2048_130
+  - first:
+      213: -6338295974542973850
+    second: Arthurios 027_E_2048_131
+  - first:
+      213: 809244774588119560
+    second: Arthurios 027_E_2048_132
+  - first:
+      213: 4083158795217557933
+    second: Arthurios 027_E_2048_133
+  - first:
+      213: 1664212349819697596
+    second: Arthurios 027_E_2048_134
+  - first:
+      213: 1345790319010874242
+    second: Arthurios 027_E_2048_135
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 1
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: iOS
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: 4
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 1
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WindowsStoreApps
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Arthurios 027_E_2048_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 7
+        width: 2048
+        height: 3060
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1f3ff9a379412a590800000000000000
+      internalID: -7664540976074984463
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Arthurios 027_E_2048_1
+      rect:
+        serializedVersion: 2
+        x: 51
+        y: 2813
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 90de943fca44bd170800000000000000
+      internalID: 8204226655792262409
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Arthurios 027_E_2048_2
+      rect:
+        serializedVersion: 2
+        x: 2005
+        y: 2815
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 62894242aa7656910800000000000000
+      internalID: 1829982804044453926
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Arthurios 027_E_2048_3
+      rect:
+        serializedVersion: 2
+        x: 13
+        y: 2717
+        width: 12
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b60efc8c640ec0900800000000000000
+      internalID: 652142640683278443
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Arthurios 027_E_2048_4
+      rect:
+        serializedVersion: 2
+        x: 29
+        y: 2717
+        width: 10
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 86862c8e157d0b900800000000000000
+      internalID: 698294689039804520
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Arthurios 027_E_2048_5
+      rect:
+        serializedVersion: 2
+        x: 37
+        y: 2719
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 258088e887e6cb5a0800000000000000
+      internalID: -6504202297763428270
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Arthurios 027_E_2048_6
+      rect:
+        serializedVersion: 2
+        x: 45
+        y: 2713
+        width: 10
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 939e3a262a8d21250800000000000000
+      internalID: 5914027452642093369
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Arthurios 027_E_2048_7
+      rect:
+        serializedVersion: 2
+        x: 1997
+        y: 2715
+        width: 10
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 04845581068823ab0800000000000000
+      internalID: -5029807887512942528
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Arthurios 027_E_2048_8
+      rect:
+        serializedVersion: 2
+        x: 2017
+        y: 2715
+        width: 6
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 21e80dd7a13f9ad20800000000000000
+      internalID: 3290428297876377106
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Arthurios 027_E_2048_9
+      rect:
+        serializedVersion: 2
+        x: 2031
+        y: 2717
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b868fdc14fb704990800000000000000
+      internalID: -7403781499010447733
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Arthurios 027_E_2048_10
+      rect:
+        serializedVersion: 2
+        x: 37
+        y: 2527
+        width: 6
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e684cab6773fb1070800000000000000
+      internalID: 8078318050852227182
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Arthurios 027_E_2048_11
+      rect:
+        serializedVersion: 2
+        x: 5
+        y: 2431
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: df1646dd8a6c4d9d0800000000000000
+      internalID: -2750355043845381635
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Arthurios 027_E_2048_12
+      rect:
+        serializedVersion: 2
+        x: 21
+        y: 2431
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cc5a36fdadd71edf0800000000000000
+      internalID: -152702533349694004
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Arthurios 027_E_2048_13
+      rect:
+        serializedVersion: 2
+        x: 1989
+        y: 2431
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fb83a5cc75fd72070800000000000000
+      internalID: 8081673624523258047
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Arthurios 027_E_2048_14
+      rect:
+        serializedVersion: 2
+        x: 1997
+        y: 2421
+        width: 6
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3397608621aac2550800000000000000
+      internalID: 6137467388230531379
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Arthurios 027_E_2048_15
+      rect:
+        serializedVersion: 2
+        x: 1989
+        y: 2277
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 60e3ccacae7566670800000000000000
+      internalID: 8531603210036329990
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Arthurios 027_E_2048_16
+      rect:
+        serializedVersion: 2
+        x: 39
+        y: 2143
+        width: 8
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a68054ff88c911b00800000000000000
+      internalID: 797590721233487978
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Arthurios 027_E_2048_17
+      rect:
+        serializedVersion: 2
+        x: 2039
+        y: 2143
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 41ad2f75a54b53b20800000000000000
+      internalID: 3113593017512155668
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Arthurios 027_E_2048_18
+      rect:
+        serializedVersion: 2
+        x: 41
+        y: 2129
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d0604ddbd810bce10800000000000000
+      internalID: 2218868949696906765
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Arthurios 027_E_2048_19
+      rect:
+        serializedVersion: 2
+        x: 41
+        y: 2091
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2492704976715e280800000000000000
+      internalID: -9014773345479612094
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Arthurios 027_E_2048_20
+      rect:
+        serializedVersion: 2
+        x: 39
+        y: 2045
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 05394812da596bfd0800000000000000
+      internalID: -2326507586666065072
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Arthurios 027_E_2048_21
+      rect:
+        serializedVersion: 2
+        x: 2005
+        y: 895
+        width: 8
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8d72131c27c69b320800000000000000
+      internalID: 2574207902142244824
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Arthurios 027_E_2048_22
+      rect:
+        serializedVersion: 2
+        x: 13
+        y: 845
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2d2bb05f8f6c4ac40800000000000000
+      internalID: 5522757815628444370
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Arthurios 027_E_2048_23
+      rect:
+        serializedVersion: 2
+        x: 37
+        y: 839
+        width: 6
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 131eefe96747804d0800000000000000
+      internalID: -3168154285032677071
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Arthurios 027_E_2048_24
+      rect:
+        serializedVersion: 2
+        x: 45
+        y: 843
+        width: 8
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 350e10b7aa431a960800000000000000
+      internalID: 7611422752045654099
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Arthurios 027_E_2048_25
+      rect:
+        serializedVersion: 2
+        x: 1989
+        y: 839
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1e057216440101610800000000000000
+      internalID: 1589788554335572193
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Arthurios 027_E_2048_26
+      rect:
+        serializedVersion: 2
+        x: 1997
+        y: 845
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6352f9b2293d74120800000000000000
+      internalID: 2398117951348614454
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Arthurios 027_E_2048_27
+      rect:
+        serializedVersion: 2
+        x: 35
+        y: 799
+        width: 8
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c1496258f35685fd0800000000000000
+      internalID: -2353019481809841124
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Arthurios 027_E_2048_28
+      rect:
+        serializedVersion: 2
+        x: 5
+        y: 223
+        width: 8
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4f515e2a05870a5e0800000000000000
+      internalID: -1900386755024710156
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Arthurios 027_E_2048_29
+      rect:
+        serializedVersion: 2
+        x: 21
+        y: 223
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d3aba0bbdd215a230800000000000000
+      internalID: 3649343816588769853
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Arthurios 027_E_2048_30
+      rect:
+        serializedVersion: 2
+        x: 1989
+        y: 221
+        width: 10
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a6550d4985a02fc60800000000000000
+      internalID: 7850348476030276970
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Arthurios 027_E_2048_31
+      rect:
+        serializedVersion: 2
+        x: 2005
+        y: 223
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d41449919ac9341e0800000000000000
+      internalID: -2214754341643599539
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Arthurios 027_E_2048_32
+      rect:
+        serializedVersion: 2
+        x: 2021
+        y: 223
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2fc40a43a742aced0800000000000000
+      internalID: -2393060144706466574
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Arthurios 027_E_2048_33
+      rect:
+        serializedVersion: 2
+        x: 2037
+        y: 223
+        width: 10
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c43f1829c207cb760800000000000000
+      internalID: 7474972818267042636
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Arthurios 027_E_2048_34
+      rect:
+        serializedVersion: 2
+        x: 1989
+        y: 215
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 645ece9b304294d80800000000000000
+      internalID: -8266036042639022778
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Arthurios 027_E_2048_35
+      rect:
+        serializedVersion: 2
+        x: 1991
+        y: 189
+        width: 8
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bdf555d951576ded0800000000000000
+      internalID: -2389593816579088421
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Arthurios 027_E_2048_36
+      rect:
+        serializedVersion: 2
+        x: 13
+        y: 171
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9d8a74242c954e8a0800000000000000
+      internalID: -6276793289777108775
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Arthurios 027_E_2048_37
+      rect:
+        serializedVersion: 2
+        x: 39
+        y: 177
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 395d5376f84c2b8b0800000000000000
+      internalID: -5137828104685365869
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Arthurios 027_E_2048_38
+      rect:
+        serializedVersion: 2
+        x: 45
+        y: 171
+        width: 10
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 08d1b3ab4af97d1a0800000000000000
+      internalID: -6784778783762473600
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Arthurios 027_E_2048_39
+      rect:
+        serializedVersion: 2
+        x: 1995
+        y: 177
+        width: 8
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a5db1bdb0c4389c50800000000000000
+      internalID: 6672140850370297178
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Arthurios 027_E_2048_40
+      rect:
+        serializedVersion: 2
+        x: 1997
+        y: 171
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 99b1bd417976e7f90800000000000000
+      internalID: -6954006876025840743
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Arthurios 027_E_2048_41
+      rect:
+        serializedVersion: 2
+        x: 2007
+        y: 177
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 403f84cd05c99d690800000000000000
+      internalID: -7576853026967063804
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Arthurios 027_E_2048_42
+      rect:
+        serializedVersion: 2
+        x: 2029
+        y: 177
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ed07d88d338f92ea0800000000000000
+      internalID: -5896909335504785186
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Arthurios 027_E_2048_43
+      rect:
+        serializedVersion: 2
+        x: 2039
+        y: 177
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e5763a65ee9566080800000000000000
+      internalID: -9194562709039650978
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Arthurios 027_E_2048_44
+      rect:
+        serializedVersion: 2
+        x: 2023
+        y: 145
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9d5195fb0fe2ba350800000000000000
+      internalID: 6028964137702856153
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Arthurios 027_E_2048_45
+      rect:
+        serializedVersion: 2
+        x: 37
+        y: 127
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 988c7f1bcd964a6b0800000000000000
+      internalID: -5285983666026592119
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Arthurios 027_E_2048_46
+      rect:
+        serializedVersion: 2
+        x: 1989
+        y: 127
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6fe90ff6ee3212520800000000000000
+      internalID: 2675459160622014198
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Arthurios 027_E_2048_47
+      rect:
+        serializedVersion: 2
+        x: 2039
+        y: 127
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e61f2e705bbd9c330800000000000000
+      internalID: 3731755336821043566
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Arthurios 027_E_2048_48
+      rect:
+        serializedVersion: 2
+        x: 37
+        y: 71
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9e4716dbf8a3fa940800000000000000
+      internalID: 5309526874725119209
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Arthurios 027_E_2048_49
+      rect:
+        serializedVersion: 2
+        x: 2037
+        y: 71
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c0690dc0305683880800000000000000
+      internalID: -8631037622081251828
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Arthurios 027_E_2048_50
+      rect:
+        serializedVersion: 2
+        x: 37
+        y: 31
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c2bbf87529cf29570800000000000000
+      internalID: 8472111554501786412
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Arthurios 027_E_2048_51
+      rect:
+        serializedVersion: 2
+        x: 101
+        y: 29
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 12837e33e6ee429c0800000000000000
+      internalID: -3952772415839848415
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Arthurios 027_E_2048_52
+      rect:
+        serializedVersion: 2
+        x: 133
+        y: 31
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 59bdcdf504b601ab0800000000000000
+      internalID: -5039410058797196395
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Arthurios 027_E_2048_53
+      rect:
+        serializedVersion: 2
+        x: 165
+        y: 29
+        width: 6
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 714007063142d7fa0800000000000000
+      internalID: -5801441079342398441
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Arthurios 027_E_2048_54
+      rect:
+        serializedVersion: 2
+        x: 181
+        y: 29
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c4f219ca6dd5a6ed0800000000000000
+      internalID: -2420018673158639796
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Arthurios 027_E_2048_55
+      rect:
+        serializedVersion: 2
+        x: 189
+        y: 33
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 26492f1590f510dd0800000000000000
+      internalID: -2521629822716570526
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Arthurios 027_E_2048_56
+      rect:
+        serializedVersion: 2
+        x: 197
+        y: 29
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ec7d6b199c16925c0800000000000000
+      internalID: -4239750055831611442
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Arthurios 027_E_2048_57
+      rect:
+        serializedVersion: 2
+        x: 237
+        y: 33
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8c92e482544282fe0800000000000000
+      internalID: -1213680220128794168
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Arthurios 027_E_2048_58
+      rect:
+        serializedVersion: 2
+        x: 277
+        y: 29
+        width: 6
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bde782f520c5dc8d0800000000000000
+      internalID: -2824500226035253541
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Arthurios 027_E_2048_59
+      rect:
+        serializedVersion: 2
+        x: 293
+        y: 29
+        width: 6
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 46d564bddf5290990800000000000000
+      internalID: -7419357138880406172
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Arthurios 027_E_2048_60
+      rect:
+        serializedVersion: 2
+        x: 341
+        y: 29
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 69972ac11fb04d500800000000000000
+      internalID: 419973795447732630
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Arthurios 027_E_2048_61
+      rect:
+        serializedVersion: 2
+        x: 373
+        y: 31
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 03c2ab4eb46b945e0800000000000000
+      internalID: -1924806928647967696
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Arthurios 027_E_2048_62
+      rect:
+        serializedVersion: 2
+        x: 389
+        y: 31
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d1c1ccaf6e43cb7f0800000000000000
+      internalID: -595542884064945123
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Arthurios 027_E_2048_63
+      rect:
+        serializedVersion: 2
+        x: 453
+        y: 29
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 52fc483b51464f430800000000000000
+      internalID: 3815784828658568997
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Arthurios 027_E_2048_64
+      rect:
+        serializedVersion: 2
+        x: 517
+        y: 31
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7c50e40bbd22f44e0800000000000000
+      internalID: -1995337782950754873
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Arthurios 027_E_2048_65
+      rect:
+        serializedVersion: 2
+        x: 581
+        y: 29
+        width: 6
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9a3929303915a4f20800000000000000
+      internalID: 3407625759921181609
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Arthurios 027_E_2048_66
+      rect:
+        serializedVersion: 2
+        x: 597
+        y: 31
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8d54a718aad1aa4c0800000000000000
+      internalID: -4275572278080944680
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Arthurios 027_E_2048_67
+      rect:
+        serializedVersion: 2
+        x: 645
+        y: 29
+        width: 6
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e49cb9e5e07b59cd0800000000000000
+      internalID: -2551932341490824882
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Arthurios 027_E_2048_68
+      rect:
+        serializedVersion: 2
+        x: 709
+        y: 31
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: beb9ab1935f970640800000000000000
+      internalID: 5046177088767957995
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Arthurios 027_E_2048_69
+      rect:
+        serializedVersion: 2
+        x: 725
+        y: 29
+        width: 6
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d931bb45de33355f0800000000000000
+      internalID: -769214016928410723
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Arthurios 027_E_2048_70
+      rect:
+        serializedVersion: 2
+        x: 741
+        y: 29
+        width: 6
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 40cc927977ded0cc0800000000000000
+      internalID: -3743074617382024188
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Arthurios 027_E_2048_71
+      rect:
+        serializedVersion: 2
+        x: 805
+        y: 29
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 303755e81dc5e3790800000000000000
+      internalID: -7548493870320487677
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Arthurios 027_E_2048_72
+      rect:
+        serializedVersion: 2
+        x: 821
+        y: 29
+        width: 6
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bd0e2dc551e690cb0800000000000000
+      internalID: -4897262081758011173
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Arthurios 027_E_2048_73
+      rect:
+        serializedVersion: 2
+        x: 845
+        y: 33
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 83c5b9673bce59040800000000000000
+      internalID: 4653886045490469944
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Arthurios 027_E_2048_74
+      rect:
+        serializedVersion: 2
+        x: 933
+        y: 29
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 03594ab878fe9cba0800000000000000
+      internalID: -6068055657462590160
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Arthurios 027_E_2048_75
+      rect:
+        serializedVersion: 2
+        x: 965
+        y: 29
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e4ab65fe111b198d0800000000000000
+      internalID: -2841295199306073522
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Arthurios 027_E_2048_76
+      rect:
+        serializedVersion: 2
+        x: 1013
+        y: 29
+        width: 6
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3fdfdefbd7d47a6f0800000000000000
+      internalID: -673484416782303757
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Arthurios 027_E_2048_77
+      rect:
+        serializedVersion: 2
+        x: 1069
+        y: 33
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 544ae8dcc24856e30800000000000000
+      internalID: 4496145130961413189
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Arthurios 027_E_2048_78
+      rect:
+        serializedVersion: 2
+        x: 1077
+        y: 31
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bc359d4d389cd4cc0800000000000000
+      internalID: -3725099748716620853
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Arthurios 027_E_2048_79
+      rect:
+        serializedVersion: 2
+        x: 1093
+        y: 29
+        width: 6
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c0c6869f840967a20800000000000000
+      internalID: 3059791639941245964
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Arthurios 027_E_2048_80
+      rect:
+        serializedVersion: 2
+        x: 1109
+        y: 29
+        width: 6
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b8a9ff53eac9dcbc0800000000000000
+      internalID: -3761177841740309877
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Arthurios 027_E_2048_81
+      rect:
+        serializedVersion: 2
+        x: 1125
+        y: 29
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7c56f7a5d6b9abe80800000000000000
+      internalID: -8162040480683563577
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Arthurios 027_E_2048_82
+      rect:
+        serializedVersion: 2
+        x: 1157
+        y: 29
+        width: 6
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cb53b4710751045e0800000000000000
+      internalID: -1927517069343246916
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Arthurios 027_E_2048_83
+      rect:
+        serializedVersion: 2
+        x: 1189
+        y: 31
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ad8f713ff9cccf940800000000000000
+      internalID: 5331361046250125530
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Arthurios 027_E_2048_84
+      rect:
+        serializedVersion: 2
+        x: 1197
+        y: 33
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0ab6d1444fdf88b60800000000000000
+      internalID: 7748722384447564704
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Arthurios 027_E_2048_85
+      rect:
+        serializedVersion: 2
+        x: 1205
+        y: 31
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 228fa0920f6227da0800000000000000
+      internalID: -5948649344880412638
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Arthurios 027_E_2048_86
+      rect:
+        serializedVersion: 2
+        x: 1221
+        y: 29
+        width: 6
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5d68d3ff0ee6521d0800000000000000
+      internalID: -3376170433010366763
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Arthurios 027_E_2048_87
+      rect:
+        serializedVersion: 2
+        x: 1237
+        y: 31
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e25fbbca8aa80f700800000000000000
+      internalID: 572109609733190958
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Arthurios 027_E_2048_88
+      rect:
+        serializedVersion: 2
+        x: 1301
+        y: 29
+        width: 6
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 54c0df90e44bb5930800000000000000
+      internalID: 4133095330310589509
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Arthurios 027_E_2048_89
+      rect:
+        serializedVersion: 2
+        x: 1317
+        y: 29
+        width: 6
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4a5962f880abf0450800000000000000
+      internalID: 6057264569760781732
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Arthurios 027_E_2048_90
+      rect:
+        serializedVersion: 2
+        x: 1325
+        y: 33
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8fcdfca5cad770320800000000000000
+      internalID: 2524124295375871224
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Arthurios 027_E_2048_91
+      rect:
+        serializedVersion: 2
+        x: 1349
+        y: 29
+        width: 6
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4590c2ab780002ea0800000000000000
+      internalID: -5899714928911316652
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Arthurios 027_E_2048_92
+      rect:
+        serializedVersion: 2
+        x: 1365
+        y: 29
+        width: 6
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e68cc21fed9d16420800000000000000
+      internalID: 2621616009658550382
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Arthurios 027_E_2048_93
+      rect:
+        serializedVersion: 2
+        x: 1381
+        y: 31
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 180eba7c4a1045c60800000000000000
+      internalID: 7805865861376106625
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Arthurios 027_E_2048_94
+      rect:
+        serializedVersion: 2
+        x: 1397
+        y: 29
+        width: 6
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bba2a8da6e7c878a0800000000000000
+      internalID: -6307071484564460869
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Arthurios 027_E_2048_95
+      rect:
+        serializedVersion: 2
+        x: 1413
+        y: 29
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 03e96427f7ec75ff0800000000000000
+      internalID: -47342224290701776
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Arthurios 027_E_2048_96
+      rect:
+        serializedVersion: 2
+        x: 1461
+        y: 33
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 683b840443bbb6470800000000000000
+      internalID: 8389004563998880646
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Arthurios 027_E_2048_97
+      rect:
+        serializedVersion: 2
+        x: 1477
+        y: 29
+        width: 6
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b684da1b5c398a630800000000000000
+      internalID: 3938560351434262635
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Arthurios 027_E_2048_98
+      rect:
+        serializedVersion: 2
+        x: 1493
+        y: 31
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 123007e1192efae40800000000000000
+      internalID: 5669999568791536417
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Arthurios 027_E_2048_99
+      rect:
+        serializedVersion: 2
+        x: 1501
+        y: 33
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6c27ad5fa348145b0800000000000000
+      internalID: -5385878290590698810
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Arthurios 027_E_2048_100
+      rect:
+        serializedVersion: 2
+        x: 1509
+        y: 29
+        width: 6
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7386f375e5a7e79e0800000000000000
+      internalID: -1621724270197512137
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Arthurios 027_E_2048_101
+      rect:
+        serializedVersion: 2
+        x: 1541
+        y: 29
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 65533677d511db6a0800000000000000
+      internalID: -6431965599682579114
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Arthurios 027_E_2048_102
+      rect:
+        serializedVersion: 2
+        x: 1583
+        y: 29
+        width: 12
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b1b6247b3ce384240800000000000000
+      internalID: 4776136415140539163
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Arthurios 027_E_2048_103
+      rect:
+        serializedVersion: 2
+        x: 1621
+        y: 31
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1ce4217d625306440800000000000000
+      internalID: 4926996433276653249
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Arthurios 027_E_2048_104
+      rect:
+        serializedVersion: 2
+        x: 1631
+        y: 29
+        width: 12
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: da26093db33f250e0800000000000000
+      internalID: -2282494622845345107
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Arthurios 027_E_2048_105
+      rect:
+        serializedVersion: 2
+        x: 1645
+        y: 33
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4c698053393485bd0800000000000000
+      internalID: -2641286881923787068
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Arthurios 027_E_2048_106
+      rect:
+        serializedVersion: 2
+        x: 1653
+        y: 29
+        width: 6
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9c5d3cfab9dd9fa20800000000000000
+      internalID: 3096749879532443081
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Arthurios 027_E_2048_107
+      rect:
+        serializedVersion: 2
+        x: 1669
+        y: 29
+        width: 6
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 723921e537cf25ba0800000000000000
+      internalID: -6101536972703886553
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Arthurios 027_E_2048_108
+      rect:
+        serializedVersion: 2
+        x: 1679
+        y: 29
+        width: 12
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f1fe0e3c00ab449e0800000000000000
+      internalID: -1637979852006953185
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Arthurios 027_E_2048_109
+      rect:
+        serializedVersion: 2
+        x: 1701
+        y: 29
+        width: 6
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3234555d7dd3001e0800000000000000
+      internalID: -2233717417969368285
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Arthurios 027_E_2048_110
+      rect:
+        serializedVersion: 2
+        x: 1711
+        y: 29
+        width: 12
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cea8edb1fec7c4290800000000000000
+      internalID: -7904805879535465748
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Arthurios 027_E_2048_111
+      rect:
+        serializedVersion: 2
+        x: 1727
+        y: 29
+        width: 12
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dce76368389e13ae0800000000000000
+      internalID: -1571218043873886515
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Arthurios 027_E_2048_112
+      rect:
+        serializedVersion: 2
+        x: 1741
+        y: 29
+        width: 14
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c4ab5ecb5fce762c0800000000000000
+      internalID: -4438318367570019764
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Arthurios 027_E_2048_113
+      rect:
+        serializedVersion: 2
+        x: 1759
+        y: 29
+        width: 12
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4c48d7406f527a3a0800000000000000
+      internalID: -6654308185849101116
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Arthurios 027_E_2048_114
+      rect:
+        serializedVersion: 2
+        x: 1775
+        y: 33
+        width: 12
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4aeda2b3f30223830800000000000000
+      internalID: 4049334470907190948
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Arthurios 027_E_2048_115
+      rect:
+        serializedVersion: 2
+        x: 1791
+        y: 29
+        width: 12
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 805c6a5be102dccc0800000000000000
+      internalID: -3689257203477854968
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Arthurios 027_E_2048_116
+      rect:
+        serializedVersion: 2
+        x: 1807
+        y: 29
+        width: 12
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e9ee286cc7945cdc0800000000000000
+      internalID: -3619405925267083618
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Arthurios 027_E_2048_117
+      rect:
+        serializedVersion: 2
+        x: 1823
+        y: 29
+        width: 12
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bdacc9274b23b5350800000000000000
+      internalID: 6006450278627068635
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Arthurios 027_E_2048_118
+      rect:
+        serializedVersion: 2
+        x: 1845
+        y: 31
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e47c2ff1d1d2a4d60800000000000000
+      internalID: 7875156501524039502
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Arthurios 027_E_2048_119
+      rect:
+        serializedVersion: 2
+        x: 1855
+        y: 29
+        width: 12
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 87818110db26d5e80800000000000000
+      internalID: -8188279983582996360
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Arthurios 027_E_2048_120
+      rect:
+        serializedVersion: 2
+        x: 1877
+        y: 29
+        width: 6
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9a9f898aff2b454c0800000000000000
+      internalID: -4299614933116978775
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Arthurios 027_E_2048_121
+      rect:
+        serializedVersion: 2
+        x: 1885
+        y: 33
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e449f5bad8fbf8d40800000000000000
+      internalID: 5588896277776536654
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Arthurios 027_E_2048_122
+      rect:
+        serializedVersion: 2
+        x: 1893
+        y: 29
+        width: 16
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5dce7f34f04031800800000000000000
+      internalID: 581813240472267989
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Arthurios 027_E_2048_123
+      rect:
+        serializedVersion: 2
+        x: 1919
+        y: 29
+        width: 12
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c03cac88a2d3755e0800000000000000
+      internalID: -1920999463157316852
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Arthurios 027_E_2048_124
+      rect:
+        serializedVersion: 2
+        x: 1941
+        y: 31
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ec301313525241ea0800000000000000
+      internalID: -5903052369906564146
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Arthurios 027_E_2048_125
+      rect:
+        serializedVersion: 2
+        x: 1957
+        y: 29
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a1f3ade560f3ac170800000000000000
+      internalID: 8199435368175124250
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Arthurios 027_E_2048_126
+      rect:
+        serializedVersion: 2
+        x: 1973
+        y: 31
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: eaa18f16c2ca1fec0800000000000000
+      internalID: -3534854925886940498
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Arthurios 027_E_2048_127
+      rect:
+        serializedVersion: 2
+        x: 1989
+        y: 29
+        width: 6
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 46839624996e0d6b0800000000000000
+      internalID: -5273461617732274076
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Arthurios 027_E_2048_128
+      rect:
+        serializedVersion: 2
+        x: 2005
+        y: 29
+        width: 6
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a775c9d91bad8cae0800000000000000
+      internalID: -1528731617103947910
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Arthurios 027_E_2048_129
+      rect:
+        serializedVersion: 2
+        x: 965
+        y: 23
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 053d6aa9135eb58d0800000000000000
+      internalID: -2856437537425665200
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Arthurios 027_E_2048_130
+      rect:
+        serializedVersion: 2
+        x: 1157
+        y: 23
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 84c3729919eeabf80800000000000000
+      internalID: -8089891471510520760
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Arthurios 027_E_2048_131
+      rect:
+        serializedVersion: 2
+        x: 1253
+        y: 23
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 664e3149469d908a0800000000000000
+      internalID: -6338295974542973850
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Arthurios 027_E_2048_132
+      rect:
+        serializedVersion: 2
+        x: 1509
+        y: 23
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 80a7aadb5d30b3b00800000000000000
+      internalID: 809244774588119560
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Arthurios 027_E_2048_133
+      rect:
+        serializedVersion: 2
+        x: 1605
+        y: 23
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: da9547e6a4b4aa830800000000000000
+      internalID: 4083158795217557933
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Arthurios 027_E_2048_134
+      rect:
+        serializedVersion: 2
+        x: 1701
+        y: 23
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cb932d59058781710800000000000000
+      internalID: 1664212349819697596
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Arthurios 027_E_2048_135
+      rect:
+        serializedVersion: 2
+        x: 1925
+        y: 23
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2838dc23a253da210800000000000000
+      internalID: 1345790319010874242
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      Arthurios 027_E_2048_0: -7664540976074984463
+      Arthurios 027_E_2048_1: 8204226655792262409
+      Arthurios 027_E_2048_10: 8078318050852227182
+      Arthurios 027_E_2048_100: -1621724270197512137
+      Arthurios 027_E_2048_101: -6431965599682579114
+      Arthurios 027_E_2048_102: 4776136415140539163
+      Arthurios 027_E_2048_103: 4926996433276653249
+      Arthurios 027_E_2048_104: -2282494622845345107
+      Arthurios 027_E_2048_105: -2641286881923787068
+      Arthurios 027_E_2048_106: 3096749879532443081
+      Arthurios 027_E_2048_107: -6101536972703886553
+      Arthurios 027_E_2048_108: -1637979852006953185
+      Arthurios 027_E_2048_109: -2233717417969368285
+      Arthurios 027_E_2048_11: -2750355043845381635
+      Arthurios 027_E_2048_110: -7904805879535465748
+      Arthurios 027_E_2048_111: -1571218043873886515
+      Arthurios 027_E_2048_112: -4438318367570019764
+      Arthurios 027_E_2048_113: -6654308185849101116
+      Arthurios 027_E_2048_114: 4049334470907190948
+      Arthurios 027_E_2048_115: -3689257203477854968
+      Arthurios 027_E_2048_116: -3619405925267083618
+      Arthurios 027_E_2048_117: 6006450278627068635
+      Arthurios 027_E_2048_118: 7875156501524039502
+      Arthurios 027_E_2048_119: -8188279983582996360
+      Arthurios 027_E_2048_12: -152702533349694004
+      Arthurios 027_E_2048_120: -4299614933116978775
+      Arthurios 027_E_2048_121: 5588896277776536654
+      Arthurios 027_E_2048_122: 581813240472267989
+      Arthurios 027_E_2048_123: -1920999463157316852
+      Arthurios 027_E_2048_124: -5903052369906564146
+      Arthurios 027_E_2048_125: 8199435368175124250
+      Arthurios 027_E_2048_126: -3534854925886940498
+      Arthurios 027_E_2048_127: -5273461617732274076
+      Arthurios 027_E_2048_128: -1528731617103947910
+      Arthurios 027_E_2048_129: -2856437537425665200
+      Arthurios 027_E_2048_13: 8081673624523258047
+      Arthurios 027_E_2048_130: -8089891471510520760
+      Arthurios 027_E_2048_131: -6338295974542973850
+      Arthurios 027_E_2048_132: 809244774588119560
+      Arthurios 027_E_2048_133: 4083158795217557933
+      Arthurios 027_E_2048_134: 1664212349819697596
+      Arthurios 027_E_2048_135: 1345790319010874242
+      Arthurios 027_E_2048_14: 6137467388230531379
+      Arthurios 027_E_2048_15: 8531603210036329990
+      Arthurios 027_E_2048_16: 797590721233487978
+      Arthurios 027_E_2048_17: 3113593017512155668
+      Arthurios 027_E_2048_18: 2218868949696906765
+      Arthurios 027_E_2048_19: -9014773345479612094
+      Arthurios 027_E_2048_2: 1829982804044453926
+      Arthurios 027_E_2048_20: -2326507586666065072
+      Arthurios 027_E_2048_21: 2574207902142244824
+      Arthurios 027_E_2048_22: 5522757815628444370
+      Arthurios 027_E_2048_23: -3168154285032677071
+      Arthurios 027_E_2048_24: 7611422752045654099
+      Arthurios 027_E_2048_25: 1589788554335572193
+      Arthurios 027_E_2048_26: 2398117951348614454
+      Arthurios 027_E_2048_27: -2353019481809841124
+      Arthurios 027_E_2048_28: -1900386755024710156
+      Arthurios 027_E_2048_29: 3649343816588769853
+      Arthurios 027_E_2048_3: 652142640683278443
+      Arthurios 027_E_2048_30: 7850348476030276970
+      Arthurios 027_E_2048_31: -2214754341643599539
+      Arthurios 027_E_2048_32: -2393060144706466574
+      Arthurios 027_E_2048_33: 7474972818267042636
+      Arthurios 027_E_2048_34: -8266036042639022778
+      Arthurios 027_E_2048_35: -2389593816579088421
+      Arthurios 027_E_2048_36: -6276793289777108775
+      Arthurios 027_E_2048_37: -5137828104685365869
+      Arthurios 027_E_2048_38: -6784778783762473600
+      Arthurios 027_E_2048_39: 6672140850370297178
+      Arthurios 027_E_2048_4: 698294689039804520
+      Arthurios 027_E_2048_40: -6954006876025840743
+      Arthurios 027_E_2048_41: -7576853026967063804
+      Arthurios 027_E_2048_42: -5896909335504785186
+      Arthurios 027_E_2048_43: -9194562709039650978
+      Arthurios 027_E_2048_44: 6028964137702856153
+      Arthurios 027_E_2048_45: -5285983666026592119
+      Arthurios 027_E_2048_46: 2675459160622014198
+      Arthurios 027_E_2048_47: 3731755336821043566
+      Arthurios 027_E_2048_48: 5309526874725119209
+      Arthurios 027_E_2048_49: -8631037622081251828
+      Arthurios 027_E_2048_5: -6504202297763428270
+      Arthurios 027_E_2048_50: 8472111554501786412
+      Arthurios 027_E_2048_51: -3952772415839848415
+      Arthurios 027_E_2048_52: -5039410058797196395
+      Arthurios 027_E_2048_53: -5801441079342398441
+      Arthurios 027_E_2048_54: -2420018673158639796
+      Arthurios 027_E_2048_55: -2521629822716570526
+      Arthurios 027_E_2048_56: -4239750055831611442
+      Arthurios 027_E_2048_57: -1213680220128794168
+      Arthurios 027_E_2048_58: -2824500226035253541
+      Arthurios 027_E_2048_59: -7419357138880406172
+      Arthurios 027_E_2048_6: 5914027452642093369
+      Arthurios 027_E_2048_60: 419973795447732630
+      Arthurios 027_E_2048_61: -1924806928647967696
+      Arthurios 027_E_2048_62: -595542884064945123
+      Arthurios 027_E_2048_63: 3815784828658568997
+      Arthurios 027_E_2048_64: -1995337782950754873
+      Arthurios 027_E_2048_65: 3407625759921181609
+      Arthurios 027_E_2048_66: -4275572278080944680
+      Arthurios 027_E_2048_67: -2551932341490824882
+      Arthurios 027_E_2048_68: 5046177088767957995
+      Arthurios 027_E_2048_69: -769214016928410723
+      Arthurios 027_E_2048_7: -5029807887512942528
+      Arthurios 027_E_2048_70: -3743074617382024188
+      Arthurios 027_E_2048_71: -7548493870320487677
+      Arthurios 027_E_2048_72: -4897262081758011173
+      Arthurios 027_E_2048_73: 4653886045490469944
+      Arthurios 027_E_2048_74: -6068055657462590160
+      Arthurios 027_E_2048_75: -2841295199306073522
+      Arthurios 027_E_2048_76: -673484416782303757
+      Arthurios 027_E_2048_77: 4496145130961413189
+      Arthurios 027_E_2048_78: -3725099748716620853
+      Arthurios 027_E_2048_79: 3059791639941245964
+      Arthurios 027_E_2048_8: 3290428297876377106
+      Arthurios 027_E_2048_80: -3761177841740309877
+      Arthurios 027_E_2048_81: -8162040480683563577
+      Arthurios 027_E_2048_82: -1927517069343246916
+      Arthurios 027_E_2048_83: 5331361046250125530
+      Arthurios 027_E_2048_84: 7748722384447564704
+      Arthurios 027_E_2048_85: -5948649344880412638
+      Arthurios 027_E_2048_86: -3376170433010366763
+      Arthurios 027_E_2048_87: 572109609733190958
+      Arthurios 027_E_2048_88: 4133095330310589509
+      Arthurios 027_E_2048_89: 6057264569760781732
+      Arthurios 027_E_2048_9: -7403781499010447733
+      Arthurios 027_E_2048_90: 2524124295375871224
+      Arthurios 027_E_2048_91: -5899714928911316652
+      Arthurios 027_E_2048_92: 2621616009658550382
+      Arthurios 027_E_2048_93: 7805865861376106625
+      Arthurios 027_E_2048_94: -6307071484564460869
+      Arthurios 027_E_2048_95: -47342224290701776
+      Arthurios 027_E_2048_96: 8389004563998880646
+      Arthurios 027_E_2048_97: 3938560351434262635
+      Arthurios 027_E_2048_98: 5669999568791536417
+      Arthurios 027_E_2048_99: -5385878290590698810
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

@@ -1,0 +1,104 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: baa3cfc011ceea542b4a6e2212c058c1, type: 3}
+  m_Name: Card_001_Oeil des Anciens
+  m_EditorClassIdentifier: Assembly-CSharp::Astraleum.CardData
+  cardName: Oeil des Anciens
+  cardTitle: 
+  cardNumber: 1
+  element: 2
+  rarity: 1
+  artwork: {fileID: 21300000, guid: 550ec56458e1a034b9ba282f62f0488a, type: 3}
+  maxHP: 200
+  armorPoints: 10
+  bonusActionsGranted: 0
+  skillOne:
+    skillType: 2
+    skillName: Regard Protecteur
+    description: "Choisissez une carte alli\xE9e et donnez lui 10 d'Armure et -2%
+      de DGT subis pendant deux tours."
+    damage: 0
+    cooldownTurns: 3
+    targetType: 1
+    adjacentDamagePercent: 0
+    effects:
+    - type: 6
+      value: 10
+      durationTurns: 0
+      effectTarget: 0
+    - type: 2
+      value: 0.02
+      durationTurns: 2
+      effectTarget: 0
+    branches:
+    - condition:
+        conditionType: 0
+        compareOp: 0
+        threshold: 0
+        effectType: 0
+      effectType: 0
+      target: 0
+      valueMode: 0
+      valuePercent: 0
+      valueFlat: 0
+      durationTurns: 0
+    attackVFXPrefab: {fileID: 0}
+    impactVFXPrefab: {fileID: 0}
+    vfxTravelTime: 0.35
+    vfxImpactDuration: 0.2
+  skillTwo:
+    skillType: 4
+    skillName: "Regard Per\xE7ant"
+    description: "Fixe une cible, et lui inflige 5 DGT. Augmente ses DGT subis de
+      5% pendant 2 Tours, et l'\xE9tourdie pendant 1 Tour. "
+    damage: 5
+    cooldownTurns: 2
+    targetType: 0
+    adjacentDamagePercent: 0
+    effects:
+    - type: 1
+      value: 0.05
+      durationTurns: 2
+      effectTarget: 0
+    - type: 16
+      value: 1
+      durationTurns: 1
+      effectTarget: 0
+    branches: []
+    attackVFXPrefab: {fileID: 0}
+    impactVFXPrefab: {fileID: 0}
+    vfxTravelTime: 0.35
+    vfxImpactDuration: 0.2
+  passive:
+    passiveName: Regard Accusateur
+    passiveDescription: "Lorsqu'une carte alli\xE9e est d\xE9truite, donne +5 d'Armure
+      aux cartes alli\xE9es et \xE9tourdie une carte adverse al\xE9atoire pendant
+      1 tour."
+    trigger: 2
+    triggerElement: 7
+    passiveColor: {r: 1, g: 0.84, b: 0, a: 1}
+    stacksPerTrigger: 0
+    maxTriggerStacks: 4
+    effects:
+    - type: 6
+      value: 5
+      durationTurns: 0
+      effectTarget: 2
+    - type: 14
+      value: 1
+      durationTurns: 1
+      effectTarget: 5
+  loreText: "L'on raconte que ceux et celles qui ont la chance d'observer cet oeil
+    finissent par devenir fou, et mettent fin \xE0 leurs jours. On ne sait pas vraiment
+    d'o\xF9 vient cet oeil, si ce n'est qu'une illusion ou bel et bien une invocation,
+    mais les gens l'appellent \"Oeil des Anciens\"."
+  loreQuote: '"Un simple regard change votre destin".'

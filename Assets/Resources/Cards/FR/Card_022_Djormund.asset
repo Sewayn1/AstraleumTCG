@@ -1,0 +1,95 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: baa3cfc011ceea542b4a6e2212c058c1, type: 3}
+  m_Name: Card_022_Djormund
+  m_EditorClassIdentifier: Assembly-CSharp::Astraleum.CardData
+  cardName: Djormund
+  cardTitle: "Nordique C\xE9leste"
+  cardNumber: 22
+  element: 6
+  rarity: 4
+  artwork: {fileID: 21300000, guid: a6244fa1aa02f6d42bd6d6c8f2fc4226, type: 3}
+  maxHP: 400
+  armorPoints: 10
+  bonusActionsGranted: 0
+  skillOne:
+    skillType: 0
+    skillName: Frappe de Berserker
+    description: "Inflige 35 DGT \xE0 une cible. Si cette carte \xE0 moins de 40%
+      de ses PV, inflige 15% de DGT suppl\xE9mentaire."
+    damage: 35
+    cooldownTurns: 2
+    targetType: 0
+    adjacentDamagePercent: 0
+    effects: []
+    branches:
+    - condition:
+        conditionType: 1
+        compareOp: 0
+        threshold: 0.4
+        effectType: 0
+      effectType: 0
+      target: 0
+      valueMode: 0
+      valuePercent: 0.15
+      valueFlat: 0
+      durationTurns: 0
+    attackVFXPrefab: {fileID: 0}
+    impactVFXPrefab: {fileID: 0}
+    vfxTravelTime: 0.35
+    vfxImpactDuration: 0.2
+  skillTwo:
+    skillType: 0
+    skillName: Cri de Guerre Astral
+    description: "+20% attaque \xE0 tous les alli\xE9s pendant 2 tours, et r\xE9duit
+      leur prochain cooldown de 1 tour."
+    damage: 0
+    cooldownTurns: 4
+    targetType: 2
+    adjacentDamagePercent: 0
+    effects:
+    - type: 13
+      value: 0.2
+      durationTurns: 2
+      effectTarget: 2
+    - type: 11
+      value: 1
+      durationTurns: 0
+      effectTarget: 2
+    branches: []
+    attackVFXPrefab: {fileID: 0}
+    impactVFXPrefab: {fileID: 0}
+    vfxTravelTime: 0.35
+    vfxImpactDuration: 0.2
+  passive:
+    passiveName: Berserker des Astres
+    passiveDescription: "Lorsque Djormund d\xE9truit une carte adverse, il obtient
+      5% de DGT bonus permanent et 10 d'Armure."
+    trigger: 3
+    triggerElement: 7
+    passiveColor: {r: 1, g: 0.84, b: 0, a: 1}
+    stacksPerTrigger: 0
+    maxTriggerStacks: 4
+    effects:
+    - type: 13
+      value: 0.05
+      durationTurns: -1
+      effectTarget: 1
+    - type: 6
+      value: 10
+      durationTurns: 0
+      effectTarget: 1
+  loreText: "Djormund a surv\xE9cu \xE0 la destruction de son clan, de son royaume
+    et de son monde. \xC0 chaque perte, il est devenu plus fort. Pas par magie \u2014
+    par refus. Il refuse de mourir avant d'avoir veng\xE9 chacun de ceux qu'il a
+    perdus. L'univers lui doit encore beaucoup."
+  loreQuote: "\"Ils sont tous tomb\xE9s devant moi. Je suis leur t\xE9moignage.\""

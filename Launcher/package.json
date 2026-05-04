@@ -1,0 +1,45 @@
+{
+  "name": "astraleum-launcher",
+  "version": "1.0.0",
+  "description": "Astraleum TCG Game Launcher",
+  "author": "Sewayn1",
+  "main": "src/main.js",
+  "scripts": {
+    "start": "electron .",
+    "build": "electron-builder",
+    "build:win": "electron-builder --win",
+    "build:mac": "electron-builder --mac",
+    "build:linux": "electron-builder --linux"
+  },
+  "dependencies": {
+    "adm-zip": "^0.5.10"
+  },
+  "devDependencies": {
+    "electron": "^28.3.0",
+    "electron-builder": "^24.13.3"
+  },
+  "build": {
+    "appId": "com.astraleum.launcher",
+    "productName": "Astraleum Launcher",
+    "directories": {
+      "output": "dist"
+    },
+    "files": [
+      "src/**/*",
+      "img/**/*",
+      "launcher.config.json"
+    ],
+    "win": {
+      "target": [{ "target": "portable", "arch": ["x64"] }],
+      "icon": "img/logo2.png"
+    },
+    "mac": {
+      "target": [{ "target": "dmg", "arch": ["x64", "arm64"] }],
+      "icon": "img/logo2.png"
+    },
+    "linux": {
+      "target": [{ "target": "AppImage", "arch": ["x64"] }],
+      "icon": "img/logo2.png"
+    }
+  }
+}

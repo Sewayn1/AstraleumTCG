@@ -1,0 +1,16 @@
+{
+  "version": "0.0.2",
+  "releaseDate": "2026-05-04",
+  "notes": "Hotfix and New Functionnalities",
+  "files": {
+    "win32": {
+      "url": "https://github.com/YOUR_GITHUB_USERNAME/Astraleum/releases/download/v0.1.0/Astraleum-v0.1.0-win.zip"
+    },
+    "darwin": {
+      "url": "https://github.com/YOUR_GITHUB_USERNAME/Astraleum/releases/download/v0.1.0/Astraleum-v0.1.0-mac.zip"
+    },
+    "linux": {
+      "url": "https://github.com/YOUR_GITHUB_USERNAME/Astraleum/releases/download/v0.1.0/Astraleum-v0.1.0-linux.zip"
+    }
+  }
+}

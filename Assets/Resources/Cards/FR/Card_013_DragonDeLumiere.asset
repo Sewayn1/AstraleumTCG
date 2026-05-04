@@ -1,0 +1,97 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: baa3cfc011ceea542b4a6e2212c058c1, type: 3}
+  m_Name: Card_013_DragonDeLumiere
+  m_EditorClassIdentifier: Assembly-CSharp::Astraleum.CardData
+  cardName: "Dragon de Lumi\xE8re"
+  cardTitle: 
+  cardNumber: 13
+  element: 4
+  rarity: 2
+  artwork: {fileID: 21300000, guid: a118bfa76be639a459c636f74776a3b7, type: 3}
+  maxHP: 220
+  armorPoints: 8
+  bonusActionsGranted: 0
+  skillOne:
+    skillType: 0
+    skillName: Rayon Divin
+    description: "Inflige 23 DGT \xE0 la cible et ignore l'Armure. Si cette carte
+      \xE0 moins de la moiti\xE9 de ses PV, gagne 5% de soins sur la dur\xE9e pendant
+      2 Tours."
+    damage: 23
+    cooldownTurns: 2
+    targetType: 0
+    adjacentDamagePercent: 0
+    effects:
+    - type: 8
+      value: 1
+      durationTurns: 0
+      effectTarget: 0
+    branches:
+    - condition:
+        conditionType: 1
+        compareOp: 0
+        threshold: 0.5
+        effectType: 0
+      effectType: 9
+      target: 1
+      valueMode: 0
+      valuePercent: 0.05
+      valueFlat: 0
+      durationTurns: 2
+    attackVFXPrefab: {fileID: 0}
+    impactVFXPrefab: {fileID: 0}
+    vfxTravelTime: 0.35
+    vfxImpactDuration: 0.2
+  skillTwo:
+    skillType: 1
+    skillName: "Aura R\xE9g\xE9n\xE9ratrice"
+    description: "Soigne tous les alli\xE9s de 15% de leurs PV max. Si cette carte
+      \xE0 moins de 30% de ses PV, le soigne de 5% suppl\xE9mentaire."
+    damage: 0
+    cooldownTurns: 3
+    targetType: 3
+    adjacentDamagePercent: 0
+    effects:
+    - type: 3
+      value: 0.15
+      durationTurns: 0
+      effectTarget: 2
+    branches:
+    - condition:
+        conditionType: 1
+        compareOp: 0
+        threshold: 0.3
+        effectType: 0
+      effectType: 8
+      target: 1
+      valueMode: 0
+      valuePercent: 0.05
+      valueFlat: 0
+      durationTurns: 0
+    attackVFXPrefab: {fileID: 0}
+    impactVFXPrefab: {fileID: 0}
+    vfxTravelTime: 0.35
+    vfxImpactDuration: 0.2
+  passive:
+    passiveName: 
+    passiveDescription: 
+    trigger: 0
+    triggerElement: 0
+    passiveColor: {r: 1, g: 0.84, b: 0, a: 1}
+    stacksPerTrigger: 0
+    maxTriggerStacks: 4
+    effects: []
+  loreText: "Le Dragon de Lumi\xE8re n'attaque pas \u2014 il juge. Il scrute chaque
+    adversaire de ses yeux d'or et d\xE9cide si leur pr\xE9sence sur ce champ de
+    bataille est m\xE9rit\xE9e. La plupart du temps, sa conclusion est non."
+  loreQuote: "\"La lumi\xE8re n'a pas d'ennemi. Elle a des absences.\""

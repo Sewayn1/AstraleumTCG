@@ -1,0 +1,76 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: baa3cfc011ceea542b4a6e2212c058c1, type: 3}
+  m_Name: Card_023_GolemDesMassifs
+  m_EditorClassIdentifier: Assembly-CSharp::Astraleum.CardData
+  cardName: Golem des Massifs
+  cardTitle: 
+  cardNumber: 23
+  element: 2
+  rarity: 0
+  artwork: {fileID: 21300000, guid: 6c113a9363940dc41801cbfa869dff84, type: 3}
+  maxHP: 150
+  armorPoints: 10
+  bonusActionsGranted: 0
+  skillOne:
+    skillType: 0
+    skillName: Poing de Roc
+    description: "Inflige 8 DGT \xE0 une cible, et augmente les cooldown actifs de
+      la cible de 1 tour."
+    damage: 8
+    cooldownTurns: 2
+    targetType: 0
+    adjacentDamagePercent: 0
+    effects:
+    - type: 12
+      value: 1
+      durationTurns: 0
+      effectTarget: 0
+    attackVFXPrefab: {fileID: 0}
+    impactVFXPrefab: {fileID: 0}
+    vfxTravelTime: 0.35
+    vfxImpactDuration: 0.2
+  skillTwo:
+    skillType: 2
+    skillName: Carapace Tellurique
+    description: "Gagne 15 d'Armure, et donne 5 d'Armure aux alli\xE9s adjacents."
+    damage: 0
+    cooldownTurns: 3
+    targetType: 5
+    adjacentDamagePercent: 0
+    effects:
+    - type: 6
+      value: 15
+      durationTurns: 0
+      effectTarget: 1
+    - type: 7
+      value: 5
+      durationTurns: 0
+      effectTarget: 0
+    attackVFXPrefab: {fileID: 0}
+    impactVFXPrefab: {fileID: 0}
+    vfxTravelTime: 0.35
+    vfxImpactDuration: 0.2
+  passive:
+    passiveName: 
+    passiveDescription: 
+    trigger: 0
+    triggerElement: 0
+    passiveColor: {r: 1, g: 0.84, b: 0, a: 1}
+    stacksPerTrigger: 0
+    maxTriggerStacks: 4
+    effects: []
+  loreText: "Personne n'a cr\xE9\xE9 le Golem des Massifs \u2014 il existe depuis
+    que les montagnes existent. Il ne parle pas, ne pense pas, n'ob\xE9it \xE0 personne.
+    Il marche. Et quand il s'arr\xEAte, c'est parce qu'il n'y a plus rien devant
+    lui."
+  loreQuote: 'Citation : "..." (Le silence des montagnes.)'

@@ -1,0 +1,49 @@
+# Unity generated
+Library/
+Temp/
+obj/
+Logs/
+UserSettings/
+MemoryCaptures/
+Recordings/
+
+# Unity build output
+Builds/
+Build/
+
+# Generated project files
+*.csproj
+*.unityproj
+*.sln
+*.slnx
+*.suo
+*.tmp
+*.user
+*.userprefs
+*.pidb
+*.booproj
+*.svd
+*.pdb
+*.mdb
+*.opendb
+*.VC.db
+*.DS_Store
+*.pidb.meta
+*.pdb.meta
+*.mdb.meta
+
+# Unity crash/log files
+crashlytics-build.properties
+Player.log
+Player-prev.log
+
+# Launcher build artifacts
+Launcher/node_modules/
+Launcher/dist/
+
+# Claude Code local settings
+.claude/
+
+# OS
+.DS_Store
+Thumbs.db

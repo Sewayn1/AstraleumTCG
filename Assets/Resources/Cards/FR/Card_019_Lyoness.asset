@@ -1,0 +1,86 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: baa3cfc011ceea542b4a6e2212c058c1, type: 3}
+  m_Name: Card_019_Lyoness
+  m_EditorClassIdentifier: Assembly-CSharp::Astraleum.CardData
+  cardName: Lyoness
+  cardTitle: "Chevali\xE8re Errante"
+  cardNumber: 19
+  element: 4
+  rarity: 1
+  artwork: {fileID: 21300000, guid: ec7795ae289c0b94ebc18a281b0da054, type: 3}
+  maxHP: 150
+  armorPoints: 4
+  bonusActionsGranted: 0
+  skillOne:
+    skillType: 0
+    skillName: Frappe Chevaleresque
+    description: "Abat son \xE9p\xE9e de lumi\xE8re sur la cible. Inflige 12 DGT."
+    damage: 12
+    cooldownTurns: 1
+    targetType: 0
+    adjacentDamagePercent: 0
+    effects: []
+    branches: []
+    attackVFXPrefab: {fileID: 0}
+    impactVFXPrefab: {fileID: 0}
+    vfxTravelTime: 0.5
+    vfxImpactDuration: 0.3
+  skillTwo:
+    skillType: 1
+    skillName: "Serment du P\xE8lerin"
+    description: "Soigne 15% des PV d'une Cible, et r\xE9duit ses DGT subis de 5%
+      pendant 2 Tours. Si les PV sont inf\xE9rieur \xE0 30%, se soigne de 5% suppl\xE9mentaire
+      pendant 2 Tours. "
+    damage: 0
+    cooldownTurns: 2
+    targetType: 1
+    adjacentDamagePercent: 0
+    effects:
+    - type: 3
+      value: 0.15
+      durationTurns: 0
+      effectTarget: 0
+    - type: 2
+      value: 0.05
+      durationTurns: 2
+      effectTarget: 0
+    branches:
+    - condition:
+        conditionType: 0
+        compareOp: 0
+        threshold: 0.3
+        effectType: 0
+      effectType: 9
+      target: 0
+      valueMode: 0
+      valuePercent: 0.05
+      valueFlat: 0
+      durationTurns: 2
+    attackVFXPrefab: {fileID: 0}
+    impactVFXPrefab: {fileID: 0}
+    vfxTravelTime: 0.35
+    vfxImpactDuration: 0.2
+  passive:
+    passiveName: 
+    passiveDescription: 
+    trigger: 0
+    triggerElement: 0
+    passiveColor: {r: 1, g: 0.84, b: 0, a: 1}
+    stacksPerTrigger: 0
+    maxTriggerStacks: 4
+    effects: []
+  loreText: "Lyoness a quitt\xE9 Liotnar le jour o\xF9 elle a compris que la lumi\xE8re
+    n'appartient pas \xE0 une cit\xE9 \u2014 elle appartient \xE0 tous ceux qui en
+    ont besoin. Depuis, elle erre de royaume en royaume, offrant sa lame et sa protection
+    \xE0 qui la m\xE9rite. Elle n'a pas de ma\xEEtre. Elle a une cause."
+  loreQuote: "\"La lumi\xE8re ne demande pas la permission.\""

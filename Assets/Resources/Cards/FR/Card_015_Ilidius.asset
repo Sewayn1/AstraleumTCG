@@ -1,0 +1,102 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: baa3cfc011ceea542b4a6e2212c058c1, type: 3}
+  m_Name: Card_015_Ilidius
+  m_EditorClassIdentifier: Assembly-CSharp::Astraleum.CardData
+  cardName: Ilidius
+  cardTitle: Archange des Cieux
+  cardNumber: 15
+  element: 4
+  rarity: 3
+  artwork: {fileID: 21300000, guid: db0ad78da17bbab4596f8eee7a48361a, type: 3}
+  maxHP: 300
+  armorPoints: 12
+  bonusActionsGranted: 0
+  skillOne:
+    skillType: 0
+    skillName: "\xC9p\xE9e C\xE9leste"
+    description: "Inflige 30 DGT \xE0 la cible et ignore l'Armure."
+    damage: 30
+    cooldownTurns: 2
+    targetType: 0
+    adjacentDamagePercent: 0
+    effects:
+    - type: 8
+      value: 1
+      durationTurns: 0
+      effectTarget: 0
+    branches: []
+    attackVFXPrefab: {fileID: 0}
+    impactVFXPrefab: {fileID: 0}
+    vfxTravelTime: 0.35
+    vfxImpactDuration: 0.2
+  skillTwo:
+    skillType: 0
+    skillName: Jugement Divin
+    description: "Inflige 50 DGT \xE0 la cible, et 50% aux cibles adjacentes. Soigne
+      les alli\xE9es de 5%. Si cette carte \xE0 moins de 30% de ses PV, inflige 15%
+      de DGT suppl\xE9mentaire, et se soigne de 5% de ses PV Max."
+    damage: 45
+    cooldownTurns: 5
+    targetType: 0
+    adjacentDamagePercent: 0.5
+    effects:
+    - type: 3
+      value: 0.05
+      durationTurns: 0
+      effectTarget: 2
+    branches:
+    - condition:
+        conditionType: 1
+        compareOp: 0
+        threshold: 0.3
+        effectType: 0
+      effectType: 0
+      target: 0
+      valueMode: 0
+      valuePercent: 0.15
+      valueFlat: 0
+      durationTurns: 0
+    - condition:
+        conditionType: 1
+        compareOp: 0
+        threshold: 0.3
+        effectType: 0
+      effectType: 8
+      target: 1
+      valueMode: 0
+      valuePercent: 0.05
+      valueFlat: 0
+      durationTurns: 0
+    attackVFXPrefab: {fileID: 0}
+    impactVFXPrefab: {fileID: 0}
+    vfxTravelTime: 0.35
+    vfxImpactDuration: 0.2
+  passive:
+    passiveName: Vengeance Divine
+    passiveDescription: "Pour chaque alli\xE9s de type \"Lumi\xE8re\" d\xE9truite,
+      applique un Soin sur la dur\xE9e pendant 2 Tours (2% des PV Max)."
+    trigger: 2
+    triggerElement: 4
+    passiveColor: {r: 1, g: 0.84, b: 0, a: 1}
+    stacksPerTrigger: 0
+    maxTriggerStacks: 4
+    effects:
+    - type: 4
+      value: 0.02
+      durationTurns: 2
+      effectTarget: 2
+  loreText: "Ilidius n'est pas un ange \u2014 il est le verdict. Avant chaque bataille,
+    il \xE9value ses adversaires en silence. Ceux qui ont agi par peur ou par contrainte,
+    il les \xE9pargne. Ceux qui ont choisi le mal de leur propre chef, il les juge.
+    Il n'a jamais rendu un verdict cl\xE9ment deux fois de suite."
+  loreQuote: '"Le ciel ne pardonne pas. Il attend."'

@@ -1,0 +1,82 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: baa3cfc011ceea542b4a6e2212c058c1, type: 3}
+  m_Name: Card_014_Nyolung
+  m_EditorClassIdentifier: Assembly-CSharp::Astraleum.CardData
+  cardName: Nyolung
+  cardTitle: Dragon Supreme
+  cardNumber: 14
+  element: 6
+  rarity: 4
+  artwork: {fileID: 21300000, guid: a68358558c1143746b46260af2fe07ae, type: 3}
+  maxHP: 350
+  armorPoints: 15
+  bonusActionsGranted: 0
+  skillOne:
+    skillType: 0
+    skillName: Souffle Primordial
+    description: "Inflige 35 DGT \xE0 la cible et ignore l'Armure."
+    damage: 35
+    cooldownTurns: 2
+    targetType: 0
+    adjacentDamagePercent: 0
+    effects:
+    - type: 8
+      value: 1
+      durationTurns: 0
+      effectTarget: 0
+    attackVFXPrefab: {fileID: 0}
+    impactVFXPrefab: {fileID: 0}
+    vfxTravelTime: 0.35
+    vfxImpactDuration: 0.2
+  skillTwo:
+    skillType: 0
+    skillName: Fracture du Voile
+    description: 45 DGT sur une cible et 50% Adjacentes. Rend les cibles Insoignable
+      pendant 2 Tours.
+    damage: 45
+    cooldownTurns: 5
+    targetType: 4
+    adjacentDamagePercent: 0.5
+    effects:
+    - type: 5
+      value: 1
+      durationTurns: 2
+      effectTarget: 6
+    attackVFXPrefab: {fileID: 0}
+    impactVFXPrefab: {fileID: 0}
+    vfxTravelTime: 0.35
+    vfxImpactDuration: 0.2
+  passive:
+    passiveName: Voile des Astres
+    passiveDescription: "Lorsqu'un \xC9l\xE9ment atteind le seuil de 5, Nyolung applique
+      8 DGT par tour aux adverdsaires. En contrepartie, les cartes alli\xE9es subissent
+      5% de DGT suppl\xE9mentaire."
+    trigger: 5
+    triggerElement: 7
+    passiveColor: {r: 1, g: 0.84, b: 0, a: 1}
+    stacksPerTrigger: 0
+    maxTriggerStacks: 4
+    effects:
+    - type: 0
+      value: 8
+      durationTurns: 0
+      effectTarget: 3
+    - type: 1
+      value: 0.05
+      durationTurns: 0
+      effectTarget: 2
+  loreText: "Nyolung n'appartient \xE0 aucun \xE9l\xE9ment. Il les a tous absorb\xE9s,
+    tous dig\xE9r\xE9s, tous transcend\xE9s. Les autres dragons le respectent. Les
+    \xE9l\xE9mentaires le craignent. Il est l'a\xEEn\xE9 \u2014 pas parce qu'il est
+    le plus vieux, mais parce qu'il est ce que tous les dragons aspirent \xE0 devenir."
+  loreQuote: "\"Je ne choisis pas mon \xE9l\xE9ment. Je suis tous les \xE9l\xE9ments.\""

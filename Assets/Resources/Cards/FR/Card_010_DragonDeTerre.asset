@@ -1,0 +1,89 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: baa3cfc011ceea542b4a6e2212c058c1, type: 3}
+  m_Name: Card_010_DragonDeTerre
+  m_EditorClassIdentifier: Assembly-CSharp::Astraleum.CardData
+  cardName: Dragon de Terre
+  cardTitle: 
+  cardNumber: 10
+  element: 2
+  rarity: 2
+  artwork: {fileID: 21300000, guid: 97a5cdb6f687e0047823d12ae08a595c, type: 3}
+  maxHP: 250
+  armorPoints: 15
+  bonusActionsGranted: 0
+  skillOne:
+    skillType: 0
+    skillName: "S\xE9isme"
+    description: "22 DGT \xE0 la cible. Ignore l'Armure de la cible."
+    damage: 22
+    cooldownTurns: 2
+    targetType: 0
+    adjacentDamagePercent: 0
+    effects:
+    - type: 8
+      value: 1
+      durationTurns: 0
+      effectTarget: 0
+    branches: []
+    attackVFXPrefab: {fileID: 0}
+    impactVFXPrefab: {fileID: 0}
+    vfxTravelTime: 0.35
+    vfxImpactDuration: 0.2
+  skillTwo:
+    skillType: 2
+    skillName: Carapace Draconique
+    description: "+5 d'Armure, d\xE9gats inflig\xE9s +5% pendant 3 Tours. Si la cible
+      \xE0 ses PV en dessous de 50%, r\xE9duit ses DGT subis de 10% pendant 2 Tours."
+    damage: 0
+    cooldownTurns: 3
+    targetType: 5
+    adjacentDamagePercent: 0
+    effects:
+    - type: 13
+      value: 0.05
+      durationTurns: 3
+      effectTarget: 1
+    - type: 6
+      value: 5
+      durationTurns: 0
+      effectTarget: 1
+    branches:
+    - condition:
+        conditionType: 0
+        compareOp: 0
+        threshold: 0.5
+        effectType: 0
+      effectType: 3
+      target: 0
+      valueMode: 0
+      valuePercent: 0.1
+      valueFlat: 0
+      durationTurns: 2
+    attackVFXPrefab: {fileID: 0}
+    impactVFXPrefab: {fileID: 0}
+    vfxTravelTime: 0.35
+    vfxImpactDuration: 0.2
+  passive:
+    passiveName: 
+    passiveDescription: 
+    trigger: 0
+    triggerElement: 0
+    passiveColor: {r: 1, g: 0.84, b: 0, a: 1}
+    stacksPerTrigger: 0
+    maxTriggerStacks: 4
+    effects: []
+  loreText: "Le Dragon de Terre ne se d\xE9place pas \u2014 il d\xE9place la terre
+    autour de lui. Chaque pas qu'il fait cr\xE9e des fissures dans le sol. Il est
+    patient comme une montagne, implacable comme un glacier, et tout aussi impossible
+    \xE0 arr\xEAter."
+  loreQuote: "\"La pierre ne plie pas. Elle \xE9crase.\""

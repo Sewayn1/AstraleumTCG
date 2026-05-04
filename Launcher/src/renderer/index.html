@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; style-src 'self' 'unsafe-inline';">
+  <title>Astraleum Launcher</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Custom title bar -->
+  <div class="title-bar">
+    <div class="title-bar-drag"></div>
+    <div class="title-bar-controls">
+      <button class="btn-wm btn-minimize" id="btn-wm-min" title="Minimize">&#8211;</button>
+      <button class="btn-wm btn-close"    id="btn-wm-close" title="Close">&#x2715;</button>
+    </div>
+  </div>
+
+  <!-- Animated background -->
+  <div class="bg-stars"></div>
+  <div class="bg-glow"></div>
+
+  <!-- Logo -->
+  <div class="logo-area">
+    <img class="logo-img" src="../../img/logo2.png" alt="Astraleum">
+  </div>
+
+  <!-- Bottom bar -->
+  <div class="bottom-bar">
+    <div class="version-block">
+      <span id="version-label">Checking&hellip;</span>
+      <span id="update-label"></span>
+    </div>
+    <div class="action-block">
+      <button class="btn-icon" id="btn-settings" title="Settings">&#9881;</button>
+      <button class="btn-play" id="btn-play" disabled>PLAY</button>
+    </div>
+  </div>
+
+  <!-- Update Modal -->
+  <div class="overlay hidden" id="overlay-update">
+    <div class="modal">
+      <h2>Update Available</h2>
+      <div class="version-diff">
+        <span id="ver-old">v0.0.0</span>
+        <span class="arrow">&#8594;</span>
+        <span id="ver-new">v1.0.0</span>
+      </div>
+      <p id="release-notes" class="release-notes"></p>
+
+      <div id="progress-wrap" class="hidden">
+        <div class="progress-track">
+          <div class="progress-fill" id="progress-fill"></div>
+        </div>
+        <p id="progress-text" class="progress-text">Preparing&hellip;</p>
+      </div>
+
+      <div class="modal-actions" id="modal-actions">
+        <button class="btn-secondary" id="btn-skip">Skip for now</button>
+        <button class="btn-primary"   id="btn-update">Update Now</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Settings Panel -->
+  <div class="settings-panel hidden" id="settings-panel">
+    <div class="settings-header">
+      <span>Settings</span>
+      <button id="btn-close-settings">&#x2715;</button>
+    </div>
+    <div class="settings-body">
+      <label>Game Folder</label>
+      <div class="path-row">
+        <input id="game-path-input" type="text" readonly placeholder="Select game folder…">
+        <button id="btn-browse">Browse</button>
+      </div>
+    </div>
+    <div class="settings-footer">
+      <button class="btn-primary" id="btn-save-settings">Save</button>
+    </div>
+  </div>
+
+  <script src="renderer.js"></script>
+</body>
+</html>

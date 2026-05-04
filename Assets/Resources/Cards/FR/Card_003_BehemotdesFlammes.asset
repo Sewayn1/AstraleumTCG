@@ -1,0 +1,88 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: baa3cfc011ceea542b4a6e2212c058c1, type: 3}
+  m_Name: Card_003_BehemotdesFlammes
+  m_EditorClassIdentifier: Assembly-CSharp::Astraleum.CardData
+  cardName: "B\xE9h\xE9mot des Flammes"
+  cardTitle: 
+  cardNumber: 3
+  element: 5
+  rarity: 2
+  artwork: {fileID: 21300000, guid: 64e32bdfce8cf204282de8de7cce5c8c, type: 3}
+  maxHP: 230
+  armorPoints: 2
+  bonusActionsGranted: 0
+  skillOne:
+    skillType: 0
+    skillName: Embraser !
+    description: "Embrase les cartes adverses, leurs infligeant 15DGT imm\xE9diat
+      et leurs applique Br\u0217lure pendant 2 Tours (10% des PV Max)."
+    damage: 15
+    cooldownTurns: 3
+    targetType: 2
+    adjacentDamagePercent: 0
+    effects:
+    - type: 18
+      value: 0.1
+      durationTurns: 2
+      effectTarget: 3
+    branches: []
+    attackVFXPrefab: {fileID: 0}
+    impactVFXPrefab: {fileID: 0}
+    vfxTravelTime: 0.35
+    vfxImpactDuration: 0.2
+  skillTwo:
+    skillType: 4
+    skillName: RAGE !
+    description: "Entre dans une Rage Meutri\xE8re, augmente les DGT inflig\xE9s
+      et subis de 5% pendant 2 Tours. "
+    damage: 0
+    cooldownTurns: 4
+    targetType: 5
+    adjacentDamagePercent: 0
+    effects:
+    - type: 1
+      value: 0.05
+      durationTurns: 2
+      effectTarget: 1
+    - type: 13
+      value: 0.05
+      durationTurns: 2
+      effectTarget: 1
+    branches: []
+    attackVFXPrefab: {fileID: 0}
+    impactVFXPrefab: {fileID: 0}
+    vfxTravelTime: 0.35
+    vfxImpactDuration: 0.2
+  passive:
+    passiveName: Furie Sanguinaire
+    passiveDescription: "Si cette carte d\xE9truit une carte adverse, se soigne de
+      10% de ses PV Max, et augmente ses DGT inflig\xE9s de 5% pendant deux tours."
+    trigger: 3
+    triggerElement: 7
+    passiveColor: {r: 1, g: 0.84, b: 0, a: 1}
+    stacksPerTrigger: 0
+    maxTriggerStacks: 4
+    effects:
+    - type: 3
+      value: 0.1
+      durationTurns: 0
+      effectTarget: 1
+    - type: 13
+      value: 0.05
+      durationTurns: 2
+      effectTarget: 1
+  loreText: "Le B\xE9h\xE9mot des Flammes et l'une des cr\xE9atures les plus redout\xE9es
+    dans le monde. Croiser son chemin reviendrait \xE0 mourir sur le champ, car d\xE9s
+    lors qu'il choisit sa proie, le B\xE9h\xE9mot ne fait que la poursuivre jusqu'\xE0
+    ce que mort s'en suive, pour l'un, ou pour l'autre. "
+  loreQuote: "\"La Mort est la seule issue \xE0 notre rencontre\""

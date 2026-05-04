@@ -1,0 +1,83 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: baa3cfc011ceea542b4a6e2212c058c1, type: 3}
+  m_Name: Card_025_GobelinPyromane
+  m_EditorClassIdentifier: Assembly-CSharp::Astraleum.CardData
+  cardName: Gobelin Pyromane
+  cardTitle: 
+  cardNumber: 25
+  element: 0
+  rarity: 0
+  artwork: {fileID: 21300000, guid: 8ac6802e09e4b3f4e96ab54c36e0125e, type: 3}
+  maxHP: 80
+  armorPoints: 3
+  bonusActionsGranted: 0
+  skillOne:
+    skillType: 0
+    skillName: Boule de Feu
+    description: "Inflige 14 DGT \xE0 une cible. Si la cible est d\xE9j\xE0 sous
+      l'effet d'une \"Brulure\", augmente les DGT inflig\xE9s de 50%."
+    damage: 14
+    cooldownTurns: 1
+    targetType: 0
+    adjacentDamagePercent: 0
+    effects: []
+    branches:
+    - condition:
+        conditionType: 4
+        compareOp: 0
+        threshold: 0
+        effectType: 0
+      effectType: 0
+      target: 0
+      valueMode: 0
+      valuePercent: 0.5
+      valueFlat: 0
+      durationTurns: 0
+    attackVFXPrefab: {fileID: 0}
+    impactVFXPrefab: {fileID: 0}
+    vfxTravelTime: 0.35
+    vfxImpactDuration: 0.2
+  skillTwo:
+    skillType: 0
+    skillName: "Chaos Enflamm\xE9"
+    description: "Inflige 18 DGT \xE0 une cible, et 50% des DGT aux cartes adjacentes,
+      et leurs applique Brulure (10% des PV Max) pendant 2 Tours."
+    damage: 18
+    cooldownTurns: 2
+    targetType: 4
+    adjacentDamagePercent: 0.5
+    effects:
+    - type: 18
+      value: 0.1
+      durationTurns: 2
+      effectTarget: 6
+    branches: []
+    attackVFXPrefab: {fileID: 0}
+    impactVFXPrefab: {fileID: 0}
+    vfxTravelTime: 0.35
+    vfxImpactDuration: 0.2
+  passive:
+    passiveName: 
+    passiveDescription: 
+    trigger: 0
+    triggerElement: 0
+    passiveColor: {r: 1, g: 0.84, b: 0, a: 1}
+    stacksPerTrigger: 0
+    maxTriggerStacks: 4
+    effects: []
+  loreText: "Personne ne sait vraiment d'o\xF9 vient ce gobelin. Il est apparu un
+    jour dans un village en feu, riant aux \xE9clats au milieu des flammes. Il court
+    d'un champ de bataille \xE0 l'autre, non par conviction, mais parce que les incendies
+    l'amusent. Inutile de lui donner des ordres \u2014 il fera ce qu'il veut de toute
+    fa\xE7on."
+  loreQuote: '"Feu feu feu feu feu !"'

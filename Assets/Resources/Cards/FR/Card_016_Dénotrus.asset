@@ -1,0 +1,92 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: baa3cfc011ceea542b4a6e2212c058c1, type: 3}
+  m_Name: "Card_016_D\xE9notrus"
+  m_EditorClassIdentifier: Assembly-CSharp::Astraleum.CardData
+  cardName: "D\xE9notrus"
+  cardTitle: "Chevalier D\xE9mon"
+  cardNumber: 16
+  element: 5
+  rarity: 3
+  artwork: {fileID: 21300000, guid: a9578ce441802a745806dbdd3a92908c, type: 3}
+  maxHP: 300
+  armorPoints: 4
+  bonusActionsGranted: 0
+  skillOne:
+    skillType: 0
+    skillName: Lame Maudite
+    description: "Inflige 30 DGT \xE0 la cible, et la rend Insoignable pendant 1
+      Tour. Si la cible est sous l'effet \"Poison\", inflige 10% de DGT suppl\xE9mentaire."
+    damage: 30
+    cooldownTurns: 2
+    targetType: 0
+    adjacentDamagePercent: 0
+    effects:
+    - type: 5
+      value: 1
+      durationTurns: 1
+      effectTarget: 0
+    branches:
+    - condition:
+        conditionType: 5
+        compareOp: 0
+        threshold: 0
+        effectType: 0
+      effectType: 0
+      target: 0
+      valueMode: 0
+      valuePercent: 0.1
+      valueFlat: 0
+      durationTurns: 0
+    attackVFXPrefab: {fileID: 0}
+    impactVFXPrefab: {fileID: 0}
+    vfxTravelTime: 0.35
+    vfxImpactDuration: 0.2
+  skillTwo:
+    skillType: 0
+    skillName: Pacte Infernal
+    description: "Inflige 25 DGT \xE0 toutes les cartes adverses. Soigne 10% de ses
+      PV max pendant deux tours."
+    damage: 25
+    cooldownTurns: 4
+    targetType: 2
+    adjacentDamagePercent: 0
+    effects:
+    - type: 4
+      value: 0.1
+      durationTurns: 2
+      effectTarget: 1
+    branches: []
+    attackVFXPrefab: {fileID: 0}
+    impactVFXPrefab: {fileID: 0}
+    vfxTravelTime: 0.35
+    vfxImpactDuration: 0.2
+  passive:
+    passiveName: Bain de Sang
+    passiveDescription: "Si cette carte d\xE9truit une carte, se soigne de 15% de
+      ses PV Max."
+    trigger: 3
+    triggerElement: 7
+    passiveColor: {r: 1, g: 0.84, b: 0, a: 1}
+    stacksPerTrigger: 0
+    maxTriggerStacks: 4
+    effects:
+    - type: 3
+      value: 0.15
+      durationTurns: 0
+      effectTarget: 1
+  loreText: "D\xE9notrus \xE9tait un chevalier de lumi\xE8re, autrefois. L'un des
+    plus grands. Puis il a regard\xE9 dans l'ab\xEEme pour vaincre ce qu'il combattait
+    \u2014 et l'ab\xEEme a regard\xE9 en retour. Aujourd'hui il porte encore son
+    armure, mais elle est noire comme la nuit. Il se souvient de ce qu'il \xE9tait.
+    \xC7a ne change rien."
+  loreQuote: '"J''ai choisi la puissance. La puissance m''a choisi en retour."'

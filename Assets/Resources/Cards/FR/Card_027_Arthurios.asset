@@ -1,0 +1,81 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: baa3cfc011ceea542b4a6e2212c058c1, type: 3}
+  m_Name: Card_027_Arthurios
+  m_EditorClassIdentifier: Assembly-CSharp::Astraleum.CardData
+  cardName: Arthurios
+  cardTitle: Paladin de Liotnar
+  cardNumber: 27
+  element: 4
+  rarity: 3
+  artwork: {fileID: 21300000, guid: 5958a744958be2a42a48b72fd05d47cd, type: 3}
+  maxHP: 280
+  armorPoints: 12
+  bonusActionsGranted: 0
+  skillOne:
+    skillType: 4
+    skillName: "Frappe de l'In\xE9branlable"
+    description: "30 DGT \xE0 la cible. Rend la cible insoignable pendant 1 Tours."
+    damage: 30
+    cooldownTurns: 2
+    targetType: 0
+    adjacentDamagePercent: 0
+    effects:
+    - type: 5
+      value: 1
+      durationTurns: 1
+      effectTarget: 0
+    attackVFXPrefab: {fileID: 0}
+    impactVFXPrefab: {fileID: 0}
+    vfxTravelTime: 0.35
+    vfxImpactDuration: 0.2
+  skillTwo:
+    skillType: 2
+    skillName: "\xC9tendard de Liotnar"
+    description: "+20 d'Armure aux Alli\xE9s. R\xE9duit les DGT subis de 10% pendant
+      2 Tours. "
+    damage: 0
+    cooldownTurns: 5
+    targetType: 3
+    adjacentDamagePercent: 0
+    effects:
+    - type: 6
+      value: 20
+      durationTurns: 0
+      effectTarget: 0
+    - type: 2
+      value: 0.1
+      durationTurns: 2
+      effectTarget: 0
+    attackVFXPrefab: {fileID: 0}
+    impactVFXPrefab: {fileID: 0}
+    vfxTravelTime: 0.35
+    vfxImpactDuration: 0.2
+  passive:
+    passiveName: "Arm\xE9e Divine"
+    passiveDescription: "Pour chaque Alli\xE9es de type Lumi\xE8re d\xE9truit au
+      combat, octroi +5% de DGT \xE0 tout les alli\xE9s encore en vie."
+    trigger: 2
+    triggerElement: 4
+    passiveColor: {r: 1, g: 0.84, b: 0, a: 1}
+    stacksPerTrigger: 1
+    maxTriggerStacks: 4
+    effects:
+    - type: 13
+      value: 0.05
+      durationTurns: -1
+      effectTarget: 2
+  loreText: "Arthurios a d\xE9fendu Liotnar contre trois invasions, deux catastrophes
+    naturelles et un dieu. Il n'a jamais recul\xE9 d'un pas. Pas par orgueil \u2014
+    par choix. Il sait que le jour o\xF9 il reculera, quelqu'un derri\xE8re lui reculera
+    aussi. Et ce quelqu'un sera peut-\xEAtre la derni\xE8re ligne de d\xE9fense."
+  loreQuote: '"Liotnar ne tombe pas. Tant que je suis debout."'

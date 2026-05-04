@@ -1,0 +1,28 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 86ab6502e9832814dab28671c739ac32, type: 3}
+  m_Name: IconLibrary
+  m_EditorClassIdentifier: Assembly-CSharp::Astraleum.IconLibrary
+  iconAttack: {fileID: 21300000, guid: 8ccfe2003da90d74d99bf135702eb2c2, type: 3}
+  iconHP: {fileID: 21300000, guid: 7011c8fe7e474bd4889239169e537e73, type: 3}
+  iconCooldown: {fileID: 1670883301750769686, guid: 16f699734152aa84ba403059600cea99, type: 3}
+  iconDeath: {fileID: 21300000, guid: d3a4e4fedda99fe4480e9afd438abdfb, type: 3}
+  iconShield: {fileID: 21300000, guid: 85b3a459c40322545b22ad259f2ff346, type: 3}
+  iconHeal: {fileID: 21300000, guid: 253cb3dd856d2804dad1b362ba9c3a9f, type: 3}
+  iconBurn: {fileID: 21300000, guid: d5ba219d952a7694c8d95a89e9810512, type: 3}
+  iconPoison: {fileID: 7176455043045392912, guid: eb6b9732a97c7fe45b614a46751086b5, type: 3}
+  iconSaignement: {fileID: 5340757975174877884, guid: cdd785bc8fef78e4c80c9227003ba1ed, type: 3}
+  iconBulletOn: {fileID: 0}
+  iconBulletOff: {fileID: 0}
+  iconBuff: {fileID: 21300000, guid: 58c20788efa19b54e8fb6f725138c0d4, type: 3}
+  iconDebuff: {fileID: 0}
+  iconTurn: {fileID: 0}

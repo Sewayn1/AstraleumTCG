@@ -1,0 +1,73 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: baa3cfc011ceea542b4a6e2212c058c1, type: 3}
+  m_Name: Card_006_GriffonDeLAurore
+  m_EditorClassIdentifier: Assembly-CSharp::Astraleum.CardData
+  cardName: Griffon de L'aurore
+  cardTitle: 
+  cardNumber: 6
+  element: 3
+  rarity: 1
+  artwork: {fileID: 21300000, guid: 725728be07d053f4c9a78d3f39fafdf0, type: 3}
+  maxHP: 140
+  armorPoints: 2
+  bonusActionsGranted: 0
+  skillOne:
+    skillType: 0
+    skillName: Griffure Plongeante
+    description: "Fonce sur la cible et la lac\xE8re, inflige 12DGT \xE0 la cible,
+      et augmente ses DGT subis de 10% pendant 2 Tours."
+    damage: 12
+    cooldownTurns: 2
+    targetType: 0
+    adjacentDamagePercent: 0
+    effects:
+    - type: 1
+      value: 0.1
+      durationTurns: 2
+      effectTarget: 0
+    attackVFXPrefab: {fileID: 0}
+    impactVFXPrefab: {fileID: 0}
+    vfxTravelTime: 0.35
+    vfxImpactDuration: 0.2
+  skillTwo:
+    skillType: 0
+    skillName: "A\xE9ro piqu\xE9"
+    description: 'Plonge brutallement sur la cible, inflige 18 DGT en ignorant l''Armure. '
+    damage: 18
+    cooldownTurns: 2
+    targetType: 0
+    adjacentDamagePercent: 0
+    effects:
+    - type: 8
+      value: 1
+      durationTurns: 0
+      effectTarget: 0
+    attackVFXPrefab: {fileID: 0}
+    impactVFXPrefab: {fileID: 0}
+    vfxTravelTime: 0.35
+    vfxImpactDuration: 0.2
+  passive:
+    passiveName: 
+    passiveDescription: 
+    trigger: 0
+    triggerElement: 0
+    passiveColor: {r: 1, g: 0.84, b: 0, a: 1}
+    stacksPerTrigger: 0
+    maxTriggerStacks: 4
+    effects: []
+  loreText: "Le Griffon de l'Aurore est une cr\xE9ature dress\xE9e et entrain\xE9e
+    pour le combat, par les Aurores. Ils sont souvent mont\xE9s par des soldats,
+    mais peuvent parfois se battre seul sans cavalier, les rendants plus mortel que
+    jamais. On raconte qu'une Griffure peut supprimer la vie plus vite qu'une fl\xE8che
+    dans le coeur."
+  loreQuote: '"Ne sous estimez jamais les Griffons"'

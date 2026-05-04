@@ -1,0 +1,86 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: baa3cfc011ceea542b4a6e2212c058c1, type: 3}
+  m_Name: Card_012_DragonDesTenebres
+  m_EditorClassIdentifier: Assembly-CSharp::Astraleum.CardData
+  cardName: "Dragon des T\xE9n\xE8bres"
+  cardTitle: 
+  cardNumber: 12
+  element: 5
+  rarity: 2
+  artwork: {fileID: 21300000, guid: a68f1cbbc658f9548b7c75fbc0ad020c, type: 3}
+  maxHP: 230
+  armorPoints: 2
+  bonusActionsGranted: 0
+  skillOne:
+    skillType: 0
+    skillName: Griffe de l'Ombre
+    description: "Inflige 20 DGT \xE0 la cible, et se soigne de 10% des DGT inflig\xE9s.
+      Si la cible est sous l'effet \"Poison\", inflige 10% de DGT suppl\xE9mentaire."
+    damage: 20
+    cooldownTurns: 2
+    targetType: 0
+    adjacentDamagePercent: 0
+    effects:
+    - type: 19
+      value: 0.1
+      durationTurns: 0
+      effectTarget: 0
+    branches:
+    - condition:
+        conditionType: 5
+        compareOp: 0
+        threshold: 0
+        effectType: 0
+      effectType: 0
+      target: 0
+      valueMode: 0
+      valuePercent: 0.1
+      valueFlat: 0
+      durationTurns: 0
+    attackVFXPrefab: {fileID: 0}
+    impactVFXPrefab: {fileID: 0}
+    vfxTravelTime: 0.35
+    vfxImpactDuration: 0.2
+  skillTwo:
+    skillType: 0
+    skillName: "Voile T\xE9n\xE9breux"
+    description: "Inflige 12 DGT \xE0 toutes les cartes adverses, et augmente leurs
+      DGT subis de 5% pendant 2 Tours."
+    damage: 12
+    cooldownTurns: 4
+    targetType: 2
+    adjacentDamagePercent: 0
+    effects:
+    - type: 1
+      value: 0.05
+      durationTurns: 2
+      effectTarget: 3
+    branches: []
+    attackVFXPrefab: {fileID: 0}
+    impactVFXPrefab: {fileID: 0}
+    vfxTravelTime: 0.35
+    vfxImpactDuration: 0.2
+  passive:
+    passiveName: 
+    passiveDescription: 
+    trigger: 0
+    triggerElement: 0
+    passiveColor: {r: 1, g: 0.84, b: 0, a: 1}
+    stacksPerTrigger: 0
+    maxTriggerStacks: 4
+    effects: []
+  loreText: "Le Dragon des T\xE9n\xE8bres est le seul dragon qui ne laisse pas de
+    traces. Pas d'empreintes, pas de cendres, pas de t\xE9moins. Les historiens d\xE9battent
+    encore de son existence \u2014 mais les rares survivants de ses attaques, eux,
+    ne d\xE9battent plus de rien."
+  loreQuote: '"Ce que tu ne vois pas te tue mieux."'
