@@ -1419,19 +1419,8 @@
   ],
   "changelog": [
     {
-      "version": "0.0.2",
-      "date": "2026-05-11",
-      "title": "Réseau SignalR + Traductions FR/EN",
-      "entries": [
-        "Mode multijoueur en ligne via SignalR",
-        "Traductions complètes FR et EN pour toutes les cartes et menus",
-        "Launcher : mise à jour automatique",
-        "Nouveau système de Pseudo en ligne"
-      ]
-    },
-    {
       "version": "Alpha 0.0.2",
-      "date": "2026-05-09",
+      "date": "2026-05-11",
       "title": "Quoi de Nouveau ?",
       "entries": [
         "Affichage des PV reçu en cas de Vol de Vie.",
