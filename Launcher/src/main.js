@@ -172,29 +172,27 @@ async function downloadAndReplaceLauncher(launcherInfo) {
     });
   });
 
-  const batchPath = path.join(app.getPath('temp'), 'astraleum-launcher-update.bat');
-  const pid       = process.pid;
+  const psPath = path.join(app.getPath('temp'), 'astraleum-launcher-update.ps1');
+  const q = s => s.replace(/'/g, "''");
 
-  const batch = [
-    '@echo off',
-    `set "MYPID=${pid}"`,
-    `set "NEWEXE=${tempExe}"`,
-    `set "OLDEXE=${currentExe}"`,
-    ':waitloop',
-    'tasklist /FI "PID eq %MYPID%" /NH 2>NUL | findstr /I "exe" >NUL 2>&1',
-    'if not errorlevel 1 (',
-    '  timeout /t 1 /nobreak >NUL',
-    '  goto waitloop',
-    ')',
-    'timeout /t 1 /nobreak >NUL',
-    'move /Y "%NEWEXE%" "%OLDEXE%"',
-    'start "" "%OLDEXE%"',
-    '(goto) 2>nul & del "%~f0"',
+  const ps = [
+    `$new = '${q(tempExe)}'`,
+    `$old = '${q(currentExe)}'`,
+    'Start-Sleep -Seconds 5',
+    'Move-Item -Force $new $old',
+    'Start-Process $old',
+    `Remove-Item -Force '${q(psPath)}' -ErrorAction SilentlyContinue`,
   ].join('\r\n');
 
-  fs.writeFileSync(batchPath, batch, 'latin1');
-  spawn('cmd.exe', ['/C', batchPath], { detached: true, stdio: 'ignore', windowsHide: true }).unref();
-  setTimeout(() => app.quit(), 800);
+  fs.writeFileSync(psPath, ps, 'utf8');
+  spawn('powershell.exe', [
+    '-WindowStyle', 'Hidden',
+    '-NonInteractive',
+    '-ExecutionPolicy', 'Bypass',
+    '-File', psPath,
+  ], { detached: true, stdio: 'ignore' }).unref();
+
+  setTimeout(() => process.exit(0), 500);
 }
 
 // ── Install helpers ────────────────────────────────────────────────────────────
