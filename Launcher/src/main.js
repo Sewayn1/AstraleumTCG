@@ -103,11 +103,7 @@ ipcMain.handle('start-install', async (_, { isFirstInstall }) => {
     const { gamePath } = loadSettings();
     fs.mkdirSync(gamePath, { recursive: true });
 
-    if (isFirstInstall) {
-      await downloadAndExtract(manifest.fullPackage.url, gamePath, manifest.fullPackage.size || 0);
-    } else {
-      await downloadChangedFiles(manifest, gamePath);
-    }
+    await downloadAndExtract(manifest.fullPackage.url, gamePath, manifest.fullPackage.size || 0);
 
     fs.writeFileSync(
       path.join(gamePath, 'version.json'),
