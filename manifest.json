@@ -1,4 +1,4 @@
-{
+﻿{
   "version": "0.0.2",
   "releaseDate": "2026-05-11",
   "launcher": {
@@ -6,7 +6,7 @@
     "url": "https://github.com/Sewayn1/AstraleumTCG/releases/download/launcher-v1.1.0/AstraleumLauncher-1.1.0.exe"
   },
   "fullPackage": {
-    "url": "https://github.com/Sewayn1/AstraleumTCG/releases/download/v0.0.2/Astraleum-v0.0.2.zip",
+    "url": "https://github.com/Sewayn1/AstraleumTCG/releases/download/0.0.2/Astraleum-v0.0.2.zip",
     "size": 0
   },
   "files": [
@@ -14,1411 +14,1411 @@
       "path": "Astraleum.exe",
       "sha256": "a2c7efb53954a06313bb3ef59a5505d12a0a5901a4780501619a0542fbda1896",
       "size": 667648,
-      "url": "https://github.com/Sewayn1/AstraleumTCG/releases/download/v0.0.2/Astraleum.exe"
+      "url": "https://github.com/Sewayn1/AstraleumTCG/releases/download/0.0.2/Astraleum.exe"
     },
     {
       "path": "Astraleum_Data/app.info",
       "sha256": "75f48e15c1b44c8c64453794ea7deb23bdcb9e91abf4ae94152fb053b002dd3e",
       "size": 23,
-      "url": "https://github.com/Sewayn1/AstraleumTCG/releases/download/v0.0.2/Astraleum_Data/app.info"
+      "url": "https://github.com/Sewayn1/AstraleumTCG/releases/download/0.0.2/Astraleum_Data/app.info"
     },
     {
       "path": "Astraleum_Data/boot.config",
       "sha256": "c07c00e6b24d61fa65a2e04e22f595cce1836904a35ab7a5b2b59667f92ed31e",
       "size": 183,
-      "url": "https://github.com/Sewayn1/AstraleumTCG/releases/download/v0.0.2/Astraleum_Data/boot.config"
+      "url": "https://github.com/Sewayn1/AstraleumTCG/releases/download/0.0.2/Astraleum_Data/boot.config"
     },
     {
       "path": "Astraleum_Data/globalgamemanagers",
       "sha256": "544e51c55ce19150ae1d9cfe0fbfd3e898ecf5830b715c408664a552fab4e39e",
       "size": 247860,
-      "url": "https://github.com/Sewayn1/AstraleumTCG/releases/download/v0.0.2/Astraleum_Data/globalgamemanagers"
+      "url": "https://github.com/Sewayn1/AstraleumTCG/releases/download/0.0.2/Astraleum_Data/globalgamemanagers"
     },
     {
       "path": "Astraleum_Data/globalgamemanagers.assets",
       "sha256": "966ae90ee0e517f71f51f948cfe1b82f53cbb170f2e63878e93b6a4029a27342",
       "size": 1273444,
-      "url": "https://github.com/Sewayn1/AstraleumTCG/releases/download/v0.0.2/Astraleum_Data/globalgamemanagers.assets"
+      "url": "https://github.com/Sewayn1/AstraleumTCG/releases/download/0.0.2/Astraleum_Data/globalgamemanagers.assets"
     },
     {
       "path": "Astraleum_Data/globalgamemanagers.assets.resS",
       "sha256": "9fa0791a6df2258af5d414a0f0ea7ac05cedf0601ef1d2535dc4d91cb3ceac1e",
       "size": 3265552,
-      "url": "https://github.com/Sewayn1/AstraleumTCG/releases/download/v0.0.2/Astraleum_Data/globalgamemanagers.assets.resS"
+      "url": "https://github.com/Sewayn1/AstraleumTCG/releases/download/0.0.2/Astraleum_Data/globalgamemanagers.assets.resS"
     },
     {
       "path": "Astraleum_Data/level0",
       "sha256": "af2781803d13dd2178f1993ca31e7131cb8e4e6f8c0a8a5b795ff3c3f66ef7ce",
       "size": 525304,
-      "url": "https://github.com/Sewayn1/AstraleumTCG/releases/download/v0.0.2/Astraleum_Data/level0"
+      "url": "https://github.com/Sewayn1/AstraleumTCG/releases/download/0.0.2/Astraleum_Data/level0"
     },
     {
       "path": "Astraleum_Data/level1",
       "sha256": "f024cfaeb2d52f19bffac5539b47a957eaccf9b0cae8b86dc8916833c3ca70fa",
       "size": 218656,
-      "url": "https://github.com/Sewayn1/AstraleumTCG/releases/download/v0.0.2/Astraleum_Data/level1"
+      "url": "https://github.com/Sewayn1/AstraleumTCG/releases/download/0.0.2/Astraleum_Data/level1"
     },
     {
       "path": "Astraleum_Data/Managed/Assembly-CSharp.dll",
       "sha256": "a1c4195924e59f5496a9326b3f4226d7f6b237ac32ec068fba09f1f661085e12",
       "size": 204288,
-      "url": "https://github.com/Sewayn1/AstraleumTCG/releases/download/v0.0.2/Astraleum_Data/Managed/Assembly-CSharp.dll"
+      "url": "https://github.com/Sewayn1/AstraleumTCG/releases/download/0.0.2/Astraleum_Data/Managed/Assembly-CSharp.dll"
     },
     {
       "path": "Astraleum_Data/Managed/Astraleum.Core.dll",
       "sha256": "190237868d4410ca6fc1216efe6cca509fef8e054bdb719d7c6ed116a6de24ff",
       "size": 47616,
-      "url": "https://github.com/Sewayn1/AstraleumTCG/releases/download/v0.0.2/Astraleum_Data/Managed/Astraleum.Core.dll"
+      "url": "https://github.com/Sewayn1/AstraleumTCG/releases/download/0.0.2/Astraleum_Data/Managed/Astraleum.Core.dll"
     },
     {
       "path": "Astraleum_Data/Managed/CFXRDemo.dll",
       "sha256": "087026c2304880562c3225d9d845f2ac563c82938abebb1b0c2deec124cdabd6",
       "size": 11776,
-      "url": "https://github.com/Sewayn1/AstraleumTCG/releases/download/v0.0.2/Astraleum_Data/Managed/CFXRDemo.dll"
+      "url": "https://github.com/Sewayn1/AstraleumTCG/releases/download/0.0.2/Astraleum_Data/Managed/CFXRDemo.dll"
     },
     {
       "path": "Astraleum_Data/Managed/CFXRRuntime.dll",
       "sha256": "82a9ff8ff23a4c94b45da269fc6b67952c6cb84f62779c051c5a18c4bd739052",
       "size": 20480,
-      "url": "https://github.com/Sewayn1/AstraleumTCG/releases/download/v0.0.2/Astraleum_Data/Managed/CFXRRuntime.dll"
+      "url": "https://github.com/Sewayn1/AstraleumTCG/releases/download/0.0.2/Astraleum_Data/Managed/CFXRRuntime.dll"
     },
     {
       "path": "Astraleum_Data/Managed/kcp2k.dll",
       "sha256": "b59dcc43f6c9fc342118f1fdab3b16de9ce6a81eeff1a03c7b8eb9220478e363",
       "size": 38400,
-      "url": "https://github.com/Sewayn1/AstraleumTCG/releases/download/v0.0.2/Astraleum_Data/Managed/kcp2k.dll"
+      "url": "https://github.com/Sewayn1/AstraleumTCG/releases/download/0.0.2/Astraleum_Data/Managed/kcp2k.dll"
     },
     {
       "path": "Astraleum_Data/Managed/KinoBloom.Runtime.dll",
       "sha256": "2837eaf5c8d46a483ffc13ad6773ef0d69a6762aa393c775d97e5c1cf11b2f44",
       "size": 8192,
-      "url": "https://github.com/Sewayn1/AstraleumTCG/releases/download/v0.0.2/Astraleum_Data/Managed/KinoBloom.Runtime.dll"
+      "url": "https://github.com/Sewayn1/AstraleumTCG/releases/download/0.0.2/Astraleum_Data/Managed/KinoBloom.Runtime.dll"
     },
     {
       "path": "Astraleum_Data/Managed/MCPForUnity.Runtime.dll",
       "sha256": "98e8ce99a264992bd18c7aa2051cd40ae54529661916b29a635524e9475c8c03",
       "size": 25088,
-      "url": "https://github.com/Sewayn1/AstraleumTCG/releases/download/v0.0.2/Astraleum_Data/Managed/MCPForUnity.Runtime.dll"
+      "url": "https://github.com/Sewayn1/AstraleumTCG/releases/download/0.0.2/Astraleum_Data/Managed/MCPForUnity.Runtime.dll"
     },
     {
       "path": "Astraleum_Data/Managed/Microsoft.AspNetCore.Connections.Abstractions.dll",
       "sha256": "6d6921a624144cbd2eedb14f9baa8e2cb32a05b64ba373f36fc218d6aa6ad2a4",
       "size": 41224,
-      "url": "https://github.com/Sewayn1/AstraleumTCG/releases/download/v0.0.2/Astraleum_Data/Managed/Microsoft.AspNetCore.Connections.Abstractions.dll"
+      "url": "https://github.com/Sewayn1/AstraleumTCG/releases/download/0.0.2/Astraleum_Data/Managed/Microsoft.AspNetCore.Connections.Abstractions.dll"
     },
     {
       "path": "Astraleum_Data/Managed/Microsoft.AspNetCore.Http.Connections.Client.dll",
       "sha256": "41f9abfcdb20d79f368a33b42ecfd4ac89165283af92bcdc087493ac080beaee",
       "size": 121608,
-      "url": "https://github.com/Sewayn1/AstraleumTCG/releases/download/v0.0.2/Astraleum_Data/Managed/Microsoft.AspNetCore.Http.Connections.Client.dll"
+      "url": "https://github.com/Sewayn1/AstraleumTCG/releases/download/0.0.2/Astraleum_Data/Managed/Microsoft.AspNetCore.Http.Connections.Client.dll"
     },
     {
       "path": "Astraleum_Data/Managed/Microsoft.AspNetCore.Http.Connections.Common.dll",
       "sha256": "f063e81a83e419cf9feced5ebc2cacab96104a9b35db10eaeeecc32b59f8a4f2",
       "size": 31520,
-      "url": "https://github.com/Sewayn1/AstraleumTCG/releases/download/v0.0.2/Astraleum_Data/Managed/Microsoft.AspNetCore.Http.Connections.Common.dll"
+      "url": "https://github.com/Sewayn1/AstraleumTCG/releases/download/0.0.2/Astraleum_Data/Managed/Microsoft.AspNetCore.Http.Connections.Common.dll"
     },
     {
       "path": "Astraleum_Data/Managed/Microsoft.AspNetCore.SignalR.Client.Core.dll",
       "sha256": "3b0e9d47eb9ef6c7468e58bf56816b22112dd10f58a2da11d5ba60ea00305345",
       "size": 199328,
-      "url": "https://github.com/Sewayn1/AstraleumTCG/releases/download/v0.0.2/Astraleum_Data/Managed/Microsoft.AspNetCore.SignalR.Client.Core.dll"
+      "url": "https://github.com/Sewayn1/AstraleumTCG/releases/download/0.0.2/Astraleum_Data/Managed/Microsoft.AspNetCore.SignalR.Client.Core.dll"
     },
     {
       "path": "Astraleum_Data/Managed/Microsoft.AspNetCore.SignalR.Client.dll",
       "sha256": "da67cec3b2152283c0160aa69bbb1ae978ea5adde7dcdec4da3302b9ef7bd3ca",
       "size": 24336,
-      "url": "https://github.com/Sewayn1/AstraleumTCG/releases/download/v0.0.2/Astraleum_Data/Managed/Microsoft.AspNetCore.SignalR.Client.dll"
+      "url": "https://github.com/Sewayn1/AstraleumTCG/releases/download/0.0.2/Astraleum_Data/Managed/Microsoft.AspNetCore.SignalR.Client.dll"
     },
     {
       "path": "Astraleum_Data/Managed/Microsoft.AspNetCore.SignalR.Common.dll",
       "sha256": "469eab32e1dd4e3fb297d66bb3ecc36adc037488106ed32cf8f20f9355106a4d",
       "size": 44808,
-      "url": "https://github.com/Sewayn1/AstraleumTCG/releases/download/v0.0.2/Astraleum_Data/Managed/Microsoft.AspNetCore.SignalR.Common.dll"
+      "url": "https://github.com/Sewayn1/AstraleumTCG/releases/download/0.0.2/Astraleum_Data/Managed/Microsoft.AspNetCore.SignalR.Common.dll"
     },
     {
       "path": "Astraleum_Data/Managed/Microsoft.AspNetCore.SignalR.Protocols.Json.dll",
       "sha256": "4d1e55efdd59dae0433bd466a8a56782b8e8a61e1bfbb8f9ae113a0429514cda",
       "size": 39584,
-      "url": "https://github.com/Sewayn1/AstraleumTCG/releases/download/v0.0.2/Astraleum_Data/Managed/Microsoft.AspNetCore.SignalR.Protocols.Json.dll"
+      "url": "https://github.com/Sewayn1/AstraleumTCG/releases/download/0.0.2/Astraleum_Data/Managed/Microsoft.AspNetCore.SignalR.Protocols.Json.dll"
     },
     {
       "path": "Astraleum_Data/Managed/Microsoft.Bcl.AsyncInterfaces.dll",
       "sha256": "136d5965cf4768e8420b547a8bddea882921f426c371833d558a858a2f0c235a",
       "size": 19104,
-      "url": "https://github.com/Sewayn1/AstraleumTCG/releases/download/v0.0.2/Astraleum_Data/Managed/Microsoft.Bcl.AsyncInterfaces.dll"
+      "url": "https://github.com/Sewayn1/AstraleumTCG/releases/download/0.0.2/Astraleum_Data/Managed/Microsoft.Bcl.AsyncInterfaces.dll"
     },
     {
       "path": "Astraleum_Data/Managed/Microsoft.Bcl.TimeProvider.dll",
       "sha256": "d9941b9603506c46e2aaf8b44166c93646b55ebea0d365792b405c2562753442",
       "size": 32416,
-      "url": "https://github.com/Sewayn1/AstraleumTCG/releases/download/v0.0.2/Astraleum_Data/Managed/Microsoft.Bcl.TimeProvider.dll"
+      "url": "https://github.com/Sewayn1/AstraleumTCG/releases/download/0.0.2/Astraleum_Data/Managed/Microsoft.Bcl.TimeProvider.dll"
     },
     {
       "path": "Astraleum_Data/Managed/Microsoft.Extensions.DependencyInjection.Abstractions.dll",
       "sha256": "3a588921e88c7b989f805adc5721ed25e24d389e8a9bc968ebcff79f412a5288",
       "size": 64264,
-      "url": "https://github.com/Sewayn1/AstraleumTCG/releases/download/v0.0.2/Astraleum_Data/Managed/Microsoft.Extensions.DependencyInjection.Abstractions.dll"
+      "url": "https://github.com/Sewayn1/AstraleumTCG/releases/download/0.0.2/Astraleum_Data/Managed/Microsoft.Extensions.DependencyInjection.Abstractions.dll"
     },
     {
       "path": "Astraleum_Data/Managed/Microsoft.Extensions.DependencyInjection.dll",
       "sha256": "3dc3c09f96115b8bb818265284abd2c15364de3658efe74813b40e76d42459e7",
       "size": 95496,
-      "url": "https://github.com/Sewayn1/AstraleumTCG/releases/download/v0.0.2/Astraleum_Data/Managed/Microsoft.Extensions.DependencyInjection.dll"
+      "url": "https://github.com/Sewayn1/AstraleumTCG/releases/download/0.0.2/Astraleum_Data/Managed/Microsoft.Extensions.DependencyInjection.dll"
     },
     {
       "path": "Astraleum_Data/Managed/Microsoft.Extensions.Features.dll",
       "sha256": "dd2441f01b8e25255be47d717f33f2b57c3cac83f23e9adcefde33783f78a3b3",
       "size": 29456,
-      "url": "https://github.com/Sewayn1/AstraleumTCG/releases/download/v0.0.2/Astraleum_Data/Managed/Microsoft.Extensions.Features.dll"
+      "url": "https://github.com/Sewayn1/AstraleumTCG/releases/download/0.0.2/Astraleum_Data/Managed/Microsoft.Extensions.Features.dll"
     },
     {
       "path": "Astraleum_Data/Managed/Microsoft.Extensions.Logging.Abstractions.dll",
       "sha256": "e899e37dfc2dd433807c205e764c32ea34bb95da083e189d7615947dd16c51e8",
       "size": 67864,
-      "url": "https://github.com/Sewayn1/AstraleumTCG/releases/download/v0.0.2/Astraleum_Data/Managed/Microsoft.Extensions.Logging.Abstractions.dll"
+      "url": "https://github.com/Sewayn1/AstraleumTCG/releases/download/0.0.2/Astraleum_Data/Managed/Microsoft.Extensions.Logging.Abstractions.dll"
     },
     {
       "path": "Astraleum_Data/Managed/Microsoft.Extensions.Logging.dll",
       "sha256": "1a13da2bb23ebdd1af5776b5d49e587d78192b3aa1314e99589fe1cda1b4b16c",
       "size": 53008,
-      "url": "https://github.com/Sewayn1/AstraleumTCG/releases/download/v0.0.2/Astraleum_Data/Managed/Microsoft.Extensions.Logging.dll"
+      "url": "https://github.com/Sewayn1/AstraleumTCG/releases/download/0.0.2/Astraleum_Data/Managed/Microsoft.Extensions.Logging.dll"
     },
     {
       "path": "Astraleum_Data/Managed/Microsoft.Extensions.Options.dll",
       "sha256": "685eb2257b161cb35a12d508e5b5a6520e66747bd94bc0afbc39f89fa7262681",
       "size": 68880,
-      "url": "https://github.com/Sewayn1/AstraleumTCG/releases/download/v0.0.2/Astraleum_Data/Managed/Microsoft.Extensions.Options.dll"
+      "url": "https://github.com/Sewayn1/AstraleumTCG/releases/download/0.0.2/Astraleum_Data/Managed/Microsoft.Extensions.Options.dll"
     },
     {
       "path": "Astraleum_Data/Managed/Microsoft.Extensions.Primitives.dll",
       "sha256": "6d492e7919789c7ab3d4afb5d2e5841cc0e2f28b07bf561bd1fcf8945e2170b3",
       "size": 49936,
-      "url": "https://github.com/Sewayn1/AstraleumTCG/releases/download/v0.0.2/Astraleum_Data/Managed/Microsoft.Extensions.Primitives.dll"
+      "url": "https://github.com/Sewayn1/AstraleumTCG/releases/download/0.0.2/Astraleum_Data/Managed/Microsoft.Extensions.Primitives.dll"
     },
     {
       "path": "Astraleum_Data/Managed/Mirror.Authenticators.dll",
       "sha256": "110695c91f69c9e521d8dfcf82ef3451575acbb41383d1bea98251f0cc5e5dd4",
       "size": 31744,
-      "url": "https://github.com/Sewayn1/AstraleumTCG/releases/download/v0.0.2/Astraleum_Data/Managed/Mirror.Authenticators.dll"
+      "url": "https://github.com/Sewayn1/AstraleumTCG/releases/download/0.0.2/Astraleum_Data/Managed/Mirror.Authenticators.dll"
     },
     {
       "path": "Astraleum_Data/Managed/Mirror.BouncyCastle.Cryptography.dll",
       "sha256": "860787fa58288910f9ef0b3147ac1df96623d4d7bd7bc309c9161871b0819fcf",
       "size": 6856192,
-      "url": "https://github.com/Sewayn1/AstraleumTCG/releases/download/v0.0.2/Astraleum_Data/Managed/Mirror.BouncyCastle.Cryptography.dll"
+      "url": "https://github.com/Sewayn1/AstraleumTCG/releases/download/0.0.2/Astraleum_Data/Managed/Mirror.BouncyCastle.Cryptography.dll"
     },
     {
       "path": "Astraleum_Data/Managed/Mirror.Components.dll",
       "sha256": "cb4910d3445903b606f02425c194369ce356aa24851cb27f189fc53cf1c18bd8",
       "size": 176128,
-      "url": "https://github.com/Sewayn1/AstraleumTCG/releases/download/v0.0.2/Astraleum_Data/Managed/Mirror.Components.dll"
+      "url": "https://github.com/Sewayn1/AstraleumTCG/releases/download/0.0.2/Astraleum_Data/Managed/Mirror.Components.dll"
     },
     {
       "path": "Astraleum_Data/Managed/Mirror.dll",
       "sha256": "35cae177bd61c775f2a87ac49990f7e454a4f351bfc3890c0afdea155bdee318",
       "size": 226816,
-      "url": "https://github.com/Sewayn1/AstraleumTCG/releases/download/v0.0.2/Astraleum_Data/Managed/Mirror.dll"
+      "url": "https://github.com/Sewayn1/AstraleumTCG/releases/download/0.0.2/Astraleum_Data/Managed/Mirror.dll"
     },
     {
       "path": "Astraleum_Data/Managed/Mirror.Examples.dll",
       "sha256": "385516bce5cbc59c4960ae9b28bbe31a5473cc98d958360b5d24024550076ddc",
       "size": 263680,
-      "url": "https://github.com/Sewayn1/AstraleumTCG/releases/download/v0.0.2/Astraleum_Data/Managed/Mirror.Examples.dll"
+      "url": "https://github.com/Sewayn1/AstraleumTCG/releases/download/0.0.2/Astraleum_Data/Managed/Mirror.Examples.dll"
     },
     {
       "path": "Astraleum_Data/Managed/Mirror.Transports.dll",
       "sha256": "2587de6b8221e466ce0c3befa460b9b8c54cc3e135a5f2dbc9467e19e88428c5",
       "size": 95232,
-      "url": "https://github.com/Sewayn1/AstraleumTCG/releases/download/v0.0.2/Astraleum_Data/Managed/Mirror.Transports.dll"
+      "url": "https://github.com/Sewayn1/AstraleumTCG/releases/download/0.0.2/Astraleum_Data/Managed/Mirror.Transports.dll"
     },
     {
       "path": "Astraleum_Data/Managed/Mono.Security.dll",
       "sha256": "9838776992dc44ebe2aff2e9ec52c292024f5464542897aa5d29429a921437b9",
       "size": 241152,
-      "url": "https://github.com/Sewayn1/AstraleumTCG/releases/download/v0.0.2/Astraleum_Data/Managed/Mono.Security.dll"
+      "url": "https://github.com/Sewayn1/AstraleumTCG/releases/download/0.0.2/Astraleum_Data/Managed/Mono.Security.dll"
     },
     {
       "path": "Astraleum_Data/Managed/mscorlib.dll",
       "sha256": "eaf6b07fd716403e8fedc054bdd1650142d1dc95d34c01d9485de97b5a0dd84b",
       "size": 4632064,
-      "url": "https://github.com/Sewayn1/AstraleumTCG/releases/download/v0.0.2/Astraleum_Data/Managed/mscorlib.dll"
+      "url": "https://github.com/Sewayn1/AstraleumTCG/releases/download/0.0.2/Astraleum_Data/Managed/mscorlib.dll"
     },
     {
       "path": "Astraleum_Data/Managed/netstandard.dll",
       "sha256": "6ae62e082dc494a2433984177f60ca4db5fae69b1f360a8b33754172b310b8c5",
       "size": 90112,
-      "url": "https://github.com/Sewayn1/AstraleumTCG/releases/download/v0.0.2/Astraleum_Data/Managed/netstandard.dll"
+      "url": "https://github.com/Sewayn1/AstraleumTCG/releases/download/0.0.2/Astraleum_Data/Managed/netstandard.dll"
     },
     {
       "path": "Astraleum_Data/Managed/Newtonsoft.Json.dll",
       "sha256": "a56146202232958f46bd6a28b5a7da166aea123ee0d646735a46e5c341dfbf1f",
       "size": 691712,
-      "url": "https://github.com/Sewayn1/AstraleumTCG/releases/download/v0.0.2/Astraleum_Data/Managed/Newtonsoft.Json.dll"
+      "url": "https://github.com/Sewayn1/AstraleumTCG/releases/download/0.0.2/Astraleum_Data/Managed/Newtonsoft.Json.dll"
     },
     {
       "path": "Astraleum_Data/Managed/Nobi.UiRoundedCorners.dll",
       "sha256": "1e470335bcff816d3b1d2bff0dc9805851602042c0256535886a9aa11cbb15ee",
       "size": 8192,
-      "url": "https://github.com/Sewayn1/AstraleumTCG/releases/download/v0.0.2/Astraleum_Data/Managed/Nobi.UiRoundedCorners.dll"
+      "url": "https://github.com/Sewayn1/AstraleumTCG/releases/download/0.0.2/Astraleum_Data/Managed/Nobi.UiRoundedCorners.dll"
     },
     {
       "path": "Astraleum_Data/Managed/SimpleWebTransport.dll",
       "sha256": "26fb8de6a3a68b69870703e96e5297b17292a213654e12b73fa74151d00580ba",
       "size": 48128,
-      "url": "https://github.com/Sewayn1/AstraleumTCG/releases/download/v0.0.2/Astraleum_Data/Managed/SimpleWebTransport.dll"
+      "url": "https://github.com/Sewayn1/AstraleumTCG/releases/download/0.0.2/Astraleum_Data/Managed/SimpleWebTransport.dll"
     },
     {
       "path": "Astraleum_Data/Managed/System.Buffers.dll",
       "sha256": "762f8fdbe975e05b76be5fe996c53ce7c75e4a2830f2f50b02a5948ef6ba0aeb",
       "size": 4608,
-      "url": "https://github.com/Sewayn1/AstraleumTCG/releases/download/v0.0.2/Astraleum_Data/Managed/System.Buffers.dll"
+      "url": "https://github.com/Sewayn1/AstraleumTCG/releases/download/0.0.2/Astraleum_Data/Managed/System.Buffers.dll"
     },
     {
       "path": "Astraleum_Data/Managed/System.ComponentModel.Annotations.dll",
       "sha256": "77357a44be285c75f40780b6c8482effbd9ee537d27f5b8128a812954cbc2f6f",
       "size": 6144,
-      "url": "https://github.com/Sewayn1/AstraleumTCG/releases/download/v0.0.2/Astraleum_Data/Managed/System.ComponentModel.Annotations.dll"
+      "url": "https://github.com/Sewayn1/AstraleumTCG/releases/download/0.0.2/Astraleum_Data/Managed/System.ComponentModel.Annotations.dll"
     },
     {
       "path": "Astraleum_Data/Managed/System.ComponentModel.Composition.dll",
       "sha256": "a30fdde214493b540a5a169aa1729ff494d46f519d9c9a036746967c0845e764",
       "size": 257024,
-      "url": "https://github.com/Sewayn1/AstraleumTCG/releases/download/v0.0.2/Astraleum_Data/Managed/System.ComponentModel.Composition.dll"
+      "url": "https://github.com/Sewayn1/AstraleumTCG/releases/download/0.0.2/Astraleum_Data/Managed/System.ComponentModel.Composition.dll"
     },
     {
       "path": "Astraleum_Data/Managed/System.ComponentModel.DataAnnotations.dll",
       "sha256": "518c1be6032cf6cea7be85ea04c742e55aaf4f7a82d49189ca341c704a7e20ef",
       "size": 84992,
-      "url": "https://github.com/Sewayn1/AstraleumTCG/releases/download/v0.0.2/Astraleum_Data/Managed/System.ComponentModel.DataAnnotations.dll"
+      "url": "https://github.com/Sewayn1/AstraleumTCG/releases/download/0.0.2/Astraleum_Data/Managed/System.ComponentModel.DataAnnotations.dll"
     },
     {
       "path": "Astraleum_Data/Managed/System.Configuration.dll",
       "sha256": "223a6629bb9debb0327082da3e525860e734f231274d0f6bb83a164df778b779",
       "size": 124928,
-      "url": "https://github.com/Sewayn1/AstraleumTCG/releases/download/v0.0.2/Astraleum_Data/Managed/System.Configuration.dll"
+      "url": "https://github.com/Sewayn1/AstraleumTCG/releases/download/0.0.2/Astraleum_Data/Managed/System.Configuration.dll"
     },
     {
       "path": "Astraleum_Data/Managed/System.Core.dll",
       "sha256": "db725196b862d96beefb95bbb6693f892a12dc401b5c044660d13789e45c255d",
       "size": 1113088,
-      "url": "https://github.com/Sewayn1/AstraleumTCG/releases/download/v0.0.2/Astraleum_Data/Managed/System.Core.dll"
+      "url": "https://github.com/Sewayn1/AstraleumTCG/releases/download/0.0.2/Astraleum_Data/Managed/System.Core.dll"
     },
     {
       "path": "Astraleum_Data/Managed/System.Data.DataSetExtensions.dll",
       "sha256": "1d6f66f38cabd57b3d099804593ce5144e22921871dfdf0d6487a4bc725b9c8b",
       "size": 29696,
-      "url": "https://github.com/Sewayn1/AstraleumTCG/releases/download/v0.0.2/Astraleum_Data/Managed/System.Data.DataSetExtensions.dll"
+      "url": "https://github.com/Sewayn1/AstraleumTCG/releases/download/0.0.2/Astraleum_Data/Managed/System.Data.DataSetExtensions.dll"
     },
     {
       "path": "Astraleum_Data/Managed/System.Data.dll",
       "sha256": "f1e0909723a04b1b8ba3630593893e1a4683b391349b79697b8958d7e897a68f",
       "size": 2125312,
-      "url": "https://github.com/Sewayn1/AstraleumTCG/releases/download/v0.0.2/Astraleum_Data/Managed/System.Data.dll"
+      "url": "https://github.com/Sewayn1/AstraleumTCG/releases/download/0.0.2/Astraleum_Data/Managed/System.Data.dll"
     },
     {
       "path": "Astraleum_Data/Managed/System.Diagnostics.DiagnosticSource.dll",
       "sha256": "abc69603fc8ddab9e90eb5317170242ef1f57d575690f82da691a2b34fc46eac",
       "size": 175280,
-      "url": "https://github.com/Sewayn1/AstraleumTCG/releases/download/v0.0.2/Astraleum_Data/Managed/System.Diagnostics.DiagnosticSource.dll"
+      "url": "https://github.com/Sewayn1/AstraleumTCG/releases/download/0.0.2/Astraleum_Data/Managed/System.Diagnostics.DiagnosticSource.dll"
     },
     {
       "path": "Astraleum_Data/Managed/System.dll",
       "sha256": "c3c900393effd00a0d36f1dfd317ffe0f19744aad0c3d9c0b10e5f4d5a00bdd7",
       "size": 2641920,
-      "url": "https://github.com/Sewayn1/AstraleumTCG/releases/download/v0.0.2/Astraleum_Data/Managed/System.dll"
+      "url": "https://github.com/Sewayn1/AstraleumTCG/releases/download/0.0.2/Astraleum_Data/Managed/System.dll"
     },
     {
       "path": "Astraleum_Data/Managed/System.Drawing.dll",
       "sha256": "630aeba7b15de154e6faf86270eaaf6921ab2b5e9dd2273382e3a0df8ed918ad",
       "size": 489984,
-      "url": "https://github.com/Sewayn1/AstraleumTCG/releases/download/v0.0.2/Astraleum_Data/Managed/System.Drawing.dll"
+      "url": "https://github.com/Sewayn1/AstraleumTCG/releases/download/0.0.2/Astraleum_Data/Managed/System.Drawing.dll"
     },
     {
       "path": "Astraleum_Data/Managed/System.EnterpriseServices.dll",
       "sha256": "e0bd4c9aa95b3264e2bc5c43404637447de098829be95d5364a50c286651ede1",
       "size": 44544,
-      "url": "https://github.com/Sewayn1/AstraleumTCG/releases/download/v0.0.2/Astraleum_Data/Managed/System.EnterpriseServices.dll"
+      "url": "https://github.com/Sewayn1/AstraleumTCG/releases/download/0.0.2/Astraleum_Data/Managed/System.EnterpriseServices.dll"
     },
     {
       "path": "Astraleum_Data/Managed/System.IO.Compression.dll",
       "sha256": "11877b20d2c14bb0eb208f3e20f102ddd3c78b8c5d18edcea935dd5960e48449",
       "size": 114688,
-      "url": "https://github.com/Sewayn1/AstraleumTCG/releases/download/v0.0.2/Astraleum_Data/Managed/System.IO.Compression.dll"
+      "url": "https://github.com/Sewayn1/AstraleumTCG/releases/download/0.0.2/Astraleum_Data/Managed/System.IO.Compression.dll"
     },
     {
       "path": "Astraleum_Data/Managed/System.IO.Compression.FileSystem.dll",
       "sha256": "738c6ea02bb89c69473f8e128f077cb6f7d62b04e7928e0e244ea7a991e65853",
       "size": 18432,
-      "url": "https://github.com/Sewayn1/AstraleumTCG/releases/download/v0.0.2/Astraleum_Data/Managed/System.IO.Compression.FileSystem.dll"
+      "url": "https://github.com/Sewayn1/AstraleumTCG/releases/download/0.0.2/Astraleum_Data/Managed/System.IO.Compression.FileSystem.dll"
     },
     {
       "path": "Astraleum_Data/Managed/System.IO.Hashing.dll",
       "sha256": "ac7ac3e83805b0b621c48b90543dc733c9a89106835278618357d6187e3da74e",
       "size": 50488,
-      "url": "https://github.com/Sewayn1/AstraleumTCG/releases/download/v0.0.2/Astraleum_Data/Managed/System.IO.Hashing.dll"
+      "url": "https://github.com/Sewayn1/AstraleumTCG/releases/download/0.0.2/Astraleum_Data/Managed/System.IO.Hashing.dll"
     },
     {
       "path": "Astraleum_Data/Managed/System.IO.Pipelines.dll",
       "sha256": "3702e2403cf265588d1544a292ea17c01d337cdb91b5bdd64690894331345ad4",
       "size": 84128,
-      "url": "https://github.com/Sewayn1/AstraleumTCG/releases/download/v0.0.2/Astraleum_Data/Managed/System.IO.Pipelines.dll"
+      "url": "https://github.com/Sewayn1/AstraleumTCG/releases/download/0.0.2/Astraleum_Data/Managed/System.IO.Pipelines.dll"
     },
     {
       "path": "Astraleum_Data/Managed/System.Memory.dll",
       "sha256": "c4f030a2cba7da7cdcf493257c24560e203d355904aee490d645a935842f834a",
       "size": 4608,
-      "url": "https://github.com/Sewayn1/AstraleumTCG/releases/download/v0.0.2/Astraleum_Data/Managed/System.Memory.dll"
+      "url": "https://github.com/Sewayn1/AstraleumTCG/releases/download/0.0.2/Astraleum_Data/Managed/System.Memory.dll"
     },
     {
       "path": "Astraleum_Data/Managed/System.Net.Http.dll",
       "sha256": "31dd2ec15094027cb78457421633e24f8272a5d83792bd02f5c483339fdc948a",
       "size": 122880,
-      "url": "https://github.com/Sewayn1/AstraleumTCG/releases/download/v0.0.2/Astraleum_Data/Managed/System.Net.Http.dll"
+      "url": "https://github.com/Sewayn1/AstraleumTCG/releases/download/0.0.2/Astraleum_Data/Managed/System.Net.Http.dll"
     },
     {
       "path": "Astraleum_Data/Managed/System.Numerics.dll",
       "sha256": "5ac2ed1d8235e6e27a7527fc159a852b1391854e35589746276377847228eb62",
       "size": 119296,
-      "url": "https://github.com/Sewayn1/AstraleumTCG/releases/download/v0.0.2/Astraleum_Data/Managed/System.Numerics.dll"
+      "url": "https://github.com/Sewayn1/AstraleumTCG/releases/download/0.0.2/Astraleum_Data/Managed/System.Numerics.dll"
     },
     {
       "path": "Astraleum_Data/Managed/System.Numerics.Vectors.dll",
       "sha256": "531308f91ecfcd854b96a0ee5e5ad3465df30781949e7f6308ce2914869f0dd8",
       "size": 12288,
-      "url": "https://github.com/Sewayn1/AstraleumTCG/releases/download/v0.0.2/Astraleum_Data/Managed/System.Numerics.Vectors.dll"
+      "url": "https://github.com/Sewayn1/AstraleumTCG/releases/download/0.0.2/Astraleum_Data/Managed/System.Numerics.Vectors.dll"
     },
     {
       "path": "Astraleum_Data/Managed/System.Runtime.CompilerServices.Unsafe.dll",
       "sha256": "01748200f2400c742aa689f1f5101bd6298efdfd92c00c18f4fa473847235ba9",
       "size": 18024,
-      "url": "https://github.com/Sewayn1/AstraleumTCG/releases/download/v0.0.2/Astraleum_Data/Managed/System.Runtime.CompilerServices.Unsafe.dll"
+      "url": "https://github.com/Sewayn1/AstraleumTCG/releases/download/0.0.2/Astraleum_Data/Managed/System.Runtime.CompilerServices.Unsafe.dll"
     },
     {
       "path": "Astraleum_Data/Managed/System.Runtime.dll",
       "sha256": "e0a7334b7ba419aaab6bd3bb6992d693e689341a9178172c9bf99c2aa6a085bd",
       "size": 12288,
-      "url": "https://github.com/Sewayn1/AstraleumTCG/releases/download/v0.0.2/Astraleum_Data/Managed/System.Runtime.dll"
+      "url": "https://github.com/Sewayn1/AstraleumTCG/releases/download/0.0.2/Astraleum_Data/Managed/System.Runtime.dll"
     },
     {
       "path": "Astraleum_Data/Managed/System.Runtime.Serialization.dll",
       "sha256": "5b7219b02b2724941f532f6806cc6402b7b413be0161f8994364ebb80b045330",
       "size": 934400,
-      "url": "https://github.com/Sewayn1/AstraleumTCG/releases/download/v0.0.2/Astraleum_Data/Managed/System.Runtime.Serialization.dll"
+      "url": "https://github.com/Sewayn1/AstraleumTCG/releases/download/0.0.2/Astraleum_Data/Managed/System.Runtime.Serialization.dll"
     },
     {
       "path": "Astraleum_Data/Managed/System.Security.dll",
       "sha256": "a51236aca52e7f43a5d236667aeee4c29b74f05e70ed4e66f23bd01f1219471d",
       "size": 320000,
-      "url": "https://github.com/Sewayn1/AstraleumTCG/releases/download/v0.0.2/Astraleum_Data/Managed/System.Security.dll"
+      "url": "https://github.com/Sewayn1/AstraleumTCG/releases/download/0.0.2/Astraleum_Data/Managed/System.Security.dll"
     },
     {
       "path": "Astraleum_Data/Managed/System.ServiceModel.Internals.dll",
       "sha256": "10362190426d7f2feb552223ebcec5dea0fb33c2ec2e4b512832ddbad2d3fbea",
       "size": 215040,
-      "url": "https://github.com/Sewayn1/AstraleumTCG/releases/download/v0.0.2/Astraleum_Data/Managed/System.ServiceModel.Internals.dll"
+      "url": "https://github.com/Sewayn1/AstraleumTCG/releases/download/0.0.2/Astraleum_Data/Managed/System.ServiceModel.Internals.dll"
     },
     {
       "path": "Astraleum_Data/Managed/System.Text.Encodings.Web.dll",
       "sha256": "5ad1f348223f281c34b9b857445a1c3412a430026ef049aeac641c53a92408be",
       "size": 79120,
-      "url": "https://github.com/Sewayn1/AstraleumTCG/releases/download/v0.0.2/Astraleum_Data/Managed/System.Text.Encodings.Web.dll"
+      "url": "https://github.com/Sewayn1/AstraleumTCG/releases/download/0.0.2/Astraleum_Data/Managed/System.Text.Encodings.Web.dll"
     },
     {
       "path": "Astraleum_Data/Managed/System.Text.Json.dll",
       "sha256": "363d39eddd1555c65aa61ad5656087c795a3790f434af92de5fc527af86a4b55",
       "size": 606368,
-      "url": "https://github.com/Sewayn1/AstraleumTCG/releases/download/v0.0.2/Astraleum_Data/Managed/System.Text.Json.dll"
+      "url": "https://github.com/Sewayn1/AstraleumTCG/releases/download/0.0.2/Astraleum_Data/Managed/System.Text.Json.dll"
     },
     {
       "path": "Astraleum_Data/Managed/System.Threading.Channels.dll",
       "sha256": "31c7e3704c0477c53d9306362dc6abe741088efb7a7b4e46cded0169cf7bb0b2",
       "size": 75952,
-      "url": "https://github.com/Sewayn1/AstraleumTCG/releases/download/v0.0.2/Astraleum_Data/Managed/System.Threading.Channels.dll"
+      "url": "https://github.com/Sewayn1/AstraleumTCG/releases/download/0.0.2/Astraleum_Data/Managed/System.Threading.Channels.dll"
     },
     {
       "path": "Astraleum_Data/Managed/System.Threading.Tasks.Extensions.dll",
       "sha256": "96150abdca5df4446b376560e069d59b3550212deda8cbdd316272f6b834f597",
       "size": 5120,
-      "url": "https://github.com/Sewayn1/AstraleumTCG/releases/download/v0.0.2/Astraleum_Data/Managed/System.Threading.Tasks.Extensions.dll"
+      "url": "https://github.com/Sewayn1/AstraleumTCG/releases/download/0.0.2/Astraleum_Data/Managed/System.Threading.Tasks.Extensions.dll"
     },
     {
       "path": "Astraleum_Data/Managed/System.Transactions.dll",
       "sha256": "8a962b8b8a99a111bd765d090cf27605f0e84911354d7b272cd2ef484bd117c7",
       "size": 35328,
-      "url": "https://github.com/Sewayn1/AstraleumTCG/releases/download/v0.0.2/Astraleum_Data/Managed/System.Transactions.dll"
+      "url": "https://github.com/Sewayn1/AstraleumTCG/releases/download/0.0.2/Astraleum_Data/Managed/System.Transactions.dll"
     },
     {
       "path": "Astraleum_Data/Managed/System.Xml.dll",
       "sha256": "22362d813e444a18592ec32a56731dd4265362bc8b2c2aab76a1816f2d7d679e",
       "size": 3160064,
-      "url": "https://github.com/Sewayn1/AstraleumTCG/releases/download/v0.0.2/Astraleum_Data/Managed/System.Xml.dll"
+      "url": "https://github.com/Sewayn1/AstraleumTCG/releases/download/0.0.2/Astraleum_Data/Managed/System.Xml.dll"
     },
     {
       "path": "Astraleum_Data/Managed/System.Xml.Linq.dll",
       "sha256": "eee68bc1879f7a5007752aa31db5640a6ec8f5f18aecd40c92d38989758f795b",
       "size": 136704,
-      "url": "https://github.com/Sewayn1/AstraleumTCG/releases/download/v0.0.2/Astraleum_Data/Managed/System.Xml.Linq.dll"
+      "url": "https://github.com/Sewayn1/AstraleumTCG/releases/download/0.0.2/Astraleum_Data/Managed/System.Xml.Linq.dll"
     },
     {
       "path": "Astraleum_Data/Managed/Telepathy.dll",
       "sha256": "d0346920dc323beb57c4ebce17dc8629df7eeca4b1078b92ba77ae3047b64d8e",
       "size": 20992,
-      "url": "https://github.com/Sewayn1/AstraleumTCG/releases/download/v0.0.2/Astraleum_Data/Managed/Telepathy.dll"
+      "url": "https://github.com/Sewayn1/AstraleumTCG/releases/download/0.0.2/Astraleum_Data/Managed/Telepathy.dll"
     },
     {
       "path": "Astraleum_Data/Managed/Unity.2D.Animation.Runtime.dll",
       "sha256": "82ed499434726cc2fda7a2b78757ab5b0098dbd590ee9d6b83dbc2d0067f97d2",
       "size": 94720,
-      "url": "https://github.com/Sewayn1/AstraleumTCG/releases/download/v0.0.2/Astraleum_Data/Managed/Unity.2D.Animation.Runtime.dll"
+      "url": "https://github.com/Sewayn1/AstraleumTCG/releases/download/0.0.2/Astraleum_Data/Managed/Unity.2D.Animation.Runtime.dll"
     },
     {
       "path": "Astraleum_Data/Managed/Unity.2D.Common.Runtime.dll",
       "sha256": "7a46d29bd748262befeb44dfc1af22a49177bab9ff411940fb600b8e4c7d4087",
       "size": 58880,
-      "url": "https://github.com/Sewayn1/AstraleumTCG/releases/download/v0.0.2/Astraleum_Data/Managed/Unity.2D.Common.Runtime.dll"
+      "url": "https://github.com/Sewayn1/AstraleumTCG/releases/download/0.0.2/Astraleum_Data/Managed/Unity.2D.Common.Runtime.dll"
     },
     {
       "path": "Astraleum_Data/Managed/Unity.2D.IK.Runtime.dll",
       "sha256": "7059136d321e493749c1c4c5603055fd21cdc49791c2bc21e2d030d933ba2cb7",
       "size": 41472,
-      "url": "https://github.com/Sewayn1/AstraleumTCG/releases/download/v0.0.2/Astraleum_Data/Managed/Unity.2D.IK.Runtime.dll"
+      "url": "https://github.com/Sewayn1/AstraleumTCG/releases/download/0.0.2/Astraleum_Data/Managed/Unity.2D.IK.Runtime.dll"
     },
     {
       "path": "Astraleum_Data/Managed/Unity.2D.SpriteShape.Runtime.dll",
       "sha256": "91a68f7ffadf87594790145a3a3fc6c06186d1f31dc897f1bf8ad4d3065a8e86",
       "size": 113152,
-      "url": "https://github.com/Sewayn1/AstraleumTCG/releases/download/v0.0.2/Astraleum_Data/Managed/Unity.2D.SpriteShape.Runtime.dll"
+      "url": "https://github.com/Sewayn1/AstraleumTCG/releases/download/0.0.2/Astraleum_Data/Managed/Unity.2D.SpriteShape.Runtime.dll"
     },
     {
       "path": "Astraleum_Data/Managed/Unity.2D.Tilemap.Extras.dll",
       "sha256": "4382e73594244ed0ff0caac8e3f1f7ed463b741d4da2e28a28d65d8071510118",
       "size": 39936,
-      "url": "https://github.com/Sewayn1/AstraleumTCG/releases/download/v0.0.2/Astraleum_Data/Managed/Unity.2D.Tilemap.Extras.dll"
+      "url": "https://github.com/Sewayn1/AstraleumTCG/releases/download/0.0.2/Astraleum_Data/Managed/Unity.2D.Tilemap.Extras.dll"
     },
     {
       "path": "Astraleum_Data/Managed/Unity.Burst.dll",
       "sha256": "ad66c15fe5233d34d1da8515cc69e8404575222fb5b4347cb410c3d91e85be03",
       "size": 304640,
-      "url": "https://github.com/Sewayn1/AstraleumTCG/releases/download/v0.0.2/Astraleum_Data/Managed/Unity.Burst.dll"
+      "url": "https://github.com/Sewayn1/AstraleumTCG/releases/download/0.0.2/Astraleum_Data/Managed/Unity.Burst.dll"
     },
     {
       "path": "Astraleum_Data/Managed/Unity.Burst.Unsafe.dll",
       "sha256": "9d9c1ff52411decbee5d9f0d1cd61ebeaa222077aa77a52101ea3debafae98e2",
       "size": 5632,
-      "url": "https://github.com/Sewayn1/AstraleumTCG/releases/download/v0.0.2/Astraleum_Data/Managed/Unity.Burst.Unsafe.dll"
+      "url": "https://github.com/Sewayn1/AstraleumTCG/releases/download/0.0.2/Astraleum_Data/Managed/Unity.Burst.Unsafe.dll"
     },
     {
       "path": "Astraleum_Data/Managed/Unity.Collections.dll",
       "sha256": "d6dc5a0f4866fc79f26878384e6a33380d85d3d8d3487f7024acbd86d36cc876",
       "size": 452096,
-      "url": "https://github.com/Sewayn1/AstraleumTCG/releases/download/v0.0.2/Astraleum_Data/Managed/Unity.Collections.dll"
+      "url": "https://github.com/Sewayn1/AstraleumTCG/releases/download/0.0.2/Astraleum_Data/Managed/Unity.Collections.dll"
     },
     {
       "path": "Astraleum_Data/Managed/Unity.Collections.LowLevel.ILSupport.dll",
       "sha256": "ff50383f807f9692e4913b97e47d86fefcb8faa33d6d48cd3e3fd6fc7ffb448d",
       "size": 5120,
-      "url": "https://github.com/Sewayn1/AstraleumTCG/releases/download/v0.0.2/Astraleum_Data/Managed/Unity.Collections.LowLevel.ILSupport.dll"
+      "url": "https://github.com/Sewayn1/AstraleumTCG/releases/download/0.0.2/Astraleum_Data/Managed/Unity.Collections.LowLevel.ILSupport.dll"
     },
     {
       "path": "Astraleum_Data/Managed/Unity.DedicatedServer.MultiplayerRoles.dll",
       "sha256": "190d1fea452f3c0d97c25633f75f30c8a5c73d0dfa08ce3dee2343cff3191205",
       "size": 5632,
-      "url": "https://github.com/Sewayn1/AstraleumTCG/releases/download/v0.0.2/Astraleum_Data/Managed/Unity.DedicatedServer.MultiplayerRoles.dll"
+      "url": "https://github.com/Sewayn1/AstraleumTCG/releases/download/0.0.2/Astraleum_Data/Managed/Unity.DedicatedServer.MultiplayerRoles.dll"
     },
     {
       "path": "Astraleum_Data/Managed/Unity.InputSystem.dll",
       "sha256": "3caccf4fde6f35936b7c85787d9208561b41ebedd65ff6107c1f9a4abb431870",
       "size": 1137152,
-      "url": "https://github.com/Sewayn1/AstraleumTCG/releases/download/v0.0.2/Astraleum_Data/Managed/Unity.InputSystem.dll"
+      "url": "https://github.com/Sewayn1/AstraleumTCG/releases/download/0.0.2/Astraleum_Data/Managed/Unity.InputSystem.dll"
     },
     {
       "path": "Astraleum_Data/Managed/Unity.InputSystem.ForUI.dll",
       "sha256": "f00dd36444d805eea63f7040081949522085857cab6a03c5b3ecec1793c917f1",
       "size": 16384,
-      "url": "https://github.com/Sewayn1/AstraleumTCG/releases/download/v0.0.2/Astraleum_Data/Managed/Unity.InputSystem.ForUI.dll"
+      "url": "https://github.com/Sewayn1/AstraleumTCG/releases/download/0.0.2/Astraleum_Data/Managed/Unity.InputSystem.ForUI.dll"
     },
     {
       "path": "Astraleum_Data/Managed/Unity.InternalAPIEngineBridge.001.dll",
       "sha256": "8a7998a12c7530c48636a4d7b3852ae7f552d715f811a6e855453f24bddcf6a8",
       "size": 6656,
-      "url": "https://github.com/Sewayn1/AstraleumTCG/releases/download/v0.0.2/Astraleum_Data/Managed/Unity.InternalAPIEngineBridge.001.dll"
+      "url": "https://github.com/Sewayn1/AstraleumTCG/releases/download/0.0.2/Astraleum_Data/Managed/Unity.InternalAPIEngineBridge.001.dll"
     },
     {
       "path": "Astraleum_Data/Managed/Unity.InternalAPIEngineBridge.004.dll",
       "sha256": "8381ee68afbbfa9403ab700916bb64e0ca133a1c93e71dd6c3025463d7f864ba",
       "size": 5120,
-      "url": "https://github.com/Sewayn1/AstraleumTCG/releases/download/v0.0.2/Astraleum_Data/Managed/Unity.InternalAPIEngineBridge.004.dll"
+      "url": "https://github.com/Sewayn1/AstraleumTCG/releases/download/0.0.2/Astraleum_Data/Managed/Unity.InternalAPIEngineBridge.004.dll"
     },
     {
       "path": "Astraleum_Data/Managed/Unity.InternalAPIEngineBridge.RenderPipelines.Core.Runtime.Shared.dll",
       "sha256": "156e164f5698ec46c88b2cebfbb6a56fcb72ef2affa008cfbc0a5daba88d54a8",
       "size": 4096,
-      "url": "https://github.com/Sewayn1/AstraleumTCG/releases/download/v0.0.2/Astraleum_Data/Managed/Unity.InternalAPIEngineBridge.RenderPipelines.Core.Runtime.Shared.dll"
+      "url": "https://github.com/Sewayn1/AstraleumTCG/releases/download/0.0.2/Astraleum_Data/Managed/Unity.InternalAPIEngineBridge.RenderPipelines.Core.Runtime.Shared.dll"
     },
     {
       "path": "Astraleum_Data/Managed/Unity.Mathematics.dll",
       "sha256": "a6555da6c536127051938a192b86ef82185aba3258d71f8ded6a1bd1cb70e117",
       "size": 752640,
-      "url": "https://github.com/Sewayn1/AstraleumTCG/releases/download/v0.0.2/Astraleum_Data/Managed/Unity.Mathematics.dll"
+      "url": "https://github.com/Sewayn1/AstraleumTCG/releases/download/0.0.2/Astraleum_Data/Managed/Unity.Mathematics.dll"
     },
     {
       "path": "Astraleum_Data/Managed/Unity.Multiplayer.Center.Common.dll",
       "sha256": "a3062bf4eb0c91e27b908568274ffb663bfaac57e7494ab6aa067e94a624c5d8",
       "size": 10752,
-      "url": "https://github.com/Sewayn1/AstraleumTCG/releases/download/v0.0.2/Astraleum_Data/Managed/Unity.Multiplayer.Center.Common.dll"
+      "url": "https://github.com/Sewayn1/AstraleumTCG/releases/download/0.0.2/Astraleum_Data/Managed/Unity.Multiplayer.Center.Common.dll"
     },
     {
       "path": "Astraleum_Data/Managed/Unity.PathTracing.Runtime.dll",
       "sha256": "5af1cbb23a72ee9cf913193239c1db6fbc24df6355ca0aa410dc068fdaa92001",
       "size": 152064,
-      "url": "https://github.com/Sewayn1/AstraleumTCG/releases/download/v0.0.2/Astraleum_Data/Managed/Unity.PathTracing.Runtime.dll"
+      "url": "https://github.com/Sewayn1/AstraleumTCG/releases/download/0.0.2/Astraleum_Data/Managed/Unity.PathTracing.Runtime.dll"
     },
     {
       "path": "Astraleum_Data/Managed/Unity.RenderPipeline.Universal.ShaderLibrary.dll",
       "sha256": "24e26e189ec18e616d95b6012bc1e08db39f353785e37115f0a4e73375aac558",
       "size": 9216,
-      "url": "https://github.com/Sewayn1/AstraleumTCG/releases/download/v0.0.2/Astraleum_Data/Managed/Unity.RenderPipeline.Universal.ShaderLibrary.dll"
+      "url": "https://github.com/Sewayn1/AstraleumTCG/releases/download/0.0.2/Astraleum_Data/Managed/Unity.RenderPipeline.Universal.ShaderLibrary.dll"
     },
     {
       "path": "Astraleum_Data/Managed/Unity.RenderPipelines.Core.Runtime.dll",
       "sha256": "b3a6965b2f3a16ccdafd9078e3f7708b6e233dab391492929d7dfcb014580cc2",
       "size": 1207808,
-      "url": "https://github.com/Sewayn1/AstraleumTCG/releases/download/v0.0.2/Astraleum_Data/Managed/Unity.RenderPipelines.Core.Runtime.dll"
+      "url": "https://github.com/Sewayn1/AstraleumTCG/releases/download/0.0.2/Astraleum_Data/Managed/Unity.RenderPipelines.Core.Runtime.dll"
     },
     {
       "path": "Astraleum_Data/Managed/Unity.RenderPipelines.Core.Runtime.Shared.dll",
       "sha256": "f6515479d12b0b81ecc9993ce24e3318f8feed183089ce72b131e6142547a53a",
       "size": 5632,
-      "url": "https://github.com/Sewayn1/AstraleumTCG/releases/download/v0.0.2/Astraleum_Data/Managed/Unity.RenderPipelines.Core.Runtime.Shared.dll"
+      "url": "https://github.com/Sewayn1/AstraleumTCG/releases/download/0.0.2/Astraleum_Data/Managed/Unity.RenderPipelines.Core.Runtime.Shared.dll"
     },
     {
       "path": "Astraleum_Data/Managed/Unity.RenderPipelines.Core.ShaderLibrary.dll",
       "sha256": "bf4c95b8694f12fb4c2f251a09055d948b778ae615e0d898fd9e952609ca81ef",
       "size": 4608,
-      "url": "https://github.com/Sewayn1/AstraleumTCG/releases/download/v0.0.2/Astraleum_Data/Managed/Unity.RenderPipelines.Core.ShaderLibrary.dll"
+      "url": "https://github.com/Sewayn1/AstraleumTCG/releases/download/0.0.2/Astraleum_Data/Managed/Unity.RenderPipelines.Core.ShaderLibrary.dll"
     },
     {
       "path": "Astraleum_Data/Managed/Unity.RenderPipelines.GPUDriven.Runtime.dll",
       "sha256": "7097dd6330ab3e002efc7622c46786ef6370fdc5a7814aed98a1c185204e0115",
       "size": 236032,
-      "url": "https://github.com/Sewayn1/AstraleumTCG/releases/download/v0.0.2/Astraleum_Data/Managed/Unity.RenderPipelines.GPUDriven.Runtime.dll"
+      "url": "https://github.com/Sewayn1/AstraleumTCG/releases/download/0.0.2/Astraleum_Data/Managed/Unity.RenderPipelines.GPUDriven.Runtime.dll"
     },
     {
       "path": "Astraleum_Data/Managed/Unity.RenderPipelines.ShaderGraph.ShaderGraphLibrary.dll",
       "sha256": "db8a96e0403d4eb71d8491877306fdc69d96a7a2a61aa0630d7b7e06e43eb90f",
       "size": 4608,
-      "url": "https://github.com/Sewayn1/AstraleumTCG/releases/download/v0.0.2/Astraleum_Data/Managed/Unity.RenderPipelines.ShaderGraph.ShaderGraphLibrary.dll"
+      "url": "https://github.com/Sewayn1/AstraleumTCG/releases/download/0.0.2/Astraleum_Data/Managed/Unity.RenderPipelines.ShaderGraph.ShaderGraphLibrary.dll"
     },
     {
       "path": "Astraleum_Data/Managed/Unity.RenderPipelines.Universal.2D.Runtime.dll",
       "sha256": "689a95581432ac9a6afaae07453d5a58f4a8a0ece8a1970881d05c2e128a0bf1",
       "size": 238080,
-      "url": "https://github.com/Sewayn1/AstraleumTCG/releases/download/v0.0.2/Astraleum_Data/Managed/Unity.RenderPipelines.Universal.2D.Runtime.dll"
+      "url": "https://github.com/Sewayn1/AstraleumTCG/releases/download/0.0.2/Astraleum_Data/Managed/Unity.RenderPipelines.Universal.2D.Runtime.dll"
     },
     {
       "path": "Astraleum_Data/Managed/Unity.RenderPipelines.Universal.Config.Runtime.dll",
       "sha256": "846bb4171dcb451a3d71bb9ae0840b9de51e0cbde6f662cb60f411702d398722",
       "size": 5632,
-      "url": "https://github.com/Sewayn1/AstraleumTCG/releases/download/v0.0.2/Astraleum_Data/Managed/Unity.RenderPipelines.Universal.Config.Runtime.dll"
+      "url": "https://github.com/Sewayn1/AstraleumTCG/releases/download/0.0.2/Astraleum_Data/Managed/Unity.RenderPipelines.Universal.Config.Runtime.dll"
     },
     {
       "path": "Astraleum_Data/Managed/Unity.RenderPipelines.Universal.Runtime.dll",
       "sha256": "4d78b682847e65aa23e8f1a485b269af925850aed1a3f5f7d21d5631cb88906f",
       "size": 764416,
-      "url": "https://github.com/Sewayn1/AstraleumTCG/releases/download/v0.0.2/Astraleum_Data/Managed/Unity.RenderPipelines.Universal.Runtime.dll"
+      "url": "https://github.com/Sewayn1/AstraleumTCG/releases/download/0.0.2/Astraleum_Data/Managed/Unity.RenderPipelines.Universal.Runtime.dll"
     },
     {
       "path": "Astraleum_Data/Managed/Unity.RenderPipelines.Universal.Shaders.dll",
       "sha256": "c957620099c2ab74233d10083721c17d8f62ca17919737f02a6cb5fa8a0e9264",
       "size": 4608,
-      "url": "https://github.com/Sewayn1/AstraleumTCG/releases/download/v0.0.2/Astraleum_Data/Managed/Unity.RenderPipelines.Universal.Shaders.dll"
+      "url": "https://github.com/Sewayn1/AstraleumTCG/releases/download/0.0.2/Astraleum_Data/Managed/Unity.RenderPipelines.Universal.Shaders.dll"
     },
     {
       "path": "Astraleum_Data/Managed/Unity.Scripting.dll",
       "sha256": "d9f107d6714f062cc2df5dd9e0c8bc7e1187d51193f96d119e0cb03082166ac3",
       "size": 74664,
-      "url": "https://github.com/Sewayn1/AstraleumTCG/releases/download/v0.0.2/Astraleum_Data/Managed/Unity.Scripting.dll"
+      "url": "https://github.com/Sewayn1/AstraleumTCG/releases/download/0.0.2/Astraleum_Data/Managed/Unity.Scripting.dll"
     },
     {
       "path": "Astraleum_Data/Managed/Unity.SurfaceCache.Runtime.dll",
       "sha256": "a72b0976470c59f2ad55f14662e1b579f439309192ad23e82cc9d3c25d36dc78",
       "size": 4096,
-      "url": "https://github.com/Sewayn1/AstraleumTCG/releases/download/v0.0.2/Astraleum_Data/Managed/Unity.SurfaceCache.Runtime.dll"
+      "url": "https://github.com/Sewayn1/AstraleumTCG/releases/download/0.0.2/Astraleum_Data/Managed/Unity.SurfaceCache.Runtime.dll"
     },
     {
       "path": "Astraleum_Data/Managed/Unity.TextMeshPro.dll",
       "sha256": "f184ef6c2eeeb0b6221850ea643fe9c560c933f44a243264ec5291e2c17a7005",
       "size": 448000,
-      "url": "https://github.com/Sewayn1/AstraleumTCG/releases/download/v0.0.2/Astraleum_Data/Managed/Unity.TextMeshPro.dll"
+      "url": "https://github.com/Sewayn1/AstraleumTCG/releases/download/0.0.2/Astraleum_Data/Managed/Unity.TextMeshPro.dll"
     },
     {
       "path": "Astraleum_Data/Managed/Unity.Timeline.dll",
       "sha256": "506a364b9667567b670522dc923185f648ae33d5d7679ef239f319ffb10e02e4",
       "size": 134656,
-      "url": "https://github.com/Sewayn1/AstraleumTCG/releases/download/v0.0.2/Astraleum_Data/Managed/Unity.Timeline.dll"
+      "url": "https://github.com/Sewayn1/AstraleumTCG/releases/download/0.0.2/Astraleum_Data/Managed/Unity.Timeline.dll"
     },
     {
       "path": "Astraleum_Data/Managed/Unity.UnifiedRayTracing.Runtime.dll",
       "sha256": "b28ac36ea556f980b0d6810db40416c125a15b4c37e9813698cdb26efd6d02bb",
       "size": 101376,
-      "url": "https://github.com/Sewayn1/AstraleumTCG/releases/download/v0.0.2/Astraleum_Data/Managed/Unity.UnifiedRayTracing.Runtime.dll"
+      "url": "https://github.com/Sewayn1/AstraleumTCG/releases/download/0.0.2/Astraleum_Data/Managed/Unity.UnifiedRayTracing.Runtime.dll"
     },
     {
       "path": "Astraleum_Data/Managed/Unity.VisualScripting.Antlr3.Runtime.dll",
       "sha256": "ed7ce205f66eafe39bbb5d084d42e7fe11cb4b386ff208e5d5110891be0b7b37",
       "size": 86016,
-      "url": "https://github.com/Sewayn1/AstraleumTCG/releases/download/v0.0.2/Astraleum_Data/Managed/Unity.VisualScripting.Antlr3.Runtime.dll"
+      "url": "https://github.com/Sewayn1/AstraleumTCG/releases/download/0.0.2/Astraleum_Data/Managed/Unity.VisualScripting.Antlr3.Runtime.dll"
     },
     {
       "path": "Astraleum_Data/Managed/Unity.VisualScripting.Core.dll",
       "sha256": "f9573ef5d8ef4eceec3e06f176532b830d987721f8fa52ae221d94b1caa3f7be",
       "size": 629760,
-      "url": "https://github.com/Sewayn1/AstraleumTCG/releases/download/v0.0.2/Astraleum_Data/Managed/Unity.VisualScripting.Core.dll"
+      "url": "https://github.com/Sewayn1/AstraleumTCG/releases/download/0.0.2/Astraleum_Data/Managed/Unity.VisualScripting.Core.dll"
     },
     {
       "path": "Astraleum_Data/Managed/Unity.VisualScripting.DocCodeExamples.dll",
       "sha256": "4a9854794aa7d15e469e1754193b8bbf282fa525d4eb9ed03a0d3f3a6a533d20",
       "size": 7168,
-      "url": "https://github.com/Sewayn1/AstraleumTCG/releases/download/v0.0.2/Astraleum_Data/Managed/Unity.VisualScripting.DocCodeExamples.dll"
+      "url": "https://github.com/Sewayn1/AstraleumTCG/releases/download/0.0.2/Astraleum_Data/Managed/Unity.VisualScripting.DocCodeExamples.dll"
     },
     {
       "path": "Astraleum_Data/Managed/Unity.VisualScripting.Flow.dll",
       "sha256": "b255bb926dce04fa4a31f30c02a15fb58cfbd5d1886f9c939ba5bf7ed39a62a2",
       "size": 407552,
-      "url": "https://github.com/Sewayn1/AstraleumTCG/releases/download/v0.0.2/Astraleum_Data/Managed/Unity.VisualScripting.Flow.dll"
+      "url": "https://github.com/Sewayn1/AstraleumTCG/releases/download/0.0.2/Astraleum_Data/Managed/Unity.VisualScripting.Flow.dll"
     },
     {
       "path": "Astraleum_Data/Managed/Unity.VisualScripting.State.dll",
       "sha256": "8d6c09d60f2272e2e8faaaceeb729880fdb71ba19cbe28f6dc9421487a77079d",
       "size": 32256,
-      "url": "https://github.com/Sewayn1/AstraleumTCG/releases/download/v0.0.2/Astraleum_Data/Managed/Unity.VisualScripting.State.dll"
+      "url": "https://github.com/Sewayn1/AstraleumTCG/releases/download/0.0.2/Astraleum_Data/Managed/Unity.VisualScripting.State.dll"
     },
     {
       "path": "Astraleum_Data/Managed/UnityEngine.AccessibilityModule.dll",
       "sha256": "cfa33b614e34c8556cef15c5b19e0c5c0d31b7e398a84a049523b4f8f4e696e3",
       "size": 48560,
-      "url": "https://github.com/Sewayn1/AstraleumTCG/releases/download/v0.0.2/Astraleum_Data/Managed/UnityEngine.AccessibilityModule.dll"
+      "url": "https://github.com/Sewayn1/AstraleumTCG/releases/download/0.0.2/Astraleum_Data/Managed/UnityEngine.AccessibilityModule.dll"
     },
     {
       "path": "Astraleum_Data/Managed/UnityEngine.AdaptivePerformanceModule.dll",
       "sha256": "cb000913ddcee43bca4bb77c5a278fac16fb727d0862dccdeb3e9fff55e34725",
       "size": 116144,
-      "url": "https://github.com/Sewayn1/AstraleumTCG/releases/download/v0.0.2/Astraleum_Data/Managed/UnityEngine.AdaptivePerformanceModule.dll"
+      "url": "https://github.com/Sewayn1/AstraleumTCG/releases/download/0.0.2/Astraleum_Data/Managed/UnityEngine.AdaptivePerformanceModule.dll"
     },
     {
       "path": "Astraleum_Data/Managed/UnityEngine.AIModule.dll",
       "sha256": "0076bef08dfe454a7cb5d97765f5cdc367c85ca58f897074d54cdaa9e953df05",
       "size": 75688,
-      "url": "https://github.com/Sewayn1/AstraleumTCG/releases/download/v0.0.2/Astraleum_Data/Managed/UnityEngine.AIModule.dll"
+      "url": "https://github.com/Sewayn1/AstraleumTCG/releases/download/0.0.2/Astraleum_Data/Managed/UnityEngine.AIModule.dll"
     },
     {
       "path": "Astraleum_Data/Managed/UnityEngine.AMDModule.dll",
       "sha256": "581c99114e5ea9e46fd15ffc769ffb25db1250d710fd220f836088ccd5ba8b55",
       "size": 21936,
-      "url": "https://github.com/Sewayn1/AstraleumTCG/releases/download/v0.0.2/Astraleum_Data/Managed/UnityEngine.AMDModule.dll"
+      "url": "https://github.com/Sewayn1/AstraleumTCG/releases/download/0.0.2/Astraleum_Data/Managed/UnityEngine.AMDModule.dll"
     },
     {
       "path": "Astraleum_Data/Managed/UnityEngine.AndroidJNIModule.dll",
       "sha256": "7d36fb1b2093cb4959f5463dbdb4f23668fe9e2e8ff469713fb7be5f9e1d9ecf",
       "size": 114608,
-      "url": "https://github.com/Sewayn1/AstraleumTCG/releases/download/v0.0.2/Astraleum_Data/Managed/UnityEngine.AndroidJNIModule.dll"
+      "url": "https://github.com/Sewayn1/AstraleumTCG/releases/download/0.0.2/Astraleum_Data/Managed/UnityEngine.AndroidJNIModule.dll"
     },
     {
       "path": "Astraleum_Data/Managed/UnityEngine.AnimationModule.dll",
       "sha256": "c5469f3190a410ef884b5c53a984a13beff9f90baaea88370f9474f63bf2165f",
       "size": 216496,
-      "url": "https://github.com/Sewayn1/AstraleumTCG/releases/download/v0.0.2/Astraleum_Data/Managed/UnityEngine.AnimationModule.dll"
+      "url": "https://github.com/Sewayn1/AstraleumTCG/releases/download/0.0.2/Astraleum_Data/Managed/UnityEngine.AnimationModule.dll"
     },
     {
       "path": "Astraleum_Data/Managed/UnityEngine.ARModule.dll",
       "sha256": "f0cf1338fe3e6874247478136223de6f0b74c342a0444d45d1a702468712b5df",
       "size": 26032,
-      "url": "https://github.com/Sewayn1/AstraleumTCG/releases/download/v0.0.2/Astraleum_Data/Managed/UnityEngine.ARModule.dll"
+      "url": "https://github.com/Sewayn1/AstraleumTCG/releases/download/0.0.2/Astraleum_Data/Managed/UnityEngine.ARModule.dll"
     },
     {
       "path": "Astraleum_Data/Managed/UnityEngine.AssetBundleModule.dll",
       "sha256": "2e0c63667ff5b6f63e71cfc881d4dbf1ec19c2623a4349942e94d87505261312",
       "size": 41384,
-      "url": "https://github.com/Sewayn1/AstraleumTCG/releases/download/v0.0.2/Astraleum_Data/Managed/UnityEngine.AssetBundleModule.dll"
+      "url": "https://github.com/Sewayn1/AstraleumTCG/releases/download/0.0.2/Astraleum_Data/Managed/UnityEngine.AssetBundleModule.dll"
     },
     {
       "path": "Astraleum_Data/Managed/UnityEngine.AudioModule.dll",
       "sha256": "e5ada1e123d701cc8f8fea9c8b596ae582ca08e2a9884078a55af545ceeb2f2d",
       "size": 138664,
-      "url": "https://github.com/Sewayn1/AstraleumTCG/releases/download/v0.0.2/Astraleum_Data/Managed/UnityEngine.AudioModule.dll"
+      "url": "https://github.com/Sewayn1/AstraleumTCG/releases/download/0.0.2/Astraleum_Data/Managed/UnityEngine.AudioModule.dll"
     },
     {
       "path": "Astraleum_Data/Managed/UnityEngine.ClothModule.dll",
       "sha256": "06b800ce5aad6c66cd4bacaa2089b239b2f96f78c7a1ff6f0c1e22647a5f3194",
       "size": 36776,
-      "url": "https://github.com/Sewayn1/AstraleumTCG/releases/download/v0.0.2/Astraleum_Data/Managed/UnityEngine.ClothModule.dll"
+      "url": "https://github.com/Sewayn1/AstraleumTCG/releases/download/0.0.2/Astraleum_Data/Managed/UnityEngine.ClothModule.dll"
     },
     {
       "path": "Astraleum_Data/Managed/UnityEngine.ClusterInputModule.dll",
       "sha256": "3a0c1b4f1cff8e27d2e36c7ea51e95deb2a0718fee6a465e826a2fda86bc58eb",
       "size": 28584,
-      "url": "https://github.com/Sewayn1/AstraleumTCG/releases/download/v0.0.2/Astraleum_Data/Managed/UnityEngine.ClusterInputModule.dll"
+      "url": "https://github.com/Sewayn1/AstraleumTCG/releases/download/0.0.2/Astraleum_Data/Managed/UnityEngine.ClusterInputModule.dll"
     },
     {
       "path": "Astraleum_Data/Managed/UnityEngine.ClusterRendererModule.dll",
       "sha256": "aed45565be0a52dabbb78535894703f7d771c561c5b7e4cc493f839b0a951380",
       "size": 27056,
-      "url": "https://github.com/Sewayn1/AstraleumTCG/releases/download/v0.0.2/Astraleum_Data/Managed/UnityEngine.ClusterRendererModule.dll"
+      "url": "https://github.com/Sewayn1/AstraleumTCG/releases/download/0.0.2/Astraleum_Data/Managed/UnityEngine.ClusterRendererModule.dll"
     },
     {
       "path": "Astraleum_Data/Managed/UnityEngine.ContentLoadModule.dll",
       "sha256": "c7ea1686f271006a7169b26ef0e7fe2e343e0109eedf30b2799ec10eeaa4f86f",
       "size": 33712,
-      "url": "https://github.com/Sewayn1/AstraleumTCG/releases/download/v0.0.2/Astraleum_Data/Managed/UnityEngine.ContentLoadModule.dll"
+      "url": "https://github.com/Sewayn1/AstraleumTCG/releases/download/0.0.2/Astraleum_Data/Managed/UnityEngine.ContentLoadModule.dll"
     },
     {
       "path": "Astraleum_Data/Managed/UnityEngine.CoreModule.dll",
       "sha256": "caa37cdc80522410287da35c5b7e5081582abb481b11b064936efbf9e1d48496",
       "size": 1997224,
-      "url": "https://github.com/Sewayn1/AstraleumTCG/releases/download/v0.0.2/Astraleum_Data/Managed/UnityEngine.CoreModule.dll"
+      "url": "https://github.com/Sewayn1/AstraleumTCG/releases/download/0.0.2/Astraleum_Data/Managed/UnityEngine.CoreModule.dll"
     },
     {
       "path": "Astraleum_Data/Managed/UnityEngine.CrashReportingModule.dll",
       "sha256": "c2a3ffd09af0fb91d4b349cea2ebd4d5eebfd32e8ad26fe02720e679bb5597cc",
       "size": 27056,
-      "url": "https://github.com/Sewayn1/AstraleumTCG/releases/download/v0.0.2/Astraleum_Data/Managed/UnityEngine.CrashReportingModule.dll"
+      "url": "https://github.com/Sewayn1/AstraleumTCG/releases/download/0.0.2/Astraleum_Data/Managed/UnityEngine.CrashReportingModule.dll"
     },
     {
       "path": "Astraleum_Data/Managed/UnityEngine.DirectorModule.dll",
       "sha256": "704480317c689d2d622f416270998663e356de04d2635fa894a0ce1cf0182780",
       "size": 41384,
-      "url": "https://github.com/Sewayn1/AstraleumTCG/releases/download/v0.0.2/Astraleum_Data/Managed/UnityEngine.DirectorModule.dll"
+      "url": "https://github.com/Sewayn1/AstraleumTCG/releases/download/0.0.2/Astraleum_Data/Managed/UnityEngine.DirectorModule.dll"
     },
     {
       "path": "Astraleum_Data/Managed/UnityEngine.dll",
       "sha256": "c1ef39a6ab66550f224a2e99d8701d165a466a387ddaa7154d1d23768c93b6ba",
       "size": 201128,
-      "url": "https://github.com/Sewayn1/AstraleumTCG/releases/download/v0.0.2/Astraleum_Data/Managed/UnityEngine.dll"
+      "url": "https://github.com/Sewayn1/AstraleumTCG/releases/download/0.0.2/Astraleum_Data/Managed/UnityEngine.dll"
     },
     {
       "path": "Astraleum_Data/Managed/UnityEngine.DSPGraphModule.dll",
       "sha256": "d8fd8df858385b23d83cba97f012a64934b6a5229c75672231bfb3108cb90fa1",
       "size": 32168,
-      "url": "https://github.com/Sewayn1/AstraleumTCG/releases/download/v0.0.2/Astraleum_Data/Managed/UnityEngine.DSPGraphModule.dll"
+      "url": "https://github.com/Sewayn1/AstraleumTCG/releases/download/0.0.2/Astraleum_Data/Managed/UnityEngine.DSPGraphModule.dll"
     },
     {
       "path": "Astraleum_Data/Managed/UnityEngine.GameCenterModule.dll",
       "sha256": "ed6201bdde3891cd2c531ed1c9f16e938f6147cb335af6c7f40b6e47537916d7",
       "size": 44976,
-      "url": "https://github.com/Sewayn1/AstraleumTCG/releases/download/v0.0.2/Astraleum_Data/Managed/UnityEngine.GameCenterModule.dll"
+      "url": "https://github.com/Sewayn1/AstraleumTCG/releases/download/0.0.2/Astraleum_Data/Managed/UnityEngine.GameCenterModule.dll"
     },
     {
       "path": "Astraleum_Data/Managed/UnityEngine.GIModule.dll",
       "sha256": "88f130095f2df7eb4f8029ba4c378f783d22ca6f737ad450122806e9107fb125",
       "size": 24496,
-      "url": "https://github.com/Sewayn1/AstraleumTCG/releases/download/v0.0.2/Astraleum_Data/Managed/UnityEngine.GIModule.dll"
+      "url": "https://github.com/Sewayn1/AstraleumTCG/releases/download/0.0.2/Astraleum_Data/Managed/UnityEngine.GIModule.dll"
     },
     {
       "path": "Astraleum_Data/Managed/UnityEngine.GraphicsStateCollectionSerializerModule.dll",
       "sha256": "2fde300493a84ecea731573e0e31d1738257fa927a8054d616b4287e48c2b592",
       "size": 14256,
-      "url": "https://github.com/Sewayn1/AstraleumTCG/releases/download/v0.0.2/Astraleum_Data/Managed/UnityEngine.GraphicsStateCollectionSerializerModule.dll"
+      "url": "https://github.com/Sewayn1/AstraleumTCG/releases/download/0.0.2/Astraleum_Data/Managed/UnityEngine.GraphicsStateCollectionSerializerModule.dll"
     },
     {
       "path": "Astraleum_Data/Managed/UnityEngine.GridModule.dll",
       "sha256": "d7bf11f654c0deed78b014fd05422e8b7cba598c3b1014d2403beab59cd95714",
       "size": 30640,
-      "url": "https://github.com/Sewayn1/AstraleumTCG/releases/download/v0.0.2/Astraleum_Data/Managed/UnityEngine.GridModule.dll"
+      "url": "https://github.com/Sewayn1/AstraleumTCG/releases/download/0.0.2/Astraleum_Data/Managed/UnityEngine.GridModule.dll"
     },
     {
       "path": "Astraleum_Data/Managed/UnityEngine.HierarchyCoreModule.dll",
       "sha256": "38489237febead7be186aca9148729f37ab6c30c35aeda3e747f08a3894f0fbd",
       "size": 106408,
-      "url": "https://github.com/Sewayn1/AstraleumTCG/releases/download/v0.0.2/Astraleum_Data/Managed/UnityEngine.HierarchyCoreModule.dll"
+      "url": "https://github.com/Sewayn1/AstraleumTCG/releases/download/0.0.2/Astraleum_Data/Managed/UnityEngine.HierarchyCoreModule.dll"
     },
     {
       "path": "Astraleum_Data/Managed/UnityEngine.HierarchyModule.dll",
       "sha256": "67839f333546171ece2f439966be6eff740aab9568e396d815b58ed0ba224e95",
       "size": 97704,
-      "url": "https://github.com/Sewayn1/AstraleumTCG/releases/download/v0.0.2/Astraleum_Data/Managed/UnityEngine.HierarchyModule.dll"
+      "url": "https://github.com/Sewayn1/AstraleumTCG/releases/download/0.0.2/Astraleum_Data/Managed/UnityEngine.HierarchyModule.dll"
     },
     {
       "path": "Astraleum_Data/Managed/UnityEngine.HotReloadModule.dll",
       "sha256": "db382274ff893a2e67968bb01facd04d6c0c658af4bc20466eb0a5c5b135c093",
       "size": 24488,
-      "url": "https://github.com/Sewayn1/AstraleumTCG/releases/download/v0.0.2/Astraleum_Data/Managed/UnityEngine.HotReloadModule.dll"
+      "url": "https://github.com/Sewayn1/AstraleumTCG/releases/download/0.0.2/Astraleum_Data/Managed/UnityEngine.HotReloadModule.dll"
     },
     {
       "path": "Astraleum_Data/Managed/UnityEngine.IdentifiersModule.dll",
       "sha256": "eae787db0596aec327c7f6608079831d28ff92a66d0a85a0cf31e24cc5acde0d",
       "size": 15280,
-      "url": "https://github.com/Sewayn1/AstraleumTCG/releases/download/v0.0.2/Astraleum_Data/Managed/UnityEngine.IdentifiersModule.dll"
+      "url": "https://github.com/Sewayn1/AstraleumTCG/releases/download/0.0.2/Astraleum_Data/Managed/UnityEngine.IdentifiersModule.dll"
     },
     {
       "path": "Astraleum_Data/Managed/UnityEngine.ImageConversionModule.dll",
       "sha256": "59a3358e07f042058fc00a84bb33f243cf896c9d9e081af3bd194beda666b996",
       "size": 31656,
-      "url": "https://github.com/Sewayn1/AstraleumTCG/releases/download/v0.0.2/Astraleum_Data/Managed/UnityEngine.ImageConversionModule.dll"
+      "url": "https://github.com/Sewayn1/AstraleumTCG/releases/download/0.0.2/Astraleum_Data/Managed/UnityEngine.ImageConversionModule.dll"
     },
     {
       "path": "Astraleum_Data/Managed/UnityEngine.IMGUIModule.dll",
       "sha256": "81af9a0b6704dac504e8623f26beb091ac1a76e02edc2627fec1bcb8162f4fe8",
       "size": 180144,
-      "url": "https://github.com/Sewayn1/AstraleumTCG/releases/download/v0.0.2/Astraleum_Data/Managed/UnityEngine.IMGUIModule.dll"
+      "url": "https://github.com/Sewayn1/AstraleumTCG/releases/download/0.0.2/Astraleum_Data/Managed/UnityEngine.IMGUIModule.dll"
     },
     {
       "path": "Astraleum_Data/Managed/UnityEngine.InputForUIModule.dll",
       "sha256": "3657d3500f9d653fde21caea6ef0b21cb16605e0d5add23f755c32f8dd220ec3",
       "size": 55728,
-      "url": "https://github.com/Sewayn1/AstraleumTCG/releases/download/v0.0.2/Astraleum_Data/Managed/UnityEngine.InputForUIModule.dll"
+      "url": "https://github.com/Sewayn1/AstraleumTCG/releases/download/0.0.2/Astraleum_Data/Managed/UnityEngine.InputForUIModule.dll"
     },
     {
       "path": "Astraleum_Data/Managed/UnityEngine.InputLegacyModule.dll",
       "sha256": "4f4a7757f49cf8971bd73c22ae1780757c7d5df0fd3b44e05e3e03eca0782146",
       "size": 40880,
-      "url": "https://github.com/Sewayn1/AstraleumTCG/releases/download/v0.0.2/Astraleum_Data/Managed/UnityEngine.InputLegacyModule.dll"
+      "url": "https://github.com/Sewayn1/AstraleumTCG/releases/download/0.0.2/Astraleum_Data/Managed/UnityEngine.InputLegacyModule.dll"
     },
     {
       "path": "Astraleum_Data/Managed/UnityEngine.InputModule.dll",
       "sha256": "793c777ff8ded0925faf15e81a9c0d65128669088b0ae27365f89150b95f9a55",
       "size": 29104,
-      "url": "https://github.com/Sewayn1/AstraleumTCG/releases/download/v0.0.2/Astraleum_Data/Managed/UnityEngine.InputModule.dll"
+      "url": "https://github.com/Sewayn1/AstraleumTCG/releases/download/0.0.2/Astraleum_Data/Managed/UnityEngine.InputModule.dll"
     },
     {
       "path": "Astraleum_Data/Managed/UnityEngine.InsightsModule.dll",
       "sha256": "59a92f51d26cb094305f7bdd158c6f4e0e4d7e64f6646736e653b5854717a852",
       "size": 14256,
-      "url": "https://github.com/Sewayn1/AstraleumTCG/releases/download/v0.0.2/Astraleum_Data/Managed/UnityEngine.InsightsModule.dll"
+      "url": "https://github.com/Sewayn1/AstraleumTCG/releases/download/0.0.2/Astraleum_Data/Managed/UnityEngine.InsightsModule.dll"
     },
     {
       "path": "Astraleum_Data/Managed/UnityEngine.JSONSerializeModule.dll",
       "sha256": "6c3db5154ff68d4bc58b83a0f779e5b9b1e5df851ed4f307d61d52b9519562b9",
       "size": 27568,
-      "url": "https://github.com/Sewayn1/AstraleumTCG/releases/download/v0.0.2/Astraleum_Data/Managed/UnityEngine.JSONSerializeModule.dll"
+      "url": "https://github.com/Sewayn1/AstraleumTCG/releases/download/0.0.2/Astraleum_Data/Managed/UnityEngine.JSONSerializeModule.dll"
     },
     {
       "path": "Astraleum_Data/Managed/UnityEngine.LocalizationModule.dll",
       "sha256": "e833812903286af3a7bd81766690564ce938244b3c27ebe2453474dd9364debf",
       "size": 27560,
-      "url": "https://github.com/Sewayn1/AstraleumTCG/releases/download/v0.0.2/Astraleum_Data/Managed/UnityEngine.LocalizationModule.dll"
+      "url": "https://github.com/Sewayn1/AstraleumTCG/releases/download/0.0.2/Astraleum_Data/Managed/UnityEngine.LocalizationModule.dll"
     },
     {
       "path": "Astraleum_Data/Managed/UnityEngine.MarshallingModule.dll",
       "sha256": "ad6a286a40e3ce300e8d3f9ba941da5ef243dd2eff1b549a6dea1e331594c9a8",
       "size": 83376,
-      "url": "https://github.com/Sewayn1/AstraleumTCG/releases/download/v0.0.2/Astraleum_Data/Managed/UnityEngine.MarshallingModule.dll"
+      "url": "https://github.com/Sewayn1/AstraleumTCG/releases/download/0.0.2/Astraleum_Data/Managed/UnityEngine.MarshallingModule.dll"
     },
     {
       "path": "Astraleum_Data/Managed/UnityEngine.MultiplayerModule.dll",
       "sha256": "b9d63637d51212bf365f1023e4633847f27f40a5092bf18027ccac403b04ea01",
       "size": 18352,
-      "url": "https://github.com/Sewayn1/AstraleumTCG/releases/download/v0.0.2/Astraleum_Data/Managed/UnityEngine.MultiplayerModule.dll"
+      "url": "https://github.com/Sewayn1/AstraleumTCG/releases/download/0.0.2/Astraleum_Data/Managed/UnityEngine.MultiplayerModule.dll"
     },
     {
       "path": "Astraleum_Data/Managed/UnityEngine.NVIDIAModule.dll",
       "sha256": "c2cc66714f12dbe5f23df242a4aaa31aeee9f3337101b41f643da438a556f94b",
       "size": 39336,
-      "url": "https://github.com/Sewayn1/AstraleumTCG/releases/download/v0.0.2/Astraleum_Data/Managed/UnityEngine.NVIDIAModule.dll"
+      "url": "https://github.com/Sewayn1/AstraleumTCG/releases/download/0.0.2/Astraleum_Data/Managed/UnityEngine.NVIDIAModule.dll"
     },
     {
       "path": "Astraleum_Data/Managed/UnityEngine.ParticleSystemModule.dll",
       "sha256": "3959db7c579a8eee00222032d7ee4df0a3d8cad5f8d9367706135c3f48117fcf",
       "size": 167848,
-      "url": "https://github.com/Sewayn1/AstraleumTCG/releases/download/v0.0.2/Astraleum_Data/Managed/UnityEngine.ParticleSystemModule.dll"
+      "url": "https://github.com/Sewayn1/AstraleumTCG/releases/download/0.0.2/Astraleum_Data/Managed/UnityEngine.ParticleSystemModule.dll"
     },
     {
       "path": "Astraleum_Data/Managed/UnityEngine.PerformanceReportingModule.dll",
       "sha256": "473759ec42b83c22fa9ccda62867f4d243da06af51eab5e417afabdd2dfcd055",
       "size": 25512,
-      "url": "https://github.com/Sewayn1/AstraleumTCG/releases/download/v0.0.2/Astraleum_Data/Managed/UnityEngine.PerformanceReportingModule.dll"
+      "url": "https://github.com/Sewayn1/AstraleumTCG/releases/download/0.0.2/Astraleum_Data/Managed/UnityEngine.PerformanceReportingModule.dll"
     },
     {
       "path": "Astraleum_Data/Managed/UnityEngine.Physics2DModule.dll",
       "sha256": "75d4e481ba01376410bda1f3c2c58a36aad9ec705c08c5665c87ea478701caed",
       "size": 583080,
-      "url": "https://github.com/Sewayn1/AstraleumTCG/releases/download/v0.0.2/Astraleum_Data/Managed/UnityEngine.Physics2DModule.dll"
+      "url": "https://github.com/Sewayn1/AstraleumTCG/releases/download/0.0.2/Astraleum_Data/Managed/UnityEngine.Physics2DModule.dll"
     },
     {
       "path": "Astraleum_Data/Managed/UnityEngine.PhysicsBackendPhysXModule.dll",
       "sha256": "dffd6510493c124be47e147825d64d3459981aaa0908e7bcb2a58975cf2728ea",
       "size": 14248,
-      "url": "https://github.com/Sewayn1/AstraleumTCG/releases/download/v0.0.2/Astraleum_Data/Managed/UnityEngine.PhysicsBackendPhysXModule.dll"
+      "url": "https://github.com/Sewayn1/AstraleumTCG/releases/download/0.0.2/Astraleum_Data/Managed/UnityEngine.PhysicsBackendPhysXModule.dll"
     },
     {
       "path": "Astraleum_Data/Managed/UnityEngine.PhysicsModule.dll",
       "sha256": "a30afa173f209c31bd92d329b0c7e40b992cdace5bb0547d13b10df41bc44b40",
       "size": 177072,
-      "url": "https://github.com/Sewayn1/AstraleumTCG/releases/download/v0.0.2/Astraleum_Data/Managed/UnityEngine.PhysicsModule.dll"
+      "url": "https://github.com/Sewayn1/AstraleumTCG/releases/download/0.0.2/Astraleum_Data/Managed/UnityEngine.PhysicsModule.dll"
     },
     {
       "path": "Astraleum_Data/Managed/UnityEngine.PropertiesModule.dll",
       "sha256": "6d7765d6f78e9df92fceef14c8411eda6a246c1c63a70c152fd9e7b13151472a",
       "size": 124328,
-      "url": "https://github.com/Sewayn1/AstraleumTCG/releases/download/v0.0.2/Astraleum_Data/Managed/UnityEngine.PropertiesModule.dll"
+      "url": "https://github.com/Sewayn1/AstraleumTCG/releases/download/0.0.2/Astraleum_Data/Managed/UnityEngine.PropertiesModule.dll"
     },
     {
       "path": "Astraleum_Data/Managed/UnityEngine.RenderAs2DModule.dll",
       "sha256": "0aa0443105a8a16ad360638a6c32532cefc1db749c9b9e3307f16abdf8f67feb",
       "size": 26024,
-      "url": "https://github.com/Sewayn1/AstraleumTCG/releases/download/v0.0.2/Astraleum_Data/Managed/UnityEngine.RenderAs2DModule.dll"
+      "url": "https://github.com/Sewayn1/AstraleumTCG/releases/download/0.0.2/Astraleum_Data/Managed/UnityEngine.RenderAs2DModule.dll"
     },
     {
       "path": "Astraleum_Data/Managed/UnityEngine.RuntimeInitializeOnLoadManagerInitializerModule.dll",
       "sha256": "846ec9096bc66ab4d5d6c2d7147f812c468504bf7ab3e9723c1a76602fcdb29d",
       "size": 24488,
-      "url": "https://github.com/Sewayn1/AstraleumTCG/releases/download/v0.0.2/Astraleum_Data/Managed/UnityEngine.RuntimeInitializeOnLoadManagerInitializerModule.dll"
+      "url": "https://github.com/Sewayn1/AstraleumTCG/releases/download/0.0.2/Astraleum_Data/Managed/UnityEngine.RuntimeInitializeOnLoadManagerInitializerModule.dll"
     },
     {
       "path": "Astraleum_Data/Managed/UnityEngine.ScreenCaptureModule.dll",
       "sha256": "f2f6428e937ea960a1c8871c34f44aac1f283bd6b9496a885528ce18e266b1b8",
       "size": 26536,
-      "url": "https://github.com/Sewayn1/AstraleumTCG/releases/download/v0.0.2/Astraleum_Data/Managed/UnityEngine.ScreenCaptureModule.dll"
+      "url": "https://github.com/Sewayn1/AstraleumTCG/releases/download/0.0.2/Astraleum_Data/Managed/UnityEngine.ScreenCaptureModule.dll"
     },
     {
       "path": "Astraleum_Data/Managed/UnityEngine.ScriptingModule.dll",
       "sha256": "30a98ab3a1e238e8f06de02dae5169625e404e2622455ba7d6eac1bf3f50de35",
       "size": 26536,
-      "url": "https://github.com/Sewayn1/AstraleumTCG/releases/download/v0.0.2/Astraleum_Data/Managed/UnityEngine.ScriptingModule.dll"
+      "url": "https://github.com/Sewayn1/AstraleumTCG/releases/download/0.0.2/Astraleum_Data/Managed/UnityEngine.ScriptingModule.dll"
     },
     {
       "path": "Astraleum_Data/Managed/UnityEngine.ShaderVariantAnalyticsModule.dll",
       "sha256": "997d7227ed1a1b204126a25018f34ef57b2237fe5c4c969dfb1ecb25a210d848",
       "size": 24496,
-      "url": "https://github.com/Sewayn1/AstraleumTCG/releases/download/v0.0.2/Astraleum_Data/Managed/UnityEngine.ShaderVariantAnalyticsModule.dll"
+      "url": "https://github.com/Sewayn1/AstraleumTCG/releases/download/0.0.2/Astraleum_Data/Managed/UnityEngine.ShaderVariantAnalyticsModule.dll"
     },
     {
       "path": "Astraleum_Data/Managed/UnityEngine.SharedInternalsModule.dll",
       "sha256": "a08aab3430f9163f5c6eff2425f0c77b8623511b8364947b6c32cf8366d6c273",
       "size": 36784,
-      "url": "https://github.com/Sewayn1/AstraleumTCG/releases/download/v0.0.2/Astraleum_Data/Managed/UnityEngine.SharedInternalsModule.dll"
+      "url": "https://github.com/Sewayn1/AstraleumTCG/releases/download/0.0.2/Astraleum_Data/Managed/UnityEngine.SharedInternalsModule.dll"
     },
     {
       "path": "Astraleum_Data/Managed/UnityEngine.SpriteMaskModule.dll",
       "sha256": "ab443a4767fb75a14431ff2cc1fc34c55c43979ff317c8600042902eb79a6441",
       "size": 29104,
-      "url": "https://github.com/Sewayn1/AstraleumTCG/releases/download/v0.0.2/Astraleum_Data/Managed/UnityEngine.SpriteMaskModule.dll"
+      "url": "https://github.com/Sewayn1/AstraleumTCG/releases/download/0.0.2/Astraleum_Data/Managed/UnityEngine.SpriteMaskModule.dll"
     },
     {
       "path": "Astraleum_Data/Managed/UnityEngine.SpriteShapeModule.dll",
       "sha256": "45f13a293f3aaf8313b9881006316195a58940c94ca2d59db767f21eed64d7d2",
       "size": 32168,
-      "url": "https://github.com/Sewayn1/AstraleumTCG/releases/download/v0.0.2/Astraleum_Data/Managed/UnityEngine.SpriteShapeModule.dll"
+      "url": "https://github.com/Sewayn1/AstraleumTCG/releases/download/0.0.2/Astraleum_Data/Managed/UnityEngine.SpriteShapeModule.dll"
     },
     {
       "path": "Astraleum_Data/Managed/UnityEngine.StreamingModule.dll",
       "sha256": "bec471247ce5136f22e29f8242cd3c34f75d8c76011eb7aa76d97297a7116151",
       "size": 26544,
-      "url": "https://github.com/Sewayn1/AstraleumTCG/releases/download/v0.0.2/Astraleum_Data/Managed/UnityEngine.StreamingModule.dll"
+      "url": "https://github.com/Sewayn1/AstraleumTCG/releases/download/0.0.2/Astraleum_Data/Managed/UnityEngine.StreamingModule.dll"
     },
     {
       "path": "Astraleum_Data/Managed/UnityEngine.SubstanceModule.dll",
       "sha256": "a694f01782dc42ddd50cbe646a0421739e25a6291fe83d541159238de928f749",
       "size": 29616,
-      "url": "https://github.com/Sewayn1/AstraleumTCG/releases/download/v0.0.2/Astraleum_Data/Managed/UnityEngine.SubstanceModule.dll"
+      "url": "https://github.com/Sewayn1/AstraleumTCG/releases/download/0.0.2/Astraleum_Data/Managed/UnityEngine.SubstanceModule.dll"
     },
     {
       "path": "Astraleum_Data/Managed/UnityEngine.SubsystemsModule.dll",
       "sha256": "d357af6c13f4d550d7e13143c68e9b3e2e7a82295c2c1b9e359648b7e9616288",
       "size": 41384,
-      "url": "https://github.com/Sewayn1/AstraleumTCG/releases/download/v0.0.2/Astraleum_Data/Managed/UnityEngine.SubsystemsModule.dll"
+      "url": "https://github.com/Sewayn1/AstraleumTCG/releases/download/0.0.2/Astraleum_Data/Managed/UnityEngine.SubsystemsModule.dll"
     },
     {
       "path": "Astraleum_Data/Managed/UnityEngine.TerrainModule.dll",
       "sha256": "fcb203267d96049074abd81961f7d8813932d8e0d61fb47d92d4ce0a6e3db31c",
       "size": 129456,
-      "url": "https://github.com/Sewayn1/AstraleumTCG/releases/download/v0.0.2/Astraleum_Data/Managed/UnityEngine.TerrainModule.dll"
+      "url": "https://github.com/Sewayn1/AstraleumTCG/releases/download/0.0.2/Astraleum_Data/Managed/UnityEngine.TerrainModule.dll"
     },
     {
       "path": "Astraleum_Data/Managed/UnityEngine.TerrainPhysicsModule.dll",
       "sha256": "024c28c900777e127dc2682055ede0925e4a35bc84fe22ba18b863dc44ba56cf",
       "size": 26032,
-      "url": "https://github.com/Sewayn1/AstraleumTCG/releases/download/v0.0.2/Astraleum_Data/Managed/UnityEngine.TerrainPhysicsModule.dll"
+      "url": "https://github.com/Sewayn1/AstraleumTCG/releases/download/0.0.2/Astraleum_Data/Managed/UnityEngine.TerrainPhysicsModule.dll"
     },
     {
       "path": "Astraleum_Data/Managed/UnityEngine.TextCoreFontEngineModule.dll",
       "sha256": "ba28c6e6f0f21ed06dc3867911c05f98c780b940f308baa679f1f8f89a9cb6fd",
       "size": 77744,
-      "url": "https://github.com/Sewayn1/AstraleumTCG/releases/download/v0.0.2/Astraleum_Data/Managed/UnityEngine.TextCoreFontEngineModule.dll"
+      "url": "https://github.com/Sewayn1/AstraleumTCG/releases/download/0.0.2/Astraleum_Data/Managed/UnityEngine.TextCoreFontEngineModule.dll"
     },
     {
       "path": "Astraleum_Data/Managed/UnityEngine.TextCoreTextEngineModule.dll",
       "sha256": "be74a05ecfeeadf38a2567429481ffe7c023073ed9d887344ab272af1b85de8e",
       "size": 323496,
-      "url": "https://github.com/Sewayn1/AstraleumTCG/releases/download/v0.0.2/Astraleum_Data/Managed/UnityEngine.TextCoreTextEngineModule.dll"
+      "url": "https://github.com/Sewayn1/AstraleumTCG/releases/download/0.0.2/Astraleum_Data/Managed/UnityEngine.TextCoreTextEngineModule.dll"
     },
     {
       "path": "Astraleum_Data/Managed/UnityEngine.TextRenderingModule.dll",
       "sha256": "ae69a3ce4f5dd5468d6ef38cbdec2e5a3e8029f9cbeaabe8cdf0639b6763ba77",
       "size": 38312,
-      "url": "https://github.com/Sewayn1/AstraleumTCG/releases/download/v0.0.2/Astraleum_Data/Managed/UnityEngine.TextRenderingModule.dll"
+      "url": "https://github.com/Sewayn1/AstraleumTCG/releases/download/0.0.2/Astraleum_Data/Managed/UnityEngine.TextRenderingModule.dll"
     },
     {
       "path": "Astraleum_Data/Managed/UnityEngine.TilemapModule.dll",
       "sha256": "b313a6f34bbf32c2c9ef1c5ac4b522e1522c65fd475874200faaf0adeac62911",
       "size": 69552,
-      "url": "https://github.com/Sewayn1/AstraleumTCG/releases/download/v0.0.2/Astraleum_Data/Managed/UnityEngine.TilemapModule.dll"
+      "url": "https://github.com/Sewayn1/AstraleumTCG/releases/download/0.0.2/Astraleum_Data/Managed/UnityEngine.TilemapModule.dll"
     },
     {
       "path": "Astraleum_Data/Managed/UnityEngine.TLSModule.dll",
       "sha256": "f7184d7459b2a038d57192bf9f52e31162f49a0281c42111d4ce7d0a2dbe409d",
       "size": 31656,
-      "url": "https://github.com/Sewayn1/AstraleumTCG/releases/download/v0.0.2/Astraleum_Data/Managed/UnityEngine.TLSModule.dll"
+      "url": "https://github.com/Sewayn1/AstraleumTCG/releases/download/0.0.2/Astraleum_Data/Managed/UnityEngine.TLSModule.dll"
     },
     {
       "path": "Astraleum_Data/Managed/UnityEngine.UI.dll",
       "sha256": "94838d20b327c96a5e83ccab7991800afe0c74b4017cd5800d076c4954648726",
       "size": 277504,
-      "url": "https://github.com/Sewayn1/AstraleumTCG/releases/download/v0.0.2/Astraleum_Data/Managed/UnityEngine.UI.dll"
+      "url": "https://github.com/Sewayn1/AstraleumTCG/releases/download/0.0.2/Astraleum_Data/Managed/UnityEngine.UI.dll"
     },
     {
       "path": "Astraleum_Data/Managed/UnityEngine.UIElementsModule.dll",
       "sha256": "5286d048af6992ebe68184efe0c8f5cb5a8b8851f31889d2c46b711776a33705",
       "size": 2256296,
-      "url": "https://github.com/Sewayn1/AstraleumTCG/releases/download/v0.0.2/Astraleum_Data/Managed/UnityEngine.UIElementsModule.dll"
+      "url": "https://github.com/Sewayn1/AstraleumTCG/releases/download/0.0.2/Astraleum_Data/Managed/UnityEngine.UIElementsModule.dll"
     },
     {
       "path": "Astraleum_Data/Managed/UnityEngine.UIModule.dll",
       "sha256": "4dc1c9f3e73fbe2119ec9b74fb92b846968c925e50e3346c24e434a49f437c46",
       "size": 50096,
-      "url": "https://github.com/Sewayn1/AstraleumTCG/releases/download/v0.0.2/Astraleum_Data/Managed/UnityEngine.UIModule.dll"
+      "url": "https://github.com/Sewayn1/AstraleumTCG/releases/download/0.0.2/Astraleum_Data/Managed/UnityEngine.UIModule.dll"
     },
     {
       "path": "Astraleum_Data/Managed/UnityEngine.UmbraModule.dll",
       "sha256": "b22de3c4dd8cf33d6af6226fe5f5ca59789439fce1f2d8538124d2ba140b1a64",
       "size": 24488,
-      "url": "https://github.com/Sewayn1/AstraleumTCG/releases/download/v0.0.2/Astraleum_Data/Managed/UnityEngine.UmbraModule.dll"
+      "url": "https://github.com/Sewayn1/AstraleumTCG/releases/download/0.0.2/Astraleum_Data/Managed/UnityEngine.UmbraModule.dll"
     },
     {
       "path": "Astraleum_Data/Managed/UnityEngine.UnityAnalyticsCommonModule.dll",
       "sha256": "3476cad7aa5b1c6ce3634cb04afffd06fe9c2593806d0fa1c8b051d1cae2d7db",
       "size": 35240,
-      "url": "https://github.com/Sewayn1/AstraleumTCG/releases/download/v0.0.2/Astraleum_Data/Managed/UnityEngine.UnityAnalyticsCommonModule.dll"
+      "url": "https://github.com/Sewayn1/AstraleumTCG/releases/download/0.0.2/Astraleum_Data/Managed/UnityEngine.UnityAnalyticsCommonModule.dll"
     },
     {
       "path": "Astraleum_Data/Managed/UnityEngine.UnityAnalyticsModule.dll",
       "sha256": "6e61864b8caeda39843c7507e63e06da358b11f70cb402b5eb71876ce4f6d0cc",
       "size": 59312,
-      "url": "https://github.com/Sewayn1/AstraleumTCG/releases/download/v0.0.2/Astraleum_Data/Managed/UnityEngine.UnityAnalyticsModule.dll"
+      "url": "https://github.com/Sewayn1/AstraleumTCG/releases/download/0.0.2/Astraleum_Data/Managed/UnityEngine.UnityAnalyticsModule.dll"
     },
     {
       "path": "Astraleum_Data/Managed/UnityEngine.UnityConnectModule.dll",
       "sha256": "b72dc356afa52083488d6b9bd167a8a8a9a3ca070e58b83a05aecb4af59c4502",
       "size": 28080,
-      "url": "https://github.com/Sewayn1/AstraleumTCG/releases/download/v0.0.2/Astraleum_Data/Managed/UnityEngine.UnityConnectModule.dll"
+      "url": "https://github.com/Sewayn1/AstraleumTCG/releases/download/0.0.2/Astraleum_Data/Managed/UnityEngine.UnityConnectModule.dll"
     },
     {
       "path": "Astraleum_Data/Managed/UnityEngine.UnityConsentModule.dll",
       "sha256": "c68da4011bc29b7f2e80b269e1747688de33c422b15a9bd7a2ab8d9784029c50",
       "size": 16304,
-      "url": "https://github.com/Sewayn1/AstraleumTCG/releases/download/v0.0.2/Astraleum_Data/Managed/UnityEngine.UnityConsentModule.dll"
+      "url": "https://github.com/Sewayn1/AstraleumTCG/releases/download/0.0.2/Astraleum_Data/Managed/UnityEngine.UnityConsentModule.dll"
     },
     {
       "path": "Astraleum_Data/Managed/UnityEngine.UnityCurlModule.dll",
       "sha256": "f8efe2d685d08f5ac9548f7402a2e17d37275211a835acc039a0a4c71d33f487",
       "size": 26544,
-      "url": "https://github.com/Sewayn1/AstraleumTCG/releases/download/v0.0.2/Astraleum_Data/Managed/UnityEngine.UnityCurlModule.dll"
+      "url": "https://github.com/Sewayn1/AstraleumTCG/releases/download/0.0.2/Astraleum_Data/Managed/UnityEngine.UnityCurlModule.dll"
     },
     {
       "path": "Astraleum_Data/Managed/UnityEngine.UnityWebRequestAssetBundleModule.dll",
       "sha256": "f4f2b7111966ac7c3e4f03cecac6b3dacc9c0f4e136bc6510144a0c4994876c2",
       "size": 29104,
-      "url": "https://github.com/Sewayn1/AstraleumTCG/releases/download/v0.0.2/Astraleum_Data/Managed/UnityEngine.UnityWebRequestAssetBundleModule.dll"
+      "url": "https://github.com/Sewayn1/AstraleumTCG/releases/download/0.0.2/Astraleum_Data/Managed/UnityEngine.UnityWebRequestAssetBundleModule.dll"
     },
     {
       "path": "Astraleum_Data/Managed/UnityEngine.UnityWebRequestAudioModule.dll",
       "sha256": "ff7612b680dfc5ca6c60e98afc0b9bd8734fc5f48ae843a7de2274124d1470bf",
       "size": 28592,
-      "url": "https://github.com/Sewayn1/AstraleumTCG/releases/download/v0.0.2/Astraleum_Data/Managed/UnityEngine.UnityWebRequestAudioModule.dll"
+      "url": "https://github.com/Sewayn1/AstraleumTCG/releases/download/0.0.2/Astraleum_Data/Managed/UnityEngine.UnityWebRequestAudioModule.dll"
     },
     {
       "path": "Astraleum_Data/Managed/UnityEngine.UnityWebRequestModule.dll",
       "sha256": "42327ae173ae2120166774c6924a89093022b91f7a430660f2c10cd41cdb24cf",
       "size": 65960,
-      "url": "https://github.com/Sewayn1/AstraleumTCG/releases/download/v0.0.2/Astraleum_Data/Managed/UnityEngine.UnityWebRequestModule.dll"
+      "url": "https://github.com/Sewayn1/AstraleumTCG/releases/download/0.0.2/Astraleum_Data/Managed/UnityEngine.UnityWebRequestModule.dll"
     },
     {
       "path": "Astraleum_Data/Managed/UnityEngine.UnityWebRequestTextureModule.dll",
       "sha256": "492bc76db860c69b6e0b416c336f7db3727fb28c6a572c72997e6516b442d98b",
       "size": 28072,
-      "url": "https://github.com/Sewayn1/AstraleumTCG/releases/download/v0.0.2/Astraleum_Data/Managed/UnityEngine.UnityWebRequestTextureModule.dll"
+      "url": "https://github.com/Sewayn1/AstraleumTCG/releases/download/0.0.2/Astraleum_Data/Managed/UnityEngine.UnityWebRequestTextureModule.dll"
     },
     {
       "path": "Astraleum_Data/Managed/UnityEngine.UnityWebRequestWWWModule.dll",
       "sha256": "d8d01d6190cc5130631e743fd249b2f6191d69e06a4cf8e348cbe98ff787e483",
       "size": 35752,
-      "url": "https://github.com/Sewayn1/AstraleumTCG/releases/download/v0.0.2/Astraleum_Data/Managed/UnityEngine.UnityWebRequestWWWModule.dll"
+      "url": "https://github.com/Sewayn1/AstraleumTCG/releases/download/0.0.2/Astraleum_Data/Managed/UnityEngine.UnityWebRequestWWWModule.dll"
     },
     {
       "path": "Astraleum_Data/Managed/UnityEngine.VectorGraphicsModule.dll",
       "sha256": "b04428ac2475642baa5f6bd56314a55878c7aaf7ed0f0352f31be1961a7b642f",
       "size": 227240,
-      "url": "https://github.com/Sewayn1/AstraleumTCG/releases/download/v0.0.2/Astraleum_Data/Managed/UnityEngine.VectorGraphicsModule.dll"
+      "url": "https://github.com/Sewayn1/AstraleumTCG/releases/download/0.0.2/Astraleum_Data/Managed/UnityEngine.VectorGraphicsModule.dll"
     },
     {
       "path": "Astraleum_Data/Managed/UnityEngine.VehiclesModule.dll",
       "sha256": "68a02875705c0fae742cf1127f096a436a5225768853e0c9349ec56ec468bf1c",
       "size": 31664,
-      "url": "https://github.com/Sewayn1/AstraleumTCG/releases/download/v0.0.2/Astraleum_Data/Managed/UnityEngine.VehiclesModule.dll"
+      "url": "https://github.com/Sewayn1/AstraleumTCG/releases/download/0.0.2/Astraleum_Data/Managed/UnityEngine.VehiclesModule.dll"
     },
     {
       "path": "Astraleum_Data/Managed/UnityEngine.VFXModule.dll",
       "sha256": "636ebdd331f4f98eedb8dbf0a9d7660f16dae243ddcf4baffa2bc35255c2d72f",
       "size": 80304,
-      "url": "https://github.com/Sewayn1/AstraleumTCG/releases/download/v0.0.2/Astraleum_Data/Managed/UnityEngine.VFXModule.dll"
+      "url": "https://github.com/Sewayn1/AstraleumTCG/releases/download/0.0.2/Astraleum_Data/Managed/UnityEngine.VFXModule.dll"
     },
     {
       "path": "Astraleum_Data/Managed/UnityEngine.VideoModule.dll",
       "sha256": "27fd8b1914a34eee6d27466dbe2bfff3afccd5dc85c208407d75fe648d8ee901",
       "size": 48552,
-      "url": "https://github.com/Sewayn1/AstraleumTCG/releases/download/v0.0.2/Astraleum_Data/Managed/UnityEngine.VideoModule.dll"
+      "url": "https://github.com/Sewayn1/AstraleumTCG/releases/download/0.0.2/Astraleum_Data/Managed/UnityEngine.VideoModule.dll"
     },
     {
       "path": "Astraleum_Data/Managed/UnityEngine.VirtualTexturingModule.dll",
       "sha256": "d70a32b883d35ec26d5f182017d2d1cb06d1119b820d1e392794f30b7a03d0b2",
       "size": 42408,
-      "url": "https://github.com/Sewayn1/AstraleumTCG/releases/download/v0.0.2/Astraleum_Data/Managed/UnityEngine.VirtualTexturingModule.dll"
+      "url": "https://github.com/Sewayn1/AstraleumTCG/releases/download/0.0.2/Astraleum_Data/Managed/UnityEngine.VirtualTexturingModule.dll"
     },
     {
       "path": "Astraleum_Data/Managed/UnityEngine.VRModule.dll",
       "sha256": "eef6e767ab93c24fda005d1d96af56aacd32b3764b9fee5500b2fa2452002c30",
       "size": 32176,
-      "url": "https://github.com/Sewayn1/AstraleumTCG/releases/download/v0.0.2/Astraleum_Data/Managed/UnityEngine.VRModule.dll"
+      "url": "https://github.com/Sewayn1/AstraleumTCG/releases/download/0.0.2/Astraleum_Data/Managed/UnityEngine.VRModule.dll"
     },
     {
       "path": "Astraleum_Data/Managed/UnityEngine.WindModule.dll",
       "sha256": "1fe67e7a5f34bad9b66abd37bac59788a2da0ecb390b78e1fdfdf89eb0902978",
       "size": 27056,
-      "url": "https://github.com/Sewayn1/AstraleumTCG/releases/download/v0.0.2/Astraleum_Data/Managed/UnityEngine.WindModule.dll"
+      "url": "https://github.com/Sewayn1/AstraleumTCG/releases/download/0.0.2/Astraleum_Data/Managed/UnityEngine.WindModule.dll"
     },
     {
       "path": "Astraleum_Data/Managed/UnityEngine.XRModule.dll",
       "sha256": "a7f257f94458b6a6d76c65647afb17d373e64cf1c85bcb121f3b333be82ae0f4",
       "size": 86448,
-      "url": "https://github.com/Sewayn1/AstraleumTCG/releases/download/v0.0.2/Astraleum_Data/Managed/UnityEngine.XRModule.dll"
+      "url": "https://github.com/Sewayn1/AstraleumTCG/releases/download/0.0.2/Astraleum_Data/Managed/UnityEngine.XRModule.dll"
     },
     {
       "path": "Astraleum_Data/Plugins/x86_64/lib_burst_generated.dll",
       "sha256": "8b46d2d1f60ac2fd11b87717365ce68779043176d93c009cf7bb86d59f38bc32",
       "size": 627712,
-      "url": "https://github.com/Sewayn1/AstraleumTCG/releases/download/v0.0.2/Astraleum_Data/Plugins/x86_64/lib_burst_generated.dll"
+      "url": "https://github.com/Sewayn1/AstraleumTCG/releases/download/0.0.2/Astraleum_Data/Plugins/x86_64/lib_burst_generated.dll"
     },
     {
       "path": "Astraleum_Data/Resources/unity default resources",
       "sha256": "4b18d5bf85c9499fc9974905d861e664a7ce7c2ec9577283cc456d2bfd0f1cca",
       "size": 5922288,
-      "url": "https://github.com/Sewayn1/AstraleumTCG/releases/download/v0.0.2/Astraleum_Data/Resources/unity%20default%20resources"
+      "url": "https://github.com/Sewayn1/AstraleumTCG/releases/download/0.0.2/Astraleum_Data/Resources/unity%20default%20resources"
     },
     {
       "path": "Astraleum_Data/Resources/unity_builtin_extra",
       "sha256": "dd7b87af0d9fa63b078a84bba6edbb05722bd93501058c3aabc64c1e07489dc8",
       "size": 401688,
-      "url": "https://github.com/Sewayn1/AstraleumTCG/releases/download/v0.0.2/Astraleum_Data/Resources/unity_builtin_extra"
+      "url": "https://github.com/Sewayn1/AstraleumTCG/releases/download/0.0.2/Astraleum_Data/Resources/unity_builtin_extra"
     },
     {
       "path": "Astraleum_Data/resources.assets",
       "sha256": "d14167adcad7a2087bad728e3e0e3acc8f1c163587e5aa01fbcf9260c5845cb1",
       "size": 1252680,
-      "url": "https://github.com/Sewayn1/AstraleumTCG/releases/download/v0.0.2/Astraleum_Data/resources.assets"
+      "url": "https://github.com/Sewayn1/AstraleumTCG/releases/download/0.0.2/Astraleum_Data/resources.assets"
     },
     {
       "path": "Astraleum_Data/resources.assets.resS",
       "sha256": "e622def6b21154b1d271094db955a884404b4500130eee32fae1151d192d0176",
       "size": 89009856,
-      "url": "https://github.com/Sewayn1/AstraleumTCG/releases/download/v0.0.2/Astraleum_Data/resources.assets.resS"
+      "url": "https://github.com/Sewayn1/AstraleumTCG/releases/download/0.0.2/Astraleum_Data/resources.assets.resS"
     },
     {
       "path": "Astraleum_Data/RuntimeInitializeOnLoads.json",
       "sha256": "7d467aba04dab81a6da48594e37c0a4aea6e0a729fe55434c6ea297a5c5f8349",
       "size": 5795,
-      "url": "https://github.com/Sewayn1/AstraleumTCG/releases/download/v0.0.2/Astraleum_Data/RuntimeInitializeOnLoads.json"
+      "url": "https://github.com/Sewayn1/AstraleumTCG/releases/download/0.0.2/Astraleum_Data/RuntimeInitializeOnLoads.json"
     },
     {
       "path": "Astraleum_Data/ScriptingAssemblies.json",
       "sha256": "fe99b048e4a3a761688b4e35311fd101301bc79e20958c515444cff71cd7f65b",
       "size": 6117,
-      "url": "https://github.com/Sewayn1/AstraleumTCG/releases/download/v0.0.2/Astraleum_Data/ScriptingAssemblies.json"
+      "url": "https://github.com/Sewayn1/AstraleumTCG/releases/download/0.0.2/Astraleum_Data/ScriptingAssemblies.json"
     },
     {
       "path": "Astraleum_Data/sharedassets0.assets",
       "sha256": "a50b9034bc10b34bc7708aef6c7c929cbe5a38c3f29ca8bfeb2ea748d8ff907e",
       "size": 685976,
-      "url": "https://github.com/Sewayn1/AstraleumTCG/releases/download/v0.0.2/Astraleum_Data/sharedassets0.assets"
+      "url": "https://github.com/Sewayn1/AstraleumTCG/releases/download/0.0.2/Astraleum_Data/sharedassets0.assets"
     },
     {
       "path": "Astraleum_Data/sharedassets0.assets.resS",
       "sha256": "ba8494a4972da716b27fc35526cc61c83be907488f3e94e4c39595dd28a6ef8c",
       "size": 35662928,
-      "url": "https://github.com/Sewayn1/AstraleumTCG/releases/download/v0.0.2/Astraleum_Data/sharedassets0.assets.resS"
+      "url": "https://github.com/Sewayn1/AstraleumTCG/releases/download/0.0.2/Astraleum_Data/sharedassets0.assets.resS"
     },
     {
       "path": "Astraleum_Data/sharedassets0.resource",
       "sha256": "3c9a0bcbc70306fd75ae507537dee47eba99e9f58ac8677211e2d257c54777af",
       "size": 5183904,
-      "url": "https://github.com/Sewayn1/AstraleumTCG/releases/download/v0.0.2/Astraleum_Data/sharedassets0.resource"
+      "url": "https://github.com/Sewayn1/AstraleumTCG/releases/download/0.0.2/Astraleum_Data/sharedassets0.resource"
     },
     {
       "path": "Astraleum_Data/sharedassets1.assets",
       "sha256": "028e66b09531881c1e9087940a54e2cd13deeb36a8a9427ee51c20334b4c742b",
       "size": 44328,
-      "url": "https://github.com/Sewayn1/AstraleumTCG/releases/download/v0.0.2/Astraleum_Data/sharedassets1.assets"
+      "url": "https://github.com/Sewayn1/AstraleumTCG/releases/download/0.0.2/Astraleum_Data/sharedassets1.assets"
     },
     {
       "path": "Astraleum_Data/sharedassets1.assets.resS",
       "sha256": "848fbe9f560a4a8121bc35e079b8114b945d1be412a77d94550d16099547d438",
       "size": 14506752,
-      "url": "https://github.com/Sewayn1/AstraleumTCG/releases/download/v0.0.2/Astraleum_Data/sharedassets1.assets.resS"
+      "url": "https://github.com/Sewayn1/AstraleumTCG/releases/download/0.0.2/Astraleum_Data/sharedassets1.assets.resS"
     },
     {
       "path": "Astraleum_Data/sharedassets1.resource",
       "sha256": "7ee8c24f88865251f23675deca38ce41cf10eba1b493ddbbf198f7b577e9ab90",
       "size": 3969760,
-      "url": "https://github.com/Sewayn1/AstraleumTCG/releases/download/v0.0.2/Astraleum_Data/sharedassets1.resource"
+      "url": "https://github.com/Sewayn1/AstraleumTCG/releases/download/0.0.2/Astraleum_Data/sharedassets1.resource"
     },
     {
       "path": "Astraleum_Data/StreamingAssets/network_config.json",
       "sha256": "f0e84f6c7efe8d72b379113d02e03bdbdf2741a9e8df005d1f5f60209f71236b",
       "size": 109,
-      "url": "https://github.com/Sewayn1/AstraleumTCG/releases/download/v0.0.2/Astraleum_Data/StreamingAssets/network_config.json"
+      "url": "https://github.com/Sewayn1/AstraleumTCG/releases/download/0.0.2/Astraleum_Data/StreamingAssets/network_config.json"
     },
     {
       "path": "D3D12/D3D12Core.dll",
       "sha256": "625bd40005b1c3708695d5256ecf230d278e6b8edba5a88af70f3d91324f3052",
       "size": 4725304,
-      "url": "https://github.com/Sewayn1/AstraleumTCG/releases/download/v0.0.2/D3D12/D3D12Core.dll"
+      "url": "https://github.com/Sewayn1/AstraleumTCG/releases/download/0.0.2/D3D12/D3D12Core.dll"
     },
     {
       "path": "dstorage.dll",
       "sha256": "cae65787f61514bec6f012f44546e68b19e39d8854a9ab52af813370d44b272a",
       "size": 206904,
-      "url": "https://github.com/Sewayn1/AstraleumTCG/releases/download/v0.0.2/dstorage.dll"
+      "url": "https://github.com/Sewayn1/AstraleumTCG/releases/download/0.0.2/dstorage.dll"
     },
     {
       "path": "dstoragecore.dll",
       "sha256": "cf85b19a92a8276f8baca0db9bbcd60735bad50768deb303d310e84d5f4fdd11",
       "size": 1482784,
-      "url": "https://github.com/Sewayn1/AstraleumTCG/releases/download/v0.0.2/dstoragecore.dll"
+      "url": "https://github.com/Sewayn1/AstraleumTCG/releases/download/0.0.2/dstoragecore.dll"
     },
     {
       "path": "MonoBleedingEdge/EmbedRuntime/mono-2.0-bdwgc.dll",
       "sha256": "2256c82119ac2bb9fddf722407687aceee51272ea211ea83c3b7e687de18beae",
       "size": 7828912,
-      "url": "https://github.com/Sewayn1/AstraleumTCG/releases/download/v0.0.2/MonoBleedingEdge/EmbedRuntime/mono-2.0-bdwgc.dll"
+      "url": "https://github.com/Sewayn1/AstraleumTCG/releases/download/0.0.2/MonoBleedingEdge/EmbedRuntime/mono-2.0-bdwgc.dll"
     },
     {
       "path": "MonoBleedingEdge/EmbedRuntime/MonoPosixHelper.dll",
       "sha256": "47aee3a918e73b6a4a4699f6ed9feb36a992b922e6935165659e7960b9b800c1",
       "size": 611240,
-      "url": "https://github.com/Sewayn1/AstraleumTCG/releases/download/v0.0.2/MonoBleedingEdge/EmbedRuntime/MonoPosixHelper.dll"
+      "url": "https://github.com/Sewayn1/AstraleumTCG/releases/download/0.0.2/MonoBleedingEdge/EmbedRuntime/MonoPosixHelper.dll"
     },
     {
       "path": "MonoBleedingEdge/etc/mono/2.0/Browsers/Compat.browser",
       "sha256": "8a1082057ac5681dcd4e9c227ed7fb8eb42ac1618963b5de3b65739dd77e2741",
       "size": 1605,
-      "url": "https://github.com/Sewayn1/AstraleumTCG/releases/download/v0.0.2/MonoBleedingEdge/etc/mono/2.0/Browsers/Compat.browser"
+      "url": "https://github.com/Sewayn1/AstraleumTCG/releases/download/0.0.2/MonoBleedingEdge/etc/mono/2.0/Browsers/Compat.browser"
     },
     {
       "path": "MonoBleedingEdge/etc/mono/2.0/DefaultWsdlHelpGenerator.aspx",
       "sha256": "751861040b69ea63a3827507b7c8da9c7f549dc181c1c8af4b7ca78cc97d710a",
       "size": 60575,
-      "url": "https://github.com/Sewayn1/AstraleumTCG/releases/download/v0.0.2/MonoBleedingEdge/etc/mono/2.0/DefaultWsdlHelpGenerator.aspx"
+      "url": "https://github.com/Sewayn1/AstraleumTCG/releases/download/0.0.2/MonoBleedingEdge/etc/mono/2.0/DefaultWsdlHelpGenerator.aspx"
     },
     {
       "path": "MonoBleedingEdge/etc/mono/2.0/machine.config",
       "sha256": "e91782a27fa39fc6c1d6ee8b08529f5d35052310d0006034b878eb04b8f2af30",
       "size": 29066,
-      "url": "https://github.com/Sewayn1/AstraleumTCG/releases/download/v0.0.2/MonoBleedingEdge/etc/mono/2.0/machine.config"
+      "url": "https://github.com/Sewayn1/AstraleumTCG/releases/download/0.0.2/MonoBleedingEdge/etc/mono/2.0/machine.config"
     },
     {
       "path": "MonoBleedingEdge/etc/mono/2.0/settings.map",
       "sha256": "49c6160f9d54af4270a3b4e997fc4a8301f79b9e2070118fa46ddbcbbc44f9a2",
       "size": 2622,
-      "url": "https://github.com/Sewayn1/AstraleumTCG/releases/download/v0.0.2/MonoBleedingEdge/etc/mono/2.0/settings.map"
+      "url": "https://github.com/Sewayn1/AstraleumTCG/releases/download/0.0.2/MonoBleedingEdge/etc/mono/2.0/settings.map"
     },
     {
       "path": "MonoBleedingEdge/etc/mono/2.0/web.config",
       "sha256": "cf2b54339e069b9e42f7d6795eecbf562c50c1011f4ca8f65f578fe52d97ff92",
       "size": 11635,
-      "url": "https://github.com/Sewayn1/AstraleumTCG/releases/download/v0.0.2/MonoBleedingEdge/etc/mono/2.0/web.config"
+      "url": "https://github.com/Sewayn1/AstraleumTCG/releases/download/0.0.2/MonoBleedingEdge/etc/mono/2.0/web.config"
     },
     {
       "path": "MonoBleedingEdge/etc/mono/4.0/Browsers/Compat.browser",
       "sha256": "8a1082057ac5681dcd4e9c227ed7fb8eb42ac1618963b5de3b65739dd77e2741",
       "size": 1605,
-      "url": "https://github.com/Sewayn1/AstraleumTCG/releases/download/v0.0.2/MonoBleedingEdge/etc/mono/4.0/Browsers/Compat.browser"
+      "url": "https://github.com/Sewayn1/AstraleumTCG/releases/download/0.0.2/MonoBleedingEdge/etc/mono/4.0/Browsers/Compat.browser"
     },
     {
       "path": "MonoBleedingEdge/etc/mono/4.0/DefaultWsdlHelpGenerator.aspx",
       "sha256": "751861040b69ea63a3827507b7c8da9c7f549dc181c1c8af4b7ca78cc97d710a",
       "size": 60575,
-      "url": "https://github.com/Sewayn1/AstraleumTCG/releases/download/v0.0.2/MonoBleedingEdge/etc/mono/4.0/DefaultWsdlHelpGenerator.aspx"
+      "url": "https://github.com/Sewayn1/AstraleumTCG/releases/download/0.0.2/MonoBleedingEdge/etc/mono/4.0/DefaultWsdlHelpGenerator.aspx"
     },
     {
       "path": "MonoBleedingEdge/etc/mono/4.0/machine.config",
       "sha256": "e60aec2c5115d65b3acb3c55ea21576dbd770f579166c017125571e46ae560ed",
       "size": 33598,
-      "url": "https://github.com/Sewayn1/AstraleumTCG/releases/download/v0.0.2/MonoBleedingEdge/etc/mono/4.0/machine.config"
+      "url": "https://github.com/Sewayn1/AstraleumTCG/releases/download/0.0.2/MonoBleedingEdge/etc/mono/4.0/machine.config"
     },
     {
       "path": "MonoBleedingEdge/etc/mono/4.0/settings.map",
       "sha256": "ce1db1ad8a9512073164e3eccdc193f7eda036e1a9733caec4635de21b2865c8",
       "size": 2622,
-      "url": "https://github.com/Sewayn1/AstraleumTCG/releases/download/v0.0.2/MonoBleedingEdge/etc/mono/4.0/settings.map"
+      "url": "https://github.com/Sewayn1/AstraleumTCG/releases/download/0.0.2/MonoBleedingEdge/etc/mono/4.0/settings.map"
     },
     {
       "path": "MonoBleedingEdge/etc/mono/4.0/web.config",
       "sha256": "e38bb8cc68fe5b4edecdfd288d094b9e8ced7629039b2a347682aba0d8bd7492",
       "size": 18802,
-      "url": "https://github.com/Sewayn1/AstraleumTCG/releases/download/v0.0.2/MonoBleedingEdge/etc/mono/4.0/web.config"
+      "url": "https://github.com/Sewayn1/AstraleumTCG/releases/download/0.0.2/MonoBleedingEdge/etc/mono/4.0/web.config"
     },
     {
       "path": "MonoBleedingEdge/etc/mono/4.5/Browsers/Compat.browser",
       "sha256": "8a1082057ac5681dcd4e9c227ed7fb8eb42ac1618963b5de3b65739dd77e2741",
       "size": 1605,
-      "url": "https://github.com/Sewayn1/AstraleumTCG/releases/download/v0.0.2/MonoBleedingEdge/etc/mono/4.5/Browsers/Compat.browser"
+      "url": "https://github.com/Sewayn1/AstraleumTCG/releases/download/0.0.2/MonoBleedingEdge/etc/mono/4.5/Browsers/Compat.browser"
     },
     {
       "path": "MonoBleedingEdge/etc/mono/4.5/DefaultWsdlHelpGenerator.aspx",
       "sha256": "751861040b69ea63a3827507b7c8da9c7f549dc181c1c8af4b7ca78cc97d710a",
       "size": 60575,
-      "url": "https://github.com/Sewayn1/AstraleumTCG/releases/download/v0.0.2/MonoBleedingEdge/etc/mono/4.5/DefaultWsdlHelpGenerator.aspx"
+      "url": "https://github.com/Sewayn1/AstraleumTCG/releases/download/0.0.2/MonoBleedingEdge/etc/mono/4.5/DefaultWsdlHelpGenerator.aspx"
     },
     {
       "path": "MonoBleedingEdge/etc/mono/4.5/machine.config",
       "sha256": "ee950004b576fb28dc85f4b0435ed04bf96612de2e8b53be84d07afe85a0de6c",
       "size": 34056,
-      "url": "https://github.com/Sewayn1/AstraleumTCG/releases/download/v0.0.2/MonoBleedingEdge/etc/mono/4.5/machine.config"
+      "url": "https://github.com/Sewayn1/AstraleumTCG/releases/download/0.0.2/MonoBleedingEdge/etc/mono/4.5/machine.config"
     },
     {
       "path": "MonoBleedingEdge/etc/mono/4.5/settings.map",
       "sha256": "ce1db1ad8a9512073164e3eccdc193f7eda036e1a9733caec4635de21b2865c8",
       "size": 2622,
-      "url": "https://github.com/Sewayn1/AstraleumTCG/releases/download/v0.0.2/MonoBleedingEdge/etc/mono/4.5/settings.map"
+      "url": "https://github.com/Sewayn1/AstraleumTCG/releases/download/0.0.2/MonoBleedingEdge/etc/mono/4.5/settings.map"
     },
     {
       "path": "MonoBleedingEdge/etc/mono/4.5/web.config",
       "sha256": "c4cbddd4fd9347b58cc5a72b36dc4ba1ad2bb699e65869d05cd3fb9865f0d824",
       "size": 18811,
-      "url": "https://github.com/Sewayn1/AstraleumTCG/releases/download/v0.0.2/MonoBleedingEdge/etc/mono/4.5/web.config"
+      "url": "https://github.com/Sewayn1/AstraleumTCG/releases/download/0.0.2/MonoBleedingEdge/etc/mono/4.5/web.config"
     },
     {
       "path": "MonoBleedingEdge/etc/mono/browscap.ini",
       "sha256": "4ddd50f31fb968f30bedefc253a46dc3f2890192d05cdaa9e0a64a056eee807e",
       "size": 311984,
-      "url": "https://github.com/Sewayn1/AstraleumTCG/releases/download/v0.0.2/MonoBleedingEdge/etc/mono/browscap.ini"
+      "url": "https://github.com/Sewayn1/AstraleumTCG/releases/download/0.0.2/MonoBleedingEdge/etc/mono/browscap.ini"
     },
     {
       "path": "MonoBleedingEdge/etc/mono/config",
       "sha256": "5776169973a26a387b8b3e5c0f2301a7ab9a6dd7c7d3efa22a96abc47fbf8662",
       "size": 3815,
-      "url": "https://github.com/Sewayn1/AstraleumTCG/releases/download/v0.0.2/MonoBleedingEdge/etc/mono/config"
+      "url": "https://github.com/Sewayn1/AstraleumTCG/releases/download/0.0.2/MonoBleedingEdge/etc/mono/config"
     },
     {
       "path": "MonoBleedingEdge/etc/mono/mconfig/config.xml",
       "sha256": "0c56e34c69124510fa8c19e7b4c2ca6c1c4ff460ae19f798dd0ca035809e396d",
       "size": 25817,
-      "url": "https://github.com/Sewayn1/AstraleumTCG/releases/download/v0.0.2/MonoBleedingEdge/etc/mono/mconfig/config.xml"
+      "url": "https://github.com/Sewayn1/AstraleumTCG/releases/download/0.0.2/MonoBleedingEdge/etc/mono/mconfig/config.xml"
     },
     {
       "path": "UnityPlayer.dll",
       "sha256": "32c07a8d79fde9af851231851bef97aa73e253a75c084585c452dbf1b466bdb0",
       "size": 36159408,
-      "url": "https://github.com/Sewayn1/AstraleumTCG/releases/download/v0.0.2/UnityPlayer.dll"
+      "url": "https://github.com/Sewayn1/AstraleumTCG/releases/download/0.0.2/UnityPlayer.dll"
     }
   ],
   "changelog": [
