@@ -1,7 +1,7 @@
 {
   "githubOwner": "Sewayn1",
-  "githubRepo": "Astraleum",
-  "versionJsonUrl": "https://raw.githubusercontent.com/Sewayn1/AstraleumTCG/main/version.json",
+  "githubRepo": "AstraleumTCG",
+  "manifestUrl": "https://raw.githubusercontent.com/Sewayn1/AstraleumTCG/main/manifest.json",
   "gameExe": {
     "win32": "Astraleum.exe",
     "darwin": "Astraleum.app",
