@@ -1,12 +1,12 @@
 {
-  "version": "0.0.2a",
-  "releaseDate": "2026-05-11",
+  "version": "0.0.3",
+  "releaseDate": "2026-05-18",
   "launcher": {
     "version": "1.1.3",
     "url": "https://github.com/Sewayn1/Astraleum-Launcher/releases/download/launcher-v1.1.3/AstraleumLauncher-1.1.3.exe"
   },
   "fullPackage": {
-    "url": "https://github.com/Sewayn1/AstraleumTCG/releases/download/0.0.2a/Astraleum-v0.0.2a.zip",
+    "url": "https://github.com/Sewayn1/AstraleumTCG/releases/download/0.0.3/Astraleum-v0.0.3.zip",
     "size": 0
   },
   "files": [
@@ -1422,6 +1422,36 @@
     }
   ],
   "changelog": [
+        {
+      "version": "Alpha 0.0.3",
+      "date": "2026-05-18",
+      "title": "Évolution",
+      "entries": [
+        "Léger Rework du Plateau de Jeu",
+        "La Barre de Prévisualisation des Dommages a été entièrement retravaillée et suit désormais votre curseur au lieu d’être fixe",
+        "Correction d’un Bug qui n’annulait pas la Recherche de Partie pour l’autre Joueur si l’un ou l’autre venait à Annuler",
+        "",
+        "",
+        "- Cartes -",
+        "",
+        "",
+        "Correction de Bug sur la Compétence 2 de Djormund",
+        "Réduction des DGT de Brulures sur plusieurs cibles = 10% → 5%",
+        "Correction des Effets “Augmente les DGT de x si la cible est sous l’effet x” ne s’appliquant pas correctement",
+        "Ajout de : Cauchemar des Mer → Eau Epique",
+        "Ajout de : Monstre des Profondeurs → Eau Légendaire",
+        "Ajout de : Araknos → Ténèbres Epique",
+        "Ajout des Sept Péchés Capitaux : Orgueil → Lumière | Colère → Feu | Paresse → Eau | Luxure → Air | Avarice →Terre | Envie → Ténèbres | Gourmandise → Astral.",
+        "Ajout d’icônes pour les Soins sur la Durée et les Soins Bloqués par des Compétences.",
+        "Rework des Illustrations des 7 Dragons Primordiaux",
+        "Rework de l’illustration de Dénotrus Chevalier Démon",
+        "Rework de l’illustration de Illidus Archange des Cieux",
+        "",
+        "",
+        "- Mécanique -",
+        "Rework complet du système d’Armure des cartes : Armure = PV supplémentaire → Armure Réduit les DGT selon sa valeur ( Exemple : 10 D’Armure et subis 15 DGT = la Carte subis seulement 5 DGT sur ses PV car Armure absorbe 10 ). De ce fait, très peu de cartes commencent leurs parties avec de l’Armure, et cette mécanique devient stratégique. Nous ferons divers ajustements afin de rendre cette nouvelle stratégie correcte, sans que ce soit trop fort, ni trop faible."
+      ]
+    },
     {
       "version": "Launcher 1.1.3",
       "date": "2026-05-12",
