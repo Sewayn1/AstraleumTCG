@@ -1,10 +1,10 @@
 {
-  "version": "0.0.3a",
+  "version": "0.0.3b",
   "releaseDate": "2026-05-19",
   "notes": "Mis à Jour correctifs",
   "files": {
     "win32": {
-      "url": "https://github.com/Sewayn1/AstraleumTCG/releases/download/v0.0.3a/Astraleum-v0.0.3a.zip"
+      "url": "https://github.com/Sewayn1/AstraleumTCG/releases/download/v0.0.3b/Astraleum-v0.0.3b.zip"
     },
     "darwin": {
       "url": "https://github.com/YOUR_GITHUB_USERNAME/Astraleum/releases/download/v0.1.0/Astraleum-v0.1.0-mac.zip"

@@ -1,12 +1,12 @@
 {
-  "version": "0.0.3a",
+  "version": "0.0.3b",
   "releaseDate": "2026-05-19",
   "launcher": {
     "version": "1.1.3",
     "url": "https://github.com/Sewayn1/Astraleum-Launcher/releases/download/launcher-v1.1.3/AstraleumLauncher-1.1.3.exe"
   },
   "fullPackage": {
-    "url": "https://github.com/Sewayn1/AstraleumTCG/releases/download/0.0.3a/Astraleum-v0.0.3a.zip",
+    "url": "https://github.com/Sewayn1/AstraleumTCG/releases/download/0.0.3b/Astraleum-v0.0.3b.zip",
     "size": 0
   },
   "files": [
@@ -1422,6 +1422,15 @@
     }
   ],
   "changelog": [
+    {
+      "version": "Alpha 0.0.3b",
+      "date": "2026-05-19",
+      "title": "Hotfix",
+      "entries": [
+        "Retrait du Journal de Combat pour une refonte complète dans le Futur",
+        "Correction de Bugs causé par les Sorts de Gain d'Armures, n'étant pas pris en compte par le Système Serveur"
+      ]
+    },
     {
       "version": "Alpha 0.0.3a",
       "date": "2026-05-19",
