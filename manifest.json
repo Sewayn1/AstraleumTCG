@@ -1,12 +1,12 @@
 {
-  "version": "0.0.3b",
-  "releaseDate": "2026-05-19",
+  "version": "0.0.4",
+  "releaseDate": "2026-05-20",
   "launcher": {
     "version": "1.1.3",
     "url": "https://github.com/Sewayn1/Astraleum-Launcher/releases/download/launcher-v1.1.3/AstraleumLauncher-1.1.3.exe"
   },
   "fullPackage": {
-    "url": "https://github.com/Sewayn1/AstraleumTCG/releases/download/0.0.3b/Astraleum-v0.0.3b.zip",
+    "url": "https://github.com/Sewayn1/AstraleumTCG/releases/download/0.0.4/Astraleum-v0.0.4.zip",
     "size": 0
   },
   "files": [
@@ -1422,6 +1422,28 @@
     }
   ],
   "changelog": [
+    {
+      "version": "Alpha 0.0.4",
+      "date": "2026-05-20",
+      "title": "Graphiques Amélioré et Ajustement Majeur",
+      "entries": [
+        "Rework de tout le design des Cartes.",
+        "Rework de l’apparence du plateau de Jeu.",
+        "Rework de l’éditeur de Deck.",
+        "Rework des passifs cumulables de l’élément Ténèbres : Poison → Supprimé | Réduit désormais l’Armure de toutes les cartes adverses de 1 par Stacks jusqu’à un maximum de 5. A 3 Stacks, augmente l’effet Vol de Vie de 5% pour les cartes ténèbres. A 5 Stacks, augmente ce même effet de 5% supplémentaire. ",
+        "Rework des passifs cumulables de l’élément Air : Action bonus → Supprimé | Ajout d’une mécanique Majeure : Les Coups Critiques. Augmente les chances de Coup Critique de 2% par niveau de Stack, jusqu’à 10% pour toutes les cartes alliées. A 3 Stacks, augmente les DGT des Coups Critiques de 5% pour toutes les cartes alliés. A 5 Stacks, ajoute 5% supplémentaire à cet effet, plus 5% de Chance de Coup Critique.",
+        "Ajout de la Mécanique Majeure : Coup Critique. Les Coups Critiques infligent 50% de DGT ou de Soin Instantané supplémentaire. Les chances de Coup Critique sont de 0 par défaut sur les cartes et peuvent être augmenté via l’application de Buff ou via des Passifs.",
+        "-----",
+        "Correction de Bugs entre Client et Serveur causant des problèmes dans plusieurs Compétences.",
+        "Correction de l’infobulle des Buff/Debuff qui n’affichait pas la bulle entièrement si trop d’état était appliqué sur la cible.",
+        "Correction d’un Bug qui empêche le joueur d’analyser ses propres cartes lorsqu’il ne s’agit pas de son tour de jeu.",
+        "Correction de la fenêtre de description dans l’éditeur de Deck, où le texte et les dégâts pouvaient dépasser de la fenêtre. ",
+        "-----",
+        "Equilibrage des cartes octroyant de l’Armure. Les valeurs ont été légèrement réduite car pouvait être trop puissant dans certaines situations.",
+        "Ajustement des Cartes d’élément Air, afin de corréler les modifications de leurs Passifs d’accumulation. Les Cartes Air sont désormais axé sur le gain de Chance ou de Dégâts des Coup Critiques, en plus d’entraver ou d’améliorer les temps de recharge des compétences.",
+        "Ajustement des Cartes d’élément Ténèbres. Nous améliorons leurs concept avec le Vol de Vie pour corréler les modifications apporté au Passif de Stack des cartes Ténèbres. Nous retirons temporairement le Poison, qui reviendra plus tard."
+      ]
+    },
     {
       "version": "Alpha 0.0.3b",
       "date": "2026-05-19",
