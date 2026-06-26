@@ -1,12 +1,12 @@
 {
-  "version": "0.0.4",
-  "releaseDate": "2026-05-20",
+  "version": "0.0.5",
+  "releaseDate": "2026-06-26",
   "launcher": {
     "version": "1.2.0",
     "url": "https://github.com/Sewayn1/Astraleum-Launcher/releases/download/launcher-v1.2.0/AstraleumLauncher-1.2.0.exe"
   },
   "fullPackage": {
-    "url": "https://github.com/Sewayn1/AstraleumTCG/releases/download/0.0.4/Astraleum-v0.0.4.zip",
+    "url": "https://github.com/Sewayn1/AstraleumTCG/releases/download/0.0.5/Astraleum-v0.0.5.zip",
     "size": 0
   },
   "files": [
@@ -1423,6 +1423,42 @@
   ],
   "changelog": [
     {
+      "version": "Alpha 0.0.5",
+      "date": "2026-06-26",
+      "title": "Rework Massif",
+      "entries": [
+        "Rework de tout le Menu Principal ! Le Menu est désormais plus épuré, lisible et compréhensible.",
+        "Rework de Description des Compétences de plusieurs cartes pour améliorer la compréhension de celles-ci.",
+        "Rework du Plateau de Jeu.",
+        "Rework des Passifs → Les Passifs Mineurs se cumulent avec les Passifs 3 et 5, cependant, si un Passif 5 est actif, ne prend pas en compte le Passif 3.",
+        "Rework des Passifs Feu → Le Stack 5 devient : Les Cartes Feu gagnent 15% de DGT de Coup Critique, et peuvent appliquer des DGT adjacents avec leurs compétences à cible unique.",
+        "Rework des Passifs Ténèbres → Stack Mineur : +2% de DGT par carte adverse toujours en vie. | Stack 3 : +5% de Vol de Vie pour les cartes Ténèbres. | Stack 5 : +10% de Vol de Vie.",
+        "Rework des Bonus et Malus d'Attaque → Les valeurs en % ont été remplacées par des valeurs fixes (FLAT) pour améliorer les effets bonus sur les cartes ayant peu d'attaque.",
+        "Rework des Effets de Cumul (Stack) → Les Stacks 3 et 5 ne se cumulent plus entre eux, et peuvent se cumuler avec les Stacks Mineur.",
+        "-----",
+        "Ajout d'un Bouton \"Muet\" sur le Menu Principal pour couper la musique en arrière-plan.",
+        "Ajout d'une section \"Paramètres\" en combat.",
+        "Ajout du CODEX → Permet de se renseigner davantage sur les mécaniques du jeu.",
+        "Ajout d'Effets Spéciaux pour les compétences des cartes.",
+        "Ajout d'un Effet Spécial pour les cartes dans l'état Étourdi.",
+        "Ajout d'un nouvel Élément : Corrosif → Cet élément a pour principal objectif de réduire les PV Maximum des cartes et leurs Armures, de manière temporaire ou permanente. Cet élément ne peut recevoir aucun bonus d'Armure.",
+        "Ajout de 6 nouvelles cartes de l'élément Corrosif.",
+        "Ajout de 7 nouvelles cartes Starter pour démarrer le jeu.",
+        "Ajout de la Mécanique d'Incantation : Compétence qui se lance après x Tours, peut être interrompue par un Étourdissement ou un Cancel. Les cartes sous Incantation ne peuvent pas jouer tant que leur compétence n'est pas appliquée ou interrompue.",
+        "Ajout de la Mécanique de Cancel : Permet d'annuler l'Incantation de la carte cible.",
+        "Ajout de la Mécanique Inarrêtable : Permet de rendre une carte immunisée aux effets d'Étourdissement et de Cancel.",
+        "Ajustement de certaines cartes via l'ajout de l'Incantation : Les DGT des compétences ont été revus à la hausse pour compenser le temps de lancement.",
+        "Ajout d'icônes pour les termes DGT, Soin, Brûlure et Armure, afin d'améliorer la lisibilité des compétences et leur compréhension.",
+        "-----",
+        "Correction de Bug sur certains effets supplémentaires dans certaines compétences.",
+        "Correction de Bug sur certaines branches conditionnelles des compétences.",
+        "Correction de certains Boutons et Menus avec des traductions manquantes.",
+        "Correction d'un problème de désynchronisation lors du démarrage d'une partie.",
+        "Correction d'un Bug qui permettait aux compétences ayant 0 DGT d'infliger des DGT avec des Bonus.",
+        "Correction de valeurs erronées dans certaines compétences qui ne correspondaient pas à la description et vice versa."
+      ]
+    },
+    {
       "version": "Alpha 0.0.4",
       "date": "2026-05-20",
       "title": "Graphiques Amélioré et Ajustement Majeur",
@@ -1463,7 +1499,7 @@
         "Correction de Bugs causé par les Sorts de Gain d'Armures, n'étant pas pris en compte par le Système Serveur"
       ]
     },
-        {
+    {
       "version": "Alpha 0.0.3",
       "date": "2026-05-18",
       "title": "Évolution",
