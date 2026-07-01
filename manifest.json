@@ -1,12 +1,12 @@
 {
-  "version": "0.0.5",
-  "releaseDate": "2026-06-26",
+  "version": "0.0.5a",
+  "releaseDate": "2026-07-01",
   "launcher": {
-    "version": "1.2.0",
-    "url": "https://github.com/Sewayn1/Astraleum-Launcher/releases/download/launcher-v1.2.0/AstraleumLauncher-1.2.0.exe"
+    "version": "1.2.1",
+    "url": "https://github.com/Sewayn1/Astraleum-Launcher/releases/download/launcher-v1.2.1/AstraleumLauncher-1.2.1.exe"
   },
   "fullPackage": {
-    "url": "https://github.com/Sewayn1/AstraleumTCG/releases/download/0.0.5/Astraleum-v0.0.5.zip",
+    "url": "https://github.com/Sewayn1/AstraleumTCG/releases/download/0.0.5a/Astraleum-v0.0.5a.zip",
     "size": 0
   },
   "files": [
@@ -1422,6 +1422,24 @@
     }
   ],
   "changelog": [
+    {
+      "version": "Alpha 0.0.5a",
+      "date": "2026-06-26",
+      "title": "Correctifs et Ajustement",
+      "entries": [
+        "Amélioration des contrastes de certains éléments interactif pour une meilleure lisibilité",
+        "Équilibrage des cartes Feu : Les Brulures appliqué par les compétences des cartes Feu ont été généralisé à 5% de DGT sur les PV max, durée définie par la compétence. De rares exceptions existent est sont écrites dans les compétences en question.",
+        "-----",
+        "Ajout d’un Bouton + vert dans la fenêtre collection pour indiquer si un slot de Deck peut être crée ou non",
+        "Ajout d’un effet de surbrillance sur les cartes sélectionnés lors de la constitution d’un deck pour indiquer lesquelles sont choisie ou non ",
+        "Ajout d’une infobulle en survolant les effets actifs sur les cartes, et les descriptions de compétence. Vous pourrez alors consulter les effets appliqués, leurs durées etc",
+        "-----",
+        "Correction des problèmes d’affichage pour les textes traduits en Anglais",
+        "Correction du Bouton Quitter le Jeu qui ne fonctionnait pas comme prévu, et pouvait se gonfler jusqu’à exploser les bords de votre écran",
+        "Correction d’un problème d’affichage sur les écran Larges déplaçant les éléments d’interface (Possibilité que le fix ne soit pas 100% fonctionnel, besoin d’utilisateur d’écran Large)",
+        "Correction des problèmes de Synchronisation entre les joueurs, et ajout d’un délai de 10sec avant annulation de la partie le cas échéant où si le joueur subis une déconnexion à ce moment"
+      ]
+    },
     {
       "version": "Alpha 0.0.5",
       "date": "2026-06-26",
