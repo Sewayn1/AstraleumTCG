@@ -2,8 +2,8 @@
   "version": "0.0.5a",
   "releaseDate": "2026-07-01",
   "launcher": {
-    "version": "1.2.3",
-    "url": "https://github.com/Sewayn1/Astraleum-Launcher/releases/download/launcher-v1.2.3/AstraleumLauncher-1.2.3.exe"
+    "version": "1.2.0",
+    "url": "https://github.com/Sewayn1/Astraleum-Launcher/releases/download/launcher-v1.2.0/AstraleumLauncher-1.2.0.exe"
   },
   "fullPackage": {
     "url": "https://github.com/Sewayn1/AstraleumTCG/releases/download/0.0.5a/Astraleum-v0.0.5a.zip",
