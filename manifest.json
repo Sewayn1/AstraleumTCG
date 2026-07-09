@@ -1,12 +1,12 @@
 {
-  "version": "0.0.6",
+  "version": "0.0.6a",
   "releaseDate": "2026-07-09",
   "launcher": {
     "version": "1.2.0",
     "url": "https://github.com/Sewayn1/Astraleum-Launcher/releases/download/launcher-v1.3.0/AstraleumLauncher-Setup-1.3.0.exe"
   },
   "fullPackage": {
-    "url": "https://github.com/Sewayn1/AstraleumTCG/releases/download/0.0.6/Astraleum-v0.0.6.zip",
+    "url": "https://github.com/Sewayn1/AstraleumTCG/releases/download/0.0.6a/Astraleum-v0.0.6a.zip",
     "size": 0
   },
   "files": [
@@ -1422,6 +1422,36 @@
     }
   ],
   "changelog": [
+        {
+      "version": "Alpha 0.0.6a",
+      "date": "2026-06-26",
+      "title": "Correctifs et Ajustements",
+      "entries": [
+        "Ajout d’un compteur de Tour affiché sous le Tour de X Joueur",
+        "Ajout d’une Option pour désactiver ou non la Bulle de Prévisualisation des DGT et Effets.",
+        "Ajout d’une Option pour couper le son ou non du début de tour",
+        "Ajout d’une fenêtre en cas de mis à jour du jeu, afin de bloquer les prochaines parties pour éviter les désynchronisation Serveur/Client",
+        "Ajout de la Barre d’espace en jeu pour passer vos tours sans avoir à cliquer dessus",
+        "-----",
+        "Equilibrages :",
+        "Abomination du Vide : Ruée Enragée 12 → 15 DGT",
+        "Araknos : Faim Insatiable Exécute 25% HP → Exécute 20% HP | Mandibule Acérée : 18 → 15 DGT et Recharge 2 → 1 Tour",
+        "Dragon de Terre : Armure 10 → Armure 7",
+        "Nyolung - Dragon Supreme : PV 350 → 320 | Fracture du Voile : 65 DGT → 55 DGT",
+        "Adelia : Vent Orageux Temps de Recharge 2 Tours → 3 Tours | 9 DGT → 11 DGT",
+        "Floria : Etreinte Parfumée Action Bonus → Retiré → Augmente les Chances de Coup Critique de tout les alliés de 5% pendant 1 Tour.",
+        "-----",
+        "Ajustements :",
+        "Les soins et soins sur la durée ont été revu. Désormais, les soins s’appliquent en fonction des PV restants de la cible et non plus selon les PV Maximum de la cible.",
+        "Les Effets qui ajoutent du temps de recharge ont été revu. Maintenant, les temps de recharge de la carte ciblé sont bloqués jusqu’à la fin du prochain tour de celle-ci.",
+        "Dans l’infobulle à droite de l’écran en Combat, les effets similaires sont désormais couplé sur une seule et même ligne, afin de réduire la lecture.",
+        "-----",
+        "Correctifs :",
+        "Correction d’un Bug qui empêchait le joueur de pouvoir analyser les cartes après avoir utilisé ses deux actions.",
+        "Correction d’un Bug causé par les compétences d’Incantation, désormais, l’incantation est annulée si la cible initiale est détruite au cours de cette même incantation.",
+        "Correction d’un Bug sur les boutons de sélection de la difficulté des IA."
+      ]
+    },
     {
       "version": "Alpha 0.0.6",
       "date": "2026-06-26",
