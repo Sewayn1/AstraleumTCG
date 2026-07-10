@@ -1,12 +1,12 @@
 {
-  "version": "0.0.6a",
-  "releaseDate": "2026-07-09",
+  "version": "0.0.6b",
+  "releaseDate": "2026-07-10",
   "launcher": {
     "version": "1.2.0",
     "url": "https://github.com/Sewayn1/Astraleum-Launcher/releases/download/launcher-v1.3.0/AstraleumLauncher-Setup-1.3.0.exe"
   },
   "fullPackage": {
-    "url": "https://github.com/Sewayn1/AstraleumTCG/releases/download/0.0.6a/Astraleum-v0.0.6a.zip",
+    "url": "https://github.com/Sewayn1/AstraleumTCG/releases/download/0.0.6b/Astraleum-v0.0.6b.zip",
     "size": 0
   },
   "files": [
@@ -1423,8 +1423,26 @@
   ],
   "changelog": [
         {
+      "version": "Alpha 0.0.6b",
+      "date": "2026-07-10",
+      "title": "Entrainez-vous !",
+      "entries": [
+        "Retour en arrière : Les Soins sont de nouveau calqué sur les PV Maximum des cartes. ",
+        "Ajustement : Le Gel des compétences et remplacé par un ajout d’1 tour aux compétences Cible, avec un effet de Gel d’1 Tour.",
+        "-----",
+        "Rééquilibrage : Les effets de Soin des cartes ont été réduites de 5%.",
+        "Rééquilibrage : Le Passive 5 de l’élément feu a été modifié : Les cartes Feu gagnent désormais 10% de DGT critique au lieu de 15%, et gagne également 5% de Chance de Coup Critique.",
+        "Rééquilibrage : Les Réduction de Temps de Recharge ne peuvent plus être appliqué sur le lanceur de la compétence.",
+        "-----",
+        "Ajout de 2 Nouvelles cartes suprême ( Feu et Lumière )",
+        "Ajout d’une icone pour indiquer l’état de DGT subis augmenté sur la carte. ",
+        "-----",
+        "Correction d’un bug lié aux compétences qui inflige des DGT bonus selon l’état appliqué à la cible "
+      ]
+    },
+        {
       "version": "Alpha 0.0.6a",
-      "date": "2026-06-26",
+      "date": "2026-07-09",
       "title": "Correctifs et Ajustements",
       "entries": [
         "Ajout d’un compteur de Tour affiché sous le Tour de X Joueur",
@@ -1454,7 +1472,7 @@
     },
     {
       "version": "Alpha 0.0.6",
-      "date": "2026-06-26",
+      "date": "2026-07-09",
       "title": "Entrainez-vous !",
       "entries": [
         "Ajout d’une fenêtre annonçant qu’une partie a été annulée dans le cas où cela arrive.",
