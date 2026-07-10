@@ -1,12 +1,12 @@
 {
-  "version": "0.0.6b",
+  "version": "0.0.6c",
   "releaseDate": "2026-07-10",
   "launcher": {
     "version": "1.2.0",
     "url": "https://github.com/Sewayn1/Astraleum-Launcher/releases/download/launcher-v1.3.0/AstraleumLauncher-Setup-1.3.0.exe"
   },
   "fullPackage": {
-    "url": "https://github.com/Sewayn1/AstraleumTCG/releases/download/0.0.6b/Astraleum-v0.0.6b.zip",
+    "url": "https://github.com/Sewayn1/AstraleumTCG/releases/download/0.0.6c/Astraleum-v0.0.6c.zip",
     "size": 0
   },
   "files": [
@@ -1422,10 +1422,21 @@
     }
   ],
   "changelog": [
+            {
+      "version": "Alpha 0.0.6c",
+      "date": "2026-07-10",
+      "title": "Hotfix",
+      "entries": [
+        "Correction d'un problème Serveur / Client, qui causait de nombreux bug en mode PvP",
+        "Correction du Journal de Combat qui ne fonctionnait pas en mode PvP",
+        "Correction des Incantations qui ne fonctionnait pas en mode PvP",
+        "Correction du système de Vol de Vie des cartes"
+      ]
+    },
         {
       "version": "Alpha 0.0.6b",
       "date": "2026-07-10",
-      "title": "Entrainez-vous !",
+      "title": "Ajustements",
       "entries": [
         "Retour en arrière : Les Soins sont de nouveau calqué sur les PV Maximum des cartes. ",
         "Ajustement : Le Gel des compétences et remplacé par un ajout d’1 tour aux compétences Cible, avec un effet de Gel d’1 Tour.",
