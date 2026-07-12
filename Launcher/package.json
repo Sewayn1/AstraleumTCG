@@ -16,6 +16,8 @@
     "adm-zip": "^0.5.10"
   },
   "devDependencies": {
+    "@aws-sdk/client-s3": "^3.1085.0",
+    "dotenv": "^17.4.2",
     "electron": "^28.3.0",
     "electron-builder": "^24.13.3"
   },
@@ -31,7 +33,14 @@
       "launcher.config.json"
     ],
     "win": {
-      "target": [{ "target": "nsis", "arch": ["x64"] }],
+      "target": [
+        {
+          "target": "nsis",
+          "arch": [
+            "x64"
+          ]
+        }
+      ],
       "icon": "img/logo2.png",
       "artifactName": "AstraleumLauncher-Setup-${version}.exe",
       "requestedExecutionLevel": "requireAdministrator"
@@ -45,11 +54,26 @@
       "shortcutName": "Astraleum Launcher"
     },
     "mac": {
-      "target": [{ "target": "dmg", "arch": ["x64", "arm64"] }],
+      "target": [
+        {
+          "target": "dmg",
+          "arch": [
+            "x64",
+            "arm64"
+          ]
+        }
+      ],
       "icon": "img/logo2.png"
     },
     "linux": {
-      "target": [{ "target": "AppImage", "arch": ["x64"] }],
+      "target": [
+        {
+          "target": "AppImage",
+          "arch": [
+            "x64"
+          ]
+        }
+      ],
       "icon": "img/logo2.png"
     }
   }

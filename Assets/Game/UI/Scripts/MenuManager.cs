@@ -109,6 +109,15 @@ namespace Astraleum.UI
             bgAnimatedVP = bgAnimated != null ? bgAnimated.GetComponent<VideoPlayer>() : null;
             bgVoragothVP = bgVoragoth != null ? bgVoragoth.GetComponent<VideoPlayer>() : null;
 
+            // BossBG.mp4 (366 Mo) vit dans StreamingAssets/ plutôt qu'importé comme VideoClip —
+            // évite qu'il soit fondu dans les fichiers sharedassetsN.resource du build (Application.
+            // streamingAssetsPath n'est résolvable qu'au runtime, jamais en dur dans l'Inspector).
+            if (bgVoragothVP != null)
+            {
+                bgVoragothVP.source = VideoSource.Url;
+                bgVoragothVP.url = System.IO.Path.Combine(Application.streamingAssetsPath, "BossBG.mp4");
+            }
+
             ShowPanel(panelMainMenu);
 
             foreach (var btn in FindObjectsByType<Button>(FindObjectsInactive.Include, FindObjectsSortMode.None))

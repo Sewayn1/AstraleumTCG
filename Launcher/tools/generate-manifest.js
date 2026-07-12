@@ -7,20 +7,25 @@
  *     --dir   "C:/GameBuild"                               (dossier du build Unity)
  *     --version  0.2.0                                     (nouvelle version)
  *     --release-url  "https://github.com/Sewayn1/AstraleumTCG/releases/download/v0.2.0"
- *     --raw-base "https://raw.githubusercontent.com/Sewayn1/AstraleumTCG/main/gamebuild"
+ *     --raw-base "https://pub-7a3fbfeeb8954a7b8248153ed3cd9f4a.r2.dev/gamebuild"
  *                                                           (optionnel, défaut ci-dessous — base
  *                                                            URL des fichiers individuels servis
- *                                                            depuis le repo Git, pour les mises à
- *                                                            jour différentielles)
+ *                                                            depuis Cloudflare R2, pour les mises
+ *                                                            à jour différentielles)
  *     --title  "Équilibrage des cartes"                    (optionnel)
  *     --notes  "Fix crash|Istan: 15→12|Gobelin: coût 3→2" (optionnel, séparés par |)
  *     --out   "C:/Dev/AstraleumTCG/manifest.json"          (optionnel, défaut: ./manifest.json)
  *
- * IMPORTANT : les fichiers de --dir doivent aussi être copiés dans le dossier "gamebuild/" du
- * repo (même contenu, écrase la version précédente) puis commit+push AVANT de publier ce
- * manifest — sinon les URLs raw.githubusercontent.com pointent vers du contenu absent/périmé.
- * Les mises à jour différentielles téléchargent chaque fichier changé individuellement depuis
- * ce dossier ; --release-url/le ZIP complet ne sert plus qu'au tout premier install.
+ * IMPORTANT : les fichiers de --dir doivent aussi être synchronisés vers R2 (bucket
+ * astraleum-gamebuild, préfixe "gamebuild") via `node tools/upload-to-r2.js --dir <build>
+ * --prefix gamebuild` AVANT de publier ce manifest — sinon les URLs pointent vers du contenu
+ * absent/périmé. Les mises à jour différentielles téléchargent chaque fichier changé
+ * individuellement depuis R2 ; --release-url/le ZIP complet ne sert plus qu'au tout premier
+ * install (hébergé sur GitHub Releases, ZIP jamais poussé sur R2).
+ *
+ * gamebuild/ n'est PLUS commit dans Git (voir .gitignore) — R2 n'a aucune limite de taille de
+ * fichier (contrairement à Git, 100 Mo/fichier) ni de coût d'egress (contrairement à S3),
+ * contournant les 2 blocages rencontrés lors de la tentative "gamebuild/ dans le repo".
  */
 
 const fs     = require('fs');
@@ -34,7 +39,7 @@ const get  = (flag) => { const i = argv.indexOf(flag); return i >= 0 ? argv[i + 
 const buildDir   = get('--dir');
 const version    = get('--version');
 const releaseUrl = get('--release-url');
-const rawBase    = get('--raw-base') || 'https://raw.githubusercontent.com/Sewayn1/AstraleumTCG/main/gamebuild';
+const rawBase    = get('--raw-base') || 'https://pub-7a3fbfeeb8954a7b8248153ed3cd9f4a.r2.dev/gamebuild';
 const title      = get('--title') || 'Nouvelle version';
 const notesRaw   = get('--notes');
 const outPath    = get('--out') || path.join(process.cwd(), 'manifest.json');
@@ -131,8 +136,8 @@ console.log('Prochaines étapes :');
 console.log(`  1. Créer le ZIP complet (sert uniquement au premier install) : Astraleum-v${version}.zip depuis ${buildDir}`);
 console.log(`  2. Téléverser le ZIP sur GitHub Release :`);
 console.log(`       gh release create ${version} --title "v${version}" Astraleum-v${version}.zip`);
-console.log(`  3. Copier ${buildDir} → gamebuild/ à la racine du repo (écrase la version précédente)`);
-console.log(`  4. Committer + pousser gamebuild/ ET manifest.json ensemble (sinon les mises à jour`);
-console.log(`     différentielles pointeraient vers du contenu absent/périmé) :`);
-console.log(`       git add gamebuild manifest.json && git commit -m "release v${version}" && git push`);
+console.log(`  3. Synchroniser ${buildDir} vers R2 (bucket astraleum-gamebuild) :`);
+console.log(`       node tools/upload-to-r2.js --dir "${buildDir}" --prefix gamebuild`);
+console.log(`  4. Committer + pousser manifest.json (gamebuild/ n'est plus versionné dans Git) :`);
+console.log(`       git add manifest.json && git commit -m "release v${version}" && git push`);
 console.log('');
