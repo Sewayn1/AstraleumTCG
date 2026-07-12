@@ -7,9 +7,20 @@
  *     --dir   "C:/GameBuild"                               (dossier du build Unity)
  *     --version  0.2.0                                     (nouvelle version)
  *     --release-url  "https://github.com/Sewayn1/AstraleumTCG/releases/download/v0.2.0"
+ *     --raw-base "https://raw.githubusercontent.com/Sewayn1/AstraleumTCG/main/gamebuild"
+ *                                                           (optionnel, défaut ci-dessous — base
+ *                                                            URL des fichiers individuels servis
+ *                                                            depuis le repo Git, pour les mises à
+ *                                                            jour différentielles)
  *     --title  "Équilibrage des cartes"                    (optionnel)
  *     --notes  "Fix crash|Istan: 15→12|Gobelin: coût 3→2" (optionnel, séparés par |)
  *     --out   "C:/Dev/AstraleumTCG/manifest.json"          (optionnel, défaut: ./manifest.json)
+ *
+ * IMPORTANT : les fichiers de --dir doivent aussi être copiés dans le dossier "gamebuild/" du
+ * repo (même contenu, écrase la version précédente) puis commit+push AVANT de publier ce
+ * manifest — sinon les URLs raw.githubusercontent.com pointent vers du contenu absent/périmé.
+ * Les mises à jour différentielles téléchargent chaque fichier changé individuellement depuis
+ * ce dossier ; --release-url/le ZIP complet ne sert plus qu'au tout premier install.
  */
 
 const fs     = require('fs');
@@ -23,6 +34,7 @@ const get  = (flag) => { const i = argv.indexOf(flag); return i >= 0 ? argv[i + 
 const buildDir   = get('--dir');
 const version    = get('--version');
 const releaseUrl = get('--release-url');
+const rawBase    = get('--raw-base') || 'https://raw.githubusercontent.com/Sewayn1/AstraleumTCG/main/gamebuild';
 const title      = get('--title') || 'Nouvelle version';
 const notesRaw   = get('--notes');
 const outPath    = get('--out') || path.join(process.cwd(), 'manifest.json');
@@ -30,7 +42,7 @@ const outPath    = get('--out') || path.join(process.cwd(), 'manifest.json');
 if (!buildDir || !version || !releaseUrl) {
   console.error('');
   console.error('Usage: node tools/generate-manifest.js --dir <build> --version <x.y.z> --release-url <url>');
-  console.error('       [--title "titre"] [--notes "note1,note2"] [--out manifest.json]');
+  console.error('       [--raw-base <url>] [--title "titre"] [--notes "note1,note2"] [--out manifest.json]');
   console.error('');
   process.exit(1);
 }
@@ -70,7 +82,9 @@ const files = relPaths.map((rel, i) => {
     path: rel,
     sha256: sha256(full),
     size: fs.statSync(full).size,
-    url: `${releaseUrl.replace(/\/$/, '')}/${rel.split('/').map(encodeURIComponent).join('/')}`,
+    // raw.githubusercontent.com supporte nativement les sous-dossiers (contrairement aux assets
+    // GitHub Releases, qui rejettent les "/" dans un nom de fichier — testé, 404 confirmé).
+    url: `${rawBase.replace(/\/$/, '')}/${rel.split('/').map(encodeURIComponent).join('/')}`,
   };
 });
 console.log(`\nHashed ${files.length} files.`);
@@ -108,13 +122,11 @@ console.log(`  Version  : ${version}`);
 console.log(`  Fichiers : ${files.length}  (${totalMb} Mo au total)`);
 console.log('');
 console.log('Prochaines étapes :');
-console.log(`  1. Créer le ZIP complet : Astraleum-v${version}.zip depuis ${buildDir}`);
-console.log(`  2. Téléverser sur GitHub Release :`);
-console.log(`       gh release create v${version} --title "v${version}" \\`);
-console.log(`           ${buildDir}/Astraleum.exe \\`);
-console.log(`           Astraleum-v${version}.zip \\`);
-console.log(`           manifest.json`);
-console.log(`     (pour la mise à jour différentielle, ajouter aussi les fichiers modifiés individuellement)`);
-console.log(`  3. Pousser manifest.json à la racine du repo :`);
-console.log(`       git add manifest.json && git commit -m "manifest v${version}" && git push`);
+console.log(`  1. Créer le ZIP complet (sert uniquement au premier install) : Astraleum-v${version}.zip depuis ${buildDir}`);
+console.log(`  2. Téléverser le ZIP sur GitHub Release :`);
+console.log(`       gh release create ${version} --title "v${version}" Astraleum-v${version}.zip`);
+console.log(`  3. Copier ${buildDir} → gamebuild/ à la racine du repo (écrase la version précédente)`);
+console.log(`  4. Committer + pousser gamebuild/ ET manifest.json ensemble (sinon les mises à jour`);
+console.log(`     différentielles pointeraient vers du contenu absent/périmé) :`);
+console.log(`       git add gamebuild manifest.json && git commit -m "release v${version}" && git push`);
 console.log('');

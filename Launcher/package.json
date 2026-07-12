@@ -1,6 +1,6 @@
 {
   "name": "astraleum-launcher",
-  "version": "1.1.3",
+  "version": "1.4.0",
   "description": "Astraleum TCG Game Launcher",
   "author": "Sewayn1",
   "main": "src/main.js",
@@ -31,9 +31,18 @@
       "launcher.config.json"
     ],
     "win": {
-      "target": [{ "target": "portable", "arch": ["x64"] }],
+      "target": [{ "target": "nsis", "arch": ["x64"] }],
       "icon": "img/logo2.png",
-      "artifactName": "AstraleumLauncher-${version}.exe"
+      "artifactName": "AstraleumLauncher-Setup-${version}.exe",
+      "requestedExecutionLevel": "requireAdministrator"
+    },
+    "nsis": {
+      "oneClick": false,
+      "perMachine": true,
+      "allowToChangeInstallationDirectory": true,
+      "createDesktopShortcut": true,
+      "createStartMenuShortcut": true,
+      "shortcutName": "Astraleum Launcher"
     },
     "mac": {
       "target": [{ "target": "dmg", "arch": ["x64", "arm64"] }],

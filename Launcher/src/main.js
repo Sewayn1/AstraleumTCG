@@ -1,4 +1,4 @@
-const { app, BrowserWindow, ipcMain, dialog } = require('electron');
+const { app, BrowserWindow, ipcMain, dialog, shell } = require('electron');
 const path = require('path');
 const https = require('https');
 const http = require('http');
@@ -11,6 +11,7 @@ const config = require('../launcher.config.json');
 const SETTINGS_FILE = path.join(app.getPath('userData'), 'settings.json');
 
 let mainWindow;
+let activeGameProcess = null;
 
 // ── Settings ──────────────────────────────────────────────────────────────────
 
@@ -18,7 +19,7 @@ function loadSettings() {
   try {
     if (fs.existsSync(SETTINGS_FILE)) return JSON.parse(fs.readFileSync(SETTINGS_FILE, 'utf8'));
   } catch {}
-  return { gamePath: path.join(app.getPath('userData'), 'game') };
+  return { gamePath: path.join(process.env['PROGRAMFILES(X86)'] || 'C:\\Program Files (x86)', 'Astraleum') };
 }
 
 function saveSettings(settings) {
@@ -30,8 +31,8 @@ function saveSettings(settings) {
 
 function createWindow() {
   mainWindow = new BrowserWindow({
-    width: 900,
-    height: 580,
+    width: 1280,
+    height: 720,
     resizable: false,
     frame: false,
     icon: path.join(__dirname, '../img/logo2.png'),
@@ -55,7 +56,13 @@ app.on('window-all-closed', () => {
 // ── IPC ────────────────────────────────────────────────────────────────────────
 
 ipcMain.on('window-minimize', () => mainWindow.minimize());
-ipcMain.on('window-close', () => app.quit());
+ipcMain.on('window-close', () => {
+  if (activeGameProcess) {
+    try { activeGameProcess.unref(); } catch {}
+    activeGameProcess = null;
+  }
+  app.quit();
+});
 
 ipcMain.handle('get-platform',         () => process.platform)
 ipcMain.handle('get-launcher-version', () => app.getVersion());
@@ -103,16 +110,29 @@ ipcMain.handle('start-install', async (_, { isFirstInstall }) => {
     const { gamePath } = loadSettings();
     fs.mkdirSync(gamePath, { recursive: true });
 
-    await downloadAndExtract(manifest.fullPackage.url, gamePath, manifest.fullPackage.size || 0);
+    // Premier install : ZIP complet (un seul gros téléchargement, plus fiable que des centaines
+    // de petites requêtes). Mise à jour : ne télécharge que les fichiers dont le SHA256 diffère
+    // de la version locale déjà installée, plus rapide et léger que tout retélécharger.
+    if (isFirstInstall) {
+      await downloadAndExtract(manifest.fullPackage.url, gamePath, manifest.fullPackage.size || 0);
+    } else {
+      await downloadChangedFiles(manifest, gamePath);
+    }
 
     fs.writeFileSync(
       path.join(gamePath, 'version.json'),
       JSON.stringify({ version: manifest.version }, null, 2)
     );
 
+    const exeName = config.gameExe[process.platform];
+    if (exeName) createDesktopShortcut(path.join(gamePath, exeName));
+
     return { success: true, version: manifest.version };
   } catch (err) {
-    return { error: err.message };
+    const msg = (err.code === 'EACCES' || err.code === 'EPERM')
+      ? `Permission refusée : impossible d'écrire dans "${loadSettings().gamePath}".\n\nRelancez le Launcher en tant qu'Administrateur, ou choisissez un autre dossier dans Paramètres.`
+      : err.message;
+    return { error: msg };
   }
 });
 
@@ -126,10 +146,59 @@ ipcMain.handle('launch-game', () => {
     return { error: `Jeu introuvable :\n${exePath}` };
   }
 
-  spawn(exePath, [], { detached: true, stdio: 'ignore' }).unref();
-  app.quit();
+  activeGameProcess = spawn(exePath, [], { detached: true, stdio: 'ignore' });
+
+  mainWindow.hide();
+
+  activeGameProcess.on('close', () => {
+    activeGameProcess = null;
+    if (mainWindow && !mainWindow.isDestroyed()) {
+      mainWindow.webContents.send('game-closed');
+      mainWindow.show();
+      mainWindow.focus();
+    }
+  });
+
   return { success: true };
 });
+
+ipcMain.handle('uninstall-game', async () => {
+  const { gamePath } = loadSettings();
+
+  const { response } = await dialog.showMessageBox(mainWindow, {
+    type: 'warning',
+    buttons: ['Désinstaller', 'Annuler'],
+    defaultId: 1,
+    cancelId: 1,
+    title: 'Désinstaller Astraleum',
+    message: 'Désinstaller Astraleum ?',
+    detail: `Le dossier "${gamePath}" et le raccourci Bureau seront supprimés définitivement.`,
+  });
+
+  if (response !== 0) return { cancelled: true };
+
+  if (fs.existsSync(gamePath)) {
+    fs.rmSync(gamePath, { recursive: true, force: true });
+  }
+
+  const shortcutPath = path.join(app.getPath('desktop'), 'Astraleum.lnk');
+  if (fs.existsSync(shortcutPath)) fs.unlinkSync(shortcutPath);
+
+  return { success: true };
+});
+
+// ── Desktop shortcut ──────────────────────────────────────────────────────────
+
+function createDesktopShortcut(exePath) {
+  if (process.platform !== 'win32') return;
+  const shortcutPath = path.join(app.getPath('desktop'), 'Astraleum.lnk');
+  shell.writeShortcutLink(shortcutPath, 'create', {
+    target: exePath,
+    icon: exePath,
+    iconIndex: 0,
+    description: 'Astraleum TCG',
+  });
+}
 
 // ── Launcher self-update ───────────────────────────────────────────────────────
 
@@ -160,10 +229,14 @@ async function promptLauncherUpdate(launcherInfo) {
 }
 
 async function downloadAndReplaceLauncher(launcherInfo) {
-  const currentExe = process.execPath;
-  const tempExe    = currentExe + '.update';
+  // Build NSIS (perMachine) : le "nouveau" téléchargement est le setup.exe complet, pas un
+  // exe portable qu'on peut simplement déplacer. On le lance en silencieux (/S), ce qui
+  // réinstalle par-dessus l'installation existante (même chemin, même raccourcis), puis on
+  // relance l'exe installé.
+  const exePath  = process.execPath;
+  const setupPath = path.join(app.getPath('temp'), `AstraleumLauncher-Setup-${launcherInfo.version}.exe`);
 
-  await downloadFile(launcherInfo.url, tempExe, (p) => {
+  await downloadFile(launcherInfo.url, setupPath, (p) => {
     sendProgress({
       stage: 'downloading',
       file: `Launcher v${launcherInfo.version}`,
@@ -175,12 +248,33 @@ async function downloadAndReplaceLauncher(launcherInfo) {
   const psPath = path.join(app.getPath('temp'), 'astraleum-launcher-update.ps1');
   const q = s => s.replace(/'/g, "''");
 
+  const releaseUrl = `https://github.com/Sewayn1/Astraleum-Launcher/releases/latest`;
+  // Le setup NSIS silencieux (/S) a besoin que l'exe cible ne soit plus verrouillé — le process
+  // courant vient d'appeler process.exit(), mais on retente quand même sur quelques secondes
+  // par sécurité (antivirus scannant le setup téléchargé, libération de handle Windows).
   const ps = [
-    `$new = '${q(tempExe)}'`,
-    `$old = '${q(currentExe)}'`,
-    'Start-Sleep -Seconds 5',
-    'Move-Item -Force $new $old',
-    'Start-Process $old',
+    `$setup = '${q(setupPath)}'`,
+    `$exe = '${q(exePath)}'`,
+    '$success = $false',
+    'for ($i = 0; $i -lt 15; $i++) {',
+    '  Start-Sleep -Seconds 1',
+    '  try {',
+    '    Start-Process -FilePath $setup -ArgumentList "/S" -Wait -ErrorAction Stop',
+    '    $success = $true',
+    '    break',
+    '  } catch {}',
+    '}',
+    'if ($success) {',
+    '  Start-Process $exe',
+    '} else {',
+    '  Add-Type -AssemblyName System.Windows.Forms',
+    '  [System.Windows.Forms.MessageBox]::Show(' +
+      '"La mise a jour automatique du Launcher a echoue.' +
+      '`nTelechargez la derniere version manuellement.", "Astraleum Launcher", ' +
+      "'OK', 'Warning') | Out-Null",
+    `  Start-Process '${releaseUrl}'`,
+    '}',
+    `Remove-Item -Force '${q(setupPath)}' -ErrorAction SilentlyContinue`,
     `Remove-Item -Force '${q(psPath)}' -ErrorAction SilentlyContinue`,
   ].join('\r\n');
 
@@ -241,6 +335,7 @@ async function downloadAndExtract(url, gamePath, totalSize) {
 }
 
 async function downloadChangedFiles(manifest, gamePath) {
+  const manifestPaths = new Set(manifest.files.map(f => f.path));
   const filesToUpdate = [];
 
   for (const file of manifest.files) {
@@ -251,34 +346,61 @@ async function downloadChangedFiles(manifest, gamePath) {
     }
   }
 
-  if (filesToUpdate.length === 0) return;
+  if (filesToUpdate.length > 0) {
+    const totalSize = filesToUpdate.reduce((sum, f) => sum + (f.size || 0), 0);
+    let bytesCompleted = 0;
 
-  const totalSize = filesToUpdate.reduce((sum, f) => sum + (f.size || 0), 0);
-  let bytesCompleted = 0;
+    for (let i = 0; i < filesToUpdate.length; i++) {
+      const file = filesToUpdate[i];
+      const destPath = path.join(gamePath, file.path.replace(/\//g, path.sep));
+      fs.mkdirSync(path.dirname(destPath), { recursive: true });
 
-  for (let i = 0; i < filesToUpdate.length; i++) {
-    const file = filesToUpdate[i];
-    const destPath = path.join(gamePath, file.path.replace(/\//g, path.sep));
-    fs.mkdirSync(path.dirname(destPath), { recursive: true });
+      const tmpPath = destPath + '.tmp';
 
-    const tmpPath = destPath + '.tmp';
-
-    await downloadFile(file.url, tmpPath, (p) => {
-      sendProgress({
-        stage: 'downloading',
-        file: file.path.split('/').pop(),
-        fileIndex: i + 1,
-        fileCount: filesToUpdate.length,
-        percent: totalSize ? Math.round(((bytesCompleted + p.downloaded) / totalSize) * 100) : p.percent,
-        downloaded: bytesCompleted + p.downloaded,
-        total: totalSize,
+      await downloadFile(file.url, tmpPath, (p) => {
+        sendProgress({
+          stage: 'downloading',
+          file: file.path.split('/').pop(),
+          fileIndex: i + 1,
+          fileCount: filesToUpdate.length,
+          percent: totalSize ? Math.round(((bytesCompleted + p.downloaded) / totalSize) * 100) : p.percent,
+          downloaded: bytesCompleted + p.downloaded,
+          total: totalSize,
+        });
       });
-    });
 
-    bytesCompleted += file.size || 0;
+      bytesCompleted += file.size || 0;
 
-    try { fs.unlinkSync(destPath); } catch {}
-    fs.renameSync(tmpPath, destPath);
+      try { fs.unlinkSync(destPath); } catch {}
+      fs.renameSync(tmpPath, destPath);
+    }
+  }
+
+  // Supprime les fichiers présents localement mais absents du nouveau manifest (asset renommé/
+  // retiré dans cette version) — sinon ils s'accumulent indéfiniment à chaque mise à jour.
+  // version.json est géré séparément par le Launcher, jamais par le manifest de fichiers.
+  removeOrphanedFiles(gamePath, gamePath, manifestPaths);
+}
+
+function removeOrphanedFiles(dir, gamePath, manifestPaths) {
+  if (!fs.existsSync(dir)) return;
+
+  for (const entry of fs.readdirSync(dir, { withFileTypes: true })) {
+    const full = path.join(dir, entry.name);
+
+    if (entry.isDirectory()) {
+      removeOrphanedFiles(full, gamePath, manifestPaths);
+      try {
+        if (fs.readdirSync(full).length === 0) fs.rmdirSync(full);
+      } catch {}
+      continue;
+    }
+
+    const rel = path.relative(gamePath, full).replace(/\\/g, '/');
+    if (rel === 'version.json') continue;
+    if (!manifestPaths.has(rel)) {
+      try { fs.unlinkSync(full); } catch {}
+    }
   }
 }
 
