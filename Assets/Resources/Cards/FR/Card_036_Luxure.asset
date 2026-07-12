@@ -1,0 +1,111 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: baa3cfc011ceea542b4a6e2212c058c1, type: 3}
+  m_Name: Card_036_Luxure
+  m_EditorClassIdentifier: Assembly-CSharp::Astraleum.CardData
+  cardName: Floria
+  cardTitle: "P\xE9ch\xE9 de la Luxure"
+  cardNumber: 36
+  element: 3
+  rarity: 3
+  artwork: {fileID: 21300000, guid: 94c866b446fa2fd448cc078bef327e1f, type: 3}
+  hiddenFromCollection: 0
+  isTrainingDummy: 0
+  maxHP: 210
+  armorPoints: 0
+  critChance: 0.01
+  bonusActionsGranted: 0
+  skillOne:
+    skillType: 2
+    skillName: "\xC9treinte parfum\xE9e"
+    description: "Affecte une cible alli\xE9e, r\xE9duit ses Temps de Recharge de
+      1 Tour.\n\nAugmente \xE9galement les Chances de Coup Critique des alli\xE9s
+      de 5% pendant 1 Tour."
+    damage: 0
+    cooldownTurns: 2
+    targetType: 1
+    adjacentDamagePercent: 0
+    effects:
+    - type: 22
+      value: 0.05
+      durationTurns: 1
+      effectTarget: 0
+    - type: 11
+      value: 1
+      durationTurns: 0
+      effectTarget: 0
+    branches: []
+    isIncantation: 0
+    castDelayTurns: 1
+    attackVFXPrefab: {fileID: 0}
+    trailVFXPrefab: {fileID: 231292765192608918, guid: 2d3ac299adedb774a90f3d902587b7ac, type: 3}
+    trailVFXScale: 1
+    attackVFXIsProjectile: 1
+    attackVFXScale: 1
+    impactVFXPrefab: {fileID: 8745673727628092440, guid: cd700f03882dbf24881f3f4eea6630ed, type: 3}
+    impactVFXScale: 1
+    vfxTravelTime: 0.35
+    vfxImpactDuration: 0.2
+    impactVFXOffset: {x: 0, y: 0, z: 0}
+  skillTwo:
+    skillType: 4
+    skillName: Douce Brise
+    description: "Attaque la cible, lui inflige 12 DGT, augmente ses DGT re\xE7u
+      de 10% pendant 1 Tour, et g\xE8le ses Temps de Recharge jusqu'\xE0 la fin de
+      son prochain tour."
+    damage: 12
+    cooldownTurns: 3
+    targetType: 0
+    adjacentDamagePercent: 0
+    effects:
+    - type: 12
+      value: 1
+      durationTurns: 0
+      effectTarget: 0
+    - type: 1
+      value: 0.1
+      durationTurns: 1
+      effectTarget: 0
+    branches: []
+    isIncantation: 0
+    castDelayTurns: 1
+    attackVFXPrefab: {fileID: 0}
+    trailVFXPrefab: {fileID: 231292765192608918, guid: 2d3ac299adedb774a90f3d902587b7ac, type: 3}
+    trailVFXScale: 1
+    attackVFXIsProjectile: 1
+    attackVFXScale: 1
+    impactVFXPrefab: {fileID: 1548960333827949869, guid: f3660c247d98dd549b09ef0f2ddf4f78, type: 3}
+    impactVFXScale: 1
+    vfxTravelTime: 0.35
+    vfxImpactDuration: 0.2
+    impactVFXOffset: {x: 0, y: 0, z: 0}
+  passive:
+    passiveName: Parfum de Luxe
+    passiveDescription: "A chaque d\xE9but de Tour, augmente les DGT inflig\xE9s
+      par un Alli\xE9 de +3 pendant 1 Tour."
+    trigger: 0
+    triggerElement: 8
+    passiveColor: {r: 1, g: 0.84, b: 0, a: 1}
+    stacksPerTrigger: 0
+    maxTriggerStacks: 4
+    effects:
+    - type: 13
+      value: 3
+      durationTurns: 1
+      effectTarget: 4
+  loreText: "Je suis le frisson sur ta peau, le murmure \xE0 ton oreille, l'air que
+    tu aspires d\xE9sesp\xE9r\xE9ment. Tu crois me chasser, mais tu ne fais que m'inviter
+    au plus profond de tes poumons. Laisse-toi porter, car une fois que j'aurai captur\xE9
+    ton souffle, tu ne sauras plus jamais respirer sans moi."
+  loreQuote: "Une simple brise suffit \xE0 faire chavirer les c\u0153urs. L'air se
+    fait chaud, les esprits s'\xE9garent, et la raison s'envole, emport\xE9e par
+    un tourbillon de d\xE9sirs interdits."

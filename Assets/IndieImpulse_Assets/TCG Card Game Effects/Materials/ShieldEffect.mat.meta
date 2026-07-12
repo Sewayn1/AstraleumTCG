@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: c43eee88afb6cdd4582c6e16179702b4
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 2100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 277550
+  packageName: TCG Card Game Effects
+  packageVersion: 1.4
+  assetPath: Assets/IndieImpulse_Assets/TCG Card Game Effects/Materials/ShieldEffect.mat
+  uploadId: 897924

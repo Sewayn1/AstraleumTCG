@@ -28,6 +28,9 @@ namespace Astraleum
         public Sprite iconBurn;         // brûlure active sur une carte
         public Sprite iconPoison;       // poison actif sur une carte
         public Sprite iconSaignement;   // saignement actif sur une carte
+        public Sprite iconHealBlock;    // blocage de soin actif sur une carte
+        public Sprite iconHOT;          // régénération (HealOverTime) active sur une carte
+        public Sprite iconDamageAmplify; // amplification de dégâts subis active sur une carte
 
         [Header("Interface")]
         public Sprite iconBulletOn;     // bullet actif ✦

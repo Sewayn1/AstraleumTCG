@@ -1,0 +1,18 @@
+fileFormatVersion: 2
+guid: 7e9f69dd1760ec948b9fa450098ae1ab
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 277550
+  packageName: TCG Card Game Effects
+  packageVersion: 1.4
+  assetPath: Assets/IndieImpulse_Assets/TCG Card Game Effects/Scripts/DemoSlide.cs
+  uploadId: 897924

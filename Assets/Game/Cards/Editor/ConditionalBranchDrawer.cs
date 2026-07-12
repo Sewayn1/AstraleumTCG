@@ -16,6 +16,10 @@ namespace Astraleum
             ct == ConditionType.TargetHasEffect  ||
             ct == ConditionType.AttackerHasEffect;
 
+        // Retourne vrai si la condition nécessite le champ conditionElement.
+        private static bool NeedsElementField(ConditionType ct) =>
+            ct == ConditionType.AttackerIsOnlyElement;
+
         public override float GetPropertyHeight(SerializedProperty property, GUIContent label)
         {
             if (!property.isExpanded) return LineH;
@@ -31,15 +35,25 @@ namespace Astraleum
                 lines++; // compareOp
                 lines++; // threshold ou effectType
             }
+            if (NeedsElementField(condType))
+                lines++; // conditionElement
 
             lines++; // effectType
             lines++; // target
-            lines++; // valueMode
-            lines++; // value (percent or flat)
 
             var effectType = (BranchEffectType)property.FindPropertyRelative("effectType").enumValueIndex;
-            if (effectType != BranchEffectType.InstantHeal && effectType != BranchEffectType.InstantDamage)
-                lines++; // durationTurns (absent pour InstantHeal)
+            bool isCancel = effectType == BranchEffectType.Cancel;
+
+            if (!isCancel)
+            {
+                lines++; // valueMode
+                lines++; // value (percent or flat)
+            }
+
+            if (!isCancel
+                && effectType != BranchEffectType.InstantHeal
+                && effectType != BranchEffectType.InstantDamage)
+                lines++; // durationTurns
 
             return lines * (LineH + Pad) + Pad;
         }
@@ -85,6 +99,12 @@ namespace Astraleum
                 }
             }
 
+            if (NeedsElementField(condType))
+            {
+                EditorGUI.PropertyField(rect, cond.FindPropertyRelative("conditionElement"), new GUIContent("Élément"));
+                rect.y += LineH + Pad;
+            }
+
             // ── Effet de branche ─────────────────────────────────────────
             var effectTypeProp = property.FindPropertyRelative("effectType");
             EditorGUI.PropertyField(rect, effectTypeProp, new GUIContent("Effet"));
@@ -93,25 +113,26 @@ namespace Astraleum
             EditorGUI.PropertyField(rect, property.FindPropertyRelative("target"), new GUIContent("Cible"));
             rect.y += LineH + Pad;
 
-            // ── Valeur ───────────────────────────────────────────────────
-            var valueModeProp = property.FindPropertyRelative("valueMode");
-            EditorGUI.PropertyField(rect, valueModeProp, new GUIContent("Mode valeur"));
-            rect.y += LineH + Pad;
-
-            var valueMode = (BranchValueMode)valueModeProp.enumValueIndex;
-            if (valueMode == BranchValueMode.Percent)
-            {
-                EditorGUI.PropertyField(rect, property.FindPropertyRelative("valuePercent"), new GUIContent("Valeur (%)"));
-            }
-            else
-            {
-                EditorGUI.PropertyField(rect, property.FindPropertyRelative("valueFlat"), new GUIContent("Valeur (Flat)"));
-            }
-            rect.y += LineH + Pad;
-
-            // ── Durée ────────────────────────────────────────────────────
+            // ── Valeur (masquée pour Cancel) ─────────────────────────────
             var effectType = (BranchEffectType)effectTypeProp.enumValueIndex;
-            if (effectType != BranchEffectType.InstantHeal && effectType != BranchEffectType.InstantDamage)
+            if (effectType != BranchEffectType.Cancel)
+            {
+                var valueModeProp = property.FindPropertyRelative("valueMode");
+                EditorGUI.PropertyField(rect, valueModeProp, new GUIContent("Mode valeur"));
+                rect.y += LineH + Pad;
+
+                var valueMode = (BranchValueMode)valueModeProp.enumValueIndex;
+                if (valueMode == BranchValueMode.Percent)
+                    EditorGUI.PropertyField(rect, property.FindPropertyRelative("valuePercent"), new GUIContent("Valeur (%)"));
+                else
+                    EditorGUI.PropertyField(rect, property.FindPropertyRelative("valueFlat"), new GUIContent("Valeur (Flat)"));
+                rect.y += LineH + Pad;
+            }
+
+            // ── Durée (masquée pour InstantHeal / InstantDamage / Cancel) ──
+            if (effectType != BranchEffectType.InstantHeal
+                && effectType != BranchEffectType.InstantDamage
+                && effectType != BranchEffectType.Cancel)
             {
                 string durationLabel = effectType == BranchEffectType.Stun ? "Tours de Stun" : "Durée (tours)";
                 EditorGUI.PropertyField(rect, property.FindPropertyRelative("durationTurns"), new GUIContent(durationLabel));

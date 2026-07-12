@@ -23,10 +23,20 @@ namespace Astraleum.UI
         [Header("Mode")]
         [Tooltip("Cocher sur les slots de Panel_DeckSelect.")]
         public bool isSelectionMode = false;
+        [Tooltip("Cocher sur les slots de Panel_Raid — route le clic vers RaidPanelController au lieu de DeckSelectPanel (évite la collision de singleton entre les deux panels).")]
+        public bool isRaidMode = false;
 
         [Header("Références")]
         public TMP_Text slotNameText;
         public Image    slotBackground;
+
+        [Header("Artworks (état Saved)")]
+        public Image[] cardArtworkImages = new Image[5];
+        public GameObject artworksRow;
+
+        [Header("Icône état vide")]
+        [Tooltip("GO affiché uniquement quand le slot est vide (ex. TMP_Text « + »).")]
+        public GameObject addDeckIcon;
 
         [Header("Couleurs d'état")]
         public Color colorEmpty   = new Color(0.25f, 0.25f, 0.25f, 0.8f);
@@ -51,7 +61,8 @@ namespace Astraleum.UI
                 { Astraleum.Element.Air,      new Color(0.70f, 0.85f, 0.90f, 0.85f) },
                 { Astraleum.Element.Lumiere,  new Color(0.95f, 0.85f, 0.25f, 0.85f) },
                 { Astraleum.Element.Tenebres, new Color(0.30f, 0.10f, 0.45f, 0.85f) },
-                { Astraleum.Element.Astral,   new Color(0.50f, 0.20f, 0.75f, 0.85f) },
+                { Astraleum.Element.Astral,    new Color(0.50f, 0.20f, 0.75f, 0.85f) },
+                { Astraleum.Element.Corrosif,  new Color(0.35f, 0.75f, 0.10f, 0.85f) },
             };
 
         // ── Init ──────────────────────────────────────────────────────
@@ -73,6 +84,7 @@ namespace Astraleum.UI
         public void StartEditing()
         {
             State = DeckSlotState.Editing;
+            if (artworksRow != null) artworksRow.SetActive(false);
             ApplyVisuals();
         }
 
@@ -94,6 +106,7 @@ namespace Astraleum.UI
             State         = DeckSlotState.Saved;
             _elementIndex = dominantElementIndex;
             _savedColor   = ResolveElementColor(dominantElementIndex);
+            RefreshArtworks();
             ApplyVisuals();
         }
 
@@ -105,6 +118,7 @@ namespace Astraleum.UI
             State         = DeckSlotState.Saved;
             _elementIndex = dominantElementIndex;
             _savedColor   = ResolveElementColor(dominantElementIndex);
+            RefreshArtworks();
             ApplyVisuals();
         }
 
@@ -116,6 +130,7 @@ namespace Astraleum.UI
             _savedColor   = colorEmpty;
             CardNumbers.Clear();
             State = DeckSlotState.Empty;
+            RefreshArtworks();
             ApplyVisuals();
         }
 
@@ -136,8 +151,12 @@ namespace Astraleum.UI
 
         public void OnPointerClick(PointerEventData eventData)
         {
-            if (isSelectionMode)
+            if (isRaidMode)
+                RaidPanelController.Instance?.OnSlotClicked(this);
+            else if (isSelectionMode)
                 DeckSelectPanel.Instance?.OnSlotClicked(this);
+            else if (DeckSlotsManager.Instance != null)
+                DeckSlotsManager.Instance.OnSlotClicked(this);
             else
                 DeckEditorManager.Instance?.OnSlotClicked(this);
         }
@@ -151,17 +170,53 @@ namespace Astraleum.UI
                 case DeckSlotState.Empty:
                     if (slotNameText   != null) slotNameText.text    = Astraleum.LocalizationManager.Get("deck_slot_empty");
                     if (slotBackground != null) slotBackground.color = colorEmpty;
+                    if (artworksRow    != null) artworksRow.SetActive(false);
+                    if (addDeckIcon    != null) addDeckIcon.SetActive(true);
                     break;
 
                 case DeckSlotState.Editing:
                     if (slotBackground != null) slotBackground.color = colorEditing;
+                    if (artworksRow    != null) artworksRow.SetActive(false);
+                    if (addDeckIcon    != null) addDeckIcon.SetActive(false);
                     break;
 
                 case DeckSlotState.Saved:
-                    if (slotNameText   != null) slotNameText.text    = $"{DeckName}  ({CardNumbers.Count}/5)";
+                    if (slotNameText   != null) slotNameText.text    = DeckName;
                     if (slotBackground != null) slotBackground.color = _savedColor;
+                    if (artworksRow    != null) artworksRow.SetActive(true);
+                    if (addDeckIcon    != null) addDeckIcon.SetActive(false);
                     break;
             }
+        }
+
+        private void RefreshArtworks()
+        {
+            if (cardArtworkImages == null) return;
+            for (int i = 0; i < cardArtworkImages.Length; i++)
+            {
+                if (cardArtworkImages[i] == null) continue;
+                if (i < CardNumbers.Count)
+                {
+                    var card = FindCard(CardNumbers[i]);
+                    cardArtworkImages[i].sprite = card?.artwork;
+                    cardArtworkImages[i].color  = card?.artwork != null
+                        ? UnityEngine.Color.white
+                        : new UnityEngine.Color(0f, 0f, 0f, 0.3f);
+                }
+                else
+                {
+                    cardArtworkImages[i].sprite = null;
+                    cardArtworkImages[i].color  = new UnityEngine.Color(0f, 0f, 0f, 0.3f);
+                }
+            }
+        }
+
+        private CardData FindCard(int number)
+        {
+            if (CardDatabase.Instance != null) return CardDatabase.Instance.GetCard(number);
+            foreach (var c in Resources.LoadAll<CardData>("Cards"))
+                if (c.cardNumber == number) return c;
+            return null;
         }
 
         private Color ResolveElementColor(int elementIndex)

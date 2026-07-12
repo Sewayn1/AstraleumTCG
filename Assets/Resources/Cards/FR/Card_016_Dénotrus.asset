@@ -17,15 +17,18 @@ MonoBehaviour:
   cardNumber: 16
   element: 5
   rarity: 3
-  artwork: {fileID: 21300000, guid: a9578ce441802a745806dbdd3a92908c, type: 3}
+  artwork: {fileID: 21300000, guid: 8b2672d762233b5498542efbab5092de, type: 3}
+  hiddenFromCollection: 0
+  isTrainingDummy: 0
   maxHP: 300
-  armorPoints: 4
+  armorPoints: 0
+  critChance: 0.01
   bonusActionsGranted: 0
   skillOne:
     skillType: 0
     skillName: Lame Maudite
-    description: "Inflige 30 DGT \xE0 la cible, et la rend Insoignable pendant 1
-      Tour. Si la cible est sous l'effet \"Poison\", inflige 10% de DGT suppl\xE9mentaire."
+    description: "Inflige 30 DGT \xE0 la cible, et la rend Insoignable pendant 2
+      Tour. Se HEAL de 15% des DGT inflig\xE9s."
     damage: 30
     cooldownTurns: 2
     targetType: 0
@@ -33,28 +36,29 @@ MonoBehaviour:
     effects:
     - type: 5
       value: 1
-      durationTurns: 1
+      durationTurns: 2
       effectTarget: 0
-    branches:
-    - condition:
-        conditionType: 5
-        compareOp: 0
-        threshold: 0
-        effectType: 0
-      effectType: 0
-      target: 0
-      valueMode: 0
-      valuePercent: 0.1
-      valueFlat: 0
-      durationTurns: 0
-    attackVFXPrefab: {fileID: 0}
-    impactVFXPrefab: {fileID: 0}
+    - type: 19
+      value: 0.15
+      durationTurns: -1
+      effectTarget: 1
+    branches: []
+    isIncantation: 0
+    castDelayTurns: 1
+    attackVFXPrefab: {fileID: 4560534324245121887, guid: 5d751cb322afd6249bf8dfe9a207b6ed, type: 3}
+    trailVFXPrefab: {fileID: 7366654879013507527, guid: 80d8771f19db96547beac20eaaf5c951, type: 3}
+    trailVFXScale: 1
+    attackVFXIsProjectile: 1
+    attackVFXScale: 1
+    impactVFXPrefab: {fileID: 2606620707222805529, guid: fdbd4eea6902bd84aab65eca9a183b57, type: 3}
+    impactVFXScale: 1
     vfxTravelTime: 0.35
     vfxImpactDuration: 0.2
+    impactVFXOffset: {x: 0, y: 0, z: 0}
   skillTwo:
     skillType: 0
     skillName: Pacte Infernal
-    description: "Inflige 25 DGT \xE0 toutes les cartes adverses. Soigne 10% de ses
+    description: "Inflige 25 DGT \xE0 toutes les cartes adverses.\nHEAL 10% de ses
       PV max pendant deux tours."
     damage: 25
     cooldownTurns: 4
@@ -66,16 +70,24 @@ MonoBehaviour:
       durationTurns: 2
       effectTarget: 1
     branches: []
-    attackVFXPrefab: {fileID: 0}
-    impactVFXPrefab: {fileID: 0}
+    isIncantation: 0
+    castDelayTurns: 1
+    attackVFXPrefab: {fileID: 4560534324245121887, guid: 5d751cb322afd6249bf8dfe9a207b6ed, type: 3}
+    trailVFXPrefab: {fileID: 0}
+    trailVFXScale: 1
+    attackVFXIsProjectile: 0
+    attackVFXScale: 1
+    impactVFXPrefab: {fileID: 5874111619560862819, guid: 099d8e982377b654fbe9d7c3c492a601, type: 3}
+    impactVFXScale: 1
     vfxTravelTime: 0.35
     vfxImpactDuration: 0.2
+    impactVFXOffset: {x: 0, y: 0, z: 0}
   passive:
     passiveName: Bain de Sang
     passiveDescription: "Si cette carte d\xE9truit une carte, se soigne de 15% de
       ses PV Max."
     trigger: 3
-    triggerElement: 7
+    triggerElement: 8
     passiveColor: {r: 1, g: 0.84, b: 0, a: 1}
     stacksPerTrigger: 0
     maxTriggerStacks: 4

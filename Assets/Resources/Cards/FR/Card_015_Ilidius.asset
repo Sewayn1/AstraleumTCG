@@ -17,14 +17,18 @@ MonoBehaviour:
   cardNumber: 15
   element: 4
   rarity: 3
-  artwork: {fileID: 21300000, guid: db0ad78da17bbab4596f8eee7a48361a, type: 3}
+  artwork: {fileID: 21300000, guid: 160323ece7687d144aa3ec368ba1bab0, type: 3}
+  hiddenFromCollection: 0
+  isTrainingDummy: 0
   maxHP: 300
-  armorPoints: 12
+  armorPoints: 0
+  critChance: 0.01
   bonusActionsGranted: 0
   skillOne:
     skillType: 0
     skillName: "\xC9p\xE9e C\xE9leste"
-    description: "Inflige 30 DGT \xE0 la cible et ignore l'Armure."
+    description: "Inflige 30 DGT \xE0 la cible et ignore ARM. Si cette carte \xE0
+      50% PV ou moins, se HEAL de 10% pendant 2 Tours."
     damage: 30
     cooldownTurns: 2
     targetType: 0
@@ -34,20 +38,41 @@ MonoBehaviour:
       value: 1
       durationTurns: 0
       effectTarget: 0
-    branches: []
-    attackVFXPrefab: {fileID: 0}
-    impactVFXPrefab: {fileID: 0}
+    branches:
+    - condition:
+        conditionType: 1
+        compareOp: 0
+        threshold: 0.5
+        effectType: 0
+        conditionElement: 0
+      effectType: 9
+      target: 1
+      valueMode: 0
+      valuePercent: 0.1
+      valueFlat: 0
+      durationTurns: 2
+    isIncantation: 0
+    castDelayTurns: 1
+    attackVFXPrefab: {fileID: 7713322516035562177, guid: efdbf1c7c99ca8945a3c4d9cf8dbe547, type: 3}
+    trailVFXPrefab: {fileID: 6857069365125669762, guid: 6a276d6d96c0fba4095854c164160ab0, type: 3}
+    trailVFXScale: 0.6
+    attackVFXIsProjectile: 0
+    attackVFXScale: 1
+    impactVFXPrefab: {fileID: 4172968788073076066, guid: 4b8cad722f9c6d745b57297826607bc5, type: 3}
+    impactVFXScale: 1
     vfxTravelTime: 0.35
     vfxImpactDuration: 0.2
+    impactVFXOffset: {x: 0, y: 0, z: 0}
   skillTwo:
     skillType: 0
     skillName: Jugement Divin
-    description: "Inflige 50 DGT \xE0 la cible, et 50% aux cibles adjacentes. Soigne
-      les alli\xE9es de 5%. Si cette carte \xE0 moins de 30% de ses PV, inflige 15%
-      de DGT suppl\xE9mentaire, et se soigne de 5% de ses PV Max."
+    description: "Incantation - 1 Tour :\n\nInflige 45 DGT \xE0 la cible, et 50%
+      aux cibles adjacentes. \nHEAL les alli\xE9es de 5%. \nSi cette carte \xE0 moins
+      de 30% de ses PV, inflige 15% de DGT suppl\xE9mentaire, et se HEAL de 5% de
+      ses PV Max."
     damage: 45
     cooldownTurns: 5
-    targetType: 0
+    targetType: 4
     adjacentDamagePercent: 0.5
     effects:
     - type: 3
@@ -60,6 +85,7 @@ MonoBehaviour:
         compareOp: 0
         threshold: 0.3
         effectType: 0
+        conditionElement: 0
       effectType: 0
       target: 0
       valueMode: 0
@@ -71,16 +97,25 @@ MonoBehaviour:
         compareOp: 0
         threshold: 0.3
         effectType: 0
+        conditionElement: 0
       effectType: 8
       target: 1
       valueMode: 0
       valuePercent: 0.05
       valueFlat: 0
       durationTurns: 0
-    attackVFXPrefab: {fileID: 0}
-    impactVFXPrefab: {fileID: 0}
+    isIncantation: 1
+    castDelayTurns: 1
+    attackVFXPrefab: {fileID: 7713322516035562177, guid: efdbf1c7c99ca8945a3c4d9cf8dbe547, type: 3}
+    trailVFXPrefab: {fileID: 0}
+    trailVFXScale: 1
+    attackVFXIsProjectile: 0
+    attackVFXScale: 1
+    impactVFXPrefab: {fileID: 8499795791273234962, guid: 96aeca063cc1cf1498b2e25f5deff215, type: 3}
+    impactVFXScale: 0.7
     vfxTravelTime: 0.35
     vfxImpactDuration: 0.2
+    impactVFXOffset: {x: 0, y: 0, z: 0}
   passive:
     passiveName: Vengeance Divine
     passiveDescription: "Pour chaque alli\xE9s de type \"Lumi\xE8re\" d\xE9truite,

@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 18c44763bf511f94492d2cf22a9b8b45
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 7400000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 277550
+  packageName: TCG Card Game Effects
+  packageVersion: 1.4
+  assetPath: Assets/IndieImpulse_Assets/TCG Card Game Effects/Animations/HexAnimation.anim
+  uploadId: 897924

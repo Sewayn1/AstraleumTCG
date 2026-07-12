@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: f6f28fe10a9e5214c834d0e441de558f
+PrefabImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 277550
+  packageName: TCG Card Game Effects
+  packageVersion: 1.4
+  assetPath: Assets/IndieImpulse_Assets/TCG Card Game Effects/Prefabs/ModelPrefabs/ShieldBuff.prefab
+  uploadId: 897924

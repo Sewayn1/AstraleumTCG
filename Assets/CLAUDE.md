@@ -60,19 +60,21 @@ Assets/_Game/
 │   ├── AudioSettingsPanel.cs         ← Panel_Audio
 │   ├── GraphicsSettingsPanel.cs      ← Panel_Graphics
 │   ├── SettingsInitializer.cs        ← GameObject persistant MainMenu
-│   └── LanguageSettingsPanel.cs      ← TMP_Dropdown FR/EN dans Panel_Settings
+│   ├── LanguageSettingsPanel.cs      ← TMP_Dropdown FR/EN dans Panel_Settings
+│   └── PanelUpdateAvailable.cs       ← Panel_UpdateAvailable (Canvas/Panel_MainMenu), bloquant
 └── Utils/Scripts/
     ├── PlayerCollection.cs            ← DontDestroyOnLoad, ALPHA_ALL_OWNED=true
     ├── DeckSaveSystem.cs             ← DontDestroyOnLoad, PlayerPrefs+JsonUtility
     ├── LocalizationManager.cs        ← DontDestroyOnLoad, charge fr.json/en.json depuis Resources/Localization/
-    └── LocalizedText.cs              ← [RequireComponent(TMP_Text)], clé dans inspecteur, s'abonne à OnLanguageChanged
+    ├── LocalizedText.cs              ← [RequireComponent(TMP_Text)], clé dans inspecteur, s'abonne à OnLanguageChanged
+    └── UpdateChecker.cs              ← sur SettingsInitializer (persistant), fetch manifest.json au démarrage
 ```
 
 ---
 
 ## 🧱 Système de Stacks
 
-- 7 éléments : `Feu`, `Eau`, `Terre`, `Air`, `Lumiere`, `Tenebres`, `Astral`
+- 8 éléments : `Feu`, `Eau`, `Terre`, `Air`, `Lumiere`, `Tenebres`, `Astral`, `Corrosif`
 - Max **10 stacks** par élément
 - Bonus **mineurs** → toutes les cartes alliées
 - Bonus **majeurs** (3/5 stacks) → cartes du même élément (sauf Terre et Lumière majeurs = tous alliés)
@@ -82,20 +84,22 @@ Assets/_Game/
 |---|---|
 | Feu | +3% dégâts/stack |
 | Eau | -2% dégâts subis/stack |
-| Terre | +5 armure UNE SEULE FOIS au début du combat |
-| Air | +1% chance relance/stack |
+| Terre | -2% dégâts subis/stack (jusqu'à -10% à 5 stacks) |
+| Air | +2% chance critique/stack, max 10% (toutes cartes alliées) |
 | Lumière | +2% efficacité soins/stack |
-| Ténèbres | +3% dégâts indirects/stack |
+| Ténèbres | +2% DGT/stack par carte adverse en vie (toutes cartes alliées) |
+| Corrosif | -1 armure/stack pour TOUTES les cartes adverses |
 
 ### Bonus majeurs
 | Élément | 3 stacks | 5 stacks |
 |---|---|---|
-| Feu | Splash adjacents (cartes Feu) | Splash toutes cibles (cartes Feu) |
+| Feu | Splash adjacents (cartes Feu) | +10% DGT critiques et +5% chance critique (cartes Feu) |
 | Eau | Ennemis -5% dégâts (cartes Eau) | Ennemis -10% dégâts (cartes Eau) |
-| Terre | +3 armure/tour TOUS alliés | +5 armure/tour TOUS alliés |
-| Air | +2% chance relance (cartes Air) | +1 action supp. (cartes Air) |
+| Terre | +3 armure infinie TOUS alliés | +5 armure infinie TOUS alliés |
+| Air | +5% DGT critique TOUS alliés | +10% DGT critique + 5% crit TOUS alliés |
 | Lumière | Régén. 3% PV max/tour TOUS alliés | Régén. 7% PV max/tour TOUS alliés |
-| Ténèbres | Poison 3% PV max/tour 2 tours (cartes Ténèbres) | Poison 6% + soin 3% PV max (cartes Ténèbres) |
+| Ténèbres | +5% Vol de Vie (cartes Ténèbres) | +10% Vol de Vie (cartes Ténèbres) |
+| Corrosif | -5% PV Max — Toutes les cartes adverses | -10% PV Max — Toutes les cartes adverses |
 
 ---
 
@@ -113,8 +117,9 @@ Assets/_Game/
 
 - Armure = **pool de PV supplémentaire** (pas un % de réduction)
 - Dégâts appliqués : armure d'abord → PV si armure épuisée
-- Plafond armure : **100 points**
-- `armorPoints` dans `CardData` (valeur initiale), `currentArmor` dans `CardInstance`
+- `armorPoints` dans `CardData` = valeur de base permanente (stat de carte)
+- GiveArmor (buffs/passifs en combat) : cumulatifs par source, **plafonné à 20 au total** (`MAX_GIVE_ARMOR`)
+- Armure totale = `armorPoints` + `min(sommeGiveArmor, 20)` − réduction Corrosif adversaire
 - Perce-Armure → ignore l'armure entièrement
 
 ---
@@ -144,7 +149,34 @@ OnStackThreshold3     — quand le joueur atteint 3 stacks d'un élément
 OnStackThreshold5     — quand le joueur atteint 5 stacks d'un élément
 OnAllyDestroyed       — quand un allié est détruit
 OnTurnStart           — début de tour
+CardIsBurning         — dynamique, PAS un événement (voir section dédiée ci-dessous)
+ForEachAllyAlive      — dynamique, PAS un événement (voir section dédiée ci-dessous)
 ```
+
+### ForEachAllyAlive — trigger dynamique (2026-07-10)
+Même architecture que `CardIsBurning` (voir ci-dessous) — bypass complet de `PassiveManager`, recalculé à chaque attaque dans `DamageCalculator.Calculate` :
+```csharp
+// Bonus = effect.value (AttackBoost/AttackBoostFlat du passif) × nb d'alliés vivants
+// de la carte (même ownerPlayerID), EN EXCLUANT la carte elle-même.
+```
+- `CountAliveAllies(card)` : `GetAliveCards(card.ownerPlayerID)` moins la carte elle-même — jamais l'adversaire
+- Diminue automatiquement à mesure que des alliés meurent, jusqu'à 0 (pas de `ActiveEffect` stocké à nettoyer, pas de logique de retrait — le recalcul live gère ça tout seul)
+- `stacksPerTrigger`/`maxTriggerStacks`/`triggerElement` ignorés pour ce trigger, comme pour `CardIsBurning` — le plafond naturel est déjà le nombre de cartes sur le plateau (4 alliés max hors soi-même)
+- UI câblée dès la création (leçon tirée du bug `CardIsBurning`) : `preview_ally_alive_passive_fx` dans `CombatUIManager` (preview) + tag `(+N Passif Alliés)` dans `SkillExecutor.ExecuteSingleEnemy` (log de combat)
+- Miroir serveur : `AstraleumCore/DamageCalculator.cs` (`GetAllyAliveFlatBonus` + `CountAliveAllies(card, board)`)
+- Ajouté **en dernier** dans `PassiveTrigger` (client + serveur) — n'affecte aucune carte existante
+
+### CardIsBurning — trigger dynamique (2026-07-10)
+Contrairement aux autres triggers, **ne passe jamais par `PassiveManager.TriggerPassive`/`ResolvePassive`** (pas d'événement discret à écouter) et **ne crée aucun `ActiveEffect`/`ConditionalPassiveEffect` stocké**. Entièrement recalculé à chaque attaque, directement dans `DamageCalculator.Calculate` (+ `GetAttackerFlatBonus` pour la preview/tooltip, + `GetPreview.isAmplified`) :
+```csharp
+// Bonus = effect.value (AttackBoost/AttackBoostFlat du passif) × nb de cartes
+// (alliées + ennemies) actuellement affectées par Burn, sur tout le plateau.
+```
+- Compte les cartes brûlantes des **deux joueurs confondus**, recalculé à chaque appel (pas de cache)
+- Réutilise `EffectType.AttackBoost`/`AttackBoostFlat` sur les `effects` du passif — **aucun nouveau champ sur `CardPassive`/`CardEffect`**, `triggerElement`/`stacksPerTrigger` ignorés pour ce trigger
+- Miroir serveur : `AstraleumCore/DamageCalculator.cs` (`GetBurningPassiveFlatBonus` + `CountBurningCardsOnField(board)`)
+- Ajouté **en dernier** dans `PassiveTrigger` (client + serveur) — n'affecte aucune carte existante, aucune donnée de passif à revérifier
+- **Bug initial (2026-07-10, corrigé le jour même)** : le bonus était bien calculé (confirmé par log de diagnostic en Play Mode : `burningBonus=2` correctement appliqué), mais **aucune UI ne l'affichait** — chiffre final noyé dans le total, aucun moyen pour le joueur de vérifier visuellement. Corrigé : `GetBurningPassiveFlatBonus`/`CountBurningCardsOnField` passés en `public`, ligne `preview_burning_passive_fx` ajoutée dans `CombatUIManager` (barre de preview, texte orange, avant l'attaque) + tag `(+N Passif Brûlure)` ajouté au log de combat dans `ExecuteSingleEnemy` (`SkillExecutor.cs`) — uniquement le chemin SingleEnemy, pas AllEnemies/AdjacentEnemies (scope limité au cas rapporté)
 
 ### Règles de désactivation
 - Seuil 5 perdu → effets `OnStackThreshold5` retirés des cartes ennemies
@@ -185,12 +217,14 @@ Déclaré dans `CardSkill.branches` (List<ConditionalBranch>) — fichier `Asset
 | `TargetIsBurning` / `TargetIsPoisoned` | aucun |
 | `AttackerIsBurning` / `AttackerIsPoisoned` | aucun |
 | `AlwaysTrue` | aucun |
+| `TargetHasNoArmor` / `TargetHasArmor` | aucun |
 
 ### Effets de branche (BranchEffectType)
 | Effet | Moment | Stocké |
 |---|---|---|
 | `DamageAmplify` | **PRE-DAMAGE** via `EvalBranchAmplify` + `extraAmplify` | Non — one-shot |
-| `AttackBoost` / `AttackBoostFlat` / `AttackReduction` | Post-damage | Oui — ActiveEffect |
+| `AttackBoost` ciblant **Attacker** | **PRE-DAMAGE** via `EvalBranchAttackBoost` + `branchAttackBoost` (même pattern que `DamageAmplify`) | Non — one-shot |
+| `AttackBoost` ciblant **Target** / `AttackBoostFlat` / `AttackReduction` | Post-damage | Oui — ActiveEffect |
 | `DamageReduction` / `Saignement` / `Burn` / `Poison` / `Stun` | Post-damage | Oui — ActiveEffect |
 | `InstantHeal` | Post-damage | Non — `Heal()` direct, respecte HealBlock |
 | `HealOverTime` | Post-damage | Oui — ActiveEffect |
@@ -211,6 +245,12 @@ int dmg = DamageCalculator.Calculate(attacker, skill, target, branchAmplify);
 - `BranchTarget` : `Target` (cible de la compétence) ou `Attacker`
 - `durationTurns` masqué dans l'inspecteur pour `InstantHeal`
 
+### ⚠️ Bug corrigé — AttackBoost/AttackReduction en mode Percent (2026-07-10)
+`EffectType.AttackBoost`/`AttackReduction` sont **flat en jeu** (migration documentée plus haut : "AttackBoost / AttackReduction — migration flat") — `DamageCalculator.Calculate` fait `dmg += eff.value` sans jamais traiter `eff.value` comme un %. Or `EvalBranchAttackBoost` et `ApplyBranches` stockaient directement `branch.valuePercent` (ex. `0.25`) tel quel quand `valueMode = Percent`, ce qui donnait **+0.25 DGT réel au lieu de +25%** (arrondi à ~0, effet invisible). Corrigé : en mode Percent, `AttackBoost`/`AttackReduction` convertissent maintenant la valeur en `skill.damage × valuePercent` avant application/stockage. Les autres effets de branche (Saignement, DamageReduction, MaxHPReduction, etc.) n'étaient PAS affectés — leur `EffectType` consomme déjà `eff.value` comme un vrai %.
+- **11 cartes affectées** (branche AttackBoost + mode Percent, jusque-là quasi sans effet, maintenant fonctionnelle) : `Card_007_Istan` (15%, Target), `Card_008_DragonDeFeu` (25%, Attacker), `Card_012_DragonDesTenebres` (5%, Attacker), `Card_015_Ilidius` (15%, Target), `Card_022_Djormund` (15%, Attacker), `Card_025_GobelinPyromane` (**50%**, Attacker), `Card_026_Eldrich` (20%, Attacker), `Card_035_Orgueil` (**50%**, Attacker), `Card_045_Arpentis le Virulent` (10%, Attacker), `Card_046_Kael&Ambroise` (25%, Attacker), `Card_Starter_Water` (25%, Attacker)
+- Ces cartes vont désormais infliger sensiblement plus de dégâts quand leur condition est vraie — à re-tester/rééquilibrer, notamment Card_025 et Card_035 (50%)
+- Miroir appliqué dans `AstraleumCore/SkillExecutor.cs` (client + serveur synchronisés)
+
 ### Note Saignement
 Les `CardEffect` de type `Saignement` sur les SO doivent utiliser des valeurs décimales (ex. `0.05` = 5% PV max/tour). Les anciennes valeurs absolues (ex. `50`) doivent être converties.
 
@@ -219,21 +259,25 @@ Les `CardEffect` de type `Saignement` sur les SO doivent utiliser des valeurs d�
 ## ⚙️ Enums importants
 
 ```csharp
-Element:       Feu, Eau, Terre, Air, Lumiere, Tenebres, Astral
-TriggerElement: Feu, Eau, Terre, Air, Lumiere, Tenebres, Astral, Any
+Element:       Feu, Eau, Terre, Air, Lumiere, Tenebres, Astral, Corrosif
+TriggerElement: Feu, Eau, Terre, Air, Lumiere, Tenebres, Astral, Corrosif, Any
 EffectType:    Saignement(0), DamageAmplify(1), DamageReduction(2), ImmediateHeal(3),
                HealOverTime(4), HealBlock(5), GiveArmor(6), GiveArmorAdjacent(7),
                ArmorIgnore(8), AddStack(9), RemoveStack(10), CooldownReduction(11),
                CooldownIncrease(12), AttackBoost(13), AttackReduction(14), BonusAction(15),
                Stun(16), Poison(17), Burn(18), LifeSteal(19), Invisible(20),
-               AttackBoostFlat(21)  ← TOUJOURS EN DERNIER
+               AttackBoostFlat(21), CritChanceBoost(22), CritDamageBoost(23),
+               MaxHPReduction(24), ReduceArmor(25), AttackReductionFlat(26), Cancel(27)  ← TOUJOURS EN DERNIER
 BranchEffectType: AttackBoost(0), AttackReduction(1), DamageAmplify(2), DamageReduction(3),
                   Saignement(4), Burn(5), Poison(6), Stun(7), InstantHeal(8),
-                  HealOverTime(9), InstantDamage(10), AttackBoostFlat(11)  ← TOUJOURS EN DERNIER
+                  HealOverTime(9), InstantDamage(10), AttackBoostFlat(11),
+                  AddArmor(12), MaxHPReduction(13), ReduceArmor(14),
+                  CritChanceBoost(15), CritDamageBoost(16), AttackReductionFlat(17), Cancel(18)  ← TOUJOURS EN DERNIER
 EffectTarget:  Target, Self, AllAllies, AllEnemies, RandomAllies, RandomEnnemies,
                AdjacentEnemies
 PassiveTrigger: OnTurnStart, OnCardDestroyed, OnAllyDestroyed,
-                WhenThisCardDestroysCard, OnStackThreshold3, OnStackThreshold5
+                WhenThisCardDestroysCard, OnStackThreshold3, OnStackThreshold5,
+                CardIsBurning  ← TOUJOURS EN DERNIER (sérialisé comme entier dans CardPassive.trigger)
 CardRarity:    Commun, Rare, Epique, Legendaire, Supreme
 SkillType:     Attack, Heal, Buff, Debuff, Mixed
 ```
@@ -251,12 +295,13 @@ SkillType:     Attack, Heal, Buff, Debuff, Mixed
 | `-1` | Permanent (infini) |
 | `0` | Ne pas utiliser |
 
-### HoT — Toujours sur maxHP
+### Soins (ImmediateHeal / HealOverTime / Régén. Lumière) — basés sur les PV MAX
 ```csharp
-// TOUJOURS utiliser data.maxHP pour les soins périodiques
-int hot = Mathf.RoundToInt(data.maxHP * effect.value);
-// JAMAIS currentHP * value pour les HoT
+// TOUJOURS utiliser EffectiveMaxHP (client) / GetEffectiveMaxHP(stacks) (serveur) pour tout soin
+int heal = Mathf.RoundToInt(EffectiveMaxHP * effect.value);
+// JAMAIS currentHP * value pour un soin (revert 2026-07-10 : % PV restants trop faible en clutch)
 ```
+Le soin est une valeur fixe basée sur les PV max effectifs (tient compte de MaxHPReduction/Corrosif), peu importe l'état actuel de la cible. Ne s'applique qu'aux soins — Saignement/Burn/Poison/MaxHPReduction restent en % de `data.maxHP` (voir plus bas).
 
 ### Heal() — paramètre showPopup
 ```csharp
@@ -310,16 +355,27 @@ Passif OnTurnStart : effect type=Invisible, value=1, durationTurns=-1, effectTar
 - Le passif re-applique Invisible au début de chaque tour du joueur
 - `CardInstance.IsInvisible` → propriété booléenne de vérification rapide
 
-### Saignement / Burn / Poison — Icônes de statut
+### Saignement / Burn / Poison / HealBlock / HOT / DamageAmplify — Icônes de statut
 - **Burn** : affectée armure + DamageReduction. Icône `BurnIcon` via `CardVisualUpdater.burnIcon` + `IconLibrary.iconBurn`
-- **Poison** : ignore armure. Icône `PoisonIcon` via `CardVisualUpdater.poisonIcon` + `IconLibrary.iconPoison` — **à créer dans le prefab**
-- **Saignement** : dégâts % PV max/tour, empile par source. Icône `SaignementIcon` via `CardVisualUpdater.saignementIcon` + `IconLibrary.iconSaignement` — **à créer dans le prefab**
-- Les icônes sont auto-trouvées par nom (`FindReferences`) — créer les GameObjects Image avec les noms exacts
+- **Poison** : ignore armure. Icône `Poison` via `CardVisualUpdater.poisonIcon` + `IconLibrary.iconPoison`
+- **Saignement** : dégâts % PV max/tour, empile par source. Icône `Bleed` via `CardVisualUpdater.saignementIcon` + `IconLibrary.iconSaignement`
+- **HealBlock** : icône `HealBlock` via `CardVisualUpdater.healBlockIcon` + `IconLibrary.iconHealBlock`
+- **HOT** : icône `HOT` via `CardVisualUpdater.hotIcon` + `IconLibrary.iconHOT`
+- **DamageAmplify** (2026-07-10) : uniquement pour un `EffectType.DamageAmplify` **stocké** (skill à `durationTurns > 0`) — la version branche conditionnelle (`BranchEffectType.DamageAmplify`) est consommée pré-damage en one-shot et n'est jamais stockée, donc jamais affichée par cette icône (comportement voulu). Icône `DamageAmplify` via `CardVisualUpdater.damageAmplifyIcon` + `IconLibrary.iconDamageAmplify`
+- Toutes ces icônes sont auto-trouvées par nom exact via `FindChildImage`/`ForceDisableChild` (`FindReferences`) — le nom du GameObject dans le prefab doit correspondre exactement (`Poison`, `Bleed`, `HealBlock`, `HOT`, `DamageAmplify`)
 - Multi-source Saignement/Burn : même source → durée/valeur rafraîchie ; source différente → nouvelle instance empilée
 - Tooltip Burn : clé `buff_burn_line` (FR/EN)
-- `FindReferences` : `SetActive(false)` appelé **inconditionnellement** pour `burnIcon`, `poisonIcon`, `saignementIcon` (hors du guard `if (== null)`) — sinon les refs pré-assignées en inspector ne sont jamais cachées au démarrage
+- `FindReferences` : `SetActive(false)` appelé **inconditionnellement** au chargement pour toutes ces icônes (hors du guard `if (== null)`) — sinon les refs pré-assignées en inspector ne sont jamais cachées au démarrage
 - `Update*Icon` : `SetActive(true)` uniquement si `sprite != null` — évite le carré blanc quand le sprite n'est pas assigné dans IconLibrary
-- **Ténèbres Poison** : le Poison appliqué par une carte Ténèbres lors de `ExecuteSingleEnemy` est le mécanisme majeur (3 stacks = 3%, 5 stacks = 6%) — ce n'est pas un bug de compétence
+
+### Règle d'empilement des effets actifs (`ApplyEffect`)
+| Effet | Comportement |
+|---|---|
+| Burn / Saignement | Même source → rafraîchit durée/valeur ; source différente → nouvelle instance |
+| Poison | Toujours mergé : valeur max, durée max (1 seule instance) |
+| DamageReduction / AttackReduction | Cumulatif additif, plafonné à 50% (1 seule instance) |
+| GiveArmor | Même source+skill → rafraîchit ; source différente → nouvelle instance (plafond total 20 dans TotalArmor) |
+| **Tous les autres** | **Toujours empilés comme instances indépendantes** — une carte peut avoir plusieurs AttackBoost, HealOverTime, HealBlock, Stun, etc. simultanément |
 
 ### TriggerHitShake — Vibration sur coup direct
 - `CardVisualUpdater.TriggerHitShake()` → coroutine 0.25s, magnitude 6px, decroissante
@@ -341,6 +397,20 @@ durationTurns ignoré — effet immédiat
 - `CardClickHandler` bloque l'ouverture du SkillPanel si la carte est étourdie
 - `CardVisualUpdater` affiche l'`ExhaustedOverlay` sur les cartes éttourdies (même visuel que "a déjà joué")
 - `durationTurns = 1` → bloque le joueur pendant exactement 1 tour complet
+
+### CooldownIncrease — +1 tour de recharge sur les deux compétences (2026-07-10)
+- **Modifie directement `skill1Cooldown` ET `skill2Cooldown`** (+1 sur les deux, même si prêtes) — visible immédiatement sur les icônes de compétence, contrairement à l'ancien gel invisible
+- En plus de ce +1, stocke un `ActiveEffect{type=CooldownIncrease, remainingTurns=1}` sur la cible pour **bloquer le décompte normal pendant exactement 1 tour** (sinon le +1 serait immédiatement annulé par le décompte du tour suivant)
+- `CardInstance.OnTurnStart()` : si cet effet est présent, **skip le décompte** des cooldowns ce tour (mais `ProcessActiveEffects` tourne normalement)
+- `TurnManager.EndTurnLocal()` : effet retiré à la **FIN du tour** du joueur affecté — exactement le même schéma que le Stun (voir ci-dessus) ; le décompte normal reprend ensuite son cours
+- Effet net = bloque les deux compétences jusqu'à la fin du **prochain tour complet** de la cible, quel que soit leur cooldown au moment du cast (corrige l'ancien flaw où un cooldown déjà à 0 n'était pas affecté par le gel)
+- `effect.value` ignoré — la durée du blocage est toujours fixe (1 tour de la cible), seul le +1 sur les deux cooldowns est fixe
+- Textes UI/log renommés de "Recharge gelée" → "Recharge +1 tour" (`buff_cdinc_line`, `preview_cd_inc_fx`, `CombatLogManager.DescribeEffect`)
+
+### CooldownReduction — jamais sur la carte qui lance la compétence (2026-07-10)
+- `SkillExecutor.ApplyEffectToCard` : guard `if (target == source) break;` — un CooldownReduction ciblé sur soi-même (SingleAlly) n'a aucun effet
+- `SkillExecutor.ApplyEffect` (dispatch AllAllies / RandomAllies) : la source est exclue de la liste des alliés avant application/tirage, uniquement pour `EffectType.CooldownReduction` (les autres effets AllAllies/RandomAllies continuent d'inclure le lanceur normalement)
+- Miroir appliqué dans `AstraleumCore/SkillExecutor.cs` (client + serveur synchronisés)
 
 ### Passifs — Règles d'implémentation
 - **Toutes raretés** peuvent avoir un passif (le check Legendaire/Supreme a été supprimé) — la `passiveDescription` non-vide est la seule garde
@@ -437,7 +507,9 @@ CardPrefab
 ## ✅ Fonctionnalités validées
 
 - [x] Système stacks complet (permanents/temporaires/Astral)
-- [x] Armure = pool HP (pas %)
+- [x] Armure = réduction plate par coup (pas pool HP)
+- [x] Terre mineur : -2% DGT subis/stack (passif DamageCalculator), max -10% à 5 stacks
+- [x] Terre majeur : +3 armure infinie (3 stacks) / +5 armure infinie (5 stacks), supprimée si seuil perdu
 - [x] Passifs conditionnels (OnStackThreshold3/5) avec ConditionalPassiveEffect
 - [x] Désactivation effets passifs sur perte de seuil
 - [x] DOT et HoT séquencés (DOT d'abord, HoT 2s après)
@@ -526,6 +598,15 @@ CardPrefab
 - [x] CardVisualUpdater icônes statut : FindReferences cache inconditionnellement burnIcon/poisonIcon/saignementIcon au démarrage ; Update*Icon n'active l'icône que si sprite != null (no white square)
 - [x] TurnAnnouncementManager : pop-up centré 1-2s au début de chaque tour (fade + scale easeOut/easeIn), `VOTRE TOUR` (vert) / `TOUR ADVERSE` (rouge), network-aware (LocalPlayerID), appelé dans TurnManager.Start() et EndTurnLocal()
 - [x] DeckEditorSkillPreview : clic droit sur carte dans Panel_DeckEditor → panel skills/passif (400×554px auto-height), sprite bar_ready blanc Sliced, childControlHeight=true sur tous les VLG, LayoutRebuilder.ForceRebuildLayoutImmediate() au Show()
+- [x] Incantation — cible morte à la résolution : `ResolveIncantations` annule proprement (log + Remove) au lieu de crasher `SkillExecutor` sur target null, ce qui bloquait `EndTurnLocal` en permanence ; null-guards ajoutés dans ExecuteSingleEnemy/SingleAlly/AdjacentEnemies
+- [x] Soins basés sur PV restants : ImmediateHeal, HealOverTime (skills + branches) et régén. Lumière utilisent `currentHP * value` au lieu de `data.maxHP * value` — CardInstance, SkillExecutor, EffectManager, CombatUIManager (previews), BuffTooltipManager, CardVisualUpdater, AIActionScorer. Les dégâts (Saignement/Burn/Poison/MaxHPReduction/InstantDamage) restent inchangés sur PV max. **Déployé sur VPS 2026-07-09.**
+- [x] EffectType.CooldownIncrease repensé : gèle la recharge de la cible jusqu'à la fin de son prochain tour (au lieu d'ajouter X tours) — ActiveEffect + skip decrement dans OnTurnStart + retrait en fin de tour dans TurnManager.EndTurnLocal (même schéma que Stun). IncreaseCooldown() supprimé. 9 descriptions de cartes mises à jour (FR). Miroir appliqué dans AstraleumCore (TurnProcessor.EndTurn + SkillExecutor). **Déployé sur VPS 2026-07-09** (Core+Server rebuild + cards.json régénéré via Astraleum/Exporter cards.json, 53 cartes).
+- [x] BuffTooltipManager : effets similaires fusionnés sur une seule ligne — `GetTooltipGroupKey` (AttackBoost+AttackBoostFlat et AttackReduction+AttackReductionFlat regroupés, le reste par EffectType) + `MergeEffects` (valeurs sommées, durée = la plus longue restante/∞, sources listées). Recalculé à chaque affichage depuis `card.activeEffects` en direct → se met à jour tout seul quand des instances expirent. `GetEffectTooltip` (tooltips icônes de statut) fusionne aussi.
+- [x] DropdownToggle (Panel_Play, Btn_Training) : placement chaotique corrigé — `anchoredPosition`/`DOAnchorPosY` remplacés par `localPosition`/`DOLocalMoveY` (les items ont un ancrage différent du bouton toggle, anchoredPosition n'était pas comparable). `ForceCollapse()` public ajouté + câblé sur `DeckSelectPanel.trainingDropdown` : Btn_Normal referme le dropdown IA avec la même animation.
+- [x] DropdownToggle : bug de clic rapide corrigé — `cg.DOKill()` ajouté partout à côté de `rt.DOKill()` (Expand/Collapse/OnEnable/OnDestroy). Un Collapse() interrompu par un Expand() rapproché laissait l'ancien tween de fade survivre et re-masquer l'item après coup (`OnComplete` non tué) — repro : 3 clics rapprochés sur Btn_Training.
+- [x] DropdownToggle simplifié en fondu pur (plus de slide) : après un 2e rapport de bug de placement malgré les corrections précédentes, le glissement de position (`DOLocalMoveY` + Ease.OutBack) a été retiré entièrement. Les items ne sont plus JAMAIS déplacés — seule leur transparence (`CanvasGroup.alpha`) est animée en cascade (`staggerDelay`). Garantit par construction qu'ils restent exactement à la position éditeur, quel que soit l'état (actif/inactif, clic rapide, panel ré-activé). Testé robuste via `DOTween.CompleteAll` après clics simples et rapides répétés.
+- [x] Btn_EndTurn (`ActionBar`) : raccourci clavier Espace ajouté dans `TurnManager.Update()` — appelle `EndTurn()`, identique au clic (mêmes guards réseau/tour existants, aucune logique dupliquée)
+- [x] Panel_UpdateAvailable raccordé : `UpdateChecker.cs` (déjà écrit, non câblé) ajouté sur `SettingsInitializer` (persistant) — fetch `manifest.json` GitHub au démarrage, compare à `Application.version`, appelle `PanelUpdateAvailable.Instance.Show(version)` si plus récent. Panel remis actif dans la scène (obligatoire pour Awake/singleton). Bug trouvé en route : `Title`/`Desc` avaient hérité de `LocalizedText` avec des clés d'un tout autre panel (`ui_first_launch_*`, panel de bienvenue) — supprimés (ce sont maintenant `versionText`/`messageText` pilotés par script) ; `Desc2` (avertissement statique) recorrigé avec sa propre clé `ui_update_desc2`. `PanelUpdateAvailable.Show()` passe maintenant par `LocalizationManager.Get()` (FR/EN) au lieu de texte français en dur. Testé en Play Mode : `Show("9.9.9")` affiche correctement, Btn_Quit (déjà câblé sur `GameManager.QuitGame()`) ferme le jeu.
 
 ---
 
@@ -544,8 +625,8 @@ CardPrefab
 - [ ] Localisation : remplir descriptions de cartes dans fr.json/en.json (vides, fallback SO actif)
 - [ ] Localisation : ajouter LocalizationManager.Get() dans CombatUIManager pour BuffLabel/ArmorLabel/HealLabel (dynamiques)
 - [x] Setup Unity : panel BuffTooltip créé et fonctionnel
-- [ ] Créer PoisonIcon et SaignementIcon dans CardPrefab (Image GO, désactivé, nom exact requis pour FindReferences)
-- [ ] Assigner iconPoison et iconSaignement dans IconLibrary SO (inspecteur)
+- [x] Créer PoisonIcon et SaignementIcon dans CardPrefab + assigner iconPoison/iconSaignement dans IconLibrary SO
+- [x] Icône DamageAmplify dans CardPrefab2 + IconLibrary.iconDamageAmplify (2026-07-10)
 
 ---
 

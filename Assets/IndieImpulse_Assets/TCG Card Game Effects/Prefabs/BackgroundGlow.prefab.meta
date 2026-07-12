@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 6ca3b067e3b53064ea53d2c2c6c41df9
+PrefabImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 277550
+  packageName: TCG Card Game Effects
+  packageVersion: 1.4
+  assetPath: Assets/IndieImpulse_Assets/TCG Card Game Effects/Prefabs/BackgroundGlow.prefab
+  uploadId: 897924

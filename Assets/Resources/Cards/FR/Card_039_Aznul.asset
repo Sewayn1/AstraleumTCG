@@ -1,0 +1,96 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: baa3cfc011ceea542b4a6e2212c058c1, type: 3}
+  m_Name: Card_039_Aznul
+  m_EditorClassIdentifier: Assembly-CSharp::Astraleum.CardData
+  cardName: Aznul
+  cardTitle: Terreur des Mer
+  cardNumber: 39
+  element: 1
+  rarity: 3
+  artwork: {fileID: -1937621546347813621, guid: b0a9a257ab3afc24cb9a1535dc7cf2a9, type: 3}
+  maxHP: 240
+  armorPoints: 0
+  critChance: 0.01
+  bonusActionsGranted: 0
+  skillOne:
+    skillType: 0
+    skillName: Emprise Tentaculaire
+    description: "Saisit sa cible, lui inflige 12 DGT et l'\xE9tourdie pendant 1
+      Tour."
+    damage: 12
+    cooldownTurns: 1
+    targetType: 0
+    adjacentDamagePercent: 0
+    effects:
+    - type: 16
+      value: 1
+      durationTurns: 1
+      effectTarget: 0
+    branches: []
+    isIncantation: 0
+    castDelayTurns: 1
+    attackVFXPrefab: {fileID: 0}
+    trailVFXPrefab: {fileID: 874104363781329116, guid: 59a8a80f4fa79d740a3afc86b3015682, type: 3}
+    trailVFXScale: 1
+    attackVFXIsProjectile: 1
+    attackVFXScale: 1
+    impactVFXPrefab: {fileID: 6699823732153390975, guid: e1c98bd529b4cc24f857b920da3fa97f, type: 3}
+    impactVFXScale: 1
+    vfxTravelTime: 0.35
+    vfxImpactDuration: 0.2
+    impactVFXOffset: {x: 0, y: 0, z: 0}
+  skillTwo:
+    skillType: 4
+    skillName: "Contr\u020Fle Mental"
+    description: "Etourdie la cible pendant 1 Tour, et lui g\xE8le ses Temps de
+      Recharge jusqu'\xE0 la fin de son prochain tour. \n\nLui inflige 5 DGT."
+    damage: 5
+    cooldownTurns: 3
+    targetType: 0
+    adjacentDamagePercent: 0
+    effects:
+    - type: 16
+      value: 1
+      durationTurns: 1
+      effectTarget: 0
+    - type: 12
+      value: 1
+      durationTurns: 0
+      effectTarget: 0
+    branches: []
+    isIncantation: 0
+    castDelayTurns: 1
+    attackVFXPrefab: {fileID: 3564256609886714696, guid: a3036ee46e4824b4d923d93f55b5ac38, type: 3}
+    trailVFXPrefab: {fileID: 0}
+    trailVFXScale: 1
+    attackVFXIsProjectile: 0
+    attackVFXScale: 1
+    impactVFXPrefab: {fileID: 8758089774389977906, guid: fab71b97e44bbe64aa91b3fa0b79414c, type: 3}
+    impactVFXScale: 1
+    vfxTravelTime: 0.35
+    vfxImpactDuration: 0.2
+    impactVFXOffset: {x: 0, y: 0, z: 0}
+  passive:
+    passiveName: 
+    passiveDescription: 
+    trigger: 0
+    triggerElement: 0
+    passiveColor: {r: 1, g: 0.84, b: 0, a: 1}
+    stacksPerTrigger: 0
+    maxTriggerStacks: 4
+    effects: []
+  loreText: "L'on raconte que dans les Mer du monde, une cr\xE9ature monstreuse s'y
+    balade afin d'assouvir et de tuer les pauvres Marins et autres personnalit\xE9s
+    qui osent voyager. Les Rares survivants racontent leurs histoires, d\xE9crivant
+    le Monstre telle un conte pour effrayer les enfants."
+  loreQuote: Balade-toi en Mer et vient me rencontrer, nous deviendrons ami...

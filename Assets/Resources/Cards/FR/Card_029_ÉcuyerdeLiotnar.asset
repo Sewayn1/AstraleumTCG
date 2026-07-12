@@ -17,45 +17,71 @@ MonoBehaviour:
   cardNumber: 29
   element: 4
   rarity: 1
-  artwork: {fileID: 21300000, guid: 46e59f07213d9c24eb26896f5ba0f15d, type: 3}
+  artwork: {fileID: 21300000, guid: c2239e526940f1749b475908fb9ddcfb, type: 3}
+  hiddenFromCollection: 0
+  isTrainingDummy: 0
   maxHP: 150
-  armorPoints: 4
+  armorPoints: 0
+  critChance: 0.01
   bonusActionsGranted: 0
   skillOne:
     skillType: 0
     skillName: "Coup d'\xC9p\xE9e"
-    description: "Inflige 8 DGT \xE0 la cible."
-    damage: 8
+    description: "Inflige 9 DGT \xE0 la cible, et r\xE9duit les DGT inflig\xE9s par
+      la cible de 5% pendant 1 Tour."
+    damage: 9
     cooldownTurns: 1
     targetType: 0
     adjacentDamagePercent: 0
-    effects: []
+    effects:
+    - type: 14
+      value: 0.05
+      durationTurns: 1
+      effectTarget: 0
+    branches: []
+    isIncantation: 0
+    castDelayTurns: 1
     attackVFXPrefab: {fileID: 0}
-    impactVFXPrefab: {fileID: 0}
+    trailVFXPrefab: {fileID: 7713322516035562177, guid: efdbf1c7c99ca8945a3c4d9cf8dbe547, type: 3}
+    trailVFXScale: 1
+    attackVFXIsProjectile: 1
+    attackVFXScale: 1
+    impactVFXPrefab: {fileID: 4172968788073076066, guid: 4b8cad722f9c6d745b57297826607bc5, type: 3}
+    impactVFXScale: 1
     vfxTravelTime: 0.35
     vfxImpactDuration: 0.2
+    impactVFXOffset: {x: 0, y: 0, z: 0}
   skillTwo:
     skillType: 0
     skillName: Bouclier du Novice
-    description: "Sur un Alli\xE9 : +5 d'Armure, r\xE9duit les d\xE9g\xE2ts re\xE7us
-      de 15% pendant 2 Tours."
+    description: "Sur un Alli\xE9 : +3 ARM pendant 2 Tours. \n\nR\xE9duit les DGT
+      re\xE7us de 10% pendant 2 Tours."
     damage: 0
     cooldownTurns: 2
     targetType: 1
     adjacentDamagePercent: 0
     effects:
     - type: 6
-      value: 5
-      durationTurns: 0
-      effectTarget: 0
-    - type: 2
-      value: 0.15
+      value: 3
       durationTurns: 2
       effectTarget: 0
+    - type: 2
+      value: 0.1
+      durationTurns: 2
+      effectTarget: 0
+    branches: []
+    isIncantation: 0
+    castDelayTurns: 1
     attackVFXPrefab: {fileID: 0}
-    impactVFXPrefab: {fileID: 0}
+    trailVFXPrefab: {fileID: 0}
+    trailVFXScale: 1
+    attackVFXIsProjectile: 0
+    attackVFXScale: 1
+    impactVFXPrefab: {fileID: 8499795791273234962, guid: 96aeca063cc1cf1498b2e25f5deff215, type: 3}
+    impactVFXScale: 1
     vfxTravelTime: 0.35
     vfxImpactDuration: 0.2
+    impactVFXOffset: {x: 0, y: 0, z: 0}
   passive:
     passiveName: 
     passiveDescription: 

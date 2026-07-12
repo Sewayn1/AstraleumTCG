@@ -30,17 +30,31 @@ namespace Astraleum
         public Element element;
         public CardRarity rarity;
         public Sprite artwork;
+        [Tooltip("Si coché, cette carte n'apparaît jamais dans la Collection ni dans le pool de deckbuilding IA (réservée à un usage interne, ex. mode Entraînement).")]
+        public bool hiddenFromCollection = false;
+        [Tooltip("Si coché : PV masqués à l'affichage (case vierge) et régénération complète à chaque tour. Réservé aux cartes d'entraînement (ex. Card_AITraining).")]
+        public bool isTrainingDummy = false;
 
         [Header("Stats")]
         public int maxHP = 100;
-        [Tooltip("Points d'armure initiaux. L'armure est un pool de PV supplémentaires absorbés avant les PV. Plafond en jeu : 100 pts.")]
+        [Tooltip("Armure permanente de la carte. Réduit les DGT subis d'un montant fixe par attaque (DGT réels = max(0, DGT - Armure)). Les Compétences Ignore-Armure contournent cette réduction.")]
         public int armorPoints = 0;
+        [Tooltip("Chance de coup critique de base (0 par défaut). Peut être augmentée via Buff / Passif / Stacks. 0.15 = 15%.")]
+        [Range(0f, 1f)] public float critChance = 0f;
         [Tooltip("Actions supplémentaires accordées par tour. 0 par défaut. Utilisé pour les effets spéciaux de carte (ex. stacks Air 5).")]
         public int bonusActionsGranted = 0;
 
         [Header("Compétences")]
         public CardSkill skillOne;
         public CardSkill skillTwo;
+        [Tooltip("3e compétence, réservée aux cartes Boss. Non utilisée par le SkillPanel joueur ni l'IA standard — pilotée directement par le contrôleur du Boss.")]
+        public CardSkill skillThree;
+
+        // CardSkill est une classe [Serializable] embarquée (pas un UnityEngine.Object) : une fois
+        // l'asset resauvegardé dans l'éditeur après l'ajout de ce champ, Unity matérialise un objet
+        // vide (skillName="") au lieu de conserver null. Un simple "skillThree != null" ne suffit
+        // donc PAS à détecter une vraie 3e compétence — toujours utiliser HasSkillThree à la place.
+        public bool HasSkillThree => skillThree != null && !string.IsNullOrEmpty(skillThree.skillName);
 
         [Header("Passif")]
         public CardPassive passive;

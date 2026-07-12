@@ -31,13 +31,31 @@ namespace Astraleum.UI
         [Header("Compteur")]
         public TMP_Text counterText;
 
-        [Header("Filtres — optionnels")]
+        [Header("Filtre — Rareté")]
         public TMP_Dropdown filterRarity;
-        public TMP_Dropdown filterElement;
+
+        [Header("Filtre — Éléments (boutons)")]
+        [Tooltip("Bouton 'Tous les éléments'.")]
+        public UnityEngine.UI.Button btnAllElements;
+        [Tooltip("Un bouton par élément, index = valeur enum Element (0=Feu,1=Eau,2=Terre,3=Air,4=Lumiere,5=Tenebres,6=Astral…).")]
+        public UnityEngine.UI.Button[] elementFilterButtons;
+        // Ordre boutons : Feu, Eau, Terre, Air, Tenebres, Lumiere, Corrosif, Astral
+        // → index bouton ≠ valeur enum, d'où le mapping explicite
+        private static readonly Astraleum.Element[] BtnToElement =
+        {
+            Astraleum.Element.Feu,       // bouton 0
+            Astraleum.Element.Eau,       // bouton 1
+            Astraleum.Element.Terre,     // bouton 2
+            Astraleum.Element.Air,       // bouton 3
+            Astraleum.Element.Tenebres,  // bouton 4
+            Astraleum.Element.Lumiere,   // bouton 5
+            Astraleum.Element.Corrosif,  // bouton 6
+            Astraleum.Element.Astral,    // bouton 7
+        };
 
         private List<GameObject> spawnedCards;
         private int currentRarityFilter  = 0;
-        private int currentElementFilter = 0;
+        private int currentElementFilter = -1; // -1 = All, sinon valeur enum Element
         private GridLayoutGroup grid;
         private ContentSizeFitter sizeFitter;
 
@@ -45,8 +63,24 @@ namespace Astraleum.UI
         {
             Instance = this;
             spawnedCards = new List<GameObject>();
+
+            // Auto-détection du Content du ScrollView si cardGrid non assigné en inspecteur
+            if (cardGrid == null)
+            {
+                var sr = GetComponentInChildren<ScrollRect>(true);
+                if (sr != null && sr.content != null)
+                {
+                    cardGrid = sr.content;
+                    Debug.Log("[CollectionManager] cardGrid auto-détecté depuis ScrollRect.content.");
+                }
+                else
+                {
+                    Debug.LogWarning("[CollectionManager] Aucun ScrollRect trouvé — assignez cardGrid en inspecteur.");
+                }
+            }
+
             SetupGrid();
-            PopulateDropdowns();
+            SetupFilters();
         }
 
         private void OnEnable()
@@ -62,7 +96,7 @@ namespace Astraleum.UI
 
         private void OnLanguageChanged()
         {
-            PopulateDropdowns();
+            PopulateRarityDropdown();
             Populate();
         }
 
@@ -94,7 +128,7 @@ namespace Astraleum.UI
                                                (int)gridPadding.z, (int)gridPadding.w);
             grid.startCorner    = GridLayoutGroup.Corner.UpperLeft;
             grid.startAxis      = GridLayoutGroup.Axis.Horizontal;
-            grid.childAlignment = TextAnchor.UpperLeft;
+            grid.childAlignment = TextAnchor.UpperCenter;
             grid.constraint     = GridLayoutGroup.Constraint.Flexible;
 
             // ContentSizeFitter : le Content grandit verticalement selon le nombre de cartes
@@ -125,19 +159,11 @@ namespace Astraleum.UI
                 return;
             }
 
-            List<Astraleum.CardData> allCards;
-            if (Astraleum.CardDatabase.Instance != null)
+            List<Astraleum.CardData> allCards = Astraleum.CardDatabase.LoadVisibleCards();
+            if (allCards.Count == 0)
             {
-                allCards = Astraleum.CardDatabase.Instance.GetAllCards();
-            }
-            else
-            {
-                allCards = Resources.LoadAll<Astraleum.CardData>("Cards").ToList();
-                if (allCards.Count == 0)
-                {
-                    Debug.LogWarning("[CollectionManager] Aucune carte trouvée dans Resources/Cards/");
-                    return;
-                }
+                Debug.LogWarning("[CollectionManager] Aucune carte trouvée dans Resources/Cards/");
+                return;
             }
 
             allCards.Sort((a, b) => a.cardNumber.CompareTo(b.cardNumber));
@@ -172,43 +198,50 @@ namespace Astraleum.UI
             spawnedCards.Clear();
         }
 
-        // ── Dropdowns ─────────────────────────────────────────────────
+        // ── Setup filtres ─────────────────────────────────────────────
 
-        private void PopulateDropdowns()
+        private void SetupFilters()
         {
-            if (filterRarity != null)
-            {
-                int prevRarity = filterRarity.value;
-                filterRarity.ClearOptions();
-                var options = new List<TMP_Dropdown.OptionData>
-                {
-                    new TMP_Dropdown.OptionData(Astraleum.LocalizationManager.Get("collection_filter_all"))
-                };
-                foreach (Astraleum.CardRarity r in System.Enum.GetValues(typeof(Astraleum.CardRarity)))
-                    options.Add(new TMP_Dropdown.OptionData(Astraleum.LocalizationManager.Get($"ui_rarity_{r.ToString().ToLower()}")));
+            PopulateRarityDropdown();
+            SetupElementButtons();
+        }
 
-                filterRarity.AddOptions(options);
-                filterRarity.value = prevRarity;
-                filterRarity.onValueChanged.RemoveAllListeners();
-                filterRarity.onValueChanged.AddListener(OnRarityFilterChanged);
+        private void PopulateRarityDropdown()
+        {
+            if (filterRarity == null) return;
+            int prev = filterRarity.value;
+            filterRarity.ClearOptions();
+            var options = new List<TMP_Dropdown.OptionData>
+            {
+                new TMP_Dropdown.OptionData(Astraleum.LocalizationManager.Get("collection_filter_all"))
+            };
+            foreach (Astraleum.CardRarity r in System.Enum.GetValues(typeof(Astraleum.CardRarity)))
+                options.Add(new TMP_Dropdown.OptionData(Astraleum.LocalizationManager.Get($"ui_rarity_{r.ToString().ToLower()}")));
+            filterRarity.AddOptions(options);
+            filterRarity.value = prev;
+            filterRarity.onValueChanged.RemoveAllListeners();
+            filterRarity.onValueChanged.AddListener(OnRarityFilterChanged);
+        }
+
+        private void SetupElementButtons()
+        {
+            if (btnAllElements != null)
+            {
+                btnAllElements.onClick.RemoveAllListeners();
+                btnAllElements.onClick.AddListener(() => SetElementFilter(-1));
             }
 
-            if (filterElement != null)
+            if (elementFilterButtons != null)
             {
-                int prevElement = filterElement.value;
-                filterElement.ClearOptions();
-                var options = new List<TMP_Dropdown.OptionData>
+                for (int i = 0; i < elementFilterButtons.Length; i++)
                 {
-                    new TMP_Dropdown.OptionData(Astraleum.LocalizationManager.Get("ui_element_all"))
-                };
-                foreach (Astraleum.Element e in System.Enum.GetValues(typeof(Astraleum.Element)))
-                    options.Add(new TMP_Dropdown.OptionData(Astraleum.LocalizationManager.Get($"ui_element_{e.ToString().ToLower()}")));
-
-                filterElement.AddOptions(options);
-                filterElement.value = prevElement;
-                filterElement.onValueChanged.RemoveAllListeners();
-                filterElement.onValueChanged.AddListener(OnElementFilterChanged);
+                    if (elementFilterButtons[i] == null) continue;
+                    int elementValue = i < BtnToElement.Length ? (int)BtnToElement[i] : -1;
+                    elementFilterButtons[i].onClick.RemoveAllListeners();
+                    elementFilterButtons[i].onClick.AddListener(() => SetElementFilter(elementValue));
+                }
             }
+
         }
 
         // ── Filtres ───────────────────────────────────────────────────
@@ -220,9 +253,9 @@ namespace Astraleum.UI
                 var target = (Astraleum.CardRarity)(currentRarityFilter - 1);
                 if (card.rarity != target) return false;
             }
-            if (currentElementFilter != 0)
+            if (currentElementFilter >= 0)
             {
-                var target = (Astraleum.Element)(currentElementFilter - 1);
+                var target = (Astraleum.Element)currentElementFilter;
                 if (card.element != target) return false;
             }
             return true;
@@ -234,9 +267,9 @@ namespace Astraleum.UI
             Populate();
         }
 
-        public void OnElementFilterChanged(int value)
+        public void SetElementFilter(int elementIndex)
         {
-            currentElementFilter = value;
+            currentElementFilter = elementIndex;
             Populate();
         }
 

@@ -1,0 +1,219 @@
+fileFormatVersion: 2
+guid: 8272ba3be0ab0214ab608986334b73bd
+ModelImporter:
+  serializedVersion: 20200
+  internalIDToNameTable:
+  - first:
+      74: -3724640389233271517
+    second: card.017_low|card.017_lowAction
+  - first:
+      74: 938470601640047568
+    second: card.017_low|card.018_lowAction
+  - first:
+      74: 3271342059435934531
+    second: card.017_low|card.019_lowAction
+  - first:
+      74: 1886788520207893870
+    second: card.017_low|card.020_lowAction
+  - first:
+      74: -253043310367069361
+    second: card.017_low|card.021_lowAction
+  - first:
+      74: 8255143361949320155
+    second: card.017_low|cat.002_lowAction
+  - first:
+      74: -622919508218469542
+    second: card.017_low|cat_017_lowAction
+  - first:
+      74: 4169472394581156951
+    second: card.018_low|card.017_lowAction
+  - first:
+      74: -7853834686986802921
+    second: card.018_low|card.018_lowAction
+  - first:
+      74: -7671914630664548804
+    second: card.018_low|card.019_lowAction
+  - first:
+      74: -9048759313857560064
+    second: card.018_low|card.020_lowAction
+  - first:
+      74: 8068939592213977993
+    second: card.018_low|card.021_lowAction
+  - first:
+      74: 1584163458722210891
+    second: card.018_low|cat.002_lowAction
+  - first:
+      74: -7884301009030341548
+    second: card.018_low|cat_017_lowAction
+  - first:
+      74: -2166499680891215087
+    second: card.019_low|card.017_lowAction
+  - first:
+      74: 5292325311554954031
+    second: card.019_low|card.018_lowAction
+  - first:
+      74: 2449212981509584077
+    second: card.019_low|card.019_lowAction
+  - first:
+      74: 831324193983322278
+    second: card.019_low|card.020_lowAction
+  - first:
+      74: -4850653547503395716
+    second: card.019_low|card.021_lowAction
+  - first:
+      74: -6285929648832939540
+    second: card.019_low|cat.002_lowAction
+  - first:
+      74: 1485138719862960634
+    second: card.019_low|cat_017_lowAction
+  - first:
+      74: 2106075186337573919
+    second: card.021_low|card.017_lowAction
+  - first:
+      74: 6083903110129024453
+    second: card.021_low|card.018_lowAction
+  - first:
+      74: 2523259884725806172
+    second: card.021_low|card.019_lowAction
+  - first:
+      74: -292971314313822180
+    second: card.021_low|card.020_lowAction
+  - first:
+      74: -2663044853666436535
+    second: card.021_low|card.021_lowAction
+  - first:
+      74: 597503389219535335
+    second: card.021_low|cat.002_lowAction
+  - first:
+      74: 6815765544744321422
+    second: card.021_low|cat_017_lowAction
+  - first:
+      74: 3684152391371994455
+    second: card.020_low|card.017_lowAction
+  - first:
+      74: 3084815494616071106
+    second: card.020_low|card.018_lowAction
+  - first:
+      74: -8378604827789520569
+    second: card.020_low|card.019_lowAction
+  - first:
+      74: 3604627944211786603
+    second: card.020_low|card.020_lowAction
+  - first:
+      74: 6085204495115927584
+    second: card.020_low|card.021_lowAction
+  - first:
+      74: -2311008735311265250
+    second: card.020_low|cat.002_lowAction
+  - first:
+      74: 8118881815833151476
+    second: card.020_low|cat_017_lowAction
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: char
+    second: {fileID: 2100000, guid: 0250a9119677b624ca34e23bf80fedb0, type: 2}
+  materials:
+    materialImportMode: 2
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 0
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 0.2
+    meshCompression: 0
+    addColliders: 0
+    useSRGBMaterialColor: 1
+    sortHierarchyByName: 1
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    fileIdsGeneration: 2
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    keepQuads: 0
+    weldVertices: 1
+    bakeAxisConversion: 0
+    preserveHierarchy: 0
+    skinWeightsMode: 0
+    maxBonesPerVertex: 4
+    minBoneWeight: 0.001
+    meshOptimizationFlags: -1
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVMarginMethod: 1
+    secondaryUVMinLightmapResolution: 40
+    secondaryUVMinObjectScale: 1
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0
+    blendShapeNormalImportMode: 1
+    normalSmoothingSource: 0
+  referencedClips: []
+  importAnimation: 1
+  humanDescription:
+    serializedVersion: 3
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    globalScale: 0.002
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  autoGenerateAvatarMappingIfUnspecified: 1
+  animationType: 2
+  humanoidOversampling: 1
+  avatarSetup: 0
+  addHumanoidExtraRootOnlyWhenUsingAvatar: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 213764
+  packageName: Board / Card Game Stylized VFX Magic
+  packageVersion: 2.1
+  assetPath: Assets/Piloto Studio/CardGameVFX/PreviewScene/ShowcaseScene/3Dcard.fbx
+  uploadId: 777334

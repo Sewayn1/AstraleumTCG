@@ -1,4 +1,4 @@
-﻿using UnityEngine;
+using UnityEngine;
 using UnityEngine.UI;
 
 namespace Nobi.UiRoundedCorners {
@@ -8,7 +8,7 @@ namespace Nobi.UiRoundedCorners {
 	public class ImageWithRoundedCorners : MonoBehaviour {
 		private static readonly int Props = Shader.PropertyToID("_WidthHeightRadius");
 
-        public float radius = 40f;          
+        public float radius = 40f;
         private Material material;
 
 		[HideInInspector, SerializeField] private MaskableGraphic image;
@@ -27,6 +27,8 @@ namespace Nobi.UiRoundedCorners {
 		}
 
 		private void OnEnable() {
+            if (Application.isBatchMode) return;
+
             //You can only add either ImageWithRoundedCorners or ImageWithIndependentRoundedCorners
             //It will replace the other component when added into the object.
             var other = GetComponent<ImageWithIndependentRoundedCorners>();
@@ -47,6 +49,8 @@ namespace Nobi.UiRoundedCorners {
 		}
 
 		public void Validate() {
+            if (Application.isBatchMode) return;
+
 			if (material == null) {
 				material = new Material(Shader.Find("UI/RoundedCorners/RoundedCorners"));
 			}
@@ -65,7 +69,7 @@ namespace Nobi.UiRoundedCorners {
 
             //Multiply radius value by 2 to make the radius value appear consistent with ImageWithIndependentRoundedCorners script.
             //Right now, the ImageWithIndependentRoundedCorners appears to have double the radius than this.
-            material.SetVector(Props, new Vector4(rect.width, rect.height, radius * 2, 0));   
+            material.SetVector(Props, new Vector4(rect.width, rect.height, radius * 2, 0));
         }
 	}
 }

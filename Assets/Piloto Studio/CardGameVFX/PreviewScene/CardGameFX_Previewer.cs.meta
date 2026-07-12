@@ -1,0 +1,18 @@
+fileFormatVersion: 2
+guid: 7fec852071ac31346aa11a8f52c2233a
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 213764
+  packageName: Board / Card Game Stylized VFX Magic
+  packageVersion: 2.1
+  assetPath: Assets/Piloto Studio/CardGameVFX/PreviewScene/CardGameFX_Previewer.cs
+  uploadId: 777334

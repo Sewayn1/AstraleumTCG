@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 2bbb43d5b97834d4cae8e3b75b5b6dcf
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 2100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 277550
+  packageName: TCG Card Game Effects
+  packageVersion: 1.4
+  assetPath: Assets/IndieImpulse_Assets/TCG Card Game Effects/Materials/Trail.mat
+  uploadId: 897924

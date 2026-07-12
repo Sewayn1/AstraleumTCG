@@ -17,9 +17,10 @@ MonoBehaviour:
   cardNumber: 20
   element: 3
   rarity: 1
-  artwork: {fileID: 21300000, guid: c45c3db27d03d6f449d5cbf21a670434, type: 3}
+  artwork: {fileID: 21300000, guid: 048de2af4011607469328151fc70ad2a, type: 3}
   maxHP: 120
-  armorPoints: 2
+  armorPoints: 0
+  critChance: 0.01
   bonusActionsGranted: 0
   skillOne:
     skillType: 0
@@ -34,28 +35,47 @@ MonoBehaviour:
       value: 1
       durationTurns: 1
       effectTarget: 0
-    attackVFXPrefab: {fileID: 0}
-    impactVFXPrefab: {fileID: 0}
+    branches: []
+    isIncantation: 0
+    castDelayTurns: 1
+    attackVFXPrefab: {fileID: 3191309101876976334, guid: d2e9082587174c3489210ce50b1a8c8e, type: 3}
+    trailVFXPrefab: {fileID: 8913368109206024948, guid: 779bd5896bc7605478fe89bd8826e052, type: 3}
+    trailVFXScale: 1
+    attackVFXIsProjectile: 1
+    attackVFXScale: 1
+    impactVFXPrefab: {fileID: 5164971940145916093, guid: 4eb9195fea8161e41874f90e6d91f5a0, type: 3}
+    impactVFXScale: 1
     vfxTravelTime: 0.35
     vfxImpactDuration: 0.2
+    impactVFXOffset: {x: 0, y: 0, z: 0}
   skillTwo:
     skillType: 0
     skillName: "Appel de la Temp\xEAte"
-    description: "Inflige 10 DGT \xE0 toutes les cartes adverses, ils subissent 5%
-      de leurs PV max pendant 2 Tours. "
-    damage: 10
+    description: "Incantation - 1 Tour :\n\nInflige 20 DGT \xE0 toutes les cartes
+      adverses, et augmente les Chances de Coup Critique des cartes Alli\xE9es de
+      5% pendant 2 Tours. "
+    damage: 20
     cooldownTurns: 4
     targetType: 2
     adjacentDamagePercent: 0
     effects:
-    - type: 0
+    - type: 22
       value: 0.05
       durationTurns: 2
-      effectTarget: 3
-    attackVFXPrefab: {fileID: 0}
-    impactVFXPrefab: {fileID: 0}
+      effectTarget: 2
+    branches: []
+    isIncantation: 1
+    castDelayTurns: 1
+    attackVFXPrefab: {fileID: 3191309101876976334, guid: d2e9082587174c3489210ce50b1a8c8e, type: 3}
+    trailVFXPrefab: {fileID: 0}
+    trailVFXScale: 1
+    attackVFXIsProjectile: 0
+    attackVFXScale: 1
+    impactVFXPrefab: {fileID: 5730789274780998671, guid: 639787bf7d068074db4863d147da4fb2, type: 3}
+    impactVFXScale: 1
     vfxTravelTime: 0.35
     vfxImpactDuration: 0.2
+    impactVFXOffset: {x: 0, y: 0, z: 0}
   passive:
     passiveName: 
     passiveDescription: 

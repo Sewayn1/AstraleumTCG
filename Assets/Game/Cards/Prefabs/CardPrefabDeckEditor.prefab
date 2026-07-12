@@ -289,7 +289,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 90, y: -7}
+  m_AnchoredPosition: {x: 165.7, y: -30.5}
   m_SizeDelta: {x: 150, y: 33}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &3841473291705121039
@@ -393,7 +393,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &187767679090824964
 RectTransform:
   m_ObjectHideFlags: 0
@@ -408,11 +408,11 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 1482293045197208102}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 1, y: 0}
-  m_AnchorMax: {x: 1, y: 0}
-  m_AnchoredPosition: {x: -8.04, y: 22}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 2.65, y: 14.05}
   m_SizeDelta: {x: 55, y: 18}
-  m_Pivot: {x: 1, y: 0}
+  m_Pivot: {x: 0, y: 0}
 --- !u!222 &5369990257459144563
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -468,8 +468,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 10
-  m_fontSizeBase: 10
+  m_fontSize: 11
+  m_fontSizeBase: 11
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -830,8 +830,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4284688227
-  m_fontColor: {r: 0.3886792, g: 0.15180488, b: 0.38867924, a: 1}
+    rgba: 4294967295
+  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -2256,7 +2256,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0}
   m_AnchorMax: {x: 1, y: 0}
-  m_AnchoredPosition: {x: 0, y: 50}
+  m_AnchoredPosition: {x: -7.9, y: 16.6}
   m_SizeDelta: {x: 45, y: 25}
   m_Pivot: {x: 1, y: 0}
 --- !u!222 &561605821596636548
@@ -2314,8 +2314,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 9
-  m_fontSizeBase: 9
+  m_fontSize: 16
+  m_fontSizeBase: 16
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -2451,7 +2451,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &6659007980996087552
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2466,10 +2466,10 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 1094823213139598397}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 75, y: -21.998703}
+  m_SizeDelta: {x: 150, y: 22.002596}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &263779494436481185
 CanvasRenderer:
@@ -2725,7 +2725,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &4325850911039685491
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2740,10 +2740,10 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 4514458283389767572}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 75.05, y: -21.998703}
+  m_SizeDelta: {x: 150.1, y: 22.002596}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &7848651600203593450
 CanvasRenderer:
@@ -3157,7 +3157,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 90.1, y: -3.02}
+  m_AnchoredPosition: {x: 165.7, y: -48}
   m_SizeDelta: {x: 150.1, y: 33}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &4634559876017929012
@@ -3468,8 +3468,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4284688227
-  m_fontColor: {r: 0.3886792, g: 0.15180488, b: 0.38867924, a: 1}
+    rgba: 4294967295
+  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -3804,11 +3804,11 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 1482293045197208102}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 1, y: 0}
-  m_AnchorMax: {x: 1, y: 0}
-  m_AnchoredPosition: {x: -11.5, y: 35.9}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 2.65, y: 25.800003}
   m_SizeDelta: {x: 55, y: 18}
-  m_Pivot: {x: 1, y: 0}
+  m_Pivot: {x: 0, y: 0}
 --- !u!222 &9112395692396321917
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -3864,8 +3864,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 12
-  m_fontSizeBase: 12
+  m_fontSize: 13
+  m_fontSizeBase: 13
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -4093,8 +4093,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0}
   m_AnchorMax: {x: 1, y: 0}
-  m_AnchoredPosition: {x: -30, y: 130.2}
-  m_SizeDelta: {x: 30, y: 30}
+  m_AnchoredPosition: {x: -30.3, y: 106.7}
+  m_SizeDelta: {x: 35, y: 35}
   m_Pivot: {x: 1, y: 0}
 --- !u!222 &4599130373935827121
 CanvasRenderer:
@@ -4221,7 +4221,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 5958a744958be2a42a48b72fd05d47cd, type: 3}
+  m_Sprite: {fileID: 21300000, guid: cbcda12b6dfa4d340a979c150ca8a4c3, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -4245,10 +4245,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Astraleum.CardInstance
   data: {fileID: 0}
   currentHP: 0
-  currentArmor: 0
   slotIndex: 0
   ownerPlayerID: 0
   hasActedThisTurn: 0
+  bonusActionsRemaining: 0
   skill1Cooldown: 0
   skill2Cooldown: 0
   activeEffects: []
@@ -4296,11 +4296,15 @@ MonoBehaviour:
   armorValue: {fileID: 8458618783597868047}
   skill1TypeIcon: {fileID: 5470908930337385444}
   skill1Name: {fileID: 2697552263379388760}
-  skill1Desc: {fileID: 1949191907752196671}
   skill2TypeIcon: {fileID: 8161926082137984538}
   skill2Name: {fileID: 2843589583872020758}
-  skill2Desc: {fileID: 7525921361733064923}
   passiveIcon: {fileID: 7311627062480435025}
+  burnIcon: {fileID: 0}
+  poisonIcon: {fileID: 0}
+  saignementIcon: {fileID: 0}
+  healBlockIcon: {fileID: 0}
+  hotIcon: {fileID: 0}
+  invisibleOverlay: {fileID: 0}
   astralArrow: {fileID: 5827123802146749033}
   astralArrowImage: {fileID: 3188678285289029023}
 --- !u!114 &4006691967030076358
@@ -4332,6 +4336,8 @@ MonoBehaviour:
   pulseSpeed: 2.5
   pulseMinScale: 1
   pulseMaxScale: 1.02
+  bounceHeight: 8
+  bounceSpeed: 3.5
 --- !u!114 &5095438529750871926
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4346,6 +4352,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Astraleum.HealPopupHandler
   healPopupText: {fileID: 5084974284278918981}
   damagePopupText: {fileID: 7480781092603424913}
+  criticalPopupText: {fileID: 0}
 --- !u!114 &6300121530366833641
 MonoBehaviour:
   m_ObjectHideFlags: 0

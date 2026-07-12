@@ -17,17 +17,17 @@ MonoBehaviour:
   cardNumber: 7
   element: 5
   rarity: 0
-  artwork: {fileID: 21300000, guid: 285b7aff13c85314188f55e2568ac762, type: 3}
-  maxHP: 90
+  artwork: {fileID: 21300000, guid: 8c80698f96d149844aac0656324c9163, type: 3}
+  maxHP: 95
   armorPoints: 0
+  critChance: 0.01
   bonusActionsGranted: 0
   skillOne:
     skillType: 0
     skillName: Coup bas
-    description: "Inflige 8 DGT et fait saigner la cible, subissant 5% de ses PV
-      Max pendant 3 Tours. Si la cible \xE0 50% de ses PV ou moins, subis 15% de
-      DGT suppl\xE9mentaire."
-    damage: 8
+    description: "Inflige 12 DGT et fait saigner la cible ( 5% PV Max ) pendant 3
+      Tours. \nSi la cible \xE0 50% de ses PV ou moins, subis 15% DGT suppl\xE9mentaire."
+    damage: 12
     cooldownTurns: 2
     targetType: 0
     adjacentDamagePercent: 0
@@ -42,28 +42,37 @@ MonoBehaviour:
         compareOp: 0
         threshold: 0.5
         effectType: 0
+        conditionElement: 0
       effectType: 0
       target: 0
       valueMode: 0
       valuePercent: 0.15
       valueFlat: 0
       durationTurns: 0
-    attackVFXPrefab: {fileID: 0}
-    impactVFXPrefab: {fileID: 0}
-    vfxTravelTime: 0.35
-    vfxImpactDuration: 0.2
+    isIncantation: 0
+    castDelayTurns: 1
+    attackVFXPrefab: {fileID: 4560534324245121887, guid: 5d751cb322afd6249bf8dfe9a207b6ed, type: 3}
+    trailVFXPrefab: {fileID: 0}
+    trailVFXScale: 1
+    attackVFXIsProjectile: 0
+    attackVFXScale: 0.3
+    impactVFXPrefab: {fileID: 2606620707222805529, guid: fdbd4eea6902bd84aab65eca9a183b57, type: 3}
+    impactVFXScale: 1
+    vfxTravelTime: 0.6
+    vfxImpactDuration: 0.4
+    impactVFXOffset: {x: 0, y: 0, z: 0}
   skillTwo:
     skillType: 4
     skillName: "Pr\xE9paration"
-    description: "Aiguise sa Lame, augmentant les DGT inflig\xE9s de 15% pendant
-      3 Tours. R\xE9duit les DGT subis de 10% pendant 1 Tour.  "
+    description: "Aiguise sa Lame, augmentant les DGT inflig\xE9s de 5 pendant 3
+      Tours. R\xE9duit ses DGT subis de 10% pendant 1 Tour."
     damage: 0
     cooldownTurns: 3
     targetType: 5
     adjacentDamagePercent: 0
     effects:
     - type: 13
-      value: 0.15
+      value: 5
       durationTurns: 3
       effectTarget: 1
     - type: 2
@@ -71,17 +80,25 @@ MonoBehaviour:
       durationTurns: 1
       effectTarget: 1
     branches: []
-    attackVFXPrefab: {fileID: 0}
-    impactVFXPrefab: {fileID: 0}
+    isIncantation: 0
+    castDelayTurns: 1
+    attackVFXPrefab: {fileID: 2470526412627155888, guid: 88cb52e9fda876d409f3696658a18bd0, type: 3}
+    trailVFXPrefab: {fileID: 0}
+    trailVFXScale: 1
+    attackVFXIsProjectile: 0
+    attackVFXScale: 1
+    impactVFXPrefab: {fileID: 5697101180579792178, guid: b29f0c49a2e6a91449d422216bc66ff5, type: 3}
+    impactVFXScale: 1
     vfxTravelTime: 0.35
-    vfxImpactDuration: 0.2
+    vfxImpactDuration: 0.4
+    impactVFXOffset: {x: 0, y: -150, z: 0}
   passive:
     passiveName: Voile de l'Assassin
     passiveDescription: "Tant que cette carte n'attaque pas, elle devient \"Invisible\"
       et ne peut etre cibl\xE9e par des comp\xE9tences directe. Si cette carte attaque
       dans son tour de jeu, perd l'invisibilit\xE9 jusqu'au prochain tour."
     trigger: 0
-    triggerElement: 7
+    triggerElement: 8
     passiveColor: {r: 1, g: 0.84, b: 0, a: 1}
     stacksPerTrigger: 0
     maxTriggerStacks: 4

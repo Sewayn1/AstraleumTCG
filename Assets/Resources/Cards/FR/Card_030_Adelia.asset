@@ -17,15 +17,18 @@ MonoBehaviour:
   cardNumber: 30
   element: 3
   rarity: 2
-  artwork: {fileID: 21300000, guid: b39c7152d3f58854cb7db8e66421d618, type: 3}
+  artwork: {fileID: 21300000, guid: 1e88e46afe39b5141b465f7395b71808, type: 3}
+  hiddenFromCollection: 0
+  isTrainingDummy: 0
   maxHP: 180
-  armorPoints: 3
+  armorPoints: 0
+  critChance: 0.01
   bonusActionsGranted: 0
   skillOne:
     skillType: 2
     skillName: Vent Revigorant
     description: "R\xE9duit le temps de recharge d'une carte alli\xE9e de 2 Tours,
-      et lui donne 1 Action bonus. "
+      et augmente ses Chances et DGT de Coup Critique de 5% pendant 1 Tour. "
     damage: 0
     cooldownTurns: 4
     targetType: 1
@@ -35,22 +38,35 @@ MonoBehaviour:
       value: 2
       durationTurns: 0
       effectTarget: 0
-    - type: 15
-      value: 1
-      durationTurns: 0
+    - type: 22
+      value: 0.05
+      durationTurns: 1
+      effectTarget: 0
+    - type: 23
+      value: 0.05
+      durationTurns: 1
       effectTarget: 0
     branches: []
+    isIncantation: 0
+    castDelayTurns: 1
     attackVFXPrefab: {fileID: 0}
-    impactVFXPrefab: {fileID: 0}
+    trailVFXPrefab: {fileID: 231292765192608918, guid: 2d3ac299adedb774a90f3d902587b7ac, type: 3}
+    trailVFXScale: 1
+    attackVFXIsProjectile: 1
+    attackVFXScale: 1
+    impactVFXPrefab: {fileID: 8745673727628092440, guid: cd700f03882dbf24881f3f4eea6630ed, type: 3}
+    impactVFXScale: 1
     vfxTravelTime: 0.35
     vfxImpactDuration: 0.2
+    impactVFXOffset: {x: 0, y: 0, z: 0}
   skillTwo:
-    skillType: 0
-    skillName: Vent Atrophiant
-    description: "Augmente la dur\xE9e de recharge d'une carte adverse d'1 Tour.
-      Lui inflige 9 DGT."
-    damage: 9
-    cooldownTurns: 2
+    skillType: 4
+    skillName: Vent Orageux
+    description: "G\xE8le la recharge d'une carte adverse jusqu'\xE0 la fin de son
+      prochain tour. Lui inflige 11 DGT, et augmente les Chances de Coup critique
+      des cartes alli\xE9e de 5% pendant 2 Tours."
+    damage: 11
+    cooldownTurns: 3
     targetType: 0
     adjacentDamagePercent: 0
     effects:
@@ -58,11 +74,23 @@ MonoBehaviour:
       value: 1
       durationTurns: 0
       effectTarget: 0
+    - type: 22
+      value: 0.05
+      durationTurns: 2
+      effectTarget: 2
     branches: []
-    attackVFXPrefab: {fileID: 0}
-    impactVFXPrefab: {fileID: 0}
+    isIncantation: 0
+    castDelayTurns: 1
+    attackVFXPrefab: {fileID: 717424307499851289, guid: b4cf88b0438a0114993617ff7a98bb63, type: 3}
+    trailVFXPrefab: {fileID: 231292765192608918, guid: 2d3ac299adedb774a90f3d902587b7ac, type: 3}
+    trailVFXScale: 1
+    attackVFXIsProjectile: 1
+    attackVFXScale: 1
+    impactVFXPrefab: {fileID: 5164971940145916093, guid: 4eb9195fea8161e41874f90e6d91f5a0, type: 3}
+    impactVFXScale: 1
     vfxTravelTime: 0.35
     vfxImpactDuration: 0.2
+    impactVFXOffset: {x: 0, y: 0, z: 0}
   passive:
     passiveName: Vent Ascendant
     passiveDescription: "Si vous avez 5 ou + dans l'\xE9l\xE9ment Air, r\xE9duit

@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 7f55ce4bb3b578144a10e440e1f1b36b
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 2100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 277550
+  packageName: TCG Card Game Effects
+  packageVersion: 1.4
+  assetPath: Assets/IndieImpulse_Assets/TCG Card Game Effects/Materials/DeadStarLinesEffect.mat
+  uploadId: 897924

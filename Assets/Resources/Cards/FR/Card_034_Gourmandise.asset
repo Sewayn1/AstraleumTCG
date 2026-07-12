@@ -1,0 +1,108 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: baa3cfc011ceea542b4a6e2212c058c1, type: 3}
+  m_Name: Card_034_Gourmandise
+  m_EditorClassIdentifier: Assembly-CSharp::Astraleum.CardData
+  cardName: Nyalosmo
+  cardTitle: "P\xE9ch\xE9 de la Gourmandise"
+  cardNumber: 34
+  element: 6
+  rarity: 3
+  artwork: {fileID: 21300000, guid: fad910f8e9493b246b9d9344745099f2, type: 3}
+  hiddenFromCollection: 0
+  isTrainingDummy: 0
+  maxHP: 350
+  armorPoints: 2
+  critChance: 0.01
+  bonusActionsGranted: 0
+  skillOne:
+    skillType: 4
+    skillName: "D\xE9vorer"
+    description: "Attaque une cible, lui inflige 20 DGT, et lui vole de mani\xE8re
+      permanente 2 de ses DGT. "
+    damage: 20
+    cooldownTurns: 2
+    targetType: 0
+    adjacentDamagePercent: 0
+    effects:
+    - type: 14
+      value: 2
+      durationTurns: -1
+      effectTarget: 0
+    - type: 13
+      value: 2
+      durationTurns: -1
+      effectTarget: 1
+    branches: []
+    isIncantation: 0
+    castDelayTurns: 1
+    attackVFXPrefab: {fileID: 0}
+    trailVFXPrefab: {fileID: 4725321797626905185, guid: 84d70620908093749b0f04559238dc6e, type: 3}
+    trailVFXScale: 1
+    attackVFXIsProjectile: 1
+    attackVFXScale: 1
+    impactVFXPrefab: {fileID: 5008419760385394743, guid: a0cdf85294c972d41b5aeb2551abd8c3, type: 3}
+    impactVFXScale: 1
+    vfxTravelTime: 0.35
+    vfxImpactDuration: 0.2
+    impactVFXOffset: {x: 0, y: 0, z: 0}
+  skillTwo:
+    skillType: 3
+    skillName: "Affam\xE9"
+    description: "R\xE9duit la R\xE9sistance de TOUTES les cartes sur le Terrain
+      de 5% infini, et augmente la r\xE9sistance de Nyalosmo de 10%."
+    damage: 0
+    cooldownTurns: 3
+    targetType: 5
+    adjacentDamagePercent: 0
+    effects:
+    - type: 1
+      value: 0.05
+      durationTurns: -1
+      effectTarget: 2
+    - type: 1
+      value: 0.05
+      durationTurns: -1
+      effectTarget: 3
+    - type: 2
+      value: 0.1
+      durationTurns: -1
+      effectTarget: 1
+    branches: []
+    isIncantation: 0
+    castDelayTurns: 1
+    attackVFXPrefab: {fileID: 0}
+    trailVFXPrefab: {fileID: 0}
+    trailVFXScale: 1
+    attackVFXIsProjectile: 0
+    attackVFXScale: 1
+    impactVFXPrefab: {fileID: 7057540923041086895, guid: 8b9ceaed4a59ab84d8933689282e5ba0, type: 3}
+    impactVFXScale: 1
+    vfxTravelTime: 0.35
+    vfxImpactDuration: 0.2
+    impactVFXOffset: {x: 0, y: 0, z: 0}
+  passive:
+    passiveName: 
+    passiveDescription: 
+    trigger: 0
+    triggerElement: 0
+    passiveColor: {r: 1, g: 0.84, b: 0, a: 1}
+    stacksPerTrigger: 0
+    maxTriggerStacks: 4
+    effects: []
+  loreText: "Le cosmos est un immense banquet, et les galaxies ne sont que des amuse-bouches.
+    J'ai aval\xE9 des soleils entiers, bu le vide entre les dimensions, et pourtant...
+    mon estomac r\xE9clame encore le n\xE9ant. Approchez, petits astres, mon gosier
+    est infini."
+  loreQuote: "Une bouch\xE9e pour le temps, une bouch\xE9e pour l'espace. Quand l'\xE9l\xE9ment
+    Astral s'\xE9veille \xE0 la gourmandise, le ciel se d\xE9chire et l'univers entier
+    commence \xE0 glisser dans la gorge du vide."

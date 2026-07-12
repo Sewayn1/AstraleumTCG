@@ -47,3 +47,9 @@ Launcher/dist/
 # OS
 .DS_Store
 Thumbs.db
+
+# Fichiers vidéo volumineux (>100 Mo, incompatibles avec Git sans LFS)
+# — restent nécessaires localement pour le build, jamais poussés
+Assets/Game/UI/Videos/BossBG.mp4
+Assets/Game/UI/Videos/Classic Space Galaxy*.mp4
+gamebuild/

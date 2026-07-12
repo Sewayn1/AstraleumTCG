@@ -17,32 +17,44 @@ MonoBehaviour:
   cardNumber: 24
   element: 5
   rarity: 1
-  artwork: {fileID: 21300000, guid: 37ab436eb5d9b1c4bb16f140ce8a892d, type: 3}
-  maxHP: 160
+  artwork: {fileID: 21300000, guid: ab16412acb6264d44a7719cbabfda418, type: 3}
+  hiddenFromCollection: 0
+  isTrainingDummy: 0
+  maxHP: 170
   armorPoints: 0
+  critChance: 0.01
   bonusActionsGranted: 0
   skillOne:
     skillType: 0
     skillName: Saignement Maudit
-    description: Inflige 12 DGT, la cible perd 5% de ses PV max pendant 2 tours.
+    description: "Inflige 12 DGT, se HEAL de 10% des DGT inflig\xE9s."
     damage: 12
     cooldownTurns: 2
     targetType: 0
     adjacentDamagePercent: 0
     effects:
-    - type: 0
-      value: 0.05
-      durationTurns: 2
-      effectTarget: 0
-    attackVFXPrefab: {fileID: 0}
-    impactVFXPrefab: {fileID: 0}
+    - type: 19
+      value: 0.1
+      durationTurns: -1
+      effectTarget: 1
+    branches: []
+    isIncantation: 0
+    castDelayTurns: 1
+    attackVFXPrefab: {fileID: 4560534324245121887, guid: 5d751cb322afd6249bf8dfe9a207b6ed, type: 3}
+    trailVFXPrefab: {fileID: 0}
+    trailVFXScale: 1
+    attackVFXIsProjectile: 0
+    attackVFXScale: 1
+    impactVFXPrefab: {fileID: 2606620707222805529, guid: fdbd4eea6902bd84aab65eca9a183b57, type: 3}
+    impactVFXScale: 1
     vfxTravelTime: 0.35
     vfxImpactDuration: 0.2
+    impactVFXOffset: {x: 0, y: 0, z: 0}
   skillTwo:
     skillType: 0
     skillName: Drain Vital
-    description: "Inflige 20 DGT, et se soigne de 30% des DGT inflig\xE9s. Soigne
-      \xE9galement 10% des PV Max d'une carte alli\xE9\_al\xE9atoire."
+    description: "Inflige 20 DGT, et se soigne de 30% des DGT inflig\xE9s. \n\nHEAL
+      \xE9galement 10% des PV Restant d'une carte alli\xE9\_al\xE9atoire."
     damage: 20
     cooldownTurns: 2
     targetType: 0
@@ -50,16 +62,25 @@ MonoBehaviour:
     effects:
     - type: 19
       value: 0.3
-      durationTurns: 0
-      effectTarget: 0
+      durationTurns: -1
+      effectTarget: 1
     - type: 3
       value: 0.1
       durationTurns: 0
       effectTarget: 4
+    branches: []
+    isIncantation: 0
+    castDelayTurns: 1
     attackVFXPrefab: {fileID: 0}
-    impactVFXPrefab: {fileID: 0}
+    trailVFXPrefab: {fileID: 7366654879013507527, guid: 80d8771f19db96547beac20eaaf5c951, type: 3}
+    trailVFXScale: 1
+    attackVFXIsProjectile: 1
+    attackVFXScale: 1
+    impactVFXPrefab: {fileID: 5874111619560862819, guid: 099d8e982377b654fbe9d7c3c492a601, type: 3}
+    impactVFXScale: 1
     vfxTravelTime: 0.35
     vfxImpactDuration: 0.2
+    impactVFXOffset: {x: 0, y: 0, z: 0}
   passive:
     passiveName: 
     passiveDescription: 

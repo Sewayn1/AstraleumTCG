@@ -44,6 +44,11 @@ namespace Astraleum
                      result.gameObject.transform.IsChildOf(ui.cardSkillPanel.transform)))
                     return;
 
+                if (ui.cardSkillPanelBoss != null &&
+                    (result.gameObject == ui.cardSkillPanelBoss ||
+                     result.gameObject.transform.IsChildOf(ui.cardSkillPanelBoss.transform)))
+                    return;
+
                 var card = result.gameObject.GetComponentInParent<CardInstance>();
                 if (card != null) return;
             }

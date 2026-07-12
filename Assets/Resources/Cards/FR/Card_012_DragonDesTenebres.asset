@@ -17,15 +17,19 @@ MonoBehaviour:
   cardNumber: 12
   element: 5
   rarity: 2
-  artwork: {fileID: 21300000, guid: a68f1cbbc658f9548b7c75fbc0ad020c, type: 3}
+  artwork: {fileID: 21300000, guid: 3d12803eb5deca745ac50d8e930d37bc, type: 3}
+  hiddenFromCollection: 0
+  isTrainingDummy: 0
   maxHP: 230
-  armorPoints: 2
+  armorPoints: 0
+  critChance: 0.01
   bonusActionsGranted: 0
   skillOne:
     skillType: 0
     skillName: Griffe de l'Ombre
-    description: "Inflige 20 DGT \xE0 la cible, et se soigne de 10% des DGT inflig\xE9s.
-      Si la cible est sous l'effet \"Poison\", inflige 10% de DGT suppl\xE9mentaire."
+    description: "Inflige 20 DGT \xE0 la cible, et se soigne de 10% des DGT inflig\xE9s.\nSi
+      la cible est en dessous de 25% de ses PV Max, augmente les DGT inflig\xE9s
+      et les Soins de 5%."
     damage: 20
     cooldownTurns: 2
     targetType: 0
@@ -33,29 +37,50 @@ MonoBehaviour:
     effects:
     - type: 19
       value: 0.1
-      durationTurns: 0
+      durationTurns: -1
       effectTarget: 0
     branches:
     - condition:
-        conditionType: 5
+        conditionType: 0
         compareOp: 0
-        threshold: 0
+        threshold: 0.25
         effectType: 0
+        conditionElement: 0
       effectType: 0
-      target: 0
+      target: 1
       valueMode: 0
-      valuePercent: 0.1
+      valuePercent: 0.05
       valueFlat: 0
       durationTurns: 0
-    attackVFXPrefab: {fileID: 0}
-    impactVFXPrefab: {fileID: 0}
-    vfxTravelTime: 0.35
-    vfxImpactDuration: 0.2
+    - condition:
+        conditionType: 0
+        compareOp: 0
+        threshold: 0.25
+        effectType: 0
+        conditionElement: 0
+      effectType: 8
+      target: 1
+      valueMode: 0
+      valuePercent: 0.05
+      valueFlat: 0
+      durationTurns: 0
+    isIncantation: 0
+    castDelayTurns: 1
+    attackVFXPrefab: {fileID: 3149302608279546713, guid: 739ac4a1cb54c4242bc94e639129e7dd, type: 3}
+    trailVFXPrefab: {fileID: 4824840610060092136, guid: 86deedb1ebda2c84ba379d0d89b758ae, type: 3}
+    trailVFXScale: 1
+    attackVFXIsProjectile: 1
+    attackVFXScale: 0.3
+    impactVFXPrefab: {fileID: 4047135651089303718, guid: 0958c2950249f124bab993324693d848, type: 3}
+    impactVFXScale: 1
+    vfxTravelTime: 0.6
+    vfxImpactDuration: 0.3
+    impactVFXOffset: {x: 0, y: 0, z: 0}
   skillTwo:
     skillType: 0
     skillName: "Voile T\xE9n\xE9breux"
-    description: "Inflige 12 DGT \xE0 toutes les cartes adverses, et augmente leurs
-      DGT subis de 5% pendant 2 Tours."
+    description: "Incantation - 1 Tour :\n\nInflige 19 DGT \xE0 toutes les cartes
+      adverses, et augmente leurs DGT subis de 5% pendant 2 Tours."
     damage: 12
     cooldownTurns: 4
     targetType: 2
@@ -64,12 +89,20 @@ MonoBehaviour:
     - type: 1
       value: 0.05
       durationTurns: 2
-      effectTarget: 3
+      effectTarget: 0
     branches: []
-    attackVFXPrefab: {fileID: 0}
-    impactVFXPrefab: {fileID: 0}
+    isIncantation: 1
+    castDelayTurns: 1
+    attackVFXPrefab: {fileID: 3149302608279546713, guid: 739ac4a1cb54c4242bc94e639129e7dd, type: 3}
+    trailVFXPrefab: {fileID: 0}
+    trailVFXScale: 1
+    attackVFXIsProjectile: 0
+    attackVFXScale: 1
+    impactVFXPrefab: {fileID: 5874111619560862819, guid: 099d8e982377b654fbe9d7c3c492a601, type: 3}
+    impactVFXScale: 1
     vfxTravelTime: 0.35
     vfxImpactDuration: 0.2
+    impactVFXOffset: {x: 0, y: 0, z: 0}
   passive:
     passiveName: 
     passiveDescription: 

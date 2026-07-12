@@ -17,15 +17,16 @@ MonoBehaviour:
   cardNumber: 18
   element: 1
   rarity: 1
-  artwork: {fileID: 21300000, guid: 99f8c08c2fc432f40876930287adb7b6, type: 3}
+  artwork: {fileID: 21300000, guid: f0d868c9a782bd346ba890f8739443d0, type: 3}
   maxHP: 150
-  armorPoints: 2
+  armorPoints: 0
+  critChance: 0.01
   bonusActionsGranted: 0
   skillOne:
     skillType: 0
     skillName: Courant Aqueux
-    description: "Inflige 10 DGT \xE0 la cible, et augmente ses temps de Recharge
-      d'1 Tour."
+    description: "Inflige 10 DGT \xE0 la cible, et g\xE8le ses temps de Recharge
+      jusqu'\xE0 la fin de son prochain tour."
     damage: 10
     cooldownTurns: 2
     targetType: 0
@@ -35,10 +36,19 @@ MonoBehaviour:
       value: 1
       durationTurns: 0
       effectTarget: 0
-    attackVFXPrefab: {fileID: 0}
-    impactVFXPrefab: {fileID: 0}
+    branches: []
+    isIncantation: 0
+    castDelayTurns: 1
+    attackVFXPrefab: {fileID: 3564256609886714696, guid: a3036ee46e4824b4d923d93f55b5ac38, type: 3}
+    trailVFXPrefab: {fileID: 874104363781329116, guid: 59a8a80f4fa79d740a3afc86b3015682, type: 3}
+    trailVFXScale: 1
+    attackVFXIsProjectile: 1
+    attackVFXScale: 1
+    impactVFXPrefab: {fileID: 6699823732153390975, guid: e1c98bd529b4cc24f857b920da3fa97f, type: 3}
+    impactVFXScale: 1
     vfxTravelTime: 0.35
     vfxImpactDuration: 0.2
+    impactVFXOffset: {x: 0, y: 0, z: 0}
   skillTwo:
     skillType: 4
     skillName: "Mar\xE9e Cage"
@@ -52,11 +62,20 @@ MonoBehaviour:
     - type: 1
       value: 0.05
       durationTurns: 2
-      effectTarget: 3
-    attackVFXPrefab: {fileID: 0}
-    impactVFXPrefab: {fileID: 0}
+      effectTarget: 0
+    branches: []
+    isIncantation: 0
+    castDelayTurns: 1
+    attackVFXPrefab: {fileID: 3564256609886714696, guid: a3036ee46e4824b4d923d93f55b5ac38, type: 3}
+    trailVFXPrefab: {fileID: 0}
+    trailVFXScale: 1
+    attackVFXIsProjectile: 0
+    attackVFXScale: 1
+    impactVFXPrefab: {fileID: 7306709923035686569, guid: e527de5bf43bb774bb8bde63f0af30d2, type: 3}
+    impactVFXScale: 1
     vfxTravelTime: 0.35
     vfxImpactDuration: 0.2
+    impactVFXOffset: {x: 0, y: 0, z: 0}
   passive:
     passiveName: 
     passiveDescription: 

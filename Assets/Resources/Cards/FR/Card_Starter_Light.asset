@@ -1,0 +1,108 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: baa3cfc011ceea542b4a6e2212c058c1, type: 3}
+  m_Name: Card_Starter_Light
+  m_EditorClassIdentifier: Assembly-CSharp::Astraleum.CardData
+  cardName: "\xC9manation de la Lumi\xE8re"
+  cardTitle: 
+  cardNumber: 994
+  element: 4
+  rarity: 0
+  artwork: {fileID: 21300000, guid: 03dcc7c43005a5846b8dd8fbc04b7e5e, type: 3}
+  hiddenFromCollection: 0
+  isTrainingDummy: 0
+  maxHP: 110
+  armorPoints: 0
+  critChance: 0.01
+  bonusActionsGranted: 0
+  skillOne:
+    skillType: 0
+    skillName: 'Jugement Aviaire '
+    description: "Attaque une cible, et la juge. Lui inflige 12 DGT et HEAL une carte
+      alli\xE9e al\xE9atoire de 5% de ses PV Max."
+    damage: 12
+    cooldownTurns: 2
+    targetType: 0
+    adjacentDamagePercent: 0
+    effects:
+    - type: 3
+      value: 0.05
+      durationTurns: 0
+      effectTarget: 4
+    branches: []
+    isIncantation: 0
+    castDelayTurns: 1
+    attackVFXPrefab: {fileID: 6258190430812525930, guid: d8f9804d243540c40af72f06943995fa, type: 3}
+    trailVFXPrefab: {fileID: 0}
+    trailVFXScale: 1
+    attackVFXIsProjectile: 0
+    attackVFXScale: 1
+    impactVFXPrefab: {fileID: 47810030221398765, guid: 8bfb9685cca79d147b3aa2262a3038f5, type: 3}
+    impactVFXScale: 1
+    vfxTravelTime: 0.35
+    vfxImpactDuration: 0.2
+    impactVFXOffset: {x: 0, y: 0, z: 0}
+  skillTwo:
+    skillType: 1
+    skillName: "B\xE9n\xE9diction"
+    description: "B\xE9ni une carte alli\xE9. Elle subit 10% de DGT en moins pendant
+      2 Tours, et la HEAL de 5% de ses PV Max pendant 2 Tours. \n\nSi cette carte
+      a ses PV \u2264 \xE0\_50%, se HEAL de 10% de ses PV Max. "
+    damage: 0
+    cooldownTurns: 3
+    targetType: 1
+    adjacentDamagePercent: 0
+    effects:
+    - type: 2
+      value: 0.1
+      durationTurns: 2
+      effectTarget: 0
+    - type: 4
+      value: 0.05
+      durationTurns: 2
+      effectTarget: 0
+    branches:
+    - condition:
+        conditionType: 1
+        compareOp: 0
+        threshold: 0.5
+        effectType: 0
+        conditionElement: 0
+      effectType: 8
+      target: 1
+      valueMode: 0
+      valuePercent: 0.1
+      valueFlat: 0
+      durationTurns: 0
+    isIncantation: 0
+    castDelayTurns: 1
+    attackVFXPrefab: {fileID: 0}
+    trailVFXPrefab: {fileID: 0}
+    trailVFXScale: 1
+    attackVFXIsProjectile: 0
+    attackVFXScale: 1
+    impactVFXPrefab: {fileID: 5409722635710148559, guid: ac0dadb6415017f4094abb9ac047aa85, type: 3}
+    impactVFXScale: 1
+    vfxTravelTime: 0.35
+    vfxImpactDuration: 0.2
+    impactVFXOffset: {x: 0, y: 0, z: 0}
+  passive:
+    passiveName: 
+    passiveDescription: 
+    trigger: 0
+    triggerElement: 0
+    passiveColor: {r: 1, g: 0.84, b: 0, a: 1}
+    stacksPerTrigger: 0
+    maxTriggerStacks: 4
+    effects: []
+  loreText: 
+  loreQuote: 

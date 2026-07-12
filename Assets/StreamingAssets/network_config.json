@@ -1,0 +1,4 @@
+{
+  "matchmakingUrl": "http://178.104.200.125:5000",
+  "signalRUrl": "http://178.104.200.125:5000/gamehub"
+}

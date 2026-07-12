@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 4b15b1b77ce10b546a66d0f02e490e8b
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 2100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 277550
+  packageName: TCG Card Game Effects
+  packageVersion: 1.4
+  assetPath: Assets/IndieImpulse_Assets/TCG Card Game Effects/Materials/Shader Graphs_LiquidEffectShader.mat
+  uploadId: 897924

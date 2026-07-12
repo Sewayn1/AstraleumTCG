@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: b7194df96195e6a449a1e2d45aaf8296
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 2100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 277550
+  packageName: TCG Card Game Effects
+  packageVersion: 1.4
+  assetPath: Assets/IndieImpulse_Assets/TCG Card Game Effects/Materials/GlassCircleEffect.mat
+  uploadId: 897924

@@ -25,6 +25,8 @@ namespace Astraleum
 
         public void PlayTurnStart(int playerID)
         {
+            if (!CombatOptionsPanel.TurnStartSoundEnabled) return;
+
             var clip = playerID == 0 ? turnStartP1 : turnStartP2;
             if (clip != null)
                 audioSource.PlayOneShot(clip);

@@ -17,14 +17,18 @@ MonoBehaviour:
   cardNumber: 10
   element: 2
   rarity: 2
-  artwork: {fileID: 21300000, guid: 97a5cdb6f687e0047823d12ae08a595c, type: 3}
+  artwork: {fileID: 21300000, guid: df757e064b32497439d097f71f7251be, type: 3}
+  hiddenFromCollection: 0
+  isTrainingDummy: 0
   maxHP: 250
-  armorPoints: 15
+  armorPoints: 7
+  critChance: 0.01
   bonusActionsGranted: 0
   skillOne:
     skillType: 0
     skillName: "S\xE9isme"
-    description: "22 DGT \xE0 la cible. Ignore l'Armure de la cible."
+    description: "22 DGT \xE0 la cible. \nIgnore ARM de la cible.\nAnnule l'incantion
+      de la cible, si l'effet existe."
     damage: 22
     cooldownTurns: 2
     targetType: 0
@@ -34,15 +38,27 @@ MonoBehaviour:
       value: 1
       durationTurns: 0
       effectTarget: 0
+    - type: 27
+      value: 1
+      durationTurns: 0
+      effectTarget: 0
     branches: []
-    attackVFXPrefab: {fileID: 0}
-    impactVFXPrefab: {fileID: 0}
+    isIncantation: 0
+    castDelayTurns: 1
+    attackVFXPrefab: {fileID: 3367621933187172575, guid: 80959bcba3449d04286f21c506e3c168, type: 3}
+    trailVFXPrefab: {fileID: 0}
+    trailVFXScale: 1
+    attackVFXIsProjectile: 0
+    attackVFXScale: 1
+    impactVFXPrefab: {fileID: 7918704070501355665, guid: c27d44d0807cef942ac7df5dbc876a00, type: 3}
+    impactVFXScale: 1
     vfxTravelTime: 0.35
     vfxImpactDuration: 0.2
+    impactVFXOffset: {x: 0, y: 0, z: 0}
   skillTwo:
     skillType: 2
     skillName: Carapace Draconique
-    description: "+5 d'Armure, d\xE9gats inflig\xE9s +5% pendant 3 Tours. Si la cible
+    description: "Gagne 5 ARM, DGT inflig\xE9s +3 pendant 3 Tours. \nSi cette carte
       \xE0 ses PV en dessous de 50%, r\xE9duit ses DGT subis de 10% pendant 2 Tours."
     damage: 0
     cooldownTurns: 3
@@ -50,12 +66,12 @@ MonoBehaviour:
     adjacentDamagePercent: 0
     effects:
     - type: 13
-      value: 0.05
+      value: 3
       durationTurns: 3
       effectTarget: 1
     - type: 6
       value: 5
-      durationTurns: 0
+      durationTurns: 3
       effectTarget: 1
     branches:
     - condition:
@@ -63,16 +79,25 @@ MonoBehaviour:
         compareOp: 0
         threshold: 0.5
         effectType: 0
+        conditionElement: 0
       effectType: 3
       target: 0
       valueMode: 0
       valuePercent: 0.1
       valueFlat: 0
       durationTurns: 2
-    attackVFXPrefab: {fileID: 0}
-    impactVFXPrefab: {fileID: 0}
-    vfxTravelTime: 0.35
-    vfxImpactDuration: 0.2
+    isIncantation: 0
+    castDelayTurns: 1
+    attackVFXPrefab: {fileID: 3367621933187172575, guid: 80959bcba3449d04286f21c506e3c168, type: 3}
+    trailVFXPrefab: {fileID: 0}
+    trailVFXScale: 1
+    attackVFXIsProjectile: 0
+    attackVFXScale: 1
+    impactVFXPrefab: {fileID: 7512445076827127504, guid: 393455d7e78088146a82759821b0f6a9, type: 3}
+    impactVFXScale: 1
+    vfxTravelTime: 0.6
+    vfxImpactDuration: 0.4
+    impactVFXOffset: {x: 0, y: 0, z: 0}
   passive:
     passiveName: 
     passiveDescription: 

@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 0e4ac902af5cdca4fbc621340253ac2e
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 7400000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 277550
+  packageName: TCG Card Game Effects
+  packageVersion: 1.4
+  assetPath: Assets/IndieImpulse_Assets/TCG Card Game Effects/Animations/Claw.anim
+  uploadId: 897924

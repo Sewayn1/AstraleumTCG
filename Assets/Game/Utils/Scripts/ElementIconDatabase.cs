@@ -25,6 +25,7 @@ namespace Astraleum
         public Sprite iconLumiere;
         public Sprite iconTenebres;
         public Sprite iconAstral;
+        public Sprite iconCorrosif;
 
         public Sprite GetIcon(Element element)
         {
@@ -37,6 +38,7 @@ namespace Astraleum
                 Element.Lumiere  => iconLumiere,
                 Element.Tenebres => iconTenebres,
                 Element.Astral   => iconAstral,
+                Element.Corrosif => iconCorrosif,
                 _                => null
             };
         }

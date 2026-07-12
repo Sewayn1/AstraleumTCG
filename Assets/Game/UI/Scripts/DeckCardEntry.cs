@@ -43,7 +43,7 @@ namespace Astraleum.UI
         public void OnPointerClick(PointerEventData eventData)
         {
             if (cardData == null) return;
-            DeckEditorManager.Instance?.ToggleCardInDeck(cardData.cardNumber);
+            DeckEditorManager.Instance?.AssignCardToActiveSelectSlot(cardData.cardNumber);
         }
     }
 }

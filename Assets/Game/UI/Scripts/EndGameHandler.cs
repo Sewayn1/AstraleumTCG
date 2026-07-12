@@ -14,6 +14,12 @@ namespace Astraleum
         public TMP_Text prValue;
         public TMP_Text eclatsValue;
 
+        [Tooltip("Vrai tant que la séquence de défaite spectaculaire du Boss n'est pas terminée — BossGameController le remet à false avant son appel explicite. N'affecte jamais la défaite du joueur (isVictory=false), uniquement sa victoire.")]
+        public bool suppressBossVictory = false;
+
+        [Tooltip("Message optionnel (ex. déblocage d'une carte de récompense) ajouté au sous-titre — posé par BossGameController juste avant son appel à ShowEndGame, consommé une seule fois.")]
+        public string pendingUnlockMessage;
+
         private bool gameEnded = false;
         private bool gameStarted = false;
 
@@ -46,11 +52,16 @@ namespace Astraleum
         public void ShowEndGame(int winnerID)
         {
             if (gameEnded) return;
-            gameEnded = true;
 
             // Perspective : le joueur local a-t-il gagné ?
             int localID = NetworkBridge.IsActive ? NetworkBridge.LocalPlayerID : 0;
             bool isVictory = winnerID == localID;
+
+            // Victoire contre le Boss : BossGameController joue sa séquence spectaculaire (VFX + fondu musique)
+            // avant de rappeler ShowEndGame lui-même — jamais appliqué à une défaite du joueur.
+            if (suppressBossVictory && isVictory) return;
+
+            gameEnded = true;
 
             if (resultTitle != null)
             {
@@ -63,9 +74,15 @@ namespace Astraleum
             }
 
             if (resultSubtitle != null)
+            {
                 resultSubtitle.text = isVictory
                     ? LocalizationManager.Get("endgame_subtitle_victory")
                     : LocalizationManager.Get("endgame_subtitle_defeat");
+
+                if (!string.IsNullOrEmpty(pendingUnlockMessage))
+                    resultSubtitle.text += "\n" + pendingUnlockMessage;
+            }
+            pendingUnlockMessage = null;
 
             int prGain = isVictory ? 20 : -10;
             int eclats = isVictory ? 80 : 30;

@@ -31,6 +31,8 @@ namespace Nobi.UiRoundedCorners {
 		}
 
 		private void OnEnable() {
+            if (Application.isBatchMode) return;
+
             //You can only add either ImageWithRoundedCorners or ImageWithIndependentRoundedCorners
 			//It will replace the other component when added into the object.
             var other = GetComponent<ImageWithRoundedCorners>();
@@ -59,6 +61,8 @@ namespace Nobi.UiRoundedCorners {
 		}
 
 		public void Validate() {
+            if (Application.isBatchMode) return;
+
 			if (material == null) {
 				material = new Material(Shader.Find("UI/RoundedCorners/IndependentRoundedCorners"));
 			}

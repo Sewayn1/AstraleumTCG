@@ -17,9 +17,10 @@ MonoBehaviour:
   cardNumber: 27
   element: 4
   rarity: 3
-  artwork: {fileID: 21300000, guid: 5958a744958be2a42a48b72fd05d47cd, type: 3}
+  artwork: {fileID: 21300000, guid: cbcda12b6dfa4d340a979c150ca8a4c3, type: 3}
   maxHP: 280
-  armorPoints: 12
+  armorPoints: 3
+  critChance: 0.01
   bonusActionsGranted: 0
   skillOne:
     skillType: 4
@@ -34,32 +35,50 @@ MonoBehaviour:
       value: 1
       durationTurns: 1
       effectTarget: 0
-    attackVFXPrefab: {fileID: 0}
-    impactVFXPrefab: {fileID: 0}
+    branches: []
+    isIncantation: 0
+    castDelayTurns: 1
+    attackVFXPrefab: {fileID: 7713322516035562177, guid: efdbf1c7c99ca8945a3c4d9cf8dbe547, type: 3}
+    trailVFXPrefab: {fileID: 0}
+    trailVFXScale: 1
+    attackVFXIsProjectile: 0
+    attackVFXScale: 1
+    impactVFXPrefab: {fileID: 47810030221398765, guid: 8bfb9685cca79d147b3aa2262a3038f5, type: 3}
+    impactVFXScale: 1
     vfxTravelTime: 0.35
     vfxImpactDuration: 0.2
+    impactVFXOffset: {x: 0, y: 0, z: 0}
   skillTwo:
     skillType: 2
     skillName: "\xC9tendard de Liotnar"
-    description: "+20 d'Armure aux Alli\xE9s. R\xE9duit les DGT subis de 10% pendant
-      2 Tours. "
+    description: "+8 ARM aux Alli\xE9s pendant 1 Tour. \n\nR\xE9duit les DGT subis
+      de 10% pendant 2 Tours. "
     damage: 0
     cooldownTurns: 5
     targetType: 3
     adjacentDamagePercent: 0
     effects:
     - type: 6
-      value: 20
-      durationTurns: 0
+      value: 8
+      durationTurns: 1
       effectTarget: 0
     - type: 2
       value: 0.1
       durationTurns: 2
       effectTarget: 0
-    attackVFXPrefab: {fileID: 0}
-    impactVFXPrefab: {fileID: 0}
+    branches: []
+    isIncantation: 0
+    castDelayTurns: 1
+    attackVFXPrefab: {fileID: 6258190430812525930, guid: d8f9804d243540c40af72f06943995fa, type: 3}
+    trailVFXPrefab: {fileID: 0}
+    trailVFXScale: 1
+    attackVFXIsProjectile: 0
+    attackVFXScale: 1
+    impactVFXPrefab: {fileID: 5409722635710148559, guid: ac0dadb6415017f4094abb9ac047aa85, type: 3}
+    impactVFXScale: 0.5
     vfxTravelTime: 0.35
     vfxImpactDuration: 0.2
+    impactVFXOffset: {x: 0, y: 0, z: 0}
   passive:
     passiveName: "Arm\xE9e Divine"
     passiveDescription: "Pour chaque Alli\xE9es de type Lumi\xE8re d\xE9truit au

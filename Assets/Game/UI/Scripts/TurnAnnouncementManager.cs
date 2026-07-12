@@ -46,7 +46,16 @@ namespace Astraleum
             else
                 isMyTurn = currentPlayerID == 0;
 
-            label.text  = isMyTurn ? "VOTRE TOUR" : "TOUR ADVERSE";
+            if (NetworkBridge.IsActive)
+            {
+                string name = isMyTurn ? NetworkBridge.LocalPlayerName : NetworkBridge.OpponentPlayerName;
+                string header = isMyTurn ? "VOTRE TOUR" : "TOUR ADVERSE";
+                label.text = $"{header}\n<size=60%>{name}</size>";
+            }
+            else
+            {
+                label.text = isMyTurn ? "VOTRE TOUR" : "TOUR ADVERSE";
+            }
             label.color = isMyTurn ? colorMyTurn : colorEnemyTurn;
 
             if (_routine != null)

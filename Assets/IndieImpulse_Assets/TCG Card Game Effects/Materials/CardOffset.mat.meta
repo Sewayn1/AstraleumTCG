@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: cbab31fcc60365347aa1d7d5a2e50f61
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 2100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 277550
+  packageName: TCG Card Game Effects
+  packageVersion: 1.4
+  assetPath: Assets/IndieImpulse_Assets/TCG Card Game Effects/Materials/CardOffset.mat
+  uploadId: 897924

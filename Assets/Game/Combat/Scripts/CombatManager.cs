@@ -19,19 +19,34 @@ namespace Astraleum
 
         private void Awake() => Instance = this;
 
-        private bool hasReplayedThisTurn = false;
-        private bool airExtraActionUsed = false;
-
-        public void OnTurnStart()
-        {
-            hasReplayedThisTurn = false;
-            airExtraActionUsed = false;
-        }
+        public void OnTurnStart() { }
 
         /// <summary>Point d'entrée principal. Lance la coroutine d'exécution avec VFX.</summary>
         public void ExecuteSkill(CardInstance attacker, int skillIndex, CardInstance target)
         {
-            var skill = skillIndex == 0 ? attacker.data.skillOne : attacker.data.skillTwo;
+            if (NetworkBridge.IsActive)
+            {
+                // En réseau : déléguer au serveur via SignalR, pas d'exécution locale
+                NetworkBridge.OnExecuteSkillRequested?.Invoke(attacker, skillIndex, target);
+                return;
+            }
+            ExecuteSkillLocal(attacker, skillIndex, target);
+        }
+
+        /// <summary>
+        /// Exécution locale effective, sans passer par le bridge réseau.
+        /// Appelée par ExecuteSkill en offline, et directement par LocalAIGameController
+        /// (humain via bridge, ou IA) pour le mode solo vs IA.
+        /// </summary>
+        public void ExecuteSkillLocal(CardInstance attacker, int skillIndex, CardInstance target)
+        {
+            CardSkill skill = skillIndex switch
+            {
+                0 => attacker.data.skillOne,
+                1 => attacker.data.skillTwo,
+                2 => attacker.data.skillThree,
+                _ => null,
+            };
             if (skill == null) return;
             StartCoroutine(ExecuteSkillCoroutine(attacker, skill, skillIndex, target));
         }
@@ -40,90 +55,150 @@ namespace Astraleum
                                                    int skillIndex, CardInstance target)
         {
             IsAnimating = true;
-
-            // ── Consomme l'action immédiatement (avant l'animation) ───
-            attacker.UseSkill(skillIndex);
-            TurnManager.Instance?.UseAction();
+            try
+            {
+                // ── Consomme l'action immédiatement (avant l'animation) ───
+                attacker.UseSkill(skillIndex);
+                TurnManager.Instance?.UseAction();
 
             // ── VFX — effet sur l'attaquant ───────────────────────────
             var attackerVFX = attacker.GetComponent<CardVFXHandler>();
-            bool hasVFX = skill.attackVFXPrefab != null || skill.impactVFXPrefab != null;
+            bool hasVFX = skill.attackVFXPrefab != null || skill.trailVFXPrefab != null || skill.impactVFXPrefab != null;
 
-            Debug.Log($"[VFX] Coroutine démarrée — skill={skill.skillName} | " +
-                      $"attackVFX={skill.attackVFXPrefab} | impactVFX={skill.impactVFXPrefab} | " +
-                      $"CardVFXHandler={attackerVFX} | hasVFX={hasVFX}");
-
+            // Attack VFX : statique sur l'attaquant (WindUp/charge)
+            // Trail VFX  : voyage vers la cible (missile/projectile)
+            // Si trailVFXPrefab absent et attackVFXIsProjectile : rétrocompat (attackVFX voyage)
             GameObject attackEffect = null;
-            if (skill.attackVFXPrefab != null)
-                attackEffect = attackerVFX?.SpawnVFXAttached(skill.attackVFXPrefab, skill.vfxTravelTime + 1f);
+            GameObject trailEffect  = null;
+
+            Vector3 targetPos = default;
+            if (target != null)
+            {
+                var targetVFX = target.GetComponent<CardVFXHandler>();
+                targetPos = targetVFX != null ? targetVFX.GetAnchorPosition() : target.transform.position;
+            }
+
+            if (skill.attackVFXPrefab != null && attackerVFX != null)
+            {
+                bool useAsProjectile = skill.attackVFXIsProjectile
+                                    && skill.trailVFXPrefab == null
+                                    && target != null;
+                attackEffect = useAsProjectile
+                    ? attackerVFX.SpawnProjectileVFX(skill.attackVFXPrefab, targetPos, skill.vfxTravelTime, skill.attackVFXScale)
+                    : attackerVFX.SpawnVFX(skill.attackVFXPrefab, skill.vfxTravelTime + 1f);
+                if (!useAsProjectile && attackEffect != null && skill.attackVFXScale != 1f)
+                    attackEffect.transform.localScale = Vector3.one * skill.attackVFXScale;
+            }
+
+            if (skill.trailVFXPrefab != null && attackerVFX != null && target != null)
+                trailEffect = attackerVFX.SpawnProjectileVFX(skill.trailVFXPrefab, targetPos, skill.vfxTravelTime, skill.trailVFXScale);
 
             // ── Attendre le temps de vol ──────────────────────────────
             if (hasVFX && skill.vfxTravelTime > 0f)
                 yield return new WaitForSeconds(skill.vfxTravelTime);
 
-            // ── VFX — impact sur la/les cible(s) ─────────────────────
-            if (skill.impactVFXPrefab != null)
+            // ── VFX — impact sur la/les cible(s) (non-incantation seulement) ──
+            if (!skill.isIncantation && skill.impactVFXPrefab != null)
                 SpawnImpactVFX(skill, attacker, target);
 
-            if (hasVFX && skill.vfxImpactDuration > 0f)
+            if (!skill.isIncantation && hasVFX && skill.vfxImpactDuration > 0f)
                 yield return new WaitForSeconds(skill.vfxImpactDuration);
 
-            // Nettoie l'effet d'attaque s'il est toujours présent
+            // Pour les incantations avec un VFX de lancement : laisser l'animation complète
+            // avant de démarrer le loop. Le +1f correspond au surplus de durée du SpawnVFX.
+            if (skill.isIncantation && attackEffect != null)
+                yield return new WaitForSeconds(1f);
+
             if (attackEffect != null) Destroy(attackEffect);
+            if (trailEffect  != null) Destroy(trailEffect);
 
             // ── Logique de jeu ────────────────────────────────────────
-            SkillExecutor.Execute(attacker, skill, target);
-
-            // 🌪️ Air — chance de relance (mineur + majeur 3)
-            if (StackManager.Instance != null && target != null && target.IsAlive)
+            if (skill.isIncantation)
             {
-                float replayChance = StackManager.Instance.GetAirReplayChance(attacker.ownerPlayerID);
-                if (attacker.data.element == Element.Air)
-                    replayChance += StackManager.Instance.GetAirMajorReplayBonus(attacker.ownerPlayerID);
+                attacker.AddIncantation(skill, skillIndex, target, skill.castDelayTurns);
+                CombatLogManager.Instance?.AddEntry(
+                    $"{attacker.data.cardName} — incantation {skill.skillName} ({skill.castDelayTurns}T)",
+                    playerID: attacker.ownerPlayerID);
+            }
+            else
+            {
+                SkillExecutor.Execute(attacker, skill, target);
 
-                if (replayChance > 0f && !hasReplayedThisTurn)
-                {
-                    float roll = UnityEngine.Random.Range(0f, 1f);
-                    if (roll < replayChance)
-                    {
-                        hasReplayedThisTurn = true;
-                        CombatLogManager.Instance?.AddEntry(
-                            $"{attacker.data.cardName} rejoue ! (Air {replayChance * 100:0}%)");
-
-                        // Rejoue avec VFX rapide
-                        if (skill.impactVFXPrefab != null)
-                            SpawnImpactVFX(skill, attacker, target);
-                        if (hasVFX && skill.vfxImpactDuration > 0f)
-                            yield return new WaitForSeconds(skill.vfxImpactDuration);
-
-                        SkillExecutor.Execute(attacker, skill, target);
-                    }
-                }
+                // ── Victoire ──────────────────────────────────────────────
+                if (BoardManager.Instance.CheckVictory(attacker.ownerPlayerID))
+                    GameManager.Instance.EndGame(attacker.ownerPlayerID);
             }
 
-            // 🌪️ Air majeur 5 → +1 action aux cartes Air uniquement
-            if (StackManager.Instance != null
-                && attacker.data.element == Element.Air
-                && StackManager.Instance.AirGrantsExtraAction(attacker.ownerPlayerID)
-                && !airExtraActionUsed)
+            } // end try
+            finally
             {
-                airExtraActionUsed = true;
-                TurnManager.Instance.actionsRemaining++;
-                CombatLogManager.Instance?.AddEntry("Air 5 stacks : +1 action accordée !");
+                IsAnimating = false;
+                OnActionComplete?.Invoke();
+            }
+        }
+
+        /// <summary>Joue les VFX d'un skill sans exécuter la logique de jeu. Utilisé en réseau.</summary>
+        public void PlaySkillVFXOnly(CardInstance attacker, CardSkill skill, CardInstance target)
+        {
+            StartCoroutine(PlaySkillVFXOnlyCoroutine(attacker, skill, target));
+        }
+
+        private IEnumerator PlaySkillVFXOnlyCoroutine(CardInstance attacker, CardSkill skill, CardInstance target)
+        {
+            var attackerVFX = attacker.GetComponent<CardVFXHandler>();
+            bool hasVFX = skill.attackVFXPrefab != null || skill.trailVFXPrefab != null || skill.impactVFXPrefab != null;
+            if (!hasVFX) yield break;
+
+            Vector3 targetPos = default;
+            if (target != null)
+            {
+                var targetVFX = target.GetComponent<CardVFXHandler>();
+                targetPos = targetVFX != null ? targetVFX.GetAnchorPosition() : target.transform.position;
             }
 
-            // ── Victoire ──────────────────────────────────────────────
-            if (BoardManager.Instance.CheckVictory(attacker.ownerPlayerID))
-                GameManager.Instance.EndGame(attacker.ownerPlayerID);
+            GameObject attackEffect = null;
+            GameObject trailEffect  = null;
 
-            IsAnimating = false;
-            OnActionComplete?.Invoke();
+            if (skill.attackVFXPrefab != null && attackerVFX != null)
+            {
+                bool useAsProjectile = skill.attackVFXIsProjectile
+                                    && skill.trailVFXPrefab == null
+                                    && target != null;
+                attackEffect = useAsProjectile
+                    ? attackerVFX.SpawnProjectileVFX(skill.attackVFXPrefab, targetPos, skill.vfxTravelTime, skill.attackVFXScale)
+                    : attackerVFX.SpawnVFX(skill.attackVFXPrefab, skill.vfxTravelTime + 1f);
+                if (!useAsProjectile && attackEffect != null && skill.attackVFXScale != 1f)
+                    attackEffect.transform.localScale = Vector3.one * skill.attackVFXScale;
+            }
+
+            if (skill.trailVFXPrefab != null && attackerVFX != null && target != null)
+                trailEffect = attackerVFX.SpawnProjectileVFX(skill.trailVFXPrefab, targetPos, skill.vfxTravelTime, skill.trailVFXScale);
+
+            if (skill.vfxTravelTime > 0f)
+                yield return new WaitForSeconds(skill.vfxTravelTime);
+
+            if (!skill.isIncantation && skill.impactVFXPrefab != null)
+                SpawnImpactVFX(skill, attacker, target);
+
+            if (!skill.isIncantation && skill.vfxImpactDuration > 0f)
+                yield return new WaitForSeconds(skill.vfxImpactDuration);
+
+            if (attackEffect != null) Destroy(attackEffect);
+            if (trailEffect  != null) Destroy(trailEffect);
         }
 
         /// <summary>Spawne l'impact VFX sur la ou les cibles selon le targetType du skill.</summary>
-        private void SpawnImpactVFX(CardSkill skill, CardInstance attacker, CardInstance primaryTarget)
+        public void SpawnImpactVFX(CardSkill skill, CardInstance attacker, CardInstance primaryTarget)
         {
             if (skill.impactVFXPrefab == null) return;
+
+            var off = skill.impactVFXOffset;
+            void Spawn(CardInstance card)
+            {
+                var go = card.GetComponent<CardVFXHandler>()?.SpawnVFX(skill.impactVFXPrefab, 2f, off);
+                if (go != null && skill.impactVFXScale != 1f)
+                    go.transform.localScale = Vector3.one * skill.impactVFXScale;
+            }
 
             switch (skill.targetType)
             {
@@ -131,30 +206,30 @@ namespace Astraleum
                 {
                     int enemyID = attacker.ownerPlayerID == 0 ? 1 : 0;
                     foreach (var enemy in BoardManager.Instance.GetAliveCards(enemyID))
-                        enemy.GetComponent<CardVFXHandler>()?.SpawnVFX(skill.impactVFXPrefab, 2f);
+                        Spawn(enemy);
                     break;
                 }
                 case SkillTargetType.AllAllies:
                 {
                     foreach (var ally in BoardManager.Instance.GetAliveCards(attacker.ownerPlayerID))
-                        ally.GetComponent<CardVFXHandler>()?.SpawnVFX(skill.impactVFXPrefab, 2f);
+                        Spawn(ally);
                     break;
                 }
                 case SkillTargetType.Self:
-                    attacker.GetComponent<CardVFXHandler>()?.SpawnVFX(skill.impactVFXPrefab, 2f);
+                    Spawn(attacker);
                     break;
                 case SkillTargetType.AdjacentEnemies:
                 {
                     if (primaryTarget != null)
                     {
-                        primaryTarget.GetComponent<CardVFXHandler>()?.SpawnVFX(skill.impactVFXPrefab, 2f);
+                        Spawn(primaryTarget);
                         foreach (var adj in BoardManager.Instance.GetAdjacentCards(primaryTarget))
-                            adj.GetComponent<CardVFXHandler>()?.SpawnVFX(skill.impactVFXPrefab, 2f);
+                            Spawn(adj);
                     }
                     break;
                 }
                 default:
-                    primaryTarget?.GetComponent<CardVFXHandler>()?.SpawnVFX(skill.impactVFXPrefab, 2f);
+                    if (primaryTarget != null) Spawn(primaryTarget);
                     break;
             }
         }

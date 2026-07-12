@@ -7,6 +7,8 @@ namespace Astraleum
 {
     public class IconLineManager : MonoBehaviour
     {
+        public TMP_FontAsset lineFont;
+
         private List<GameObject> activeLines = new List<GameObject>();
 
         public void Clear()
@@ -64,6 +66,7 @@ namespace Astraleum
             tmp.text = text;
             tmp.color = textColor;
             tmp.fontSize = 13f;
+            if (lineFont != null) tmp.font = lineFont;
             tmp.textWrappingMode = TextWrappingModes.Normal;
             tmp.overflowMode = TextOverflowModes.Overflow;
             tmp.raycastTarget = false;

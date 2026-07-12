@@ -17,14 +17,18 @@ MonoBehaviour:
   cardNumber: 26
   element: 6
   rarity: 4
-  artwork: {fileID: 21300000, guid: 006dd6e50d87f684b8c79a0055c9298d, type: 3}
+  artwork: {fileID: 21300000, guid: fc52497deefda5e4eb6837aad7c3b2ae, type: 3}
+  hiddenFromCollection: 0
+  isTrainingDummy: 0
   maxHP: 360
   armorPoints: 0
+  critChance: 0.01
   bonusActionsGranted: 0
   skillOne:
     skillType: 0
     skillName: "D\xE9chirure Astrale"
-    description: "30 DGT \xE0 la cible et bloque les soins re\xE7u pendant deux tours."
+    description: "\n30 DGT \xE0 la cible et bloque les soins re\xE7u pendant deux
+      tours."
     damage: 30
     cooldownTurns: 2
     targetType: 0
@@ -35,17 +39,26 @@ MonoBehaviour:
       durationTurns: 2
       effectTarget: 0
     branches: []
+    isIncantation: 0
+    castDelayTurns: 1
     attackVFXPrefab: {fileID: 0}
-    impactVFXPrefab: {fileID: 0}
+    trailVFXPrefab: {fileID: 4725321797626905185, guid: 84d70620908093749b0f04559238dc6e, type: 3}
+    trailVFXScale: 1
+    attackVFXIsProjectile: 0
+    attackVFXScale: 1
+    impactVFXPrefab: {fileID: 5008419760385394743, guid: a0cdf85294c972d41b5aeb2551abd8c3, type: 3}
+    impactVFXScale: 1
     vfxTravelTime: 0.35
     vfxImpactDuration: 0.2
+    impactVFXOffset: {x: 0, y: 0, z: 0}
   skillTwo:
     skillType: 0
     skillName: Convergence des Mondes
-    description: "45 DGT \xE0 la cible et inflige 60% aux adjacentes. Si la cible
-      principale \xE0\_moins de 20% de ses PV, inflige +20% de DGT."
-    damage: 45
-    cooldownTurns: 4
+    description: "Incantation - 2 Tours :\n\n70 DGT \xE0 la cible et inflige 60%
+      aux adjacentes. \n\nSi la cible principale \xE0\_moins de 20% de ses PV, inflige
+      +20% de DGT."
+    damage: 70
+    cooldownTurns: 5
     targetType: 4
     adjacentDamagePercent: 0.6
     effects: []
@@ -55,23 +68,32 @@ MonoBehaviour:
         compareOp: 0
         threshold: 0.2
         effectType: 0
+        conditionElement: 0
       effectType: 0
-      target: 0
+      target: 1
       valueMode: 0
       valuePercent: 0.2
       valueFlat: 0
       durationTurns: 0
-    attackVFXPrefab: {fileID: 0}
-    impactVFXPrefab: {fileID: 0}
+    isIncantation: 1
+    castDelayTurns: 2
+    attackVFXPrefab: {fileID: 4888133546414290188, guid: 6757c1ec9f83764419773df9138ff331, type: 3}
+    trailVFXPrefab: {fileID: 0}
+    trailVFXScale: 1
+    attackVFXIsProjectile: 0
+    attackVFXScale: 1
+    impactVFXPrefab: {fileID: 6124575847552538670, guid: cf78cb9b6effa7c4c94f1cb20d81bccb, type: 3}
+    impactVFXScale: 1
     vfxTravelTime: 0.35
     vfxImpactDuration: 0.2
+    impactVFXOffset: {x: 0, y: 0, z: 0}
   passive:
     passiveName: Fin des Temps
     passiveDescription: "Pour chaque carte d\xE9truites (Alli\xE9es ou Adverses),
       inflige 5% des PV Max au prochain tour \xE0 TOUTES les cartes en jeu, et augmente
       de 5% les DGT inflig\xE9s par Eldrich. (Cumulable 5 fois) "
     trigger: 1
-    triggerElement: 7
+    triggerElement: 8
     passiveColor: {r: 1, g: 0.84, b: 0, a: 1}
     stacksPerTrigger: 1
     maxTriggerStacks: 5
@@ -85,7 +107,7 @@ MonoBehaviour:
       durationTurns: 1
       effectTarget: 2
     - type: 13
-      value: 0.05
+      value: 2
       durationTurns: -1
       effectTarget: 1
   loreText: "Eldrich n'a pas appris la magie \u2014 il l'a comprise. Il a pass\xE9

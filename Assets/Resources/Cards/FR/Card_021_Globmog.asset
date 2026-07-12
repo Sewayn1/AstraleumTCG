@@ -17,9 +17,10 @@ MonoBehaviour:
   cardNumber: 21
   element: 1
   rarity: 0
-  artwork: {fileID: 21300000, guid: f85d7c74adafcde4bb1394a7c794acf4, type: 3}
+  artwork: {fileID: 21300000, guid: 0cfa5c5bca940da43b2519adaffd21f4, type: 3}
   maxHP: 110
-  armorPoints: 2
+  armorPoints: 0
+  critChance: 0.01
   bonusActionsGranted: 0
   skillOne:
     skillType: 4
@@ -36,14 +37,22 @@ MonoBehaviour:
       durationTurns: 0
       effectTarget: 4
     branches: []
-    attackVFXPrefab: {fileID: 0}
-    impactVFXPrefab: {fileID: 0}
+    isIncantation: 0
+    castDelayTurns: 1
+    attackVFXPrefab: {fileID: 3564256609886714696, guid: a3036ee46e4824b4d923d93f55b5ac38, type: 3}
+    trailVFXPrefab: {fileID: 874104363781329116, guid: 59a8a80f4fa79d740a3afc86b3015682, type: 3}
+    trailVFXScale: 1
+    attackVFXIsProjectile: 1
+    attackVFXScale: 1
+    impactVFXPrefab: {fileID: 6699823732153390975, guid: e1c98bd529b4cc24f857b920da3fa97f, type: 3}
+    impactVFXScale: 1
     vfxTravelTime: 0.35
     vfxImpactDuration: 0.2
+    impactVFXOffset: {x: 0, y: 0, z: 0}
   skillTwo:
     skillType: 0
     skillName: Vague de Submersion
-    description: "Inflige 12 DGT \xE0 la cible et 60% aux adjacentes. Ignore l'Armure
+    description: "Inflige 12 DGT \xE0 la cible et 60% aux adjacentes. Ignore ARM
       des cibles."
     damage: 12
     cooldownTurns: 3
@@ -55,10 +64,18 @@ MonoBehaviour:
       durationTurns: 0
       effectTarget: 6
     branches: []
-    attackVFXPrefab: {fileID: 0}
-    impactVFXPrefab: {fileID: 0}
+    isIncantation: 0
+    castDelayTurns: 1
+    attackVFXPrefab: {fileID: 3564256609886714696, guid: a3036ee46e4824b4d923d93f55b5ac38, type: 3}
+    trailVFXPrefab: {fileID: 874104363781329116, guid: 59a8a80f4fa79d740a3afc86b3015682, type: 3}
+    trailVFXScale: 1
+    attackVFXIsProjectile: 1
+    attackVFXScale: 1
+    impactVFXPrefab: {fileID: 7306709923035686569, guid: e527de5bf43bb774bb8bde63f0af30d2, type: 3}
+    impactVFXScale: 1
     vfxTravelTime: 0.35
     vfxImpactDuration: 0.2
+    impactVFXOffset: {x: 0, y: 0, z: 0}
   passive:
     passiveName: 
     passiveDescription: 

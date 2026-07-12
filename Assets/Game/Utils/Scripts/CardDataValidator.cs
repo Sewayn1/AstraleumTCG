@@ -32,13 +32,13 @@ namespace Astraleum
 
         private bool IsPercentEffect(EffectType type)
         {
-            return type == EffectType.DamageAmplify    ||
-                   type == EffectType.DamageReduction  ||
-                   type == EffectType.AttackBoost      ||
-                   type == EffectType.HealOverTime     ||
-                   type == EffectType.ImmediateHeal    ||
-                   type == EffectType.ArmorIgnore      ||
+            return type == EffectType.DamageAmplify   ||
+                   type == EffectType.DamageReduction ||
+                   type == EffectType.HealOverTime    ||
+                   type == EffectType.ImmediateHeal   ||
+                   type == EffectType.ArmorIgnore     ||
                    type == EffectType.Poison;
+            // AttackBoost et AttackReduction sont maintenant FLAT (valeurs entières)
         }
     }
 }

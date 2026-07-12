@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 688fc9a3acecc7745b39d3aaeb721beb
+PrefabImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 277550
+  packageName: TCG Card Game Effects
+  packageVersion: 1.4
+  assetPath: Assets/IndieImpulse_Assets/TCG Card Game Effects/Prefabs/TeleportEffect.prefab
+  uploadId: 897924

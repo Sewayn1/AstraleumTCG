@@ -60,6 +60,7 @@ namespace Astraleum
             UpdateIcon(group.lumiere, playerID, Element.Lumiere);
             UpdateIcon(group.tenebres, playerID, Element.Tenebres);
             UpdateIcon(group.astral, playerID, Element.Astral);
+            UpdateIcon(group.corrosif, playerID, Element.Corrosif);
         }
 
         private void UpdateIcon(StackIcon icon, int playerID, Element element)
@@ -93,51 +94,40 @@ namespace Astraleum
             }
         }
 
-        private System.Collections.IEnumerator PositionTooltip(Vector3 screenPos)
+        private void PositionTooltipImmediate(Vector3 screenPos)
         {
-            yield return null;
-            yield return null;
-
             var linesRT   = tooltipLines?.GetComponent<RectTransform>();
             var tooltipRT = tooltipPanel?.GetComponent<RectTransform>();
-            if (tooltipRT == null) yield break;
+            if (tooltipRT == null) return;
 
-            // Préserve la largeur — réinitialise uniquement la hauteur pour que le CSF recalcule
-            tooltipRT.sizeDelta = new Vector2(tooltipRT.sizeDelta.x, 0f);
-
-            Canvas.ForceUpdateCanvases();
             if (linesRT != null) LayoutRebuilder.ForceRebuildLayoutImmediate(linesRT);
             LayoutRebuilder.ForceRebuildLayoutImmediate(tooltipRT);
 
-            yield return null;
-            Canvas.ForceUpdateCanvases();
-
-            // Lit la taille réelle après rebuild — évite le calcul manuel de finalH
-            // qui utilisait childLE.preferredHeight = -1 (non défini) pour les lignes
             float tipW = tooltipRT.rect.width;
             float tipH = tooltipRT.rect.height;
 
             var canvas = tooltipPanel.GetComponentInParent<Canvas>();
-            if (canvas == null) yield break;
+            if (canvas == null) return;
 
             var canvasRT = canvas.GetComponent<RectTransform>();
             float cW = canvasRT.rect.width;
             float cH = canvasRT.rect.height;
 
+            Camera cam = canvas.renderMode == RenderMode.ScreenSpaceOverlay ? null : canvas.worldCamera;
             RectTransformUtility.ScreenPointToLocalPointInRectangle(
-                canvasRT, screenPos, canvas.worldCamera, out Vector2 local);
+                canvasRT, screenPos, cam, out Vector2 local);
 
-            bool top   = screenPos.y > Screen.height / 2f;
-            bool right = screenPos.x > Screen.width  / 2f;
+            bool top   = screenPos.y > Screen.height * 0.5f;
+            bool right = screenPos.x > Screen.width  * 0.5f;
 
             local += right ? new Vector2(-(tipW + 10f), top ? -(tipH + 5f) : 5f)
                            : new Vector2(10f,            top ? -(tipH + 5f) : 5f);
 
-            local.x = Mathf.Clamp(local.x, -cW / 2f + tipW / 2f, cW / 2f - tipW / 2f);
-            local.y = Mathf.Clamp(local.y, -cH / 2f + tipH / 2f, cH / 2f - tipH / 2f);
+            local.x = Mathf.Clamp(local.x, -cW * 0.5f + tipW * 0.5f, cW * 0.5f - tipW * 0.5f);
+            local.y = Mathf.Clamp(local.y, -cH * 0.5f + tipH * 0.5f, cH * 0.5f - tipH * 0.5f);
 
-            tooltipRT.anchorMin      = new Vector2(0.5f, 0.5f);
-            tooltipRT.anchorMax      = new Vector2(0.5f, 0.5f);
+            tooltipRT.anchorMin        = new Vector2(0.5f, 0.5f);
+            tooltipRT.anchorMax        = new Vector2(0.5f, 0.5f);
             tooltipRT.anchoredPosition = local;
         }
 
@@ -169,7 +159,7 @@ namespace Astraleum
             }
 
             tooltipPanel.SetActive(true);
-            StartCoroutine(PositionTooltip(screenPos));
+            PositionTooltipImmediate(screenPos);
 
 
         }
@@ -206,7 +196,9 @@ namespace Astraleum
 
                         tooltipLines.AddSeparator();
 
-                        if (stacks >= 3)
+                        if (stacks >= 5)
+                            tooltipLines.AddLine(lib?.iconBulletOff, LocalizationManager.Get("stack_fire_3_on"), inactiveColor);
+                        else if (stacks >= 3)
                             tooltipLines.AddLine(lib?.iconAttack, LocalizationManager.Get("stack_fire_3_on"), activeColor);
                         else
                             tooltipLines.AddLine(lib?.iconBulletOff, LocalizationManager.Get("stack_fire_3_off", 3 - stacks), inactiveColor);
@@ -214,7 +206,7 @@ namespace Astraleum
                         tooltipLines.AddSeparator();
 
                         if (stacks >= 5)
-                            tooltipLines.AddLine(lib?.iconAttack, LocalizationManager.Get("stack_fire_5_on"), goldColor);
+                            tooltipLines.AddLine(lib?.iconBulletOn, LocalizationManager.Get("stack_fire_5_on"), goldColor);
                         else
                             tooltipLines.AddLine(lib?.iconBulletOff, LocalizationManager.Get("stack_fire_5_off", 5 - stacks), inactiveColor);
                         break;
@@ -227,7 +219,9 @@ namespace Astraleum
 
                         tooltipLines.AddSeparator();
 
-                        if (stacks >= 3)
+                        if (stacks >= 5)
+                            tooltipLines.AddLine(lib?.iconBulletOff, LocalizationManager.Get("stack_water_3_on"), inactiveColor);
+                        else if (stacks >= 3)
                             tooltipLines.AddLine(lib?.iconShield, LocalizationManager.Get("stack_water_3_on"), activeColor);
                         else
                             tooltipLines.AddLine(lib?.iconBulletOff, LocalizationManager.Get("stack_water_3_off", 3 - stacks), inactiveColor);
@@ -243,14 +237,15 @@ namespace Astraleum
 
                 case Element.Terre:
                     {
-                        int armorStart = stacks * 5;
-                        tooltipLines.AddLine(lib?.iconShield, LocalizationManager.Get("stack_earth_minor", armorStart), activeColor);
+                        int drPct = stacks * 2;
+                        tooltipLines.AddLine(lib?.iconShield, LocalizationManager.Get("stack_earth_minor", drPct), activeColor);
 
                         tooltipLines.AddSeparator();
 
-                        int regen = StackManager.Instance.GetEarthArmorRegen(playerID);
-                        if (stacks >= 3)
-                            tooltipLines.AddLine(lib?.iconShield, LocalizationManager.Get("stack_earth_3_on", regen), activeColor);
+                        if (stacks >= 5)
+                            tooltipLines.AddLine(lib?.iconBulletOff, LocalizationManager.Get("stack_earth_3_on"), inactiveColor);
+                        else if (stacks >= 3)
+                            tooltipLines.AddLine(lib?.iconShield, LocalizationManager.Get("stack_earth_3_on"), activeColor);
                         else
                             tooltipLines.AddLine(lib?.iconBulletOff, LocalizationManager.Get("stack_earth_3_off", 3 - stacks), inactiveColor);
 
@@ -265,12 +260,14 @@ namespace Astraleum
 
                 case Element.Air:
                     {
-                        float chance = stacks * 1f;
-                        tooltipLines.AddLine(lib?.iconBulletOn, LocalizationManager.Get("stack_air_minor", $"{chance:0}"), activeColor);
+                        float critChance = Mathf.Min(stacks * 2f, 10f);
+                        tooltipLines.AddLine(lib?.iconBulletOn, LocalizationManager.Get("stack_air_minor", $"{critChance:0}"), activeColor);
 
                         tooltipLines.AddSeparator();
 
-                        if (stacks >= 3)
+                        if (stacks >= 5)
+                            tooltipLines.AddLine(lib?.iconBulletOff, LocalizationManager.Get("stack_air_3_on"), inactiveColor);
+                        else if (stacks >= 3)
                             tooltipLines.AddLine(lib?.iconBulletOn, LocalizationManager.Get("stack_air_3_on"), activeColor);
                         else
                             tooltipLines.AddLine(lib?.iconBulletOff, LocalizationManager.Get("stack_air_3_off", 3 - stacks), inactiveColor);
@@ -291,7 +288,9 @@ namespace Astraleum
 
                         tooltipLines.AddSeparator();
 
-                        if (stacks >= 3)
+                        if (stacks >= 5)
+                            tooltipLines.AddLine(lib?.iconBulletOff, LocalizationManager.Get("stack_light_3_on"), inactiveColor);
+                        else if (stacks >= 3)
                             tooltipLines.AddLine(lib?.iconHeal, LocalizationManager.Get("stack_light_3_on"), activeColor);
                         else
                             tooltipLines.AddLine(lib?.iconBulletOff, LocalizationManager.Get("stack_light_3_off", 3 - stacks), inactiveColor);
@@ -307,14 +306,16 @@ namespace Astraleum
 
                 case Element.Tenebres:
                     {
-                        float dark = stacks * 3f;
-                        tooltipLines.AddLine(lib?.iconAttack, LocalizationManager.Get("stack_dark_minor", $"{dark:0}"), activeColor);
+                        int aliveEnemies = BoardManager.Instance?.GetAliveCards(1 - playerID).Count ?? 0;
+                        int bonusPct = aliveEnemies * 2;
+                        tooltipLines.AddLine(lib?.iconAttack, LocalizationManager.Get("stack_dark_minor", bonusPct), activeColor);
 
                         tooltipLines.AddSeparator();
 
-                        float poison = StackManager.Instance.GetPoisonPercent(playerID) * 100f;
-                        if (stacks >= 3)
-                            tooltipLines.AddLine(lib?.iconDeath, LocalizationManager.Get("stack_dark_3_on", $"{poison:0}"), activeColor);
+                        if (stacks >= 5)
+                            tooltipLines.AddLine(lib?.iconBulletOff, LocalizationManager.Get("stack_dark_3_on"), inactiveColor);
+                        else if (stacks >= 3)
+                            tooltipLines.AddLine(lib?.iconDeath, LocalizationManager.Get("stack_dark_3_on"), activeColor);
                         else
                             tooltipLines.AddLine(lib?.iconBulletOff, LocalizationManager.Get("stack_dark_3_off", 3 - stacks), inactiveColor);
 
@@ -324,6 +325,29 @@ namespace Astraleum
                             tooltipLines.AddLine(lib?.iconDeath, LocalizationManager.Get("stack_dark_5_on"), goldColor);
                         else
                             tooltipLines.AddLine(lib?.iconBulletOff, LocalizationManager.Get("stack_dark_5_off", 5 - stacks), inactiveColor);
+                        break;
+                    }
+
+                case Element.Corrosif:
+                    {
+                        int armorReduc = StackManager.Instance?.GetCorrosifArmorReduction(playerID) ?? 0;
+                        tooltipLines.AddLine(lib?.iconShield, LocalizationManager.Get("stack_corrosif_minor", armorReduc), activeColor);
+
+                        tooltipLines.AddSeparator();
+
+                        if (stacks >= 5)
+                            tooltipLines.AddLine(lib?.iconBulletOff, LocalizationManager.Get("stack_corrosif_3_on"), inactiveColor);
+                        else if (stacks >= 3)
+                            tooltipLines.AddLine(lib?.iconDeath, LocalizationManager.Get("stack_corrosif_3_on"), activeColor);
+                        else
+                            tooltipLines.AddLine(lib?.iconBulletOff, LocalizationManager.Get("stack_corrosif_3_off", 3 - stacks), inactiveColor);
+
+                        tooltipLines.AddSeparator();
+
+                        if (stacks >= 5)
+                            tooltipLines.AddLine(lib?.iconDeath, LocalizationManager.Get("stack_corrosif_5_on"), goldColor);
+                        else
+                            tooltipLines.AddLine(lib?.iconBulletOff, LocalizationManager.Get("stack_corrosif_5_off", 5 - stacks), inactiveColor);
                         break;
                     }
 
@@ -374,6 +398,7 @@ namespace Astraleum
         public StackIcon lumiere;
         public StackIcon tenebres;
         public StackIcon astral;
+        public StackIcon corrosif;
     }
 
     [System.Serializable]

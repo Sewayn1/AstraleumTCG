@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 6f8bf149723bc2d46a342de00c5a56cf
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 2100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 277550
+  packageName: TCG Card Game Effects
+  packageVersion: 1.4
+  assetPath: Assets/IndieImpulse_Assets/TCG Card Game Effects/Materials/HexGlow.mat
+  uploadId: 897924

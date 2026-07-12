@@ -1,0 +1,123 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: baa3cfc011ceea542b4a6e2212c058c1, type: 3}
+  m_Name: "Card_048_Voragoth Derni\xE8re Calamit\xE9"
+  m_EditorClassIdentifier: Assembly-CSharp::Astraleum.CardData
+  cardName: Voragoth
+  cardTitle: "Derni\xE8re Calamit\xE9"
+  cardNumber: 48
+  element: 5
+  rarity: 4
+  artwork: {fileID: 21300000, guid: 10c344af578d84e4ca497fa3bc124c44, type: 3}
+  hiddenFromCollection: 0
+  isTrainingDummy: 0
+  maxHP: 350
+  armorPoints: 0
+  critChance: 0
+  bonusActionsGranted: 0
+  skillOne:
+    skillType: 4
+    skillName: Regard du Vide
+    description: "Inflige 25 DGT \xE0 une cible adverse, et lui applique l'\xE9tat
+      \"Insoignable\" pendant 2 Tours."
+    damage: 25
+    cooldownTurns: 2
+    targetType: 0
+    adjacentDamagePercent: 0
+    effects:
+    - type: 5
+      value: 0
+      durationTurns: 2
+      effectTarget: 0
+    branches: []
+    isIncantation: 0
+    castDelayTurns: 1
+    attackVFXPrefab: {fileID: 3994965004076699975, guid: 350fde7c27a0ed5439852b66d8ef0590, type: 3}
+    trailVFXPrefab: {fileID: 1992815801676329838, guid: bb5b4a62633a53f45835d2229c7ccf98, type: 3}
+    trailVFXScale: 1
+    attackVFXIsProjectile: 0
+    attackVFXScale: 1
+    impactVFXPrefab: {fileID: 1386483879094485057, guid: d9121a3dbed0969429d4c44e865c6dbb, type: 3}
+    impactVFXScale: 1
+    vfxTravelTime: 0.35
+    vfxImpactDuration: 0.2
+    impactVFXOffset: {x: 0, y: 0, z: 0}
+  skillTwo:
+    skillType: 4
+    skillName: Eclipse Vorace
+    description: "Inflige 35 DGT \xE0\_toutes les cartes adverses.\n\nVole 15% des
+      PV des DGT inflig\xE9s."
+    damage: 35
+    cooldownTurns: 3
+    targetType: 2
+    adjacentDamagePercent: 0
+    effects:
+    - type: 19
+      value: 0.15
+      durationTurns: -1
+      effectTarget: 0
+    branches: []
+    isIncantation: 0
+    castDelayTurns: 1
+    attackVFXPrefab: {fileID: 4888133546414290188, guid: 6757c1ec9f83764419773df9138ff331, type: 3}
+    trailVFXPrefab: {fileID: 0}
+    trailVFXScale: 1
+    attackVFXIsProjectile: 0
+    attackVFXScale: 1
+    impactVFXPrefab: {fileID: 5008419760385394743, guid: a0cdf85294c972d41b5aeb2551abd8c3, type: 3}
+    impactVFXScale: 1
+    vfxTravelTime: 0.35
+    vfxImpactDuration: 0.2
+    impactVFXOffset: {x: 0, y: 0, z: 0}
+  skillThree:
+    skillType: 0
+    skillName: 
+    description: 
+    damage: 0
+    cooldownTurns: 0
+    targetType: 0
+    adjacentDamagePercent: 0
+    effects: []
+    branches: []
+    isIncantation: 0
+    castDelayTurns: 1
+    attackVFXPrefab: {fileID: 0}
+    trailVFXPrefab: {fileID: 0}
+    trailVFXScale: 1
+    attackVFXIsProjectile: 0
+    attackVFXScale: 1
+    impactVFXPrefab: {fileID: 0}
+    impactVFXScale: 1
+    vfxTravelTime: 0.35
+    vfxImpactDuration: 0.2
+    impactVFXOffset: {x: 0, y: 0, z: 0}
+  passive:
+    passiveName: Calamitas
+    passiveDescription: "Tant que des alli\xE9s des T\xE9n\xE8bres sont pr\xE9sent
+      sur le terrain, Voragoth gagne +2 en DGT inflig\xE9s, et se soigne de 1% de
+      ses PV Max par Tour."
+    trigger: 7
+    triggerElement: 5
+    passiveColor: {r: 1, g: 0.84, b: 0, a: 1}
+    stacksPerTrigger: 0
+    maxTriggerStacks: 4
+    effects:
+    - type: 21
+      value: 2
+      durationTurns: -1
+      effectTarget: 1
+    - type: 4
+      value: 0.02
+      durationTurns: -1
+      effectTarget: 1
+  loreText: 
+  loreQuote: 

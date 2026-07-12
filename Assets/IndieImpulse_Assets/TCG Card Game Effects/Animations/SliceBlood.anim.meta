@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 0ed4bf011c331024a8237b9cd99dcfcc
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 7400000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 277550
+  packageName: TCG Card Game Effects
+  packageVersion: 1.4
+  assetPath: Assets/IndieImpulse_Assets/TCG Card Game Effects/Animations/SliceBlood.anim
+  uploadId: 897924

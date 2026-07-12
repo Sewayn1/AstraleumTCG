@@ -1,0 +1,130 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: baa3cfc011ceea542b4a6e2212c058c1, type: 3}
+  m_Name: Card_045_Arpentis le Virulent
+  m_EditorClassIdentifier: Assembly-CSharp::Astraleum.CardData
+  cardName: Arpentis
+  cardTitle: Le Virulent
+  cardNumber: 45
+  element: 7
+  rarity: 3
+  artwork: {fileID: 21300000, guid: 1aaee7f1e049d54439f83ba32b39ab14, type: 3}
+  hiddenFromCollection: 0
+  isTrainingDummy: 0
+  maxHP: 280
+  armorPoints: 0
+  critChance: 0.01
+  bonusActionsGranted: 0
+  skillOne:
+    skillType: 0
+    skillName: Enlacement Virulent
+    description: "Enlace la cible, lui inflige 25 DGT et r\xE9duit son ARM de 1 permanent,
+      et 10% de ses PV Max pendant 3 Tours."
+    damage: 25
+    cooldownTurns: 3
+    targetType: 0
+    adjacentDamagePercent: 0
+    effects:
+    - type: 25
+      value: 1
+      durationTurns: -1
+      effectTarget: 0
+    - type: 24
+      value: 0.1
+      durationTurns: 3
+      effectTarget: 0
+    branches: []
+    isIncantation: 0
+    castDelayTurns: 1
+    attackVFXPrefab: {fileID: 3564256609886714696, guid: 735dd27392136d44a84aee8a19768be5, type: 3}
+    trailVFXPrefab: {fileID: 0}
+    trailVFXScale: 1
+    attackVFXIsProjectile: 0
+    attackVFXScale: 1
+    impactVFXPrefab: {fileID: 6699823732153390975, guid: 23f86f9eeaa15864aa6e10cb9202b3a1, type: 3}
+    impactVFXScale: 1
+    vfxTravelTime: 0.35
+    vfxImpactDuration: 0.2
+    impactVFXOffset: {x: 0, y: 0, z: 0}
+  skillTwo:
+    skillType: 0
+    skillName: Vapeur Virulente
+    description: "Attaque toutes les cartes adverse. Leurs inflige 21 DGT et r\xE9duit
+      leurs PV Max de 5% pendant 3 Tours. \n\nSi cette carte \xE0 ses PV \u2264 50%,
+      augmente de 5% cet effet, et augmente les DGT de cette attaque de 10%."
+    damage: 21
+    cooldownTurns: 4
+    targetType: 2
+    adjacentDamagePercent: 0
+    effects:
+    - type: 24
+      value: 0.05
+      durationTurns: 3
+      effectTarget: 3
+    branches:
+    - condition:
+        conditionType: 1
+        compareOp: 0
+        threshold: 0.5
+        effectType: 0
+        conditionElement: 0
+      effectType: 13
+      target: 0
+      valueMode: 0
+      valuePercent: 0.05
+      valueFlat: 0
+      durationTurns: 3
+    - condition:
+        conditionType: 1
+        compareOp: 0
+        threshold: 0.5
+        effectType: 0
+        conditionElement: 0
+      effectType: 0
+      target: 1
+      valueMode: 0
+      valuePercent: 0.1
+      valueFlat: 0
+      durationTurns: 0
+    isIncantation: 0
+    castDelayTurns: 1
+    attackVFXPrefab: {fileID: 0}
+    trailVFXPrefab: {fileID: 874104363781329116, guid: be6bc6713504fb04f85a72f3ad7f8c5d, type: 3}
+    trailVFXScale: 1
+    attackVFXIsProjectile: 1
+    attackVFXScale: 1
+    impactVFXPrefab: {fileID: 7306709923035686569, guid: bb45264756d159749a8810e731ee167b, type: 3}
+    impactVFXScale: 1
+    vfxTravelTime: 0.35
+    vfxImpactDuration: 0.2
+    impactVFXOffset: {x: 0, y: 0, z: 0}
+  passive:
+    passiveName: Vapeur Toxique
+    passiveDescription: "Lorsqu'une carte alli\xE9 est d\xE9truite, projette de la
+      Vapeur Toxique sur toutes les carte adverse, leurs retire 5% de PV Max permanent
+      et 1 d'Armure permanent."
+    trigger: 2
+    triggerElement: 8
+    passiveColor: {r: 1, g: 0.84, b: 0, a: 1}
+    stacksPerTrigger: 1
+    maxTriggerStacks: 4
+    effects:
+    - type: 25
+      value: 1
+      durationTurns: -1
+      effectTarget: 3
+    - type: 24
+      value: 0.05
+      durationTurns: -1
+      effectTarget: 3
+  loreText: 
+  loreQuote: 

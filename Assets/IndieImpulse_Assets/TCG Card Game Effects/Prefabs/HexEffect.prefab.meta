@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 83715cd604d47ad44a5d66fb43e87d14
+PrefabImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 277550
+  packageName: TCG Card Game Effects
+  packageVersion: 1.4
+  assetPath: Assets/IndieImpulse_Assets/TCG Card Game Effects/Prefabs/HexEffect.prefab
+  uploadId: 897924

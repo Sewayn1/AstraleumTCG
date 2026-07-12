@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: d095d0e8986d1194f9b05ca53a1f650f
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 7400000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 277550
+  packageName: TCG Card Game Effects
+  packageVersion: 1.4
+  assetPath: Assets/IndieImpulse_Assets/TCG Card Game Effects/Animations/Dissolve.anim
+  uploadId: 897924

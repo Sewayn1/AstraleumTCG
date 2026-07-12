@@ -16,8 +16,10 @@ namespace Astraleum
         public TMP_Text skill2DMG;
         public GameObject skill1CDIndicator;
         public GameObject skill2CDIndicator;
+        public GameObject skill3CDIndicator;
         public TMP_Text skill1CDText;
         public TMP_Text skill2CDText;
+        public TMP_Text skill3CDText;
         public GameObject stateIcon;
         public GameObject exhaustedOverlay;
         public GameObject destroyedOverlay;
@@ -36,16 +38,33 @@ namespace Astraleum
         public TMP_Text skill1Name;
         public Image skill2TypeIcon;
         public TMP_Text skill2Name;
+        public TMP_Text skill3Name; // ← pas de typeIcon dédié (compétence 3 = Boss uniquement)
 
 
         [Header("Passif")]
         public Image passiveIcon; // ← icône coin inférieur droit de l'artwork
 
+        [Header("Incantation")]
+        public Image incantationIcon;  // ← icône incantation en cours (rune/étoile)
+        public TMP_Text incantationTimerText;
+        public GameObject incantationLoopVFXPrefab;
+        private GameObject _incantationLoopInstance;
+
         [Header("Effets de statut")]
         public Image burnIcon;         // ← icône brûlure active sur la carte
         public Image poisonIcon;       // ← icône poison actif sur la carte
         public Image saignementIcon;   // ← icône saignement actif sur la carte
+        public Image healBlockIcon;    // ← icône HealBlock actif sur la carte
+        public Image hotIcon;          // ← icône HealOverTime actif sur la carte
+        public Image damageAmplifyIcon; // ← icône DamageAmplify actif sur la carte
         public Image invisibleOverlay; // ← overlay bleu semi-transparent état Invisible
+
+        [Header("VFX Soins")]
+        public GameObject healVFXPrefab;
+
+        [Header("VFX Stun")]
+        public GameObject stunLoopVFXPrefab;
+        private GameObject _stunLoopInstance;
 
         [Header("Astral")]
         public GameObject astralArrow;
@@ -72,10 +91,14 @@ namespace Astraleum
                 skill1CDIndicator = transform.Find("Skill1_Cooldown")?.gameObject;
             if (skill2CDIndicator == null)
                 skill2CDIndicator = transform.Find("Skill2_Cooldown")?.gameObject;
+            if (skill3CDIndicator == null)
+                skill3CDIndicator = transform.Find("Skill3_Cooldown")?.gameObject;
             if (skill1CDText == null)
                 skill1CDText = transform.Find("Skill1_Cooldown/CD1_Text")?.GetComponent<TMP_Text>();
             if (skill2CDText == null)
                 skill2CDText = transform.Find("Skill2_Cooldown/CD2_Text")?.GetComponent<TMP_Text>();
+            if (skill3CDText == null)
+                skill3CDText = transform.Find("Skill3_Cooldown/CD3_Text")?.GetComponent<TMP_Text>();
             if (stateIcon == null)
                 stateIcon = transform.Find("StateIcon")?.gameObject;
             if (exhaustedOverlay == null)
@@ -83,25 +106,52 @@ namespace Astraleum
             if (destroyedOverlay == null)
                 destroyedOverlay = transform.Find("DestroyedOverlay")?.gameObject;
             if (skill1Name == null)
-                skill1Name = transform.Find("SkillZone/Skill1_Row/Skill1_Name")?.GetComponent<TMP_Text>();
+                skill1Name = transform.Find("SkillZone/Skill1_Name")?.GetComponent<TMP_Text>();
             if (skill1DMG == null)
                 skill1DMG = transform.Find("SkillZone/Skill1_Row/Skill1_DMG")?.GetComponent<TMP_Text>();
             if (skill2Name == null)
-                skill2Name = transform.Find("SkillZone/Skill2_Row/Skill2_Name")?.GetComponent<TMP_Text>();
+                skill2Name = transform.Find("SkillZone/Skill2_Name")?.GetComponent<TMP_Text>();
             if (skill2DMG == null)
                 skill2DMG = transform.Find("SkillZone/Skill2_Row/Skill2_DMG")?.GetComponent<TMP_Text>();
+            if (skill3Name == null)
+                skill3Name = transform.Find("SkillZone/Skill3_Name")?.GetComponent<TMP_Text>();
 
             if (invisibleOverlay == null)
                 invisibleOverlay = transform.Find("InvisibleOverlay")?.GetComponent<Image>();
+            if (incantationIcon == null)
+                incantationIcon = transform.Find("IncantationIcon")?.GetComponent<Image>();
+            if (incantationIcon != null) incantationIcon.gameObject.SetActive(false);
+            if (incantationTimerText == null)
+                incantationTimerText = transform.Find("IncantationIcon/Timer")?.GetComponent<TMP_Text>();
+            if (incantationTimerText != null) incantationTimerText.gameObject.SetActive(false);
+
             if (burnIcon == null)
                 burnIcon = transform.Find("BurnIcon")?.GetComponent<Image>();
             burnIcon?.gameObject.SetActive(false);
             if (poisonIcon == null)
-                poisonIcon = transform.Find("PoisonIcon")?.GetComponent<Image>();
-            poisonIcon?.gameObject.SetActive(false);
+                poisonIcon = FindChildImage("Poison");
+            if (poisonIcon != null) poisonIcon.gameObject.SetActive(false);
+            else ForceDisableChild("Poison");
+
             if (saignementIcon == null)
-                saignementIcon = transform.Find("SaignementIcon")?.GetComponent<Image>();
-            saignementIcon?.gameObject.SetActive(false);
+                saignementIcon = FindChildImage("Bleed");
+            if (saignementIcon != null) saignementIcon.gameObject.SetActive(false);
+            else ForceDisableChild("Bleed");
+
+            if (healBlockIcon == null)
+                healBlockIcon = FindChildImage("HealBlock");
+            if (healBlockIcon != null) healBlockIcon.gameObject.SetActive(false);
+            else ForceDisableChild("HealBlock");
+
+            if (hotIcon == null)
+                hotIcon = FindChildImage("HOT");
+            if (hotIcon != null) hotIcon.gameObject.SetActive(false);
+            else ForceDisableChild("HOT");
+
+            if (damageAmplifyIcon == null)
+                damageAmplifyIcon = FindChildImage("DamageAmplify");
+            if (damageAmplifyIcon != null) damageAmplifyIcon.gameObject.SetActive(false);
+            else ForceDisableChild("DamageAmplify");
 
             // Désactive les descriptions directement sur la carte — affichées dans le tooltip à la place
             transform.Find("SkillZone/Skill1_Row/Skill1_InfoCol/Skill1_Desc")?.gameObject.SetActive(false);
@@ -126,7 +176,67 @@ namespace Astraleum
             UpdateBurnIcon();
             UpdatePoisonIcon();
             UpdateSaignementIcon();
+            UpdateHealBlockIcon();
+            UpdateHotIcon();
+            UpdateDamageAmplifyIcon();
             UpdateAstralArrow();
+            UpdateStunVFX();
+            UpdateIncantationVFX();
+            UpdateIncantationIcon();
+        }
+
+        public void SpawnHealVFX()
+        {
+            if (healVFXPrefab == null) return;
+            var vfx = GetComponent<CardVFXHandler>();
+            if (vfx != null) vfx.SpawnVFX(healVFXPrefab, 2.5f);
+            else Instantiate(healVFXPrefab);
+        }
+
+        private void UpdateIncantationVFX()
+        {
+            if (incantationLoopVFXPrefab == null || cardInstance == null) return;
+
+            bool isCasting = cardInstance.IsAlive
+                          && cardInstance.pendingIncantations != null
+                          && cardInstance.pendingIncantations.Count > 0;
+
+            if (isCasting && _incantationLoopInstance == null)
+            {
+                var vfx = GetComponent<CardVFXHandler>();
+                _incantationLoopInstance = vfx != null
+                    ? vfx.SpawnVFX(incantationLoopVFXPrefab, 0f)
+                    : Instantiate(incantationLoopVFXPrefab);
+            }
+            else if (!isCasting && _incantationLoopInstance != null)
+            {
+                Destroy(_incantationLoopInstance);
+                _incantationLoopInstance = null;
+            }
+        }
+
+        private void UpdateIncantationIcon()
+        {
+            if (incantationIcon == null || cardInstance == null) return;
+            bool casting = cardInstance.pendingIncantations != null
+                        && cardInstance.pendingIncantations.Count > 0;
+            incantationIcon.gameObject.SetActive(casting && incantationIcon.sprite != null);
+
+            if (incantationTimerText != null)
+            {
+                if (casting)
+                {
+                    int minTurns = int.MaxValue;
+                    foreach (var p in cardInstance.pendingIncantations)
+                        if (p.turnsRemaining < minTurns) minTurns = p.turnsRemaining;
+                    incantationTimerText.text = minTurns.ToString();
+                    incantationTimerText.gameObject.SetActive(true);
+                }
+                else
+                {
+                    incantationTimerText.gameObject.SetActive(false);
+                }
+            }
         }
 
         private void UpdatePassiveIcon()
@@ -168,6 +278,36 @@ namespace Astraleum
             saignementIcon.gameObject.SetActive(isBleeding && saignementIcon.sprite != null);
         }
 
+        private void UpdateHealBlockIcon()
+        {
+            if (healBlockIcon == null || cardInstance == null) return;
+
+            bool isBlocked = cardInstance.activeEffects.Any(e => e.type == EffectType.HealBlock);
+            if (isBlocked && healBlockIcon.sprite == null && IconLibrary.Instance != null)
+                healBlockIcon.sprite = IconLibrary.Instance.iconHealBlock;
+            healBlockIcon.gameObject.SetActive(isBlocked && healBlockIcon.sprite != null);
+        }
+
+        private void UpdateHotIcon()
+        {
+            if (hotIcon == null || cardInstance == null) return;
+
+            bool hasHot = cardInstance.activeEffects.Any(e => e.type == EffectType.HealOverTime);
+            if (hasHot && hotIcon.sprite == null && IconLibrary.Instance != null)
+                hotIcon.sprite = IconLibrary.Instance.iconHOT;
+            hotIcon.gameObject.SetActive(hasHot && hotIcon.sprite != null);
+        }
+
+        private void UpdateDamageAmplifyIcon()
+        {
+            if (damageAmplifyIcon == null || cardInstance == null) return;
+
+            bool isAmplified = cardInstance.activeEffects.Any(e => e.type == EffectType.DamageAmplify);
+            if (isAmplified && damageAmplifyIcon.sprite == null && IconLibrary.Instance != null)
+                damageAmplifyIcon.sprite = IconLibrary.Instance.iconDamageAmplify;
+            damageAmplifyIcon.gameObject.SetActive(isAmplified && damageAmplifyIcon.sprite != null);
+        }
+
         public void TriggerHitShake()
         {
             if (gameObject.activeInHierarchy)
@@ -205,6 +345,15 @@ namespace Astraleum
             SetSkillDisplay(cardInstance.data.skillTwo,
                             skill2TypeIcon, skill2Name,
                             cardInstance.skill2Cooldown);
+
+            // Compétence 3 — Boss uniquement (les cartes normales n'ont pas de skillThree),
+            // masquée explicitement sinon le slot resterait visible et vide sur les 53 autres cartes.
+            bool hasSkillThree = cardInstance.data.HasSkillThree;
+            if (skill3Name != null) skill3Name.gameObject.SetActive(hasSkillThree);
+            if (hasSkillThree)
+                SetSkillDisplay(cardInstance.data.skillThree,
+                                null, skill3Name,
+                                cardInstance.skill3Cooldown);
         }
 
         private void SetSkillDisplay(CardSkill skill, Image typeIcon, TMP_Text nameText, int cooldown)
@@ -214,7 +363,7 @@ namespace Astraleum
             if (nameText != null)
             {
                 nameText.text = skill.skillName;
-                nameText.fontSize = 12f;
+                nameText.fontSize = 8f;
                 nameText.alignment = TMPro.TextAlignmentOptions.Center;
                 nameText.color = cooldown > 0
                     ? new Color(0.5f, 0.5f, 0.5f)
@@ -265,8 +414,8 @@ namespace Astraleum
             float healPercent = 0f;
             int armorGain = 0;
 
-            // Cherche dans les deux compétences
-            foreach (var skill in new[] { cardInstance.data.skillOne, cardInstance.data.skillTwo })
+            // Cherche dans les compétences (skillThree = Boss uniquement, null sinon)
+            foreach (var skill in new[] { cardInstance.data.skillOne, cardInstance.data.skillTwo, cardInstance.data.skillThree })
             {
                 if (skill == null) continue;
 
@@ -289,7 +438,7 @@ namespace Astraleum
                 healGroup.SetActive(showHeal);
                 if (showHeal && healValue != null)
                 {
-                    int healAmt = Mathf.RoundToInt(cardInstance.data.maxHP * healPercent);
+                    int healAmt = Mathf.RoundToInt(cardInstance.EffectiveMaxHP * healPercent);
                     healValue.text = $"+{healAmt}";
                 }
             }
@@ -306,21 +455,35 @@ namespace Astraleum
 
         private void UpdateHP()
         {
+            if (cardInstance.data.isTrainingDummy)
+            {
+                if (hpCurrent != null) hpCurrent.text = "";
+                if (hpMax != null) hpMax.text = "";
+                return;
+            }
+
             if (hpCurrent != null)
+            {
                 hpCurrent.text = cardInstance.currentHP.ToString();
+                hpCurrent.color = Color.white;
+            }
 
             if (hpMax != null)
-                hpMax.text = cardInstance.data.maxHP.ToString();
+            {
+                int effectiveMax = cardInstance.EffectiveMaxHP;
+                hpMax.text = effectiveMax.ToString();
+                hpMax.color = effectiveMax < cardInstance.data.maxHP
+                    ? new Color(0.88f, 0.25f, 0.25f)
+                    : Color.white;
+            }
 
-            if (hpCurrent != null)
-                hpCurrent.color = Color.white;
-
-            // Armure — pool HP secondaire
+            // Armure — réduction dégâts plate
             if (armorText != null)
             {
-                if (cardInstance.currentArmor > 0)
+                int armor = cardInstance.TotalArmor;
+                if (armor > 0)
                 {
-                    armorText.text = cardInstance.currentArmor.ToString();
+                    armorText.text = armor.ToString();
                     armorText.color = new Color(0.6f, 0.85f, 1f);
                 }
                 else
@@ -339,34 +502,16 @@ namespace Astraleum
             bool cd2 = cardInstance.skill2Cooldown > 0;
             if (skill2CDIndicator != null) skill2CDIndicator.SetActive(cd2);
             if (skill2CDText != null && cd2) skill2CDText.text = cardInstance.skill2Cooldown.ToString();
+
+            bool cd3 = cardInstance.skill3Cooldown > 0;
+            if (skill3CDIndicator != null) skill3CDIndicator.SetActive(cd3);
+            if (skill3CDText != null && cd3) skill3CDText.text = cardInstance.skill3Cooldown.ToString();
         }
 
         private void UpdateStackIcon()
         {
             if (stateIcon == null) return;
-
-            // Affiche l'élément de la carte + stacks actifs
-            bool hasStacks = StackManager.Instance != null &&
-                             StackManager.Instance.GetStacks(
-                                 cardInstance.ownerPlayerID,
-                                 cardInstance.data.element) > 0;
-
-            stateIcon.SetActive(hasStacks);
-
-            if (hasStacks && ElementIconDatabase.Instance != null)
-            {
-                var img = stateIcon.GetComponent<Image>();
-                var sprite = ElementIconDatabase.Instance.GetIcon(cardInstance.data.element);
-                if (img != null)
-                {
-                    img.sprite = sprite;
-                    img.color = sprite != null ? Color.white
-                                               : GetElementColor(cardInstance.data.element);
-                }
-
-                float pulse = 1f + Mathf.Sin(Time.time * 3f) * 0.06f;
-                stateIcon.transform.localScale = Vector3.one * pulse;
-            }
+            stateIcon.SetActive(false);
         }
 
         private void UpdateOverlays()
@@ -392,15 +537,76 @@ namespace Astraleum
         {
             return element switch
             {
-                Element.Feu => new Color(1f, 0.4f, 0.1f),
-                Element.Eau => new Color(0.2f, 0.6f, 1f),
-                Element.Terre => new Color(0.4f, 0.7f, 0.2f),
-                Element.Air => new Color(0.6f, 0.9f, 1f),
-                Element.Lumiere => new Color(1f, 0.95f, 0.4f),
+                Element.Feu      => new Color(1f, 0.4f, 0.1f),
+                Element.Eau      => new Color(0.2f, 0.6f, 1f),
+                Element.Terre    => new Color(0.4f, 0.7f, 0.2f),
+                Element.Air      => new Color(0.6f, 0.9f, 1f),
+                Element.Lumiere  => new Color(1f, 0.95f, 0.4f),
                 Element.Tenebres => new Color(0.6f, 0.2f, 0.8f),
-                Element.Astral => new Color(0.5f, 0.7f, 1f),
+                Element.Astral   => new Color(0.5f, 0.7f, 1f),
+                Element.Corrosif => new Color(0.55f, 0.85f, 0.35f),
                 _ => Color.white
             };
+        }
+
+        private Image FindChildImage(string childName)
+        {
+            foreach (Transform t in GetComponentsInChildren<Transform>(true))
+            {
+                if (t != transform && t.name == childName)
+                {
+                    var img = t.GetComponent<Image>();
+                    if (img != null) return img;
+                }
+            }
+            return null;
+        }
+
+        private void ForceDisableChild(string childName)
+        {
+            foreach (Transform t in GetComponentsInChildren<Transform>(true))
+                if (t != transform && t.name == childName)
+                    t.gameObject.SetActive(false);
+        }
+
+        private void UpdateStunVFX()
+        {
+            if (stunLoopVFXPrefab == null || cardInstance == null) return;
+
+            bool isStunned = cardInstance.IsAlive &&
+                             cardInstance.activeEffects.Any(e => e.type == EffectType.Stun);
+
+            if (isStunned && _stunLoopInstance == null)
+            {
+                var vfx = GetComponent<CardVFXHandler>();
+                _stunLoopInstance = vfx != null
+                    ? vfx.SpawnVFX(stunLoopVFXPrefab, 0f)
+                    : Instantiate(stunLoopVFXPrefab);
+                if (_stunLoopInstance != null)
+                {
+                    foreach (var ps in _stunLoopInstance.GetComponentsInChildren<ParticleSystem>(true))
+                    {
+                        var main = ps.main;
+                        main.scalingMode = ParticleSystemScalingMode.Hierarchy;
+                    }
+                    foreach (var r in _stunLoopInstance.GetComponentsInChildren<Renderer>(true))
+                        r.sortingOrder = 50;
+                    _stunLoopInstance.transform.localScale = new Vector3(0.8f, 0.32f, 0.32f);
+                }
+            }
+            else if (!isStunned && _stunLoopInstance != null)
+            {
+                Destroy(_stunLoopInstance);
+                _stunLoopInstance = null;
+            }
+        }
+
+        private void OnDestroy()
+        {
+            if (_stunLoopInstance != null)
+                Destroy(_stunLoopInstance);
+            if (_incantationLoopInstance != null)
+                Destroy(_incantationLoopInstance);
         }
 
         private void UpdateAstralArrow()

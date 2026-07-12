@@ -101,6 +101,14 @@ namespace Astraleum
         public void ClearDeck()
             => deckCardNumbers.Clear();
 
+        // Charge un deck depuis une liste de CardData — utilisé par le mode custom playtest
+        public void LoadCustomDeck(List<CardData> cards)
+        {
+            deckCardNumbers.Clear();
+            foreach (var c in cards)
+                if (c != null) deckCardNumbers.Add(c.cardNumber);
+        }
+
         // Valide les restrictions sans modifier le deck
         public DeckValidationResult ValidateDeck()
         {
@@ -120,11 +128,11 @@ namespace Astraleum
         public void LoadTestDeck()
         {
             ClearDeck();
-            TryAddCard(9);  // Dragon de Foudre (Épique) — Foudre Directe = AdjacentEnemies 40%
-            TryAddCard(28); // Chevalier de Liotnar (Épique)
-            TryAddCard(13); // Dragon de Lumière (Épique)
-            TryAddCard(19); // Lyoness (Rare)
-            TryAddCard(14); // Nyolung (Suprême)
+            TryAddCard(1);  // 1
+            TryAddCard(2); // 2
+            TryAddCard(3); // 3
+            TryAddCard(4); // 4
+            TryAddCard(12); // 5
             Debug.Log($"DeckManager : deck de test chargé ({deckCardNumbers.Count} cartes).");
         }
     }

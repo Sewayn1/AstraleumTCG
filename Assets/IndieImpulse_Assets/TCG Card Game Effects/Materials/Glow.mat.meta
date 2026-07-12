@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: e9b2a7c4b7c937a4b9c15cc06623762e
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 2100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 277550
+  packageName: TCG Card Game Effects
+  packageVersion: 1.4
+  assetPath: Assets/IndieImpulse_Assets/TCG Card Game Effects/Materials/Glow.mat
+  uploadId: 897924

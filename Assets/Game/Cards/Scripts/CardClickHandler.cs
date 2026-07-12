@@ -104,18 +104,32 @@ namespace Astraleum
             // Cas 4 : Pas de compétence + clic sur allié → Ouvre le SkillPanel
             if (!uiManager.HasSkillSelected && !isEnemy)
             {
-                if (TurnManager.Instance.actionsRemaining <= 0) return;
-                if (card.hasActedThisTurn && card.bonusActionsRemaining <= 0) return;
-                if (card.activeEffects.Any(e => e.type == EffectType.Stun)) return; // carte étourdie
-
-                // En réseau : un joueur ne peut agir que sur SES cartes ET pendant SON tour
+                // Ne jamais interagir avec des cartes qui ne nous appartiennent pas
                 if (NetworkBridge.IsActive && card.ownerPlayerID != NetworkBridge.LocalPlayerID)
                     return;
-                if (NetworkBridge.IsActive && TurnManager.Instance?.currentPlayerID != NetworkBridge.LocalPlayerID)
+
+                // Hors de notre tour en réseau → lecture seule (inspection uniquement)
+                bool isOurTurn = !NetworkBridge.IsActive
+                    || TurnManager.Instance?.currentPlayerID == NetworkBridge.LocalPlayerID;
+
+                if (!isOurTurn)
+                {
+                    DezoomEnemy();
+                    uiManager.OpenSkillPanel(card, readOnly: true);
+                    PassiveTooltipManager.Instance?.Show(card, card.GetComponent<RectTransform>());
                     return;
+                }
+
+                // Notre tour : si la carte ne peut plus agir (actions épuisées, a déjà joué,
+                // étourdie, incantation en cours), on l'ouvre quand même en lecture seule
+                // pour permettre de consulter ses détails.
+                bool canAct = TurnManager.Instance.actionsRemaining > 0
+                    && (!card.hasActedThisTurn || card.bonusActionsRemaining > 0)
+                    && !card.activeEffects.Any(e => e.type == EffectType.Stun)
+                    && card.pendingIncantations.Count == 0;
 
                 DezoomEnemy();
-                uiManager.OpenSkillPanel(card);
+                uiManager.OpenSkillPanel(card, readOnly: !canAct);
                 PassiveTooltipManager.Instance?.Show(card, card.GetComponent<RectTransform>());
                 return;
             }

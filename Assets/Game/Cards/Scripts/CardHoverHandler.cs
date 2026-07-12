@@ -78,7 +78,7 @@ namespace Astraleum
         {
             var uiManager = CombatUIManager.Instance;
             if (uiManager == null) return;
-            uiManager.HideDamagePreview();
+            uiManager.HideDamagePreviewSoon();
             BuffTooltipManager.Instance?.Hide();
 
             if (NetworkBridge.IsActive && uiManager.HasSkillSelected)

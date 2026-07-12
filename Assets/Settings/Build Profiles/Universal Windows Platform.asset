@@ -50,7 +50,7 @@ MonoBehaviour:
         m_WsaArchitecture: 
         m_WsaUWPVisualStudioVersion: 
         m_WsaUWPSDK: 
-        m_WsaMinUWPSDK: 
+        m_WsaMinUWPSDK: 10.0.19041.0
         m_WsaUWPBuildType: 1
         m_WsaBuildAndRunDeployTarget: 0
         m_WindowsDevicePortalAddress: 

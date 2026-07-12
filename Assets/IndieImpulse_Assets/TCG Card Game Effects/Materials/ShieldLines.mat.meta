@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 25aef727ad355734dbdb0d0d17220875
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 2100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 277550
+  packageName: TCG Card Game Effects
+  packageVersion: 1.4
+  assetPath: Assets/IndieImpulse_Assets/TCG Card Game Effects/Materials/ShieldLines.mat
+  uploadId: 897924

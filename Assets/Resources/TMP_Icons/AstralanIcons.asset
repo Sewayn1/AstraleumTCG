@@ -77,40 +77,114 @@ MonoBehaviour:
     m_StrikethroughOffset: 0
     m_StrikethroughThickness: 0
     m_TabWidth: 0
-  m_Material: {fileID: -225072445447210004}
-  spriteSheet: {fileID: 2800000, guid: 8ccfe2003da90d74d99bf135702eb2c2, type: 3}
+  m_Material: {fileID: 2100000, guid: 55c13b8c4ec661943ba612b691710753, type: 2}
+  spriteSheet: {fileID: 2800000, guid: 02fb107755e5412459967343aab325aa, type: 3}
   m_SpriteCharacterTable:
   - m_ElementType: 2
-    m_Unicode: 65534
+    m_Unicode: 57344
     m_GlyphIndex: 0
     m_Scale: 1
-    m_Name: Icon_Attack
+    m_Name: dgt
   - m_ElementType: 2
-    m_Unicode: 65534
-    m_GlyphIndex: 0
+    m_Unicode: 57345
+    m_GlyphIndex: 1
     m_Scale: 1
-    m_Name: Icon_Attack
+    m_Name: pv
   - m_ElementType: 2
-    m_Unicode: 65534
-    m_GlyphIndex: 0
+    m_Unicode: 57346
+    m_GlyphIndex: 2
     m_Scale: 1
-    m_Name: Icon_Attack
+    m_Name: heal
+  - m_ElementType: 2
+    m_Unicode: 57347
+    m_GlyphIndex: 3
+    m_Scale: 1
+    m_Name: arm
+  - m_ElementType: 2
+    m_Unicode: 57348
+    m_GlyphIndex: 4
+    m_Scale: 1
+    m_Name: burn
   m_GlyphTable:
   - m_Index: 0
     m_Metrics:
-      m_Width: 110
-      m_Height: 96
-      m_HorizontalBearingX: -55
-      m_HorizontalBearingY: 48
-      m_HorizontalAdvance: 110
+      m_Width: 128
+      m_Height: 128
+      m_HorizontalBearingX: 0
+      m_HorizontalBearingY: 112
+      m_HorizontalAdvance: 128
     m_GlyphRect:
       m_X: 0
       m_Y: 0
-      m_Width: 110
-      m_Height: 96
+      m_Width: 128
+      m_Height: 128
     m_Scale: 1
     m_AtlasIndex: 0
     m_ClassDefinitionType: 0
-    sprite: {fileID: 21300000, guid: 8ccfe2003da90d74d99bf135702eb2c2, type: 3}
+    sprite: {fileID: 0}
+  - m_Index: 1
+    m_Metrics:
+      m_Width: 128
+      m_Height: 128
+      m_HorizontalBearingX: 0
+      m_HorizontalBearingY: 112
+      m_HorizontalAdvance: 128
+    m_GlyphRect:
+      m_X: 128
+      m_Y: 0
+      m_Width: 128
+      m_Height: 128
+    m_Scale: 1
+    m_AtlasIndex: 0
+    m_ClassDefinitionType: 0
+    sprite: {fileID: 0}
+  - m_Index: 2
+    m_Metrics:
+      m_Width: 128
+      m_Height: 128
+      m_HorizontalBearingX: 0
+      m_HorizontalBearingY: 112
+      m_HorizontalAdvance: 128
+    m_GlyphRect:
+      m_X: 256
+      m_Y: 0
+      m_Width: 128
+      m_Height: 128
+    m_Scale: 1
+    m_AtlasIndex: 0
+    m_ClassDefinitionType: 0
+    sprite: {fileID: 0}
+  - m_Index: 3
+    m_Metrics:
+      m_Width: 128
+      m_Height: 128
+      m_HorizontalBearingX: 0
+      m_HorizontalBearingY: 112
+      m_HorizontalAdvance: 128
+    m_GlyphRect:
+      m_X: 384
+      m_Y: 0
+      m_Width: 128
+      m_Height: 128
+    m_Scale: 1
+    m_AtlasIndex: 0
+    m_ClassDefinitionType: 0
+    sprite: {fileID: 0}
+  - m_Index: 4
+    m_Metrics:
+      m_Width: 128
+      m_Height: 128
+      m_HorizontalBearingX: 0
+      m_HorizontalBearingY: 112
+      m_HorizontalAdvance: 128
+    m_GlyphRect:
+      m_X: 512
+      m_Y: 0
+      m_Width: 128
+      m_Height: 128
+    m_Scale: 1
+    m_AtlasIndex: 0
+    m_ClassDefinitionType: 0
+    sprite: {fileID: 0}
   spriteInfoList: []
   fallbackSpriteAssets: []

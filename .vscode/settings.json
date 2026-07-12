@@ -68,5 +68,7 @@
         "*.slnx": "*.csproj"
     },
     "dotnet.defaultSolution": "Astraleum.slnx",
-    "dotnet.enableWorkspaceBasedDevelopment": false
+    "dotnet.enableWorkspaceBasedDevelopment": false,
+    "bg3ModHelper.rootModPath": "g:\\Unity\\Project\\Astraleum",
+    "bg3ModHelper.packingPriority": 0
 }

@@ -38,7 +38,7 @@ private void Awake() { Instance = this; canvas = GetComponentInParent<Canvas>();
         }
 
         /// <summary>Affiche la flèche depuis le centre de la carte source vers le curseur (local).</summary>
-        public void Show(RectTransform source, Color color)
+        public void Show(RectTransform source, Color color, bool isAlly = false)
         {
             sourceRect       = source;
             staticTargetRect = null;

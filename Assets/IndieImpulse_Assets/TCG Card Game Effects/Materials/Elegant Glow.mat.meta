@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 991cb40be0f2cbb4394c555b4268ba3e
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 2100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 277550
+  packageName: TCG Card Game Effects
+  packageVersion: 1.4
+  assetPath: Assets/IndieImpulse_Assets/TCG Card Game Effects/Materials/Elegant Glow.mat
+  uploadId: 897924

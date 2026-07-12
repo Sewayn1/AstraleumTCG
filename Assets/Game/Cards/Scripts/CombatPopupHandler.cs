@@ -9,9 +9,16 @@ namespace Astraleum
         [Header("Références")]
         public TMP_Text healPopupText;
         public TMP_Text damagePopupText;
+        public TMP_Text criticalPopupText;
 
         private Coroutine healCoroutine;
         private Coroutine damageCoroutine;
+        private Coroutine critCoroutine;
+
+        // Position par défaut (celle configurée dans le prefab) — utilisée quand ShowHealPopup/
+        // ShowDamagePopup sont appelés sans offset explicite.
+        private Vector2 healDefaultPos;
+        private Vector2 damageDefaultPos;
 
         private void Awake()
         {
@@ -21,6 +28,29 @@ namespace Astraleum
             if (damagePopupText == null)
                 damagePopupText = transform.Find("DamagePopup")
                                            ?.GetComponent<TMP_Text>();
+            if (criticalPopupText == null)
+                criticalPopupText = transform.Find("CriticalPopup")
+                                             ?.GetComponent<TMP_Text>();
+
+            if (healPopupText != null) healDefaultPos = healPopupText.rectTransform.anchoredPosition;
+            if (damagePopupText != null) damageDefaultPos = damagePopupText.rectTransform.anchoredPosition;
+
+            // Créé dynamiquement si absent du prefab
+            if (criticalPopupText == null)
+            {
+                var go = new GameObject("CriticalPopup");
+                go.transform.SetParent(transform, false);
+                criticalPopupText = go.AddComponent<TextMeshProUGUI>();
+                var rt = criticalPopupText.rectTransform;
+                rt.anchorMin = rt.anchorMax = rt.pivot = new Vector2(0.5f, 0.5f);
+                rt.anchoredPosition = Vector2.zero;
+                rt.sizeDelta = new Vector2(160f, 90f);
+                criticalPopupText.alignment = TextAlignmentOptions.Center;
+                criticalPopupText.color = new Color(0.95f, 0.1f, 0.1f);
+                criticalPopupText.fontSize = 38f;
+                criticalPopupText.fontStyle = FontStyles.Bold;
+                go.SetActive(false);
+            }
         }
 
         // ── Soin ─────────────────────────────────────────────────────
@@ -33,7 +63,7 @@ namespace Astraleum
             healPopupText.color = new Color(0.39f, 0.86f, 0.59f);
             healPopupText.fontSize = 18f; // ← plus grand
             healPopupText.rectTransform.anchoredPosition =
-                offset == default ? Vector2.zero : offset;
+                offset == default ? healDefaultPos : offset;
             healPopupText.gameObject.SetActive(true);
 
             if (gameObject.activeInHierarchy)
@@ -51,7 +81,7 @@ namespace Astraleum
             damagePopupText.color = new Color(0.86f, 0.31f, 0.31f);
             damagePopupText.fontSize = 18f; // ← plus grand
             damagePopupText.rectTransform.anchoredPosition =
-                offset == default ? Vector2.zero : offset;
+                offset == default ? damageDefaultPos : offset;
             damagePopupText.gameObject.SetActive(true);
 
             if (gameObject.activeInHierarchy)
@@ -123,6 +153,20 @@ namespace Astraleum
             }
             if (damagePopupText != null)
                 damagePopupText.gameObject.SetActive(false);
+        }
+
+        // ── Coup Critique ─────────────────────────────────────────────
+
+        public void ShowCritDamagePopup(int amount)
+        {
+            if (criticalPopupText == null) return;
+            if (critCoroutine != null) StopCoroutine(critCoroutine);
+
+            criticalPopupText.text = $"{amount}!";
+            criticalPopupText.gameObject.SetActive(true);
+
+            if (gameObject.activeInHierarchy)
+                critCoroutine = StartCoroutine(HideAfterDelay(criticalPopupText, 1.5f));
         }
 
         public int GetCurrentPreviewValue()

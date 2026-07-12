@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: bec69625c2749244aa919a75ca49d5e4
+PrefabImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 277550
+  packageName: TCG Card Game Effects
+  packageVersion: 1.4
+  assetPath: Assets/IndieImpulse_Assets/TCG Card Game Effects/Prefabs/SqureWaveEffect.prefab
+  uploadId: 897924

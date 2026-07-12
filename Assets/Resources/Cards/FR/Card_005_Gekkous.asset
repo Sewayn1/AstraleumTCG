@@ -17,15 +17,16 @@ MonoBehaviour:
   cardNumber: 5
   element: 2
   rarity: 0
-  artwork: {fileID: 21300000, guid: 1ae9755adb1f9d14dbe88cf3b80111ed, type: 3}
+  artwork: {fileID: 21300000, guid: a6340fef3ad2d0045b177fd55c1f9ac7, type: 3}
   maxHP: 110
-  armorPoints: 5
+  armorPoints: 3
+  critChance: 0.01
   bonusActionsGranted: 0
   skillOne:
     skillType: 3
     skillName: "Poser Pi\xE8ge"
-    description: "Etourdie une Cible pendant 1 Tour. Elle subit \xE9galement 10%
-      de DGT suppl\xE9mentaire pendant 2 Tours."
+    description: "Etourdie une Cible pendant 1 Tour.\nElle subit \xE9galement 10%
+      DGT suppl\xE9mentaire pendant 2 Tours."
     damage: 0
     cooldownTurns: 2
     targetType: 0
@@ -40,40 +41,57 @@ MonoBehaviour:
       durationTurns: 2
       effectTarget: 0
     branches: []
-    attackVFXPrefab: {fileID: 0}
-    impactVFXPrefab: {fileID: 0}
+    isIncantation: 0
+    castDelayTurns: 1
+    attackVFXPrefab: {fileID: 3367621933187172575, guid: 80959bcba3449d04286f21c506e3c168, type: 3}
+    trailVFXPrefab: {fileID: 4990638367906664984, guid: f43a002d927e1814986ae406894c3be7, type: 3}
+    trailVFXScale: 1
+    attackVFXIsProjectile: 1
+    attackVFXScale: 0.3
+    impactVFXPrefab: {fileID: 7512445076827127504, guid: 393455d7e78088146a82759821b0f6a9, type: 3}
+    impactVFXScale: 1
     vfxTravelTime: 0.35
     vfxImpactDuration: 0.2
+    impactVFXOffset: {x: 0, y: 0, z: 0}
   skillTwo:
     skillType: 4
     skillName: Aider Ami
-    description: "Attaque la cible, inflige 5 DGT et octroi 5 d'Armure \xE0 un alli\xE9
-      al\xE9atoire, et 3 d'Armure \xE0 lui meme."
+    description: "Attaque la cible, inflige 5 DGT.\nDonne 2 ARM \xE0 un alli\xE9
+      al\xE9atoire, et 2 ARM \xE0 lui meme pendant 2 tours.\nOctroi l'effet \"inarr\xEAtable\"
+      pendant 2 Tours."
     damage: 5
-    cooldownTurns: 1
+    cooldownTurns: 2
     targetType: 0
     adjacentDamagePercent: 0
     effects:
     - type: 6
-      value: 5
-      durationTurns: 0
+      value: 2
+      durationTurns: 2
       effectTarget: 4
     - type: 6
-      value: 3
-      durationTurns: 0
+      value: 2
+      durationTurns: 2
       effectTarget: 1
     branches: []
-    attackVFXPrefab: {fileID: 0}
-    impactVFXPrefab: {fileID: 0}
-    vfxTravelTime: 0.35
+    isIncantation: 0
+    castDelayTurns: 1
+    attackVFXPrefab: {fileID: 3367621933187172575, guid: 80959bcba3449d04286f21c506e3c168, type: 3}
+    trailVFXPrefab: {fileID: 0}
+    trailVFXScale: 1
+    attackVFXIsProjectile: 0
+    attackVFXScale: 0.3
+    impactVFXPrefab: {fileID: 7635241807268729040, guid: 3e79e6dea2b82c34b86ec64d5dfbbc31, type: 3}
+    impactVFXScale: 1
+    vfxTravelTime: 0.6
     vfxImpactDuration: 0.2
+    impactVFXOffset: {x: 0, y: 0, z: 0}
   passive:
     passiveName: Venger Amis
-    passiveDescription: "Chaque fois qu'une carte alli\xE9e est d\xE9truite, octroi
-      5 d'Armure \xE0 tout les alli\xE9s et r\xE9duit leurs DGT subis de 5% pendant
-      2 Tours."
+    passiveDescription: "Chaque fois qu'une carte alli\xE9 est d\xE9truite, octroi
+      4 ARM \xE0 tout les alli\xE9s et r\xE9duit leurs DGT subis de 5% pendant 2
+      Tours."
     trigger: 2
-    triggerElement: 7
+    triggerElement: 8
     passiveColor: {r: 1, g: 0.84, b: 0, a: 1}
     stacksPerTrigger: 0
     maxTriggerStacks: 4
@@ -83,8 +101,8 @@ MonoBehaviour:
       durationTurns: 2
       effectTarget: 2
     - type: 6
-      value: 5
-      durationTurns: 0
+      value: 4
+      durationTurns: 2
       effectTarget: 2
   loreText: "Gekkous est un reptilien ayant v\xE9cu d'attroce exp\xE9rience. L'une
     d'elle lui permit de parler basiquement la langue Commune, lui permettant de

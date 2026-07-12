@@ -37,15 +37,33 @@ namespace Astraleum
         [Tooltip("Effets supplémentaires appliqués si une condition est remplie au moment de l'impact.")]
         public List<ConditionalBranch> branches = new List<ConditionalBranch>();
 
+        [Header("Incantation")]
+        [Tooltip("Si vrai, la compétence ne s'applique qu'après un délai de tours au lieu d'agir immédiatement.")]
+        public bool isIncantation = false;
+        [Tooltip("Tours avant activation (1 = tour suivant du lanceur). Ignoré si isIncantation = false.")]
+        public int castDelayTurns = 1;
+
         [Header("Effets visuels")]
-        [Tooltip("Particule jouée sur la carte attaquante au déclenchement de la compétence.")]
+        [Tooltip("Particule jouée sur la carte attaquante au déclenchement (WindUp, charge, aura). Ne voyage pas.")]
         public GameObject attackVFXPrefab;
+        [Tooltip("Projectile voyageant de l'attaquant vers la cible pendant vfxTravelTime (missile, trail). Joué simultanément à l'attackVFXPrefab.")]
+        public GameObject trailVFXPrefab;
+        [Tooltip("Échelle uniforme appliquée au trailVFXPrefab au spawn.")]
+        public float trailVFXScale = 1f;
+        [Tooltip("(Rétrocompat) Si trailVFXPrefab est vide, l'attackVFXPrefab voyage lui-même vers la cible.")]
+        public bool attackVFXIsProjectile;
+        [Tooltip("Échelle uniforme appliquée à l'attackVFXPrefab quand il est utilisé comme projectile (attackVFXIsProjectile = true).")]
+        public float attackVFXScale = 1f;
         [Tooltip("Particule jouée sur la/les cible(s) au moment de l'impact.")]
         public GameObject impactVFXPrefab;
-        [Tooltip("Délai en secondes entre le lancement de l'attaque et l'impact (temps de vol). Les dégâts sont appliqués après ce délai.")]
+        [Tooltip("Échelle uniforme appliquée à l'impactVFXPrefab au spawn.")]
+        public float impactVFXScale = 1f;
+        [Tooltip("Délai en secondes entre le lancement de l'attaque et l'impact (temps de vol du trail). Les dégâts sont appliqués après ce délai.")]
         public float vfxTravelTime = 0.35f;
         [Tooltip("Durée en secondes après l'impact avant de passer à la suite (laisser l'effet d'impact visible).")]
         public float vfxImpactDuration = 0.2f;
+        [Tooltip("Décalage appliqué à la position de spawn de l'impactVFX (en unités UI canvas). Ex: (0, -100, 0) = 100px vers le bas.")]
+        public Vector3 impactVFXOffset = Vector3.zero;
 
 
         public bool TargetsAllies =>
@@ -105,7 +123,7 @@ namespace Astraleum
     {
         public EffectType type;
 
-        [Tooltip("Valeur de l'effet.\n— Effets en % (DamageAmplify, DamageReduction, AttackBoost, ImmediateHeal, HealOverTime, Poison, Burn, Saignement, ArmorIgnore) : décimal entre 0 et 1 (ex. 0.05 = 5% PV max/tour).\n— Effets en valeur absolue (GiveArmor, CooldownReduction, CooldownIncrease) : valeur entière.")]
+        [Tooltip("Valeur de l'effet.\n— Effets en % (DamageAmplify, DamageReduction, ImmediateHeal, HealOverTime, Poison, Burn, Saignement, ArmorIgnore) : décimal entre 0 et 1 (ex. 0.05 = 5%).\n— Effets en valeur FLAT absolue (AttackBoost, AttackReduction, GiveArmor, CooldownReduction) : valeur entière (ex. 5 = +5 DGT).\n— CooldownIncrease : valeur ignorée, gèle la recharge jusqu'à la fin du prochain tour de la cible.")]
         public float value;
 
         [Tooltip("Durée en tours.\n— Valeur positive : dure N tours.\n— -1 : permanent (infini).\n— 0 : NE PAS UTILISER.")]

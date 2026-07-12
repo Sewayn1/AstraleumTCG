@@ -89,11 +89,14 @@ const files = relPaths.map((rel, i) => {
 });
 console.log(`\nHashed ${files.length} files.`);
 
-/* ── Preserve existing changelog ───────────────────────────────────────── */
+/* ── Preserve existing changelog + launcher section ───────────────────── */
 let existingChangelog = [];
+let existingLauncher  = null;
 if (fs.existsSync(outPath)) {
   try {
-    existingChangelog = JSON.parse(fs.readFileSync(outPath, 'utf8')).changelog || [];
+    const prev = JSON.parse(fs.readFileSync(outPath, 'utf8'));
+    existingChangelog = prev.changelog || [];
+    existingLauncher  = prev.launcher || null;
   } catch {}
 }
 
@@ -104,6 +107,9 @@ const changelog = [newEntry, ...existingChangelog.filter(e => e.version !== vers
 const manifest = {
   version,
   releaseDate: today,
+  // Section gérée par le workflow de release du Launcher (pas ce script) — préservée telle
+  // quelle si déjà présente, sinon absente (le Launcher tolère son absence).
+  ...(existingLauncher ? { launcher: existingLauncher } : {}),
   fullPackage: {
     url:  `${releaseUrl.replace(/\/$/, '')}/Astraleum-v${version}.zip`,
     size: 0,

@@ -11,15 +11,30 @@ namespace Astraleum
         {
             if (StackManager.Instance == null) return;
 
-            // Régénération armure Terre
+            // Armure Terre majeur (permanente)
             if (element == Element.Terre)
             {
-                int armorRegen = StackManager.Instance.GetEarthArmorRegen(playerID);
-                if (armorRegen > 0)
+                int armorBonus = StackManager.Instance.GetEarthArmorRegen(playerID);
+                var allies = BoardManager.Instance.GetAliveCards(playerID);
+                if (armorBonus > 0)
                 {
-                    var allies = BoardManager.Instance.GetAliveCards(playerID);
                     foreach (var ally in allies)
-                        ally.RestoreArmor(armorRegen);
+                        ally.ApplyEffect(new ActiveEffect
+                        {
+                            type            = EffectType.GiveArmor,
+                            value           = armorBonus,
+                            remainingTurns  = -1,
+                            sourceName      = "Terre",
+                            sourceSkillName = "majeur",
+                        });
+                }
+                else
+                {
+                    foreach (var ally in allies)
+                        ally.activeEffects.RemoveAll(e =>
+                            e.type == EffectType.GiveArmor &&
+                            e.sourceName == "Terre" &&
+                            e.sourceSkillName == "majeur");
                 }
             }
 
@@ -32,7 +47,7 @@ namespace Astraleum
                     var allies = BoardManager.Instance.GetAliveCards(playerID);
                     foreach (var ally in allies)
                     {
-                        int heal = Mathf.RoundToInt(ally.data.maxHP * hotPercent);
+                        int heal = Mathf.RoundToInt(ally.EffectiveMaxHP * hotPercent);
                         ally.Heal(heal, false);
                     }
                 }

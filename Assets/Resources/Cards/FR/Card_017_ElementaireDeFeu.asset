@@ -17,46 +17,64 @@ MonoBehaviour:
   cardNumber: 17
   element: 0
   rarity: 1
-  artwork: {fileID: 21300000, guid: 181c1827a964c9340b48a71cc60a16fc, type: 3}
+  artwork: {fileID: 21300000, guid: 1a94ce97d30b7014b9ebe353178b3b8d, type: 3}
   maxHP: 140
-  armorPoints: 3
+  armorPoints: 0
+  critChance: 0.01
   bonusActionsGranted: 0
   skillOne:
     skillType: 0
     skillName: Embrasement
-    description: "Inflige 12 DGT \xE0 la cible, et la Brule (10% des PV Max) pendant
-      2 Tours."
+    description: "Inflige 12 DGT \xE0 la cible, et la BURN pendant 2 Tours."
     damage: 12
     cooldownTurns: 2
     targetType: 0
     adjacentDamagePercent: 0
     effects:
     - type: 18
-      value: 0.1
+      value: 0.05
       durationTurns: 2
       effectTarget: 0
-    attackVFXPrefab: {fileID: 0}
-    impactVFXPrefab: {fileID: 0}
+    branches: []
+    isIncantation: 0
+    castDelayTurns: 1
+    attackVFXPrefab: {fileID: 3994965004076699975, guid: 350fde7c27a0ed5439852b66d8ef0590, type: 3}
+    trailVFXPrefab: {fileID: 1992815801676329838, guid: bb5b4a62633a53f45835d2229c7ccf98, type: 3}
+    trailVFXScale: 1
+    attackVFXIsProjectile: 1
+    attackVFXScale: 1
+    impactVFXPrefab: {fileID: 1386483879094485057, guid: d9121a3dbed0969429d4c44e865c6dbb, type: 3}
+    impactVFXScale: 1
     vfxTravelTime: 0.35
     vfxImpactDuration: 0.2
+    impactVFXOffset: {x: 0, y: 0, z: 0}
   skillTwo:
     skillType: 0
     skillName: Explosion de Flammes
-    description: "Inflige 20 DGT \xE0 la cible et aux cartes adjacentes. Les Brules
-      (10% des PV Max) pendant 2 Tours."
+    description: "Inflige 20 DGT \xE0 la cible et aux cartes adjacentes. Les BURN
+      pendant 2 Tours.\n"
     damage: 20
     cooldownTurns: 3
-    targetType: 0
+    targetType: 4
     adjacentDamagePercent: 1
     effects:
     - type: 18
-      value: 0.1
+      value: 0.05
       durationTurns: 2
-      effectTarget: 6
-    attackVFXPrefab: {fileID: 0}
-    impactVFXPrefab: {fileID: 0}
+      effectTarget: 0
+    branches: []
+    isIncantation: 0
+    castDelayTurns: 1
+    attackVFXPrefab: {fileID: 3994965004076699975, guid: 350fde7c27a0ed5439852b66d8ef0590, type: 3}
+    trailVFXPrefab: {fileID: 0}
+    trailVFXScale: 1
+    attackVFXIsProjectile: 0
+    attackVFXScale: 1
+    impactVFXPrefab: {fileID: 3617973170196555100, guid: 4e99cec8e95448344a74b2a860760716, type: 3}
+    impactVFXScale: 1
     vfxTravelTime: 0.35
     vfxImpactDuration: 0.2
+    impactVFXOffset: {x: 0, y: 0, z: 0}
   passive:
     passiveName: 
     passiveDescription: 

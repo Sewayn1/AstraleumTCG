@@ -1,0 +1,138 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: baa3cfc011ceea542b4a6e2212c058c1, type: 3}
+  m_Name: "Card_Boss_Voragoth_Derni\xE8re Calamit\xE9"
+  m_EditorClassIdentifier: Assembly-CSharp::Astraleum.CardData
+  cardName: Voragoth
+  cardTitle: "Derni\xE8re Calamit\xE9"
+  cardNumber: 0
+  element: 5
+  rarity: 4
+  artwork: {fileID: 21300000, guid: 205b9cc17f098af4c93b9059750e5e1d, type: 3}
+  hiddenFromCollection: 1
+  isTrainingDummy: 0
+  maxHP: 3000
+  armorPoints: 0
+  critChance: 0.1
+  bonusActionsGranted: 0
+  skillOne:
+    skillType: 4
+    skillName: Lame de la Calamite
+    description: Une lame d'ombre s'abat sur la cible, plus devastatrice encore si
+      sa proie est proche de la mort.
+    damage: 35
+    cooldownTurns: 1
+    targetType: 0
+    adjacentDamagePercent: 0
+    effects:
+    - type: 0
+      value: 0.08
+      durationTurns: 2
+      effectTarget: 0
+    - type: 29
+      value: 0.05
+      durationTurns: -1
+      effectTarget: 1
+    branches:
+    - condition:
+        conditionType: 0
+        compareOp: 0
+        threshold: 0.3
+        effectType: 16
+        conditionElement: 0
+      effectType: 2
+      target: 0
+      valueMode: 0
+      valuePercent: 0.5
+      valueFlat: 1
+      durationTurns: 1
+    isIncantation: 0
+    castDelayTurns: 1
+    attackVFXPrefab: {fileID: 8758089774389977906, guid: fab71b97e44bbe64aa91b3fa0b79414c, type: 3}
+    trailVFXPrefab: {fileID: 8436336899256403242, guid: ce77327dbe6869a46a705eee863f952b, type: 3}
+    trailVFXScale: 1
+    attackVFXIsProjectile: 0
+    attackVFXScale: 1
+    impactVFXPrefab: {fileID: 4143199435437317879, guid: cca2b5eddc7f9b94d86c258ee77929a3, type: 3}
+    impactVFXScale: 1
+    vfxTravelTime: 0.35
+    vfxImpactDuration: 0.2
+    impactVFXOffset: {x: 0, y: 0, z: 0}
+  skillTwo:
+    skillType: 4
+    skillName: Eclipse Vorace
+    description: Un voile de tenebres devore toute l'equipe adverse tandis que Voragoth
+      se repait de leur vitalite.
+    damage: 35
+    cooldownTurns: 3
+    targetType: 2
+    adjacentDamagePercent: 0
+    effects:
+    - type: 19
+      value: 0.15
+      durationTurns: -1
+      effectTarget: 0
+    branches: []
+    isIncantation: 0
+    castDelayTurns: 1
+    attackVFXPrefab: {fileID: 4888133546414290188, guid: 6757c1ec9f83764419773df9138ff331, type: 3}
+    trailVFXPrefab: {fileID: 0}
+    trailVFXScale: 1
+    attackVFXIsProjectile: 0
+    attackVFXScale: 1
+    impactVFXPrefab: {fileID: 5008419760385394743, guid: a0cdf85294c972d41b5aeb2551abd8c3, type: 3}
+    impactVFXScale: 1
+    vfxTravelTime: 0.35
+    vfxImpactDuration: 0.2
+    impactVFXOffset: {x: 0, y: 0, z: 0}
+  skillThree:
+    skillType: 4
+    skillName: Cataclysme Final
+    description: Voragoth canalise toute sa puissance en un cataclysme qui s'abattra
+      sur l'ensemble de ses ennemis au prochain tour.
+    damage: 55
+    cooldownTurns: 4
+    targetType: 2
+    adjacentDamagePercent: 0
+    effects:
+    - type: 1
+      value: 0.3
+      durationTurns: 2
+      effectTarget: 0
+    branches: []
+    isIncantation: 1
+    castDelayTurns: 1
+    attackVFXPrefab: {fileID: 4888133546414290188, guid: 6757c1ec9f83764419773df9138ff331, type: 3}
+    trailVFXPrefab: {fileID: 0}
+    trailVFXScale: 1
+    attackVFXIsProjectile: 0
+    attackVFXScale: 1
+    impactVFXPrefab: {fileID: 4143199435437317879, guid: cca2b5eddc7f9b94d86c258ee77929a3, type: 3}
+    impactVFXScale: 1.5
+    vfxTravelTime: 0.35
+    vfxImpactDuration: 0.2
+    impactVFXOffset: {x: 0, y: 0, z: 0}
+  passive:
+    passiveName: Cadence Infernale
+    passiveDescription: Voragoth agit deux fois par tour.
+    trigger: 0
+    triggerElement: 8
+    passiveColor: {r: 1, g: 0.84, b: 0, a: 1}
+    stacksPerTrigger: 0
+    maxTriggerStacks: 4
+    effects:
+    - type: 15
+      value: 1
+      durationTurns: 1
+      effectTarget: 1
+  loreText: 
+  loreQuote: 

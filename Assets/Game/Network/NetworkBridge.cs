@@ -16,6 +16,12 @@ namespace Astraleum
         /// <summary>Vrai si on est le serveur/hôte.</summary>
         public static bool IsServer { get; set; }
 
+        /// <summary>Pseudo du joueur local (reçu depuis le serveur au GameSetup).</summary>
+        public static string LocalPlayerName    = "Joueur";
+
+        /// <summary>Pseudo de l'adversaire (reçu depuis le serveur au GameSetup).</summary>
+        public static string OpponentPlayerName = "Adversaire";
+
         // ── Délégués mis en place par NetworkGameController ──────────────
 
         /// <summary>Appelé quand le joueur local veut finir son tour.</summary>
@@ -51,6 +57,8 @@ namespace Astraleum
         {
             LocalPlayerID              = -1;
             IsServer                   = false;
+            LocalPlayerName            = "Joueur";
+            OpponentPlayerName         = "Adversaire";
             OnEndTurnRequested         = null;
             OnExecuteSkillRequested    = null;
             OnArrowShowRequested       = null;

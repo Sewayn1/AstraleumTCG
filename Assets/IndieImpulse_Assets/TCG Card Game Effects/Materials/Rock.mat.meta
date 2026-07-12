@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 3a75960a7ae4bb54db8c2b450bcb8431
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 2100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 277550
+  packageName: TCG Card Game Effects
+  packageVersion: 1.4
+  assetPath: Assets/IndieImpulse_Assets/TCG Card Game Effects/Materials/Rock.mat
+  uploadId: 897924

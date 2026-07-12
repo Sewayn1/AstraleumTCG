@@ -17,14 +17,16 @@ MonoBehaviour:
   cardNumber: 11
   element: 1
   rarity: 2
-  artwork: {fileID: 21300000, guid: 557016ba3a3e7294a959b00520095e6a, type: 3}
+  artwork: {fileID: 21300000, guid: 7b31b9707f794904d8f5dd106af0e937, type: 3}
   maxHP: 210
-  armorPoints: 4
+  armorPoints: 0
+  critChance: 0.01
   bonusActionsGranted: 0
   skillOne:
     skillType: 0
     skillName: Torrent Draconique
-    description: Inflige 13 DGT, et augmente le cooldown actif de la cible de 1 tour.
+    description: "Inflige 13 DGT. G\xE8le la recharge de la cible jusqu'\xE0 la fin
+      de son prochain tour."
     damage: 13
     cooldownTurns: 2
     targetType: 0
@@ -34,15 +36,24 @@ MonoBehaviour:
       value: 1
       durationTurns: 0
       effectTarget: 0
-    attackVFXPrefab: {fileID: 0}
-    impactVFXPrefab: {fileID: 0}
+    branches: []
+    isIncantation: 0
+    castDelayTurns: 1
+    attackVFXPrefab: {fileID: 3564256609886714696, guid: a3036ee46e4824b4d923d93f55b5ac38, type: 3}
+    trailVFXPrefab: {fileID: 874104363781329116, guid: 59a8a80f4fa79d740a3afc86b3015682, type: 3}
+    trailVFXScale: 1
+    attackVFXIsProjectile: 1
+    attackVFXScale: 1
+    impactVFXPrefab: {fileID: 6699823732153390975, guid: e1c98bd529b4cc24f857b920da3fa97f, type: 3}
+    impactVFXScale: 1
     vfxTravelTime: 0.35
     vfxImpactDuration: 0.2
+    impactVFXOffset: {x: 0, y: 0, z: 0}
   skillTwo:
     skillType: 0
     skillName: "Raz-de-Mar\xE9e"
-    description: "Inflige 10 DGT \xE0 toutes les cartes adverses. Augmente les DGT
-      subis de 5% pendant 2 Tours."
+    description: "Inflige 10 DGT \xE0 toutes les cartes adverses. Augmente leurs
+      DGT subis de 5% pendant 2 Tours."
     damage: 10
     cooldownTurns: 4
     targetType: 2
@@ -51,11 +62,20 @@ MonoBehaviour:
     - type: 1
       value: 0.05
       durationTurns: 2
-      effectTarget: 3
-    attackVFXPrefab: {fileID: 0}
-    impactVFXPrefab: {fileID: 0}
+      effectTarget: 0
+    branches: []
+    isIncantation: 0
+    castDelayTurns: 1
+    attackVFXPrefab: {fileID: 3564256609886714696, guid: a3036ee46e4824b4d923d93f55b5ac38, type: 3}
+    trailVFXPrefab: {fileID: 0}
+    trailVFXScale: 1
+    attackVFXIsProjectile: 0
+    attackVFXScale: 1
+    impactVFXPrefab: {fileID: 7306709923035686569, guid: e527de5bf43bb774bb8bde63f0af30d2, type: 3}
+    impactVFXScale: 1.2
     vfxTravelTime: 0.35
-    vfxImpactDuration: 0.2
+    vfxImpactDuration: 1
+    impactVFXOffset: {x: 0, y: 0, z: 0}
   passive:
     passiveName: 
     passiveDescription: 

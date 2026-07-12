@@ -1,0 +1,16 @@
+fileFormatVersion: 2
+guid: f045a21e826f16e40b993de940ec6bc1
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 11400000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 277550
+  packageName: TCG Card Game Effects
+  packageVersion: 1.4
+  assetPath: Assets/IndieImpulse_Assets/TCG Card Game Effects/Scenes/TCG Card Game
+    EffectsDEMO/Global Volume Profile.asset
+  uploadId: 897924

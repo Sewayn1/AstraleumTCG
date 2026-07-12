@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: f6ed3c7d1a35c974faeedcc4ac1f8856
+PrefabImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 277550
+  packageName: TCG Card Game Effects
+  packageVersion: 1.4
+  assetPath: Assets/IndieImpulse_Assets/TCG Card Game Effects/Prefabs/BackgroundEffect.prefab
+  uploadId: 897924

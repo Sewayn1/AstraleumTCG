@@ -17,29 +17,40 @@ MonoBehaviour:
   cardNumber: 19
   element: 4
   rarity: 1
-  artwork: {fileID: 21300000, guid: ec7795ae289c0b94ebc18a281b0da054, type: 3}
+  artwork: {fileID: 21300000, guid: 586e93761775ffe46872988382b2bf16, type: 3}
+  hiddenFromCollection: 0
+  isTrainingDummy: 0
   maxHP: 150
-  armorPoints: 4
+  armorPoints: 2
+  critChance: 0.01
   bonusActionsGranted: 0
   skillOne:
     skillType: 0
     skillName: Frappe Chevaleresque
-    description: "Abat son \xE9p\xE9e de lumi\xE8re sur la cible. Inflige 12 DGT."
-    damage: 12
+    description: "Abat son \xE9p\xE9e de lumi\xE8re sur la cible. Inflige 14 DGT."
+    damage: 14
     cooldownTurns: 1
     targetType: 0
     adjacentDamagePercent: 0
     effects: []
     branches: []
-    attackVFXPrefab: {fileID: 0}
-    impactVFXPrefab: {fileID: 0}
+    isIncantation: 0
+    castDelayTurns: 1
+    attackVFXPrefab: {fileID: 7713322516035562177, guid: efdbf1c7c99ca8945a3c4d9cf8dbe547, type: 3}
+    trailVFXPrefab: {fileID: 0}
+    trailVFXScale: 1
+    attackVFXIsProjectile: 0
+    attackVFXScale: 1
+    impactVFXPrefab: {fileID: 4172968788073076066, guid: 4b8cad722f9c6d745b57297826607bc5, type: 3}
+    impactVFXScale: 1
     vfxTravelTime: 0.5
     vfxImpactDuration: 0.3
+    impactVFXOffset: {x: 0, y: 0, z: 0}
   skillTwo:
     skillType: 1
     skillName: "Serment du P\xE8lerin"
-    description: "Soigne 15% des PV d'une Cible, et r\xE9duit ses DGT subis de 5%
-      pendant 2 Tours. Si les PV sont inf\xE9rieur \xE0 30%, se soigne de 5% suppl\xE9mentaire
+    description: "Soigne 10% des PV Max d'une Cible, et r\xE9duit ses DGT subis de
+      5% pendant 2 Tours. Si les PV sont inf\xE9rieur \xE0 30%, se soigne de 5% suppl\xE9mentaire
       pendant 2 Tours. "
     damage: 0
     cooldownTurns: 2
@@ -47,7 +58,7 @@ MonoBehaviour:
     adjacentDamagePercent: 0
     effects:
     - type: 3
-      value: 0.15
+      value: 0.1
       durationTurns: 0
       effectTarget: 0
     - type: 2
@@ -60,16 +71,25 @@ MonoBehaviour:
         compareOp: 0
         threshold: 0.3
         effectType: 0
+        conditionElement: 0
       effectType: 9
       target: 0
       valueMode: 0
       valuePercent: 0.05
       valueFlat: 0
       durationTurns: 2
+    isIncantation: 0
+    castDelayTurns: 1
     attackVFXPrefab: {fileID: 0}
-    impactVFXPrefab: {fileID: 0}
+    trailVFXPrefab: {fileID: 0}
+    trailVFXScale: 1
+    attackVFXIsProjectile: 0
+    attackVFXScale: 1
+    impactVFXPrefab: {fileID: 7713322516035562177, guid: efdbf1c7c99ca8945a3c4d9cf8dbe547, type: 3}
+    impactVFXScale: 1
     vfxTravelTime: 0.35
     vfxImpactDuration: 0.2
+    impactVFXOffset: {x: 0, y: 0, z: 0}
   passive:
     passiveName: 
     passiveDescription: 

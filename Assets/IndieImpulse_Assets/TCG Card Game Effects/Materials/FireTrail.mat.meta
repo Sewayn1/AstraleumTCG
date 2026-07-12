@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: b7f6267eb7c3be24fbe204361c55c1d1
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 2100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 277550
+  packageName: TCG Card Game Effects
+  packageVersion: 1.4
+  assetPath: Assets/IndieImpulse_Assets/TCG Card Game Effects/Materials/FireTrail.mat
+  uploadId: 897924

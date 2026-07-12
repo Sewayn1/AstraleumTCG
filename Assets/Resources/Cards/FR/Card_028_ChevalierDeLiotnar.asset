@@ -17,14 +17,17 @@ MonoBehaviour:
   cardNumber: 28
   element: 4
   rarity: 2
-  artwork: {fileID: 21300000, guid: 855c5a508e25d9e43bd79cbb9fa34811, type: 3}
+  artwork: {fileID: 21300000, guid: dcf8a89fcb481f844b403d5c9ae51dbb, type: 3}
+  hiddenFromCollection: 0
+  isTrainingDummy: 0
   maxHP: 220
-  armorPoints: 8
+  armorPoints: 2
+  critChance: 0.01
   bonusActionsGranted: 0
   skillOne:
     skillType: 4
     skillName: Frappe du Templier
-    description: "18 DGT \xE0 la cible, et soigne les alli\xE9es de 2% de leurs PV
+    description: "18 DGT \xE0 la cible, et HEAL les alli\xE9es de 6% de leurs PV
       Max."
     damage: 18
     cooldownTurns: 2
@@ -32,35 +35,53 @@ MonoBehaviour:
     adjacentDamagePercent: 0
     effects:
     - type: 3
-      value: 0.02
+      value: 0.06
       durationTurns: 2
       effectTarget: 2
-    attackVFXPrefab: {fileID: 0}
-    impactVFXPrefab: {fileID: 0}
+    branches: []
+    isIncantation: 0
+    castDelayTurns: 1
+    attackVFXPrefab: {fileID: 6258190430812525930, guid: d8f9804d243540c40af72f06943995fa, type: 3}
+    trailVFXPrefab: {fileID: 0}
+    trailVFXScale: 1
+    attackVFXIsProjectile: 0
+    attackVFXScale: 1
+    impactVFXPrefab: {fileID: 47810030221398765, guid: 8bfb9685cca79d147b3aa2262a3038f5, type: 3}
+    impactVFXScale: 1
     vfxTravelTime: 0.35
     vfxImpactDuration: 0.2
+    impactVFXOffset: {x: 0, y: 0, z: 0}
   skillTwo:
     skillType: 2
     skillName: Mur de Foi
-    description: "+10 d'Armure \xE0 toutes les cartes alli\xE9es. R\xE9duit leurs
-      DGT subis de 10% pendant 2 Tours."
+    description: "+4 ARM \xE0 toutes les cartes alli\xE9es pendant 2 Tours. \n\nR\xE9duit
+      leurs DGT subis de 10% pendant 2 Tours."
     damage: 0
     cooldownTurns: 4
     targetType: 3
     adjacentDamagePercent: 0
     effects:
     - type: 6
-      value: 10
-      durationTurns: 0
+      value: 4
+      durationTurns: 2
       effectTarget: 0
     - type: 2
       value: 0.1
       durationTurns: 2
       effectTarget: 0
+    branches: []
+    isIncantation: 0
+    castDelayTurns: 1
     attackVFXPrefab: {fileID: 0}
-    impactVFXPrefab: {fileID: 0}
+    trailVFXPrefab: {fileID: 0}
+    trailVFXScale: 1
+    attackVFXIsProjectile: 0
+    attackVFXScale: 1
+    impactVFXPrefab: {fileID: 5409722635710148559, guid: ac0dadb6415017f4094abb9ac047aa85, type: 3}
+    impactVFXScale: 1
     vfxTravelTime: 0.35
     vfxImpactDuration: 0.2
+    impactVFXOffset: {x: 0, y: 0, z: 0}
   passive:
     passiveName: 
     passiveDescription: 

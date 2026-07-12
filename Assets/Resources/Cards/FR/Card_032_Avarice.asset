@@ -1,0 +1,105 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: baa3cfc011ceea542b4a6e2212c058c1, type: 3}
+  m_Name: Card_032_Avarice
+  m_EditorClassIdentifier: Assembly-CSharp::Astraleum.CardData
+  cardName: Jadio
+  cardTitle: "P\xE9ch\xE9 de l'Avarice"
+  cardNumber: 32
+  element: 2
+  rarity: 3
+  artwork: {fileID: 21300000, guid: c33f1df38c5b0c54a8b45fb918f6c8b5, type: 3}
+  maxHP: 350
+  armorPoints: 5
+  critChance: 0.01
+  bonusActionsGranted: 0
+  skillOne:
+    skillType: 2
+    skillName: Rien que pour moi
+    description: S'octroi 6 ARM pendant 3 Tours.
+    damage: 0
+    cooldownTurns: 3
+    targetType: 5
+    adjacentDamagePercent: 0
+    effects:
+    - type: 6
+      value: 6
+      durationTurns: 3
+      effectTarget: 1
+    branches: []
+    isIncantation: 0
+    castDelayTurns: 1
+    attackVFXPrefab: {fileID: 0}
+    trailVFXPrefab: {fileID: 0}
+    trailVFXScale: 1
+    attackVFXIsProjectile: 0
+    attackVFXScale: 1
+    impactVFXPrefab: {fileID: 7918704070501355665, guid: c27d44d0807cef942ac7df5dbc876a00, type: 3}
+    impactVFXScale: 1
+    vfxTravelTime: 0.35
+    vfxImpactDuration: 0.2
+    impactVFXOffset: {x: 0, y: 0, z: 0}
+  skillTwo:
+    skillType: 4
+    skillName: Donne-moi tout
+    description: "Emp\u0207che la cible d'effectuer une action pendant 1 Tour. Lui
+      vole 5% de ses DGT pendant 2 Tours, et lui inflige 8 DGT."
+    damage: 8
+    cooldownTurns: 2
+    targetType: 0
+    adjacentDamagePercent: 0
+    effects:
+    - type: 16
+      value: 1
+      durationTurns: 1
+      effectTarget: 0
+    - type: 14
+      value: 0.05
+      durationTurns: 2
+      effectTarget: 0
+    - type: 13
+      value: 0.05
+      durationTurns: 2
+      effectTarget: 1
+    branches: []
+    isIncantation: 0
+    castDelayTurns: 1
+    attackVFXPrefab: {fileID: 0}
+    trailVFXPrefab: {fileID: 4990638367906664984, guid: f43a002d927e1814986ae406894c3be7, type: 3}
+    trailVFXScale: 1
+    attackVFXIsProjectile: 0
+    attackVFXScale: 1
+    impactVFXPrefab: {fileID: 7512445076827127504, guid: 393455d7e78088146a82759821b0f6a9, type: 3}
+    impactVFXScale: 1
+    vfxTravelTime: 0.35
+    vfxImpactDuration: 0.2
+    impactVFXOffset: {x: 0, y: 0, z: 0}
+  passive:
+    passiveName: Avare
+    passiveDescription: "Pour chaque Carte d\xE9truite, Alli\xE9 ou Ennemi, gagne
+      3 d'Armure permanent."
+    trigger: 1
+    triggerElement: 8
+    passiveColor: {r: 1, g: 0.84, b: 0, a: 1}
+    stacksPerTrigger: 1
+    maxTriggerStacks: 8
+    effects:
+    - type: 6
+      value: 3
+      durationTurns: -1
+      effectTarget: 1
+  loreText: "Les hommes creusent la roche pour m'arracher mes tr\xE9sors, mais ils
+    oublient que la Terre reprend toujours ce qui lui appartient. Chaque pi\xE8ce
+    d'or qui tombe au sol est une graine de ma prison de pierre. Et je veux tout
+    r\xE9colter."
+  loreQuote: "L'or appelle l'or, et la roche exige le sang. Quiconque foule mes mines
+    paiera son passage de sa vie... et sa d\xE9pouille rejoindra mes strates \xE9ternelles."

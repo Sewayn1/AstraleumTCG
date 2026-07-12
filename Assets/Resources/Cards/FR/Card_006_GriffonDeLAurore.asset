@@ -17,15 +17,16 @@ MonoBehaviour:
   cardNumber: 6
   element: 3
   rarity: 1
-  artwork: {fileID: 21300000, guid: 725728be07d053f4c9a78d3f39fafdf0, type: 3}
+  artwork: {fileID: 21300000, guid: 8ad948dc201a89144866a33eda87806e, type: 3}
   maxHP: 140
-  armorPoints: 2
+  armorPoints: 0
+  critChance: 0.01
   bonusActionsGranted: 0
   skillOne:
     skillType: 0
     skillName: Griffure Plongeante
-    description: "Fonce sur la cible et la lac\xE8re, inflige 12DGT \xE0 la cible,
-      et augmente ses DGT subis de 10% pendant 2 Tours."
+    description: "Fonce sur la cible et la lac\xE8re, inflige 12DGT.\nAugmente ses
+      DGT subis de 10% pendant 2 Tours."
     damage: 12
     cooldownTurns: 2
     targetType: 0
@@ -35,14 +36,24 @@ MonoBehaviour:
       value: 0.1
       durationTurns: 2
       effectTarget: 0
-    attackVFXPrefab: {fileID: 0}
-    impactVFXPrefab: {fileID: 0}
-    vfxTravelTime: 0.35
-    vfxImpactDuration: 0.2
+    branches: []
+    isIncantation: 0
+    castDelayTurns: 1
+    attackVFXPrefab: {fileID: 717424307499851289, guid: b4cf88b0438a0114993617ff7a98bb63, type: 3}
+    trailVFXPrefab: {fileID: 231292765192608918, guid: 2d3ac299adedb774a90f3d902587b7ac, type: 3}
+    trailVFXScale: 1
+    attackVFXIsProjectile: 1
+    attackVFXScale: 1
+    impactVFXPrefab: {fileID: 8745673727628092440, guid: cd700f03882dbf24881f3f4eea6630ed, type: 3}
+    impactVFXScale: 1
+    vfxTravelTime: 0.6
+    vfxImpactDuration: 0.4
+    impactVFXOffset: {x: 0, y: 0, z: 0}
   skillTwo:
     skillType: 0
     skillName: "A\xE9ro piqu\xE9"
-    description: 'Plonge brutallement sur la cible, inflige 18 DGT en ignorant l''Armure. '
+    description: Plonge brutallement sur la cible, inflige 18 DGT en ignorant son
+      ARM.
     damage: 18
     cooldownTurns: 2
     targetType: 0
@@ -52,10 +63,19 @@ MonoBehaviour:
       value: 1
       durationTurns: 0
       effectTarget: 0
-    attackVFXPrefab: {fileID: 0}
-    impactVFXPrefab: {fileID: 0}
-    vfxTravelTime: 0.35
-    vfxImpactDuration: 0.2
+    branches: []
+    isIncantation: 0
+    castDelayTurns: 1
+    attackVFXPrefab: {fileID: 717424307499851289, guid: b4cf88b0438a0114993617ff7a98bb63, type: 3}
+    trailVFXPrefab: {fileID: 0}
+    trailVFXScale: 1
+    attackVFXIsProjectile: 0
+    attackVFXScale: 1
+    impactVFXPrefab: {fileID: 1548960333827949869, guid: f3660c247d98dd549b09ef0f2ddf4f78, type: 3}
+    impactVFXScale: 1
+    vfxTravelTime: 0.6
+    vfxImpactDuration: 0.4
+    impactVFXOffset: {x: 0, y: -150, z: 0}
   passive:
     passiveName: 
     passiveDescription: 

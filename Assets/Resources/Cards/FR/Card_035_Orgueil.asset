@@ -1,0 +1,138 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: baa3cfc011ceea542b4a6e2212c058c1, type: 3}
+  m_Name: Card_035_Orgueil
+  m_EditorClassIdentifier: Assembly-CSharp::Astraleum.CardData
+  cardName: Tycus
+  cardTitle: "P\xE9ch\xE9 de l'Orgueil"
+  cardNumber: 35
+  element: 4
+  rarity: 3
+  artwork: {fileID: 21300000, guid: f4cde370c26bdaf4ab3515eaf752b88d, type: 3}
+  hiddenFromCollection: 0
+  isTrainingDummy: 0
+  maxHP: 260
+  armorPoints: 0
+  critChance: 0.01
+  bonusActionsGranted: 0
+  skillOne:
+    skillType: 0
+    skillName: Frappe Orgueilleuse
+    description: "Attaque la cible, et lui inflige 35 DGT. Se HEAL de 25% des DGT
+      inflig\xE9s. \n\nSi Tycus est la seule carte alli\xE9e\_\"Lumi\xE8re\" sur
+      le terrain, augmente de 50% les DGT inflig\xE9s. "
+    damage: 35
+    cooldownTurns: 2
+    targetType: 0
+    adjacentDamagePercent: 0
+    effects:
+    - type: 19
+      value: 0.25
+      durationTurns: -1
+      effectTarget: 0
+    branches:
+    - condition:
+        conditionType: 9
+        compareOp: 0
+        threshold: 0
+        effectType: 0
+        conditionElement: 4
+      effectType: 0
+      target: 1
+      valueMode: 0
+      valuePercent: 0.5
+      valueFlat: 0
+      durationTurns: 0
+    isIncantation: 0
+    castDelayTurns: 1
+    attackVFXPrefab: {fileID: 6258190430812525930, guid: d8f9804d243540c40af72f06943995fa, type: 3}
+    trailVFXPrefab: {fileID: 0}
+    trailVFXScale: 1
+    attackVFXIsProjectile: 0
+    attackVFXScale: 1
+    impactVFXPrefab: {fileID: 4172968788073076066, guid: 4b8cad722f9c6d745b57297826607bc5, type: 3}
+    impactVFXScale: 1
+    vfxTravelTime: 0.35
+    vfxImpactDuration: 0.2
+    impactVFXOffset: {x: 0, y: 0, z: 0}
+  skillTwo:
+    skillType: 2
+    skillName: Le Plus Fort
+    description: "Se HEAL de 8% de ses PV Max, et augmente sa R\xE9sistance aux DGT
+      de 15% pendant 1 Tour. \n\nSi cette carte est la seule carte alli\xE9e de type
+      \"Lumi\xE8re\", gagne 10 ARM pendant 3 Tours."
+    damage: 0
+    cooldownTurns: 3
+    targetType: 5
+    adjacentDamagePercent: 0
+    effects:
+    - type: 3
+      value: 0.08
+      durationTurns: 0
+      effectTarget: 1
+    - type: 2
+      value: 0.15
+      durationTurns: 1
+      effectTarget: 1
+    branches:
+    - condition:
+        conditionType: 9
+        compareOp: 0
+        threshold: 0
+        effectType: 0
+        conditionElement: 4
+      effectType: 12
+      target: 1
+      valueMode: 1
+      valuePercent: 0
+      valueFlat: 10
+      durationTurns: 3
+    isIncantation: 0
+    castDelayTurns: 1
+    attackVFXPrefab: {fileID: 0}
+    trailVFXPrefab: {fileID: 0}
+    trailVFXScale: 1
+    attackVFXIsProjectile: 0
+    attackVFXScale: 1
+    impactVFXPrefab: {fileID: 5409722635710148559, guid: ac0dadb6415017f4094abb9ac047aa85, type: 3}
+    impactVFXScale: 1
+    vfxTravelTime: 0.35
+    vfxImpactDuration: 0.2
+    impactVFXOffset: {x: 0, y: 0, z: 0}
+  passive:
+    passiveName: Orgueilleux
+    passiveDescription: "Tant que cette carte est sur le Terrain, TOUTES les autres
+      cartes subissent un Malus de 3DGT sur leurs DGT inflig\xE9s."
+    trigger: 0
+    triggerElement: 8
+    passiveColor: {r: 1, g: 0.84, b: 0, a: 1}
+    stacksPerTrigger: 0
+    maxTriggerStacks: 4
+    effects:
+    - type: 14
+      value: 3
+      durationTurns: 1
+      effectTarget: 3
+    - type: 13
+      value: 6
+      durationTurns: 1
+      effectTarget: 1
+    - type: 14
+      value: 3
+      durationTurns: 1
+      effectTarget: 2
+  loreText: "Il s'est \xE9lev\xE9 si haut qu'il a confondu son propre \xE9clat avec
+    celui de la cr\xE9ation. Sous sa lumi\xE8re parfaite, aucune imperfection n'est
+    tol\xE9r\xE9e, et quiconque refuse de baisser les yeux est instantan\xE9ment
+    r\xE9duit en cendres par son m\xE9pris."
+  loreQuote: "Je ne partage pas le ciel. Devant ma lueur, les \xE9toiles s'\xE9teignent,
+    les rois s'agenouillent et le monde entier comprend sa propre insignifiance."

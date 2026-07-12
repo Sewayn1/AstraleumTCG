@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 07997be15f0ff7f4194c408a054bd5b4
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 2100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 277550
+  packageName: TCG Card Game Effects
+  packageVersion: 1.4
+  assetPath: Assets/IndieImpulse_Assets/TCG Card Game Effects/Materials/TrailColorful.mat
+  uploadId: 897924

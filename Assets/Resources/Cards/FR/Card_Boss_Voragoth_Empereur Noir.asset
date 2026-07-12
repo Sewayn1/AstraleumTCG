@@ -1,0 +1,129 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: baa3cfc011ceea542b4a6e2212c058c1, type: 3}
+  m_Name: Card_Boss_Voragoth_Empereur Noir
+  m_EditorClassIdentifier: Assembly-CSharp::Astraleum.CardData
+  cardName: Voragoth
+  cardTitle: Empereur Noir
+  cardNumber: 0
+  element: 5
+  rarity: 4
+  artwork: {fileID: 21300000, guid: db328394800bd1748aad58c66bb907ed, type: 3}
+  hiddenFromCollection: 1
+  isTrainingDummy: 0
+  maxHP: 3000
+  armorPoints: 0
+  critChance: 0.1
+  bonusActionsGranted: 0
+  skillOne:
+    skillType: 4
+    skillName: Etreinte Grandissante
+    description: Ses bras d'ombre se referment sur la cible et ses voisines, laissant
+      des plaies qui s'enveniment.
+    damage: 22
+    cooldownTurns: 1
+    targetType: 4
+    adjacentDamagePercent: 0.5
+    effects:
+    - type: 0
+      value: 0.06
+      durationTurns: 2
+      effectTarget: 0
+    - type: 29
+      value: 0.05
+      durationTurns: -1
+      effectTarget: 1
+    branches: []
+    isIncantation: 0
+    castDelayTurns: 1
+    attackVFXPrefab: {fileID: 3149302608279546713, guid: 739ac4a1cb54c4242bc94e639129e7dd, type: 3}
+    trailVFXPrefab: {fileID: 0}
+    trailVFXScale: 1
+    attackVFXIsProjectile: 0
+    attackVFXScale: 1
+    impactVFXPrefab: {fileID: 4047135651089303718, guid: 0958c2950249f124bab993324693d848, type: 3}
+    impactVFXScale: 1
+    vfxTravelTime: 0.35
+    vfxImpactDuration: 0.2
+    impactVFXOffset: {x: 0, y: 0, z: 0}
+  skillTwo:
+    skillType: 4
+    skillName: Malediction de l'Empereur
+    description: Une malediction s'abat sur toute l'equipe adverse, empoisonnant
+      les corps et scellant les soins.
+    damage: 10
+    cooldownTurns: 3
+    targetType: 2
+    adjacentDamagePercent: 0
+    effects:
+    - type: 5
+      value: 0
+      durationTurns: 1
+      effectTarget: 0
+    - type: 17
+      value: 0.05
+      durationTurns: 2
+      effectTarget: 0
+    branches: []
+    isIncantation: 0
+    castDelayTurns: 1
+    attackVFXPrefab: {fileID: 3149302608279546713, guid: 739ac4a1cb54c4242bc94e639129e7dd, type: 3}
+    trailVFXPrefab: {fileID: 0}
+    trailVFXScale: 1
+    attackVFXIsProjectile: 0
+    attackVFXScale: 1
+    impactVFXPrefab: {fileID: 4047135651089303718, guid: 0958c2950249f124bab993324693d848, type: 3}
+    impactVFXScale: 1
+    vfxTravelTime: 0.35
+    vfxImpactDuration: 0.2
+    impactVFXOffset: {x: 0, y: 0, z: 0}
+  skillThree:
+    skillType: 2
+    skillName: Pacte des Ombres
+    description: Voragoth se drape d'une armure d'ombre pour endurer l'assaut adverse.
+    damage: 0
+    cooldownTurns: 3
+    targetType: 5
+    adjacentDamagePercent: 0
+    effects:
+    - type: 6
+      value: 10
+      durationTurns: 2
+      effectTarget: 1
+    branches: []
+    isIncantation: 0
+    castDelayTurns: 1
+    attackVFXPrefab: {fileID: 3149302608279546713, guid: 739ac4a1cb54c4242bc94e639129e7dd, type: 3}
+    trailVFXPrefab: {fileID: 0}
+    trailVFXScale: 1
+    attackVFXIsProjectile: 0
+    attackVFXScale: 1
+    impactVFXPrefab: {fileID: 4047135651089303718, guid: 0958c2950249f124bab993324693d848, type: 3}
+    impactVFXScale: 1
+    vfxTravelTime: 0.35
+    vfxImpactDuration: 0.2
+    impactVFXOffset: {x: 0, y: 0, z: 0}
+  passive:
+    passiveName: Cadence Infernale
+    passiveDescription: Voragoth agit deux fois par tour.
+    trigger: 0
+    triggerElement: 8
+    passiveColor: {r: 1, g: 0.84, b: 0, a: 1}
+    stacksPerTrigger: 0
+    maxTriggerStacks: 4
+    effects:
+    - type: 15
+      value: 1
+      durationTurns: 1
+      effectTarget: 1
+  loreText: 
+  loreQuote: 

@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: f785203e6243b90449a2f7df9a0d5e19
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 9100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 277550
+  packageName: TCG Card Game Effects
+  packageVersion: 1.4
+  assetPath: Assets/IndieImpulse_Assets/TCG Card Game Effects/Animations/Controllers/SuckedBlackhole.controller
+  uploadId: 897924

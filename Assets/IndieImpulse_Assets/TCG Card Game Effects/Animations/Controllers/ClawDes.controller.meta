@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 1009e7634b4a2874787d9c761e819d07
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 9100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 277550
+  packageName: TCG Card Game Effects
+  packageVersion: 1.4
+  assetPath: Assets/IndieImpulse_Assets/TCG Card Game Effects/Animations/Controllers/ClawDes.controller
+  uploadId: 897924

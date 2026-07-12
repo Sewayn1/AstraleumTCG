@@ -1,6 +1,7 @@
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using Astraleum;
 
 namespace Astraleum.UI
 {
@@ -116,8 +117,7 @@ namespace Astraleum.UI
                                             card.passive.passiveName);
                     passiveName.color = card.passive.passiveColor;
                 }
-                if (passiveDescription != null)
-                    passiveDescription.text = passiveDescRaw;
+                TMPIconReplacer.ApplyTo(passiveDescription, passiveDescRaw);
             }
 
             // ── Lore ──────────────────────────────────────────────────
@@ -177,8 +177,7 @@ namespace Astraleum.UI
             if (cooldownText != null)
                 cooldownText.gameObject.SetActive(false);
 
-            if (descText != null)
-                descText.text = LocalizationManager.GetCard(cardNumber, $"{skillKey}_desc", skill.description);
+            TMPIconReplacer.ApplyTo(descText, LocalizationManager.GetCard(cardNumber, $"{skillKey}_desc", skill.description));
         }
 
         public void Hide()

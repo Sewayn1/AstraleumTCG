@@ -28,20 +28,37 @@ namespace Astraleum
 
         private void Start()
         {
-            // Joueur de départ aléatoire — décision prise par le serveur ou en local
-            if (!NetworkBridge.IsActive || NetworkBridge.LocalPlayerID == 0)
+            // Contre un Boss, le joueur humain commence toujours (pas de tirage aléatoire).
+            if (AI.GameModeContext.IsBossMatch)
+                currentPlayerID = 0;
+            // Joueur de départ aléatoire — décision prise par le serveur ou en local.
+            // Le client (Player 1) ne roule pas : il attend le premier snapshot pour connaître
+            // le vrai currentPlayerID et déclencher l'annonce correcte.
+            else if (!NetworkBridge.IsActive || NetworkBridge.LocalPlayerID == 0)
                 currentPlayerID = UnityEngine.Random.Range(0, 2);
 
             ResetTimer();
+
+            if (NetworkBridge.IsActive && NetworkBridge.LocalPlayerID != 0) return;
+
             CombatUIManager.Instance?.UpdateTurnIndicator(currentPlayerID);
+            TurnCounterUI.Instance?.SetTurn(1);
             TurnAudioManager.Instance?.PlayTurnStart(currentPlayerID);
             TurnAnnouncementManager.Instance?.Show(currentPlayerID);
             CombatLogManager.Instance?.AddEntry(
-                $"Joueur {currentPlayerID + 1} commence !", playerID: currentPlayerID);
+                "commence !", playerID: currentPlayerID);
         }
 
         private void Update()
         {
+            // Raccourci clavier — même action que le clic sur Btn_EndTurn
+            if (Input.GetKeyDown(KeyCode.Space))
+                EndTurn();
+
+            // Pas de limite de temps par tour contre un Boss — combat solo, pas d'adversaire
+            // humain à faire attendre. Le timer est aussi masqué (voir BossGameController.Start()).
+            if (AI.GameModeContext.IsBossMatch) return;
+
             if (currentTurnTime <= 0) return;
 
             // En réseau : le client décrémente localement pour un affichage fluide.
@@ -113,6 +130,51 @@ namespace Astraleum
             EndTurnLocal();
         }
 
+        private void ResolveIncantations(int playerID)
+        {
+            var cards = BoardManager.Instance?.GetAliveCards(playerID);
+            if (cards == null) return;
+            bool anyFired = false;
+
+            foreach (var card in cards.ToList())
+            {
+                foreach (var incant in card.pendingIncantations.ToList())
+                {
+                    incant.turnsRemaining--;
+                    if (incant.turnsRemaining > 0) continue;
+
+                    CardInstance target = incant.targetPlayerID >= 0
+                        ? BoardManager.Instance.GetCardAtSlot(incant.targetPlayerID, incant.targetSlotIndex)
+                        : null;
+
+                    // Cible morte entre le lancement et la résolution → incantation annulée
+                    // (évite un NullReferenceException dans SkillExecutor qui bloquerait
+                    // définitivement la fin de tour).
+                    bool needsTarget = incant.skill.targetType == SkillTargetType.SingleEnemy
+                        || incant.skill.targetType == SkillTargetType.SingleAlly
+                        || incant.skill.targetType == SkillTargetType.AdjacentEnemies;
+
+                    if (needsTarget && target == null)
+                    {
+                        CombatLogManager.Instance?.AddEntry(
+                            $"{card.data.cardName} — incantation {incant.skill.skillName} annulée (cible perdue)",
+                            playerID: card.ownerPlayerID);
+                        card.pendingIncantations.Remove(incant);
+                        continue;
+                    }
+
+                    SkillExecutor.Execute(card, incant.skill, target);
+                    CombatManager.Instance?.SpawnImpactVFX(incant.skill, card, target);
+                    card.pendingIncantations.Remove(incant);
+                    anyFired = true;
+                }
+                card.GetComponent<CardVisualUpdater>()?.UpdateVisuals();
+            }
+
+            if (anyFired && BoardManager.Instance.CheckVictory(playerID))
+                GameManager.Instance.EndGame(playerID);
+        }
+
         /// <summary>
         /// Exécution locale effective de la fin de tour (appelée par le serveur).
         /// </summary>
@@ -134,6 +196,16 @@ namespace Astraleum
                         stun.remainingTurns--;
                         if (stun.remainingTurns <= 0)
                             card.activeEffects.Remove(stun);
+                    }
+
+                    // Recharge gelée : dégèle en fin de tour du joueur affecté
+                    // (bloqué pendant exactement 1 tour complet, comme le Stun)
+                    var cdLock = card.activeEffects.Find(e => e.type == EffectType.CooldownIncrease);
+                    if (cdLock != null)
+                    {
+                        cdLock.remainingTurns--;
+                        if (cdLock.remainingTurns <= 0)
+                            card.activeEffects.Remove(cdLock);
                     }
                 }
 
@@ -158,15 +230,13 @@ namespace Astraleum
             CombatUIManager.Instance?.ClearAllHighlights();
             CombatUIManager.Instance?.CancelSelection();
 
-            // Applique le Poison Ténèbres de l'ancien joueur sur le nouveau AVANT son ProcessActiveEffects
-            // (fix timing : la victime subit le poison dès son premier tour actif)
-            StackManager.Instance?.ApplyPoisonToEnemies(oldPlayerID);
-
             // ← OnTurnStart UNIQUEMENT sur les cartes du joueur actif
             // Chaque carte traite ses propres effets (DoT, HoT) au début de SON tour
             if (BoardManager.Instance != null)
                 foreach (var card in BoardManager.Instance.GetAliveCards(currentPlayerID))
                     card.OnTurnStart();
+
+            ResolveIncantations(currentPlayerID);
 
             StackManager.Instance?.ApplyTurnBonuses(currentPlayerID);
             OnTurnStart?.Invoke(currentPlayerID);
@@ -174,6 +244,7 @@ namespace Astraleum
             PassiveManager.Instance?.OnTurnStart(currentPlayerID);
             CombatUIManager.Instance?.UpdateActionDots();
             CombatUIManager.Instance?.UpdateTurnIndicator(currentPlayerID);
+            TurnCounterUI.Instance?.IncrementTurn();
             TurnAnnouncementManager.Instance?.Show(currentPlayerID);
             CombatLogManager.Instance?.OnTurnChanged(currentPlayerID + 1);
         }

@@ -1,0 +1,229 @@
+fileFormatVersion: 2
+guid: 5f6023685fcff68459f4d1560246e449
+ModelImporter:
+  serializedVersion: 20200
+  internalIDToNameTable:
+  - first:
+      74: -5471792669984432960
+    second: farm.003_low|cat.002_lowAction
+  - first:
+      74: -4258280344670322584
+    second: farm.003_low|cat_017_lowAction
+  - first:
+      74: 9051079120160187833
+    second: farm.013_low|cat.002_lowAction
+  - first:
+      74: 2020822028130499707
+    second: farm.013_low|cat_017_lowAction
+  - first:
+      74: 4920691724457616439
+    second: farm.003_low.001|cat.002_lowAction
+  - first:
+      74: 5202034258122775309
+    second: farm.003_low.001|cat_017_lowAction
+  - first:
+      74: 3780424165665304058
+    second: farm.003_low.002|cat.002_lowAction
+  - first:
+      74: -5616732958472570514
+    second: farm.003_low.002|cat_017_lowAction
+  - first:
+      74: -1135590261631987883
+    second: farm.003_low.003|cat.002_lowAction
+  - first:
+      74: -6141034083340834652
+    second: farm.003_low.003|cat_017_lowAction
+  - first:
+      74: 6770101056359113910
+    second: farm.003_low.005|cat.002_lowAction
+  - first:
+      74: 1079756942922267711
+    second: farm.003_low.005|cat_017_lowAction
+  - first:
+      74: -2449062769030923532
+    second: farm.003_low.007|cat.002_lowAction
+  - first:
+      74: -1641206180741576446
+    second: farm.003_low.007|cat_017_lowAction
+  - first:
+      74: -4477843130591653614
+    second: farm.003_low.009|cat.002_lowAction
+  - first:
+      74: 8446648817463607598
+    second: farm.003_low.009|cat_017_lowAction
+  - first:
+      74: 3856370207747911787
+    second: farm.003_low.010|cat.002_lowAction
+  - first:
+      74: -8245461352166764093
+    second: farm.003_low.010|cat_017_lowAction
+  - first:
+      74: -8717597611560132014
+    second: farm.003_low.011|cat.002_lowAction
+  - first:
+      74: 2941964552564937003
+    second: farm.003_low.011|cat_017_lowAction
+  - first:
+      74: 2409950221154920171
+    second: farm.013_low.001|cat.002_lowAction
+  - first:
+      74: -4485478342057799069
+    second: farm.013_low.001|cat_017_lowAction
+  - first:
+      74: -2491659568748127091
+    second: farm.013_low.002|cat.002_lowAction
+  - first:
+      74: -5580273897502938144
+    second: farm.013_low.002|cat_017_lowAction
+  - first:
+      74: -5131918913957011287
+    second: farm.013_low.003|cat.002_lowAction
+  - first:
+      74: -4717278407046625099
+    second: farm.013_low.003|cat_017_lowAction
+  - first:
+      74: -3747905317008766998
+    second: cat_017_low|cat.002_lowAction
+  - first:
+      74: -1640543387860539304
+    second: cat_017_low|cat_017_lowAction
+  - first:
+      74: -736823322032346758
+    second: cat.002_low|cat.002_lowAction
+  - first:
+      74: 5662889330088313429
+    second: cat.002_low|cat_017_lowAction
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: board
+    second: {fileID: 2100000, guid: bfb49158f0e48354880067234bbf183e, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: cat
+    second: {fileID: 2100000, guid: 791ca16698195aa43aeb7fa9d1717c28, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: farm
+    second: {fileID: 2100000, guid: a486d253ee3cb774e985b854199c99ae, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: kettle
+    second: {fileID: 2100000, guid: 18291134c10a52d4ba375a0b05d77505, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: mushroom
+    second: {fileID: 2100000, guid: 2b78d9f1909113043be145134b1e8952, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: table
+    second: {fileID: 2100000, guid: 5b96aff3070e3f949b54af7d03b7b7b9, type: 2}
+  materials:
+    materialImportMode: 2
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 0
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    useSRGBMaterialColor: 1
+    sortHierarchyByName: 1
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    fileIdsGeneration: 2
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    keepQuads: 0
+    weldVertices: 1
+    bakeAxisConversion: 0
+    preserveHierarchy: 0
+    skinWeightsMode: 0
+    maxBonesPerVertex: 4
+    minBoneWeight: 0.001
+    meshOptimizationFlags: -1
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVMarginMethod: 1
+    secondaryUVMinLightmapResolution: 40
+    secondaryUVMinObjectScale: 1
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0
+    blendShapeNormalImportMode: 1
+    normalSmoothingSource: 0
+  referencedClips: []
+  importAnimation: 1
+  humanDescription:
+    serializedVersion: 3
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    globalScale: 1
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  autoGenerateAvatarMappingIfUnspecified: 1
+  animationType: 2
+  humanoidOversampling: 1
+  avatarSetup: 0
+  addHumanoidExtraRootOnlyWhenUsingAvatar: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 213764
+  packageName: Board / Card Game Stylized VFX Magic
+  packageVersion: 2.1
+  assetPath: Assets/Piloto Studio/CardGameVFX/PreviewScene/ShowcaseScene/board.fbx
+  uploadId: 777334

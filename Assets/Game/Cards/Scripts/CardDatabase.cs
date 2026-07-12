@@ -67,9 +67,19 @@ namespace Astraleum
             return new List<CardData>();
         }
 
-        // Récupère toutes les cartes
+        // Récupère toutes les cartes (hors cartes internes marquées hiddenFromCollection)
         public List<CardData> GetAllCards()
-            => cardsByNumber.Values.ToList();
+            => cardsByNumber.Values.Where(c => !c.hiddenFromCollection).ToList();
+
+        // Toutes les cartes visibles, que CardDatabase soit initialisé ou non (fallback Resources.LoadAll
+        // si la scène n'a pas encore de CardDatabase, ex. MainMenu avant tout combat). À utiliser partout
+        // où une liste de cartes "joueur" est nécessaire (Collection, DeckEditor, pool IA...) plutôt que de
+        // dupliquer le ternaire Instance != null / Resources.LoadAll, qui oublierait facilement le filtre.
+        public static List<CardData> LoadVisibleCards()
+        {
+            if (Instance != null) return Instance.GetAllCards();
+            return Resources.LoadAll<CardData>("Cards").Where(c => c != null && !c.hiddenFromCollection).ToList();
+        }
 
         // Récupère une carte aléatoire d'une rareté donnée
         public CardData GetRandomCard(CardRarity rarity)

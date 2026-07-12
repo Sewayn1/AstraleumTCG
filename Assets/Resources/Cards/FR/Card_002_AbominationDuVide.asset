@@ -17,14 +17,17 @@ MonoBehaviour:
   cardNumber: 2
   element: 5
   rarity: 1
-  artwork: {fileID: 21300000, guid: 3fc0fe8a5228b004fa337f0cfd4abfb0, type: 3}
+  artwork: {fileID: 21300000, guid: e3c077ced0358c34fbdb2e1306179b78, type: 3}
+  hiddenFromCollection: 0
+  isTrainingDummy: 0
   maxHP: 150
-  armorPoints: 2
+  armorPoints: 0
+  critChance: 0.01
   bonusActionsGranted: 0
   skillOne:
     skillType: 0
     skillName: Entaille du Vide
-    description: "Attaque une cible et lui inflige 15 DGT. Se soigne du montant des
+    description: "Attaque une cible et lui inflige 15 DGT. Se HEAL du montant des
       DGT inflig\xE9s. "
     damage: 15
     cooldownTurns: 2
@@ -33,19 +36,27 @@ MonoBehaviour:
     effects:
     - type: 19
       value: 1
-      durationTurns: 0
+      durationTurns: -1
       effectTarget: 1
     branches: []
-    attackVFXPrefab: {fileID: 0}
-    impactVFXPrefab: {fileID: 0}
-    vfxTravelTime: 0.35
+    isIncantation: 0
+    castDelayTurns: 1
+    attackVFXPrefab: {fileID: 3149302608279546713, guid: 739ac4a1cb54c4242bc94e639129e7dd, type: 3}
+    trailVFXPrefab: {fileID: 4824840610060092136, guid: 86deedb1ebda2c84ba379d0d89b758ae, type: 3}
+    trailVFXScale: 1
+    attackVFXIsProjectile: 1
+    attackVFXScale: 0.3
+    impactVFXPrefab: {fileID: 4047135651089303718, guid: 0958c2950249f124bab993324693d848, type: 3}
+    impactVFXScale: 1
+    vfxTravelTime: 0.5
     vfxImpactDuration: 0.2
+    impactVFXOffset: {x: 0, y: 0, z: 0}
   skillTwo:
     skillType: 0
     skillName: "Ru\xE9e Enrag\xE9e"
-    description: Fonce sur une cible, et lui inflige 12DGT, les cartes adjacentes
-      subissent 50% des DGT totaux. Etourdie les cibles pendant 1 Tour.
-    damage: 12
+    description: "Fonce sur une cible, et lui inflige 15DGT.\nLes cartes adjacentes
+      subissent 50% des DGT. \n\xC9tourdie les cibles pendant 1 Tour."
+    damage: 15
     cooldownTurns: 4
     targetType: 4
     adjacentDamagePercent: 0.5
@@ -53,12 +64,20 @@ MonoBehaviour:
     - type: 16
       value: 1
       durationTurns: 1
-      effectTarget: 6
+      effectTarget: 0
     branches: []
-    attackVFXPrefab: {fileID: 0}
-    impactVFXPrefab: {fileID: 0}
+    isIncantation: 0
+    castDelayTurns: 1
+    attackVFXPrefab: {fileID: 3149302608279546713, guid: 739ac4a1cb54c4242bc94e639129e7dd, type: 3}
+    trailVFXPrefab: {fileID: 0}
+    trailVFXScale: 1
+    attackVFXIsProjectile: 1
+    attackVFXScale: 0.3
+    impactVFXPrefab: {fileID: 4047135651089303718, guid: 0958c2950249f124bab993324693d848, type: 3}
+    impactVFXScale: 1
     vfxTravelTime: 0.35
     vfxImpactDuration: 0.2
+    impactVFXOffset: {x: 0, y: 0, z: 0}
   passive:
     passiveName: 
     passiveDescription: 

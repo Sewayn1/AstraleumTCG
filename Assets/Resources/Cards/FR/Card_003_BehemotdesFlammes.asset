@@ -17,34 +17,45 @@ MonoBehaviour:
   cardNumber: 3
   element: 5
   rarity: 2
-  artwork: {fileID: 21300000, guid: 64e32bdfce8cf204282de8de7cce5c8c, type: 3}
+  artwork: {fileID: 21300000, guid: ee8a19a872ff93a4b84f8f7b08a9e16f, type: 3}
+  hiddenFromCollection: 0
+  isTrainingDummy: 0
   maxHP: 230
-  armorPoints: 2
+  armorPoints: 0
+  critChance: 0.01
   bonusActionsGranted: 0
   skillOne:
     skillType: 0
     skillName: Embraser !
     description: "Embrase les cartes adverses, leurs infligeant 15DGT imm\xE9diat
-      et leurs applique Br\u0217lure pendant 2 Tours (10% des PV Max)."
+      et leurs applique BURN pendant 2 Tours."
     damage: 15
     cooldownTurns: 3
     targetType: 2
     adjacentDamagePercent: 0
     effects:
     - type: 18
-      value: 0.1
+      value: 0.05
       durationTurns: 2
-      effectTarget: 3
+      effectTarget: 0
     branches: []
-    attackVFXPrefab: {fileID: 0}
-    impactVFXPrefab: {fileID: 0}
-    vfxTravelTime: 0.35
-    vfxImpactDuration: 0.2
+    isIncantation: 0
+    castDelayTurns: 1
+    attackVFXPrefab: {fileID: 3994965004076699975, guid: 350fde7c27a0ed5439852b66d8ef0590, type: 3}
+    trailVFXPrefab: {fileID: 1992815801676329838, guid: bb5b4a62633a53f45835d2229c7ccf98, type: 3}
+    trailVFXScale: 1
+    attackVFXIsProjectile: 0
+    attackVFXScale: 1
+    impactVFXPrefab: {fileID: 1386483879094485057, guid: d9121a3dbed0969429d4c44e865c6dbb, type: 3}
+    impactVFXScale: 1
+    vfxTravelTime: 0.6
+    vfxImpactDuration: 0.3
+    impactVFXOffset: {x: 0, y: 0, z: 0}
   skillTwo:
     skillType: 4
     skillName: RAGE !
     description: "Entre dans une Rage Meutri\xE8re, augmente les DGT inflig\xE9s
-      et subis de 5% pendant 2 Tours. "
+      de 3 et subis de 5%  pendant 2 Tours."
     damage: 0
     cooldownTurns: 4
     targetType: 5
@@ -55,30 +66,38 @@ MonoBehaviour:
       durationTurns: 2
       effectTarget: 1
     - type: 13
-      value: 0.05
+      value: 3
       durationTurns: 2
       effectTarget: 1
     branches: []
-    attackVFXPrefab: {fileID: 0}
-    impactVFXPrefab: {fileID: 0}
-    vfxTravelTime: 0.35
+    isIncantation: 0
+    castDelayTurns: 1
+    attackVFXPrefab: {fileID: 2348517054397344516, guid: 688fc9a3acecc7745b39d3aaeb721beb, type: 3}
+    trailVFXPrefab: {fileID: 0}
+    trailVFXScale: 1
+    attackVFXIsProjectile: 0
+    attackVFXScale: 1
+    impactVFXPrefab: {fileID: 2470526412627155888, guid: 88cb52e9fda876d409f3696658a18bd0, type: 3}
+    impactVFXScale: 1
+    vfxTravelTime: 1
     vfxImpactDuration: 0.2
+    impactVFXOffset: {x: 0, y: 0, z: 0}
   passive:
     passiveName: Furie Sanguinaire
-    passiveDescription: "Si cette carte d\xE9truit une carte adverse, se soigne de
-      10% de ses PV Max, et augmente ses DGT inflig\xE9s de 5% pendant deux tours."
+    passiveDescription: "Si cette carte d\xE9truit une carte adverse, se HEAL de
+      10% de ses PV Max, et augmente ses DGT inflig\xE9s de 5 pendant 2 tours."
     trigger: 3
-    triggerElement: 7
+    triggerElement: 8
     passiveColor: {r: 1, g: 0.84, b: 0, a: 1}
     stacksPerTrigger: 0
     maxTriggerStacks: 4
     effects:
     - type: 3
       value: 0.1
-      durationTurns: 0
+      durationTurns: 1
       effectTarget: 1
     - type: 13
-      value: 0.05
+      value: 5
       durationTurns: 2
       effectTarget: 1
   loreText: "Le B\xE9h\xE9mot des Flammes et l'une des cr\xE9atures les plus redout\xE9es

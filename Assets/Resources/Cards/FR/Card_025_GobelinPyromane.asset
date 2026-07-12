@@ -17,15 +17,16 @@ MonoBehaviour:
   cardNumber: 25
   element: 0
   rarity: 0
-  artwork: {fileID: 21300000, guid: 8ac6802e09e4b3f4e96ab54c36e0125e, type: 3}
-  maxHP: 80
-  armorPoints: 3
+  artwork: {fileID: 21300000, guid: ed8bc0a1139c84342b6c9dbb85db50e1, type: 3}
+  maxHP: 90
+  armorPoints: 0
+  critChance: 0.01
   bonusActionsGranted: 0
   skillOne:
     skillType: 0
     skillName: Boule de Feu
-    description: "Inflige 14 DGT \xE0 une cible. Si la cible est d\xE9j\xE0 sous
-      l'effet d'une \"Brulure\", augmente les DGT inflig\xE9s de 50%."
+    description: "Inflige 14 DGT \xE0 une cible.\n\nSi la cible est d\xE9j\xE0 sous
+      l'effet d'une BURN, augmente les DGT inflig\xE9s de 50%."
     damage: 14
     cooldownTurns: 1
     targetType: 0
@@ -37,35 +38,52 @@ MonoBehaviour:
         compareOp: 0
         threshold: 0
         effectType: 0
+        conditionElement: 0
       effectType: 0
-      target: 0
+      target: 1
       valueMode: 0
       valuePercent: 0.5
       valueFlat: 0
       durationTurns: 0
+    isIncantation: 0
+    castDelayTurns: 1
     attackVFXPrefab: {fileID: 0}
-    impactVFXPrefab: {fileID: 0}
+    trailVFXPrefab: {fileID: 1992815801676329838, guid: bb5b4a62633a53f45835d2229c7ccf98, type: 3}
+    trailVFXScale: 1
+    attackVFXIsProjectile: 1
+    attackVFXScale: 1
+    impactVFXPrefab: {fileID: 1386483879094485057, guid: d9121a3dbed0969429d4c44e865c6dbb, type: 3}
+    impactVFXScale: 1
     vfxTravelTime: 0.35
     vfxImpactDuration: 0.2
+    impactVFXOffset: {x: 0, y: 0, z: 0}
   skillTwo:
     skillType: 0
     skillName: "Chaos Enflamm\xE9"
-    description: "Inflige 18 DGT \xE0 une cible, et 50% des DGT aux cartes adjacentes,
-      et leurs applique Brulure (10% des PV Max) pendant 2 Tours."
+    description: "Inflige 18 DGT \xE0 une cible, et 50% des DGT aux cartes adjacentes.\n\nLeurs
+      applique BURN pendant 2 Tours."
     damage: 18
     cooldownTurns: 2
     targetType: 4
     adjacentDamagePercent: 0.5
     effects:
     - type: 18
-      value: 0.1
+      value: 0.05
       durationTurns: 2
       effectTarget: 6
     branches: []
+    isIncantation: 0
+    castDelayTurns: 1
     attackVFXPrefab: {fileID: 0}
-    impactVFXPrefab: {fileID: 0}
+    trailVFXPrefab: {fileID: 1992815801676329838, guid: bb5b4a62633a53f45835d2229c7ccf98, type: 3}
+    trailVFXScale: 1.3
+    attackVFXIsProjectile: 1
+    attackVFXScale: 1
+    impactVFXPrefab: {fileID: 3617973170196555100, guid: 4e99cec8e95448344a74b2a860760716, type: 3}
+    impactVFXScale: 1
     vfxTravelTime: 0.35
     vfxImpactDuration: 0.2
+    impactVFXOffset: {x: 0, y: 0, z: 0}
   passive:
     passiveName: 
     passiveDescription: 

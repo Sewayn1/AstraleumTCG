@@ -17,23 +17,24 @@ MonoBehaviour:
   cardNumber: 8
   element: 0
   rarity: 2
-  artwork: {fileID: 21300000, guid: c215aa103ae72af4891c8ac83fb975f8, type: 3}
+  artwork: {fileID: 21300000, guid: 3d432fc36a63d2048a0d18875a49e5a5, type: 3}
   maxHP: 190
-  armorPoints: 5
+  armorPoints: 0
+  critChance: 0.01
   bonusActionsGranted: 0
   skillOne:
     skillType: 0
     skillName: Souffle Infernal
-    description: "Inflige 15 DGT \xE0 la cible, et la Brule pendant 1 tour (10% des
-      PV Max). Si la cible est sous l'effet d'une Brulure, inflige 25% de DGT suppl\xE9mentaire.\n\nTemps
-      de Recharge : 2 Tours."
+    description: "Inflige 15 DGT \xE0 la cible, et la BURN pendant 1 tour.\n\nSi
+      la cible est sous l'effet BURN, inflige 25% de DGT suppl\xE9mentaire, et augmente
+      les DGT des Coups Critique de 10% pendant 3 Tours."
     damage: 15
     cooldownTurns: 2
     targetType: 0
     adjacentDamagePercent: 0
     effects:
-    - type: 0
-      value: 0.1
+    - type: 18
+      value: 0.05
       durationTurns: 1
       effectTarget: 0
     branches:
@@ -42,35 +43,64 @@ MonoBehaviour:
         compareOp: 0
         threshold: 0
         effectType: 0
+        conditionElement: 0
       effectType: 0
-      target: 0
+      target: 1
       valueMode: 0
       valuePercent: 0.25
       valueFlat: 0
       durationTurns: 0
-    attackVFXPrefab: {fileID: 0}
-    impactVFXPrefab: {fileID: 0}
-    vfxTravelTime: 0.35
-    vfxImpactDuration: 0.2
+    - condition:
+        conditionType: 4
+        compareOp: 0
+        threshold: 0
+        effectType: 0
+        conditionElement: 0
+      effectType: 16
+      target: 1
+      valueMode: 0
+      valuePercent: 0.1
+      valueFlat: 0
+      durationTurns: 3
+    isIncantation: 0
+    castDelayTurns: 1
+    attackVFXPrefab: {fileID: 4264918837223881828, guid: 976c10645f9037842947e5bd116edbe8, type: 3}
+    trailVFXPrefab: {fileID: 1992815801676329838, guid: bb5b4a62633a53f45835d2229c7ccf98, type: 3}
+    trailVFXScale: 0.8
+    attackVFXIsProjectile: 1
+    attackVFXScale: 0.6
+    impactVFXPrefab: {fileID: 1386483879094485057, guid: d9121a3dbed0969429d4c44e865c6dbb, type: 3}
+    impactVFXScale: 1
+    vfxTravelTime: 0.6
+    vfxImpactDuration: 0.4
+    impactVFXOffset: {x: 0, y: 0, z: 0}
   skillTwo:
     skillType: 0
     skillName: "D\xE9luge de Braise"
-    description: "Inflige 12 DGT \xE0 tout les adversaires, et les Brulent pendant
-      2 Tours (10% des PV Max).\n\nTemps de Recharge : 3 Tours."
-    damage: 12
+    description: "Incantation - 1 Tour :\nInflige 24 DGT \xE0 tout les adversaires,
+      et leurs applique BURN pendant 2 Tours."
+    damage: 24
     cooldownTurns: 3
     targetType: 2
     adjacentDamagePercent: 0
     effects:
     - type: 18
-      value: 0.1
+      value: 0.05
       durationTurns: 2
-      effectTarget: 3
+      effectTarget: 0
     branches: []
-    attackVFXPrefab: {fileID: 0}
-    impactVFXPrefab: {fileID: 0}
-    vfxTravelTime: 0.35
-    vfxImpactDuration: 0.2
+    isIncantation: 1
+    castDelayTurns: 1
+    attackVFXPrefab: {fileID: 3994965004076699975, guid: 350fde7c27a0ed5439852b66d8ef0590, type: 3}
+    trailVFXPrefab: {fileID: 0}
+    trailVFXScale: 1
+    attackVFXIsProjectile: 0
+    attackVFXScale: 0.6
+    impactVFXPrefab: {fileID: 4264918837223881828, guid: 976c10645f9037842947e5bd116edbe8, type: 3}
+    impactVFXScale: 1.2
+    vfxTravelTime: 0.4
+    vfxImpactDuration: 1
+    impactVFXOffset: {x: 0, y: 0, z: 0}
   passive:
     passiveName: 
     passiveDescription: 

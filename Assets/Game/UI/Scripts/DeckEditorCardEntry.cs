@@ -81,7 +81,7 @@ namespace Astraleum.UI
                 return;
             }
 
-            DeckEditorManager.Instance?.ToggleCardInDeck(cardData.cardNumber);
+            DeckEditorManager.Instance?.AssignCardToActiveSelectSlot(cardData.cardNumber);
         }
     }
 }

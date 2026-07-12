@@ -87,6 +87,15 @@ namespace Astraleum
                         PassiveManager.Instance?.OnStackThresholdLost(p, e, 3);
                 }
             }
+
+            // Corrosif : plafonne les HP de toutes les cartes après changement de stacks
+            if (BoardManager.Instance != null)
+            {
+                foreach (var card in BoardManager.Instance.GetAliveCards(0))
+                    card.ClampCurrentHP();
+                foreach (var card in BoardManager.Instance.GetAliveCards(1))
+                    card.ClampCurrentHP();
+            }
         }
 
 
@@ -137,44 +146,35 @@ namespace Astraleum
         public void ApplyTurnBonuses(int playerID)
         {
             if (BoardManager.Instance == null) return;
-            // Mineur Terre → appliqué une seule fois au démarrage (ApplyEarthMinorBonusOnGameStart)
-            // Autres mineurs → passifs dans CalculateDamage / Heal
             ApplyMajorBonuses(playerID);
         }
 
         // ── Bonus MINEURS (toutes les cartes alliées) ─────────────────
 
-        public void ApplyEarthMinorBonusOnGameStart(int playerID)
+        // No-op — Terre mineur est désormais un passif de réduction de dégâts (GetEarthDamageReduction)
+        public void ApplyEarthMinorBonusOnGameStart(int playerID) { }
+
+        // 🌱 Terre mineur : -2% DGT subis/stack → appliqué passivement dans DamageCalculator
+        public float GetEarthDamageReduction(int playerID)
         {
-            int earthStacks = GetStacks(playerID, Element.Terre);
-            if (earthStacks <= 0) return;
-
-            int armorGain = earthStacks * 5;
-            var allies = BoardManager.Instance.GetAliveCards(playerID);
-
-            foreach (var ally in allies)
-            {
-                ally.currentArmor = Mathf.Min(ally.currentArmor + armorGain, 100);
-                CombatLogManager.Instance?.AddEntry(
-                    $"{ally.data.cardName} +{armorGain} armure (Terre mineur, début de combat)");
-            }
-            Debug.Log($"[StackManager] Terre mineur appliqué une fois P{playerID} : +{armorGain} armure");
+            return GetStacks(playerID, Element.Terre) * 0.02f;
         }
 
-        // 🌱 Terre majeur 3/5 → armure par tour aux alliés
+        // 🌱 Terre majeur 3/5 → armure permanente
         public int GetEarthArmorRegen(int playerID)
         {
             int s = GetStacks(playerID, Element.Terre);
-            if (s >= 5) return 5; // ← 5 armure/tour
-            if (s >= 3) return 3; // ← 3 armure/tour
+            if (s >= 5) return 5;
+            if (s >= 3) return 3;
             return 0;
         }
 
         // 🔥 Feu mineur : +3% dégâts/stack → appliqué passivement dans CalculateDamage
         // 💧 Eau mineur : -2% dégâts subis/stack → appliqué passivement dans CalculateDamage
-        // 🌪️ Air mineur : +1% chance relance/stack → appliqué passivement dans CombatManager
+        // 🌱 Terre mineur : -2% DGT subis/stack → appliqué passivement dans CalculateDamage
+        // 🌪️ Air mineur : +2% crit/stack, max 10% → CardInstance.EffectiveCritChance
         // ✨ Lumière mineur : +2% efficacité soins/stack → appliqué passivement dans CardInstance.Heal
-        // 🌑 Ténèbres mineur : +3% dégâts indirects/stack → appliqué passivement dans SkillExecutor
+        // 🌑 Ténèbres mineur : -1 armure/stack, max -5 pour cartes adverses → CardInstance.TotalArmor
 
         // ── Bonus MAJEURS (cartes du même élément uniquement) ─────────
 
@@ -183,63 +183,37 @@ namespace Astraleum
             if (BoardManager.Instance == null) return;
             var allies = BoardManager.Instance.GetAliveCards(playerID);
 
-            // 🌱 Terre majeur 3/5 : régénération armure → TOUS les alliés sans exception
-            int earthRegen = GetEarthArmorRegen(playerID);
-            if (earthRegen > 0)
+            // 🌱 Terre majeur 3/5 : armure permanente → TOUS les alliés
+            int earthArmor = GetEarthArmorRegen(playerID);
+            if (earthArmor > 0)
             {
                 foreach (var a in allies)
                 {
-                    a.RestoreArmor(earthRegen);
-                    CombatLogManager.Instance?.AddEntry(
-                        $"{a.data.cardName} +{earthRegen} armure/tour (Terre majeur)");
+                    a.ApplyEffect(new ActiveEffect
+                    {
+                        type            = EffectType.GiveArmor,
+                        value           = earthArmor,
+                        remainingTurns  = -1,
+                        sourceName      = "Terre",
+                        sourceSkillName = "majeur",
+                    });
                 }
+            }
+            else
+            {
+                foreach (var a in allies)
+                    a.activeEffects.RemoveAll(e =>
+                        e.type == EffectType.GiveArmor &&
+                        e.sourceName == "Terre" &&
+                        e.sourceSkillName == "majeur");
             }
 
             // ✨ Lumière → RETIRÉ ICI → géré dans ProcessActiveEffects
 
-            // 🌑 Ténèbres majeur 3/5 : poison aux ennemis
-            ApplyPoisonToEnemies(playerID);
-
-            // 🌑 Ténèbres majeur 5 : soin 3% PV max → cartes Ténèbres uniquement
-            if (GetStacks(playerID, Element.Tenebres) >= 5)
-            {
-                foreach (var a in allies)
-                {
-                    if (a.data.element != Element.Tenebres) continue;
-                    int darkHeal = Mathf.RoundToInt(a.data.maxHP * 0.03f);
-                    a.Heal(darkHeal, false);
-                    CombatLogManager.Instance?.AddEntry(
-                        $"{a.data.cardName} soigné de {darkHeal} PV (Ténèbres 5 stacks)");
-                }
-            }
-
-            // 🌪️ Air majeur 5 → +1 action → géré dans TurnManager
+            // 🌪️ Air majeur 3/5 → crit → passif dans CardInstance.EffectiveCritChance/EffectiveCritDamageBonus
+            // 🌑 Ténèbres majeur 3/5 → LifeSteal → passif dans SkillExecutor.ApplyLifeSteal
             // 💧 Eau majeur 3/5 → réduction ennemis → passif dans CalculateDamage
             // 🔥 Feu majeur 3/5 → splash → passif dans SkillExecutor
-        }
-
-        // ── Poison (Ténèbres majeur 3/5) ─────────────────────────────
-
-        public void ApplyPoisonToEnemies(int attackerPlayerID)
-        {
-            float poisonPct = GetPoisonPercent(attackerPlayerID);
-            if (poisonPct <= 0f) return;
-
-            int enemyID = 1 - attackerPlayerID;
-            var enemies = BoardManager.Instance.GetAliveCards(enemyID);
-
-            foreach (var enemy in enemies)
-            {
-                enemy.ApplyEffect(new ActiveEffect
-                {
-                    type           = EffectType.Poison,
-                    value          = poisonPct,
-                    remainingTurns = 2,
-                    sourceName     = "Ténèbres majeur"
-                });
-                CombatLogManager.Instance?.AddEntry(
-                    $"{enemy.data.cardName} empoisonné ({poisonPct * 100:0}% PV/tour, Ténèbres majeur)");
-            }
         }
 
         // ── Calculs passifs (utilisés dans CalculateDamage) ───────────
@@ -254,9 +228,13 @@ namespace Astraleum
         public bool FireSplashAdjacent(int playerID)
             => GetStacks(playerID, Element.Feu) >= 3;
 
-        // 🔥 Feu majeur 5 → splash toutes cibles
-        public bool FireSplashAll(int playerID)
-            => GetStacks(playerID, Element.Feu) >= 5;
+        // 🔥 Feu majeur 5 → +10% DGT critiques (cartes Feu uniquement)
+        public float GetFireMajorCritDamageBonus(int playerID)
+            => GetStacks(playerID, Element.Feu) >= 5 ? 0.10f : 0f;
+
+        // 🔥 Feu majeur 5 → +5% chance critique (cartes Feu uniquement)
+        public float GetFireMajorCritChanceBonus(int playerID)
+            => GetStacks(playerID, Element.Feu) >= 5 ? 0.05f : 0f;
 
         // 💧 Eau mineur → réduction dégâts subis TOUTES les cartes alliées
         public float GetWaterDamageReduction(int playerID)
@@ -277,41 +255,22 @@ namespace Astraleum
             return 0f;
         }
 
-        // 🌱 Terre mineur → armure fixe TOUTES les cartes
-        public int GetEarthArmorBonus(int playerID)
-        {
-            return GetStacks(playerID, Element.Terre) * 2;
-        }
+        // 🌪️ Air mineur → +2% crit/stack, max 10% — toutes les cartes alliées
+        public float GetAirCritChanceBonus(int playerID)
+            => Mathf.Min(GetStacks(playerID, Element.Air) * 0.02f, 0.10f);
 
-        public int GetTotalArmorBonus(int playerID)
-        {
-            return GetEarthArmorBonus(playerID);
-        }
-
-        // 🌱 Terre majeur 5 → -3% dégâts subis cartes Terre uniquement
-        public float GetEarthMajorDamageReduction(int playerID)
-        {
-            return GetStacks(playerID, Element.Terre) >= 5 ? 0.03f : 0f;
-        }
-
-        // 🌪️ Air mineur → chance relance TOUTES les cartes
-        public float GetAirReplayChance(int playerID)
+        // 🌪️ Air majeur 3/5 → bonus DGT critique — toutes les cartes alliées
+        public float GetAirMajorCritDamageBonus(int playerID)
         {
             int s = GetStacks(playerID, Element.Air);
-            float base_ = s * 0.01f;
-            // Majeur 3 → +2% supplémentaire cartes Air (géré dans CombatManager)
-            return base_;
+            if (s >= 5) return 0.10f;
+            if (s >= 3) return 0.05f;
+            return 0f;
         }
 
-        // 🌪️ Air majeur 3 → +2% chance relance cartes Air uniquement
-        public float GetAirMajorReplayBonus(int playerID)
-        {
-            return GetStacks(playerID, Element.Air) >= 3 ? 0.02f : 0f;
-        }
-
-        // 🌪️ Air majeur 5 → +1 action cartes Air uniquement
-        public bool AirGrantsExtraAction(int playerID)
-            => GetStacks(playerID, Element.Air) >= 5;
+        // 🌪️ Air majeur 5 → +5% crit supplémentaire — toutes les cartes alliées
+        public float GetAirMajorCritChanceBonus(int playerID)
+            => GetStacks(playerID, Element.Air) >= 5 ? 0.05f : 0f;
 
         // ✨ Lumière mineur → efficacité soins TOUTES les cartes
         public float GetHealBonus(int playerID)
@@ -328,18 +287,33 @@ namespace Astraleum
             return 0f;
         }
 
-        // 🌑 Ténèbres mineur → dégâts indirects TOUTES les cartes
-        public float GetDarkIndirectBonus(int playerID)
+        // 🌑 Ténèbres mineur → +2% DGT par carte adverse en vie (toutes cartes alliées)
+        public float GetDarkDamageBonus(int playerID)
         {
-            return GetStacks(playerID, Element.Tenebres) * 0.03f;
+            if (GetStacks(playerID, Element.Tenebres) == 0) return 0f;
+            int aliveEnemies = BoardManager.Instance?.GetAliveCards(1 - playerID).Count ?? 0;
+            return aliveEnemies * 0.02f;
         }
 
-        // 🌑 Ténèbres majeur 3/5 → poison cartes Ténèbres uniquement
-        public float GetPoisonPercent(int playerID)
+        // 🟢 Corrosif mineur → -1 armure/stack, dynamique (toutes cartes adverses)
+        public int GetCorrosifArmorReduction(int playerID)
+            => GetStacks(playerID, Element.Corrosif);
+
+        // 🟢 Corrosif majeur 3/5 → -5%/-10% PV Max (toutes cartes adverses, dynamique)
+        public float GetCorrosifMaxHPReduction(int playerID)
+        {
+            int s = GetStacks(playerID, Element.Corrosif);
+            if (s >= 5) return 0.10f;
+            if (s >= 3) return 0.05f;
+            return 0f;
+        }
+
+        // 🌑 Ténèbres majeur 3/5 → bonus Vol de Vie cartes Ténèbres uniquement
+        public float GetDarkLifeStealBonus(int playerID)
         {
             int s = GetStacks(playerID, Element.Tenebres);
-            if (s >= 5) return 0.06f;
-            if (s >= 3) return 0.03f;
+            if (s >= 5) return 0.10f;
+            if (s >= 3) return 0.05f;
             return 0f;
         }
 

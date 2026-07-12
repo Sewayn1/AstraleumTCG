@@ -1,13 +1,10 @@
 fileFormatVersion: 2
-guid: 8ccfe2003da90d74d99bf135702eb2c2
+guid: d86a2ab97203fab45ab6623fc8e76dfc
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 2815224374038201433
-    second: icon-set-v2-combat-action-pixarts-store_50@2x_0
-  - first:
-      213: 4228258009305074380
-    second: icon-set-v2-combat-action-pixarts-store_50@2x_1
+      213: -2124102372771563869
+    second: icon_sword_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -49,7 +46,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -75,10 +72,10 @@ TextureImporter:
   platformSettings:
   - serializedVersion: 4
     buildTarget: DefaultTexturePlatform
-    maxTextureSize: 128
+    maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 0
+    textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -114,14 +111,14 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 4
     buildTarget: Standalone
-    maxTextureSize: 128
+    maxTextureSize: 2048
     resizeAlgorithm: 0
-    textureFormat: 4
+    textureFormat: -1
     textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
-    overridden: 1
+    overridden: 0
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
@@ -155,13 +152,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: icon-set-v2-combat-action-pixarts-store_50@2x_0
+      name: icon_sword_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
-        width: 76
-        height: 68
+        x: 6
+        y: 1
+        width: 233
+        height: 284
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -170,30 +167,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 954819907afa11720800000000000000
-      internalID: 2815224374038201433
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: icon-set-v2-combat-action-pixarts-store_50@2x_1
-      rect:
-        serializedVersion: 2
-        x: 35
-        y: 14
-        width: 75
-        height: 82
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: cca4457d14acdaa30800000000000000
-      internalID: 4228258009305074380
+      spriteID: 3a6f26c552ca582e0800000000000000
+      internalID: -2124102372771563869
       vertices: []
       indices: 
       edges: []
@@ -202,7 +177,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 5e97eb03825dee720800000000000000
+    spriteID: 
     internalID: 0
     vertices: []
     indices: 
@@ -212,8 +187,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      icon-set-v2-combat-action-pixarts-store_50@2x_0: 2815224374038201433
-      icon-set-v2-combat-action-pixarts-store_50@2x_1: 4228258009305074380
+      icon_sword_0: -2124102372771563869
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

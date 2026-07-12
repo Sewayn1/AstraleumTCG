@@ -3,6 +3,7 @@ using UnityEngine.UI;
 using UnityEngine.InputSystem;
 using TMPro;
 using System.Collections;
+using DG.Tweening;
 
 namespace Astraleum
 {
@@ -13,7 +14,8 @@ namespace Astraleum
         [Header("Panneaux")]
         public GameObject cardSkillPanel;
         private CardZoomHandler currentZoomedCard;
-        public bool IsSkillPanelOpen => cardSkillPanel != null && cardSkillPanel.activeSelf;
+        public bool IsSkillPanelOpen => (cardSkillPanel != null && cardSkillPanel.activeSelf)
+                                      || (cardSkillPanelBoss != null && cardSkillPanelBoss.activeSelf);
 
         [Header("CardSkillPanel — Références")]
         public Image skillPanelCardPreview;
@@ -38,6 +40,31 @@ namespace Astraleum
         [Header("CardSkillPanel — Overlays assombrissement")]
         public Image skill1DarkenOverlay;
         public Image skill2DarkenOverlay;
+
+        [Header("CardSkillPanelBoss — Références (3 compétences, lecture seule)")]
+        public GameObject cardSkillPanelBoss;
+        public TMP_Text bossPanelCardName;
+        public Button bossSkill1Button;
+        public Button bossSkill2Button;
+        public Button bossSkill3Button;
+        public TMP_Text bossSkill1Name;
+        public TMP_Text bossSkill1DMG;
+        public TMP_Text bossSkill1Desc;
+        public TMP_Text bossSkill2Name;
+        public TMP_Text bossSkill2DMG;
+        public TMP_Text bossSkill2Desc;
+        public TMP_Text bossSkill3Name;
+        public TMP_Text bossSkill3DMG;
+        public TMP_Text bossSkill3Desc;
+        public GameObject bossSkill1CD;
+        public GameObject bossSkill2CD;
+        public GameObject bossSkill3CD;
+        public TMP_Text bossSkill1CDText;
+        public TMP_Text bossSkill2CDText;
+        public TMP_Text bossSkill3CDText;
+        public Image bossSkill1DarkenOverlay;
+        public Image bossSkill2DarkenOverlay;
+        public Image bossSkill3DarkenOverlay;
 
         [Header("DamagePreviewBar — Références")]
         public GameObject damagePreviewBar;      // ← la barre entière
@@ -67,8 +94,15 @@ namespace Astraleum
         public Color btnFinTourNormal = new Color(0.3f, 0.25f, 0.6f, 1f);
         public Color btnFinTourHighlight = new Color(0.48f, 0.36f, 0.96f, 1f);
 
+        [Header("Animation Dots")]
+        public Color dotUsedColor = new Color(0.22f, 0.22f, 0.28f, 1f);
+
         private Sprite _dot1OriginalSprite;
         private Sprite _dot2OriginalSprite;
+        private Color  _dot1OriginalColor;
+        private Color  _dot2OriginalColor;
+        private bool   _dot1WasUsed;
+        private bool   _dot2WasUsed;
 
         [Header("TurnIndicator")]
         public TMP_Text turnText;
@@ -83,14 +117,57 @@ namespace Astraleum
         private void Awake()
         {
             Instance = this;
-            if (dot1 != null) _dot1OriginalSprite = dot1.sprite;
-            if (dot2 != null) _dot2OriginalSprite = dot2.sprite;
+            if (dot1 != null) { _dot1OriginalSprite = dot1.sprite; _dot1OriginalColor = dot1.color; }
+            if (dot2 != null) { _dot2OriginalSprite = dot2.sprite; _dot2OriginalColor = dot2.color; }
+
+            // La barre ne doit pas intercepter les événements pointeur (sinon elle vole les OnPointerExit des cartes)
+            if (damagePreviewBar != null)
+            {
+                var cg = damagePreviewBar.GetComponent<CanvasGroup>();
+                if (cg == null) cg = damagePreviewBar.AddComponent<CanvasGroup>();
+                cg.blocksRaycasts = false;
+                cg.interactable   = false;
+            }
+
+            // CardSkillPanel rendu au-dessus des VFX (sortingOrder 150 > VFX Stun 50)
+            if (cardSkillPanel != null)
+            {
+                var rootCanvas = GetComponentInParent<Canvas>()?.rootCanvas ?? FindFirstObjectByType<Canvas>();
+                var cv = cardSkillPanel.GetComponent<Canvas>();
+                if (cv == null) cv = cardSkillPanel.AddComponent<Canvas>();
+                cv.overrideSorting = true;
+                cv.sortingLayerName = rootCanvas != null ? rootCanvas.sortingLayerName : "Default";
+                cv.sortingOrder = 150;
+                if (cardSkillPanel.GetComponent<GraphicRaycaster>() == null)
+                    cardSkillPanel.AddComponent<GraphicRaycaster>();
+            }
+
+            // Même traitement pour le panel Boss (3 compétences)
+            if (cardSkillPanelBoss != null)
+            {
+                var rootCanvas = GetComponentInParent<Canvas>()?.rootCanvas ?? FindFirstObjectByType<Canvas>();
+                var cv = cardSkillPanelBoss.GetComponent<Canvas>();
+                if (cv == null) cv = cardSkillPanelBoss.AddComponent<Canvas>();
+                cv.overrideSorting = true;
+                cv.sortingLayerName = rootCanvas != null ? rootCanvas.sortingLayerName : "Default";
+                cv.sortingOrder = 150;
+                if (cardSkillPanelBoss.GetComponent<GraphicRaycaster>() == null)
+                    cardSkillPanelBoss.AddComponent<GraphicRaycaster>();
+            }
         }
 
         // ─── CardSkillPanel ───────────────────────────────────────────
 
         public void OpenSkillPanel(CardInstance card, bool readOnly = false)
         {
+            // Carte à 3 compétences (Boss uniquement) → panel dédié CardSkillPanelBoss,
+            // toujours en lecture seule (le joueur ne contrôle jamais le Boss).
+            if (card.data.HasSkillThree)
+            {
+                OpenBossSkillPanel(card);
+                return;
+            }
+
             // En mode normal, vérifie qu'il reste des actions
             if (!readOnly && TurnManager.Instance.actionsRemaining <= 0) return;
 
@@ -145,12 +222,12 @@ namespace Astraleum
             // skillbutton1
             UpdateSkillButton(skill1Button, skill1Name, skill1DMG, skill1Desc,
                               skill1CD, skill1CDText, skill1TypeIcon,
-                              card.data.skillOne, card.skill1Cooldown, skill1DarkenOverlay);
+                              card.data.skillOne, card.skill1Cooldown, card, skill1DarkenOverlay);
 
             // skillbutton2
             UpdateSkillButton(skill2Button, skill2Name, skill2DMG, skill2Desc,
                               skill2CD, skill2CDText, skill2TypeIcon,
-                              card.data.skillTwo, card.skill2Cooldown, skill2DarkenOverlay);
+                              card.data.skillTwo, card.skill2Cooldown, card, skill2DarkenOverlay);
 
             // Lecture seule : force les boutons non-interactifs, pas de changement visuel
             if (readOnly)
@@ -164,21 +241,73 @@ namespace Astraleum
             cardSkillPanel.SetActive(true);
             var panelRTTemp = cardSkillPanel.GetComponent<RectTransform>();
             UnityEngine.UI.LayoutRebuilder.ForceRebuildLayoutImmediate(panelRTTemp);
-            PositionPanelNextToCard(card.GetComponent<RectTransform>());
+            PositionPanelNextToCard(cardSkillPanel, card.GetComponent<RectTransform>());
+        }
+
+        // ─── CardSkillPanelBoss (3 compétences, lecture seule) ─────────
+
+        public void OpenBossSkillPanel(CardInstance card)
+        {
+            if (cardSkillPanelBoss == null) return;
+
+            // Déjà ouvert pour la même carte → ne pas repositionner
+            if (cardSkillPanelBoss.activeSelf && currentReadOnlyCard == card) return;
+
+            if (bossSkill1DarkenOverlay != null) bossSkill1DarkenOverlay.gameObject.SetActive(false);
+            if (bossSkill2DarkenOverlay != null) bossSkill2DarkenOverlay.gameObject.SetActive(false);
+            if (bossSkill3DarkenOverlay != null) bossSkill3DarkenOverlay.gameObject.SetActive(false);
+
+            if (currentZoomedCard != null)
+            {
+                currentZoomedCard.ZoomOut();
+                currentZoomedCard = null;
+            }
+
+            currentReadOnlyCard = card;
+
+            var zoomHandler = card.GetComponent<CardZoomHandler>();
+            if (zoomHandler != null)
+            {
+                currentZoomedCard = zoomHandler;
+                zoomHandler.ZoomIn();
+            }
+
+            if (bossPanelCardName != null)
+                bossPanelCardName.text = card.data.cardName;
+
+            UpdateSkillButton(bossSkill1Button, bossSkill1Name, bossSkill1DMG, bossSkill1Desc,
+                              bossSkill1CD, bossSkill1CDText, null,
+                              card.data.skillOne, card.skill1Cooldown, card, bossSkill1DarkenOverlay);
+            UpdateSkillButton(bossSkill2Button, bossSkill2Name, bossSkill2DMG, bossSkill2Desc,
+                              bossSkill2CD, bossSkill2CDText, null,
+                              card.data.skillTwo, card.skill2Cooldown, card, bossSkill2DarkenOverlay);
+            UpdateSkillButton(bossSkill3Button, bossSkill3Name, bossSkill3DMG, bossSkill3Desc,
+                              bossSkill3CD, bossSkill3CDText, null,
+                              card.data.skillThree, card.skill3Cooldown, card, bossSkill3DarkenOverlay);
+
+            // Toujours en lecture seule — le joueur ne contrôle jamais le Boss
+            if (bossSkill1Button != null) bossSkill1Button.interactable = false;
+            if (bossSkill2Button != null) bossSkill2Button.interactable = false;
+            if (bossSkill3Button != null) bossSkill3Button.interactable = false;
+
+            cardSkillPanelBoss.SetActive(true);
+            var panelRTTemp = cardSkillPanelBoss.GetComponent<RectTransform>();
+            UnityEngine.UI.LayoutRebuilder.ForceRebuildLayoutImmediate(panelRTTemp);
+            PositionPanelNextToCard(cardSkillPanelBoss, card.GetComponent<RectTransform>());
         }
 
         /// <summary>
-        /// Positionne le CardSkillPanel à droite de la carte cible.
+        /// Positionne le panel de compétences (normal ou Boss) à droite de la carte cible.
         /// Si le panel sortirait du canvas, il est recadré automatiquement.
         /// </summary>
-        private void PositionPanelNextToCard(RectTransform cardRT)
+        private void PositionPanelNextToCard(GameObject panel, RectTransform cardRT)
         {
-            if (cardSkillPanel == null || cardRT == null) return;
+            if (panel == null || cardRT == null) return;
 
-            var panelRT = cardSkillPanel.GetComponent<RectTransform>();
+            var panelRT = panel.GetComponent<RectTransform>();
             if (panelRT == null) return;
 
-            Canvas cv = cardSkillPanel.GetComponentInParent<Canvas>();
+            Canvas cv = panel.GetComponentInParent<Canvas>()?.rootCanvas;
             if (cv == null) { Debug.LogError("[SkillPanel] Canvas introuvable"); return; }
 
             RectTransform cvRT = cv.GetComponent<RectTransform>();
@@ -243,19 +372,18 @@ namespace Astraleum
                                 Image typeIcon,
                                 CardSkill skill,
                                 int cooldown,
+                                CardInstance card,
                                 Image darkenOverlay = null)
         {
             if (skill == null) return;
 
-            if (nameText != null) nameText.text = skill.skillName;
+            if (nameText != null)
+                nameText.text = skill.cooldownTurns > 0
+                    ? $"{skill.skillName}  <size=75%><color=#aaaaaa>CD {skill.cooldownTurns}</color></size>"
+                    : skill.skillName;
 
-            // Icône selon type de compétence
             if (typeIcon != null)
-            {
-                typeIcon.sprite = GetSkillIcon(skill.skillType);
-                typeIcon.color = GetSkillColor(skill.skillType);
-                typeIcon.gameObject.SetActive(true);
-            }
+                typeIcon.gameObject.SetActive(false);
 
             // Valeur affichée selon type
             if (dmgText != null)
@@ -273,7 +401,7 @@ namespace Astraleum
                 };
             }
 
-            if (descText != null) descText.text = skill.description;
+            TMPIconReplacer.ApplyWithModifiers(descText, skill.description, card);
 
             bool onCooldown = cooldown > 0;
 
@@ -315,10 +443,11 @@ namespace Astraleum
             if (cardRT != null)
             {
                 var skill = skillIndex == 0 ? selectedCard.data.skillOne : selectedCard.data.skillTwo;
-                Color arrowCol = (skill != null && (skill.skillType == SkillType.Attack || skill.skillType == SkillType.Debuff))
-                    ? new Color(0.9f, 0.2f, 0.2f, 0.85f)
-                    : new Color(0.2f, 0.85f, 0.35f, 0.85f);
-                TargetingArrow.Instance?.Show(cardRT, arrowCol);
+                bool isAlly    = skill == null || skill.TargetsAllies;
+                Color arrowCol = isAlly
+                    ? new Color(0.2f, 0.85f, 0.35f, 0.85f)
+                    : new Color(0.9f, 0.2f, 0.2f, 0.85f);
+                TargetingArrow.Instance?.Show(cardRT, arrowCol, isAlly);
                 if (NetworkBridge.IsActive && selectedCard != null)
                 {
                     Debug.Log($"[Net] Arrow show demandé — P{selectedCard.ownerPlayerID} slot {selectedCard.slotIndex}");
@@ -349,6 +478,8 @@ namespace Astraleum
 
             if (cardSkillPanel != null)
                 cardSkillPanel.SetActive(false);
+            if (cardSkillPanelBoss != null)
+                cardSkillPanelBoss.SetActive(false);
 
             selectedCard = null;
             selectedSkillIndex = -1;
@@ -462,14 +593,14 @@ namespace Astraleum
             float healPercent = skill.GetImmediateHealPercent();
             if (healPercent > 0f)
             {
-                int baseHeal = Mathf.RoundToInt(target.data.maxHP * healPercent);
+                int baseHeal = Mathf.RoundToInt(target.EffectiveMaxHP * healPercent);
                 int boostedHeal = Mathf.RoundToInt(baseHeal * (1f + healBonus));
-                int missingHP = target.data.maxHP - target.currentHP;
+                int missingHP = target.EffectiveMaxHP - target.currentHP;
                 int actualHeal = healBlocked ? 0 : Mathf.Min(boostedHeal, missingHP);
 
                 if (bar_BaseValue != null)
                 {
-                    int healFixed = Mathf.RoundToInt(target.data.maxHP * healPercent);
+                    int healFixed = Mathf.RoundToInt(target.EffectiveMaxHP * healPercent);
                     bar_BaseValue.text = LocalizationManager.Get("combat_label_hp_gain", healFixed);
                 }
 
@@ -492,6 +623,7 @@ namespace Astraleum
                     bar_BlockHeal.SetActive(true);
                     if (bar_HealValue != null)
                     {
+                        bar_HealValue.fontSize = 11f;
                         bar_HealValue.text = healBlocked
                             ? LocalizationManager.Get("preview_incurable")
                             : LocalizationManager.Get("combat_label_hp_gain", actualHeal);
@@ -515,7 +647,7 @@ namespace Astraleum
             int hotDuration = skill.GetHealOverTimeDuration();
             if (hotPercent > 0f)
             {
-                int hotBase = Mathf.RoundToInt(target.data.maxHP * hotPercent);
+                int hotBase = Mathf.RoundToInt(target.EffectiveMaxHP * hotPercent);
                 int hotBoosted = Mathf.RoundToInt(hotBase * (1f + healBonus));
                 int hotTotal = hotBoosted * hotDuration;
 
@@ -550,11 +682,19 @@ namespace Astraleum
                         : new Color(0.39f, 0.86f, 0.59f);
                 }
             }
-            damagePreviewBar.SetActive(true);
-            FitBarToContent();
+            CancelHideDamagePreview();
+            ShowDamagePreviewBar();
+            PositionPreviewNearCursor();
         }
 
         // ─── DamagePreviewBubble ──────────────────────────────────────
+
+        // Respecte l'option Panel_Settings (CombatOptionsPanel.DamagePreviewBarEnabled)
+        private void ShowDamagePreviewBar()
+        {
+            if (damagePreviewBar == null) return;
+            damagePreviewBar.SetActive(CombatOptionsPanel.DamagePreviewBarEnabled);
+        }
 
         private Coroutine hidePreviewCoroutine;
 
@@ -569,51 +709,69 @@ namespace Astraleum
                 damagePreviewBar.SetActive(false);
         }
 
+        // Démarre un délai avant de cacher la barre — annulable si le curseur entre sur la barre.
+        public void HideDamagePreviewSoon()
+        {
+            if (hidePreviewCoroutine != null) { StopCoroutine(hidePreviewCoroutine); hidePreviewCoroutine = null; }
+            hidePreviewCoroutine = StartCoroutine(HidePreviewDelayed());
+        }
+
+        public void CancelHideDamagePreview()
+        {
+            if (hidePreviewCoroutine != null) { StopCoroutine(hidePreviewCoroutine); hidePreviewCoroutine = null; }
+        }
+
         private IEnumerator HidePreviewDelayed()
         {
-            yield return new WaitForSeconds(0.08f);
+            yield return new WaitForSeconds(0.5f);
             if (damagePreviewBar != null)
                 damagePreviewBar.SetActive(false);
             hidePreviewCoroutine = null;
         }
 
-        // Resize each active block so its TMP text fits on one line, then rebuild the bar.
-        private void FitBarToContent()
+        // rebuild=true + snap immédiat à l'ouverture ; rebuild=false + smooth pour le suivi frame-par-frame
+        private void PositionPreviewNearCursor(bool rebuild = true, bool smooth = false)
         {
-            Canvas.ForceUpdateCanvases();
+            if (damagePreviewBar == null) return;
+            Canvas cv = damagePreviewBar.GetComponentInParent<Canvas>();
+            if (cv == null) return;
 
-            FitBlock(FindBlockRT(bar_SkillName), bar_SkillName);
-            FitBlock(FindBlockRT(bar_BaseValue),  bar_BaseValue);
-            FitBlock(bar_BlockBuff?.GetComponent<RectTransform>(),  bar_BuffLabel,  bar_BuffValue);
-            FitBlock(bar_BlockArmor?.GetComponent<RectTransform>(), bar_ArmorLabel, bar_ArmorValue);
-            FitBlock(bar_BlockHeal?.GetComponent<RectTransform>(),  bar_HealValue);
-            FitBlock(FindBlockRT(bar_FinalValue), bar_FinalValue);
+            var barRT  = damagePreviewBar.GetComponent<RectTransform>();
+            var cvRT   = cv.GetComponent<RectTransform>();
+            Camera cam = cv.renderMode == RenderMode.ScreenSpaceCamera ? cv.worldCamera : null;
 
-            LayoutRebuilder.ForceRebuildLayoutImmediate(damagePreviewBar.GetComponent<RectTransform>());
-        }
+            if (rebuild)
+                LayoutRebuilder.ForceRebuildLayoutImmediate(barRT);
 
-        // Walk up from a TMP_Text until we reach a direct child of damagePreviewBar.
-        private RectTransform FindBlockRT(TMP_Text text)
-        {
-            if (text == null || damagePreviewBar == null) return null;
-            Transform t    = text.transform;
-            Transform barT = damagePreviewBar.transform;
-            while (t.parent != null && t.parent != barT)
-                t = t.parent;
-            return t.parent == barT ? t.GetComponent<RectTransform>() : null;
-        }
+            float barW    = barRT.rect.width;
+            float barH    = barRT.rect.height;
+            const float gap = 15f;
+            Vector2 cvHalf = cvRT.rect.size * 0.5f;
 
-        // Set a block's width to the widest preferred text width + padding.
-        private void FitBlock(RectTransform blockRT, params TMP_Text[] texts)
-        {
-            if (blockRT == null || !blockRT.gameObject.activeSelf) return;
-            const float padding  = 20f;
-            const float minWidth = 60f;
-            float w = minWidth;
-            foreach (var t in texts)
-                if (t != null && !string.IsNullOrEmpty(t.text))
-                    w = Mathf.Max(w, t.preferredWidth);
-            blockRT.SetSizeWithCurrentAnchors(RectTransform.Axis.Horizontal, w + padding);
+            Vector2 mouseScreen = Mouse.current != null
+                ? Mouse.current.position.ReadValue()
+                : new Vector2(Screen.width * 0.5f, Screen.height * 0.5f);
+
+            RectTransformUtility.ScreenPointToLocalPointInRectangle(cvRT, mouseScreen, cam, out Vector2 mouseLocal);
+
+            barRT.anchorMin = barRT.anchorMax = new Vector2(0.5f, 0.5f);
+            barRT.pivot = new Vector2(0.5f, 0.5f);
+
+            // Bord gauche de la barre à 15px du curseur (droite en priorité, sinon gauche)
+            float x = mouseLocal.x + gap + barW * 0.5f;
+            if (x + barW * 0.5f > cvHalf.x)
+                x = mouseLocal.x - gap - barW * 0.5f;
+
+            // Centré verticalement sur le curseur
+            float y = mouseLocal.y;
+            x = Mathf.Clamp(x, -cvHalf.x + barW * 0.5f, cvHalf.x - barW * 0.5f);
+            y = Mathf.Clamp(y, -cvHalf.y + barH * 0.5f, cvHalf.y - barH * 0.5f);
+
+            var target = new Vector2(x, y);
+            if (smooth)
+                barRT.anchoredPosition = Vector2.Lerp(barRT.anchoredPosition, target, Time.unscaledDeltaTime * 15f);
+            else
+                barRT.anchoredPosition = target;
         }
 
         public void ShowDamagePreview(CardInstance target, Vector3 worldPos)
@@ -640,26 +798,19 @@ namespace Astraleum
             if (StackManager.Instance != null)
                 fireBonus = StackManager.Instance.GetFireDamageBonus(selectedCard.ownerPlayerID);
 
-            // AttackBoost : activeEffects + CPE
-            float attackBoost = 0f;
-            foreach (var eff in selectedCard.activeEffects)
-                if (eff.type == EffectType.AttackBoost) attackBoost += eff.value;
-            foreach (var cpe in selectedCard.conditionalPassiveEffects)
-            {
-                if (cpe.type != EffectType.AttackBoost) continue;
-                int s = StackManager.Instance?.GetStacks(selectedCard.ownerPlayerID, cpe.triggerElement) ?? 0;
-                if (s >= cpe.requiredThreshold) attackBoost += cpe.value;
-            }
-
-            // AttackBoostFlat : activeEffects + CPE
+            // AttackBoost (flat) + AttackBoostFlat — cumulés ensemble pour l'affichage
             float attackBoostFlat = 0f;
             foreach (var eff in selectedCard.activeEffects)
+            {
+                if (eff.type == EffectType.AttackBoost)     attackBoostFlat += eff.value;
                 if (eff.type == EffectType.AttackBoostFlat) attackBoostFlat += eff.value;
+            }
             foreach (var cpe in selectedCard.conditionalPassiveEffects)
             {
-                if (cpe.type != EffectType.AttackBoostFlat) continue;
                 int s = StackManager.Instance?.GetStacks(selectedCard.ownerPlayerID, cpe.triggerElement) ?? 0;
-                if (s >= cpe.requiredThreshold) attackBoostFlat += cpe.value;
+                if (s < cpe.requiredThreshold) continue;
+                if (cpe.type == EffectType.AttackBoost)     attackBoostFlat += cpe.value;
+                if (cpe.type == EffectType.AttackBoostFlat) attackBoostFlat += cpe.value;
             }
 
             // Amplification sur la cible
@@ -679,10 +830,10 @@ namespace Astraleum
             bool hasDmgRed = dmgRedEff != null;
 
             float armorIgnore = skill.GetArmorIgnorePercent() >= 1f ? 1f : 0f;
-            float effArmor = target.currentArmor;
+            float effArmor = target.TotalArmor;
 
-            // ── Bloc offensif : Feu / AttackBoost / Amplify ──────────────
-            bool hasOffensive = fireBonus > 0f || attackBoost > 0f || attackBoostFlat > 0f || hasDmgAmp;
+            // ── Bloc offensif : Feu / AttackBoost (flat) / Amplify ──────────
+            bool hasOffensive = fireBonus > 0f || attackBoostFlat > 0f || hasDmgAmp;
 
             if (bar_BlockBuff != null)
             {
@@ -691,23 +842,19 @@ namespace Astraleum
 
                 if (hasOffensive)
                 {
-                    // Label
                     if (bar_BuffLabel != null)
                     {
                         var parts = new System.Collections.Generic.List<string>();
-                        if (fireBonus > 0f)        parts.Add(LocalizationManager.Get("preview_fire_bonus", $"{fireBonus * 100:0}"));
-                        if (attackBoost > 0f)      parts.Add(LocalizationManager.Get("preview_atk_bonus", $"{attackBoost * 100:0}"));
-                        if (attackBoostFlat > 0f)  parts.Add(LocalizationManager.Get("preview_atkflat_bonus", $"{attackBoostFlat:0}"));
-                        if (hasDmgAmp)             parts.Add(LocalizationManager.Get("preview_amplified_bonus", $"{ampEff.value * 100:0}"));
+                        if (fireBonus > 0f)       parts.Add(LocalizationManager.Get("preview_fire_bonus", $"{fireBonus * 100:0}"));
+                        if (attackBoostFlat > 0f) parts.Add(LocalizationManager.Get("preview_atkflat_bonus", $"{attackBoostFlat:0}"));
+                        if (hasDmgAmp)            parts.Add(LocalizationManager.Get("preview_amplified_bonus", $"{ampEff.value * 100:0}"));
                         bar_BuffLabel.text = string.Join(" | ", parts);
                     }
 
-                    // Valeur : total offensif (% d'abord, puis flat)
                     if (bar_BuffValue != null)
                     {
-                        float totalOff = (fireBonus + attackBoost) * 100f
-                                       + (hasDmgAmp ? ampEff.value * 100f : 0f);
-                        string buffVal = totalOff > 0f ? $"+{totalOff:0}%" : "";
+                        float totalOffPct = fireBonus * 100f + (hasDmgAmp ? ampEff.value * 100f : 0f);
+                        string buffVal = totalOffPct > 0f ? $"+{totalOffPct:0}%" : "";
                         if (attackBoostFlat > 0f)
                             buffVal += (buffVal.Length > 0 ? " " : "") + LocalizationManager.Get("preview_atkflat_bonus", $"{attackBoostFlat:0}");
                         bar_BuffValue.text  = buffVal;
@@ -787,29 +934,39 @@ namespace Astraleum
                         secondaryParts.Add(LocalizationManager.Get("preview_stun_fx"));
                         break;
                     case EffectType.CooldownIncrease:
-                        secondaryParts.Add(LocalizationManager.Get("preview_cd_inc_fx", (int)eff.value));
+                        secondaryParts.Add(LocalizationManager.Get("preview_cd_inc_fx"));
                         break;
                 }
             }
 
-            // LifeSteal buff persistant sur l'attaquant
+            // Passif dynamique CardIsBurning
+            float burningPassiveBonus = DamageCalculator.GetBurningPassiveFlatBonus(selectedCard);
+            if (burningPassiveBonus > 0f)
+            {
+                int burningCount = DamageCalculator.CountBurningCardsOnField();
+                secondaryParts.Add(LocalizationManager.Get("preview_burning_passive_fx", Mathf.RoundToInt(burningPassiveBonus), burningCount));
+            }
+
+            // Passif dynamique ForEachAllyAlive
+            float allyAlivePassiveBonus = DamageCalculator.GetAllyAliveFlatBonus(selectedCard);
+            if (allyAlivePassiveBonus > 0f)
+            {
+                int allyCount = DamageCalculator.CountAliveAllies(selectedCard);
+                secondaryParts.Add(LocalizationManager.Get("preview_ally_alive_passive_fx", Mathf.RoundToInt(allyAlivePassiveBonus), allyCount));
+            }
+
+            // LifeSteal buff persistant sur l'attaquant + bonus Ténèbres stacks
             float activeLifeSteal = 0f;
             foreach (var eff in selectedCard.activeEffects)
                 if (eff.type == EffectType.LifeSteal)
                     activeLifeSteal += eff.value;
+            if (selectedCard.data.element == Element.Tenebres && StackManager.Instance != null)
+                activeLifeSteal += StackManager.Instance.GetDarkLifeStealBonus(selectedCard.ownerPlayerID);
             if (activeLifeSteal > 0f)
             {
                 var preview2 = DamageCalculator.GetPreview(selectedCard, skill, target);
                 int stealAmt2 = Mathf.RoundToInt(preview2.estimatedDamage * activeLifeSteal);
                 secondaryParts.Add(LocalizationManager.Get("preview_lifesteal_fx", stealAmt2, $"{activeLifeSteal * 100:0}"));
-            }
-
-            // Poison Ténèbres (stack majeur)
-            if (selectedCard.data.element == Element.Tenebres && StackManager.Instance != null)
-            {
-                float poisonPct = StackManager.Instance.GetPoisonPercent(selectedCard.ownerPlayerID);
-                if (poisonPct > 0f)
-                    secondaryParts.Add(LocalizationManager.Get("preview_poison_fx", $"{poisonPct * 100:0}"));
             }
 
             bool hasSecondary = secondaryParts.Count > 0;
@@ -819,8 +976,9 @@ namespace Astraleum
                 if (vSep5 != null) vSep5.SetActive(hasSecondary);
                 if (hasSecondary && bar_HealValue != null)
                 {
-                    bar_HealValue.text  = string.Join("  |  ", secondaryParts);
-                    bar_HealValue.color = new Color(1f, 0.6f, 0.2f); // orange
+                    bar_HealValue.fontSize = 9f;
+                    bar_HealValue.text     = string.Join("  |  ", secondaryParts);
+                    bar_HealValue.color    = new Color(1f, 0.6f, 0.2f); // orange
                 }
             }
 
@@ -838,8 +996,8 @@ namespace Astraleum
                     : new Color(1f, 0.85f, 0.31f);
             }
 
-            damagePreviewBar.SetActive(true);
-            FitBarToContent();
+            CancelHideDamagePreview();
+            ShowDamagePreviewBar();
 
             // ── Dégâts adjacents — écrase le bloc offensif ────────────────
             if (skill.targetType == SkillTargetType.AdjacentEnemies
@@ -861,8 +1019,7 @@ namespace Astraleum
                 }
             }
 
-            // Recalcul final après le bloc adjacents (peut avoir modifié bar_BlockBuff)
-            FitBarToContent();
+            PositionPreviewNearCursor();
         }
 
         public void ShowAdjacentDamagePreview(CardInstance primaryTarget)
@@ -913,14 +1070,15 @@ namespace Astraleum
                 // ── Soin immédiat ─────────────────────────────────────
                 if (eff.type == EffectType.ImmediateHeal)
                 {
-                    int healAmt = Mathf.RoundToInt(target.data.maxHP * eff.value);
+                    int healAmt = Mathf.RoundToInt(target.EffectiveMaxHP * eff.value);
                     if (bar_BlockHeal != null)
                     {
                         bar_BlockHeal.SetActive(true);
                         if (bar_ArmorLabel != null) bar_ArmorLabel.text = LocalizationManager.Get("combat_label_heal");
                         if (bar_ArmorValue != null)
                         {
-                            bar_ArmorValue.text = LocalizationManager.Get("combat_label_hp_gain", healAmt);
+                            bar_ArmorValue.fontSize = 11f;
+                            bar_ArmorValue.text  = LocalizationManager.Get("combat_label_hp_gain", healAmt);
                             bar_ArmorValue.color = new Color(0.39f, 0.86f, 0.59f);
                         }
                     }
@@ -929,7 +1087,7 @@ namespace Astraleum
                 // ── HealOverTime ──────────────────────────────────────
                 if (eff.type == EffectType.HealOverTime)
                 {
-                    int hotPerTurn = Mathf.RoundToInt(target.data.maxHP * eff.value);
+                    int hotPerTurn = Mathf.RoundToInt(target.EffectiveMaxHP * eff.value);
                     int hotTotal = hotPerTurn * Mathf.Max(1, eff.durationTurns);
                     if (bar_BlockHeal != null)
                     {
@@ -940,6 +1098,7 @@ namespace Astraleum
                                 : LocalizationManager.Get("preview_hot_per_turn");
                         if (bar_ArmorValue != null)
                         {
+                            bar_ArmorValue.fontSize = 11f;
                             bar_ArmorValue.text = eff.durationTurns > 0
                                 ? LocalizationManager.Get("preview_hp_total", hotPerTurn, hotTotal)
                                 : LocalizationManager.Get("combat_label_hp_gain", hotPerTurn);
@@ -966,7 +1125,7 @@ namespace Astraleum
                     }
                 }
 
-                // ── AttackBoost ──────────────────────────────────────
+                // ── AttackBoost (flat) ────────────────────────────────
                 if (eff.type == EffectType.AttackBoost)
                 {
                     if (bar_BlockBuff != null)
@@ -975,11 +1134,11 @@ namespace Astraleum
                         if (vSep3 != null) vSep3.SetActive(true);
                         if (bar_BuffLabel != null)
                             bar_BuffLabel.text = eff.durationTurns > 0
-                                ? LocalizationManager.Get("preview_boost_atk_dur", eff.durationTurns)
-                                : LocalizationManager.Get("preview_boost_atk");
+                                ? LocalizationManager.Get("preview_boost_atkflat_dur", eff.durationTurns)
+                                : LocalizationManager.Get("preview_boost_atkflat");
                         if (bar_BuffValue != null)
                         {
-                            bar_BuffValue.text = LocalizationManager.Get("combat_label_bonus_pct", $"{eff.value * 100:0}");
+                            bar_BuffValue.text = LocalizationManager.Get("preview_atkflat_bonus", $"{eff.value:0}");
                             bar_BuffValue.color = new Color(1f, 0.85f, 0.31f);
                         }
                     }
@@ -1041,8 +1200,9 @@ namespace Astraleum
                 }
             }
 
-            damagePreviewBar.SetActive(true);
-            FitBarToContent();
+            CancelHideDamagePreview();
+            ShowDamagePreviewBar();
+            PositionPreviewNearCursor();
         }
 
 
@@ -1110,18 +1270,46 @@ namespace Astraleum
         public void UpdateActionDots()
         {
             int actions = TurnManager.Instance.actionsRemaining;
+            bool dot1Used = actions < 1;
+            bool dot2Used = actions < 2;
 
             if (dot1 != null)
-                dot1.sprite = (actions < 1 && spriteActionUsed != null) ? spriteActionUsed : _dot1OriginalSprite;
+            {
+                dot1.sprite = dot1Used && spriteActionUsed != null ? spriteActionUsed : _dot1OriginalSprite;
+                if (dot1Used  && !_dot1WasUsed) AnimateDotUsed(dot1, _dot1OriginalColor);
+                if (!dot1Used && _dot1WasUsed)  ResetDotVisual(dot1, _dot1OriginalColor);
+                _dot1WasUsed = dot1Used;
+            }
 
             if (dot2 != null)
-                dot2.sprite = (actions < 2 && spriteActionUsed != null) ? spriteActionUsed : _dot2OriginalSprite;
+            {
+                dot2.sprite = dot2Used && spriteActionUsed != null ? spriteActionUsed : _dot2OriginalSprite;
+                if (dot2Used  && !_dot2WasUsed) AnimateDotUsed(dot2, _dot2OriginalColor);
+                if (!dot2Used && _dot2WasUsed)  ResetDotVisual(dot2, _dot2OriginalColor);
+                _dot2WasUsed = dot2Used;
+            }
 
-            // Bouton Fin de Tour : prononcé quand toutes les actions sont épuisées
             bool allUsed = actions <= 0;
             if (btnFinTourImage != null)
                 btnFinTourImage.color = allUsed ? btnFinTourHighlight : btnFinTourNormal;
             BtnFinTourGlow.Instance?.SetGlowing(allUsed);
+        }
+
+        private void AnimateDotUsed(Image dot, Color originalColor)
+        {
+            dot.transform.DOKill();
+            dot.DOKill();
+            var seq = DOTween.Sequence().SetUpdate(true);
+            seq.Append(dot.transform.DOPunchScale(Vector3.one * 0.4f, 0.3f, 1, 0.4f));
+            seq.Join(dot.DOColor(dotUsedColor, 0.25f).SetDelay(0.08f).SetEase(Ease.InQuad));
+        }
+
+        private void ResetDotVisual(Image dot, Color originalColor)
+        {
+            dot.transform.DOKill();
+            dot.DOKill();
+            dot.transform.localScale = Vector3.one;
+            dot.color = originalColor;
         }
 
         public void UpdateTurnIndicator(int playerID)
@@ -1130,16 +1318,24 @@ namespace Astraleum
             bool isMyTurn = !NetworkBridge.IsActive
                 ? playerID == 0
                 : playerID == NetworkBridge.LocalPlayerID;
-            turnText.text = isMyTurn
-                ? LocalizationManager.Get("combat_turn_your")
-                : LocalizationManager.Get("combat_turn_opponent");
+
+            if (NetworkBridge.IsActive)
+                turnText.text = isMyTurn ? NetworkBridge.LocalPlayerName : NetworkBridge.OpponentPlayerName;
+            else
+                turnText.text = isMyTurn
+                    ? LocalizationManager.Get("combat_turn_your")
+                    : LocalizationManager.Get("combat_turn_opponent");
         }
 
         private void Update()
         {
             // Échap → annule la sélection
             if (Keyboard.current != null && Keyboard.current.escapeKey.wasPressedThisFrame)
-                CancelSelection(); // Annuler avec Echap
+                CancelSelection();
+
+            // La barre suit le curseur en temps réel, mouvement lissé
+            if (damagePreviewBar != null && damagePreviewBar.activeSelf)
+                PositionPreviewNearCursor(false, true);
         }
 
         //Add Highlights to targeted cards
@@ -1239,6 +1435,22 @@ namespace Astraleum
 
         // Appelé par le bouton ConfirmGiveUp — passe toujours par GameManager.Instance
         // pour éviter le problème DontDestroyOnLoad (le GM local est détruit au chargement)
-        public void ConfirmGiveUp() => GameManager.Instance?.GiveUp();
+        public void ConfirmGiveUp()
+        {
+            // Ferme le panel d'abandon pour éviter le chevauchement avec Panel_EndGame
+            var canvas = FindAnyObjectByType<Canvas>();
+            if (canvas != null)
+            {
+                foreach (var t in canvas.GetComponentsInChildren<Transform>(true))
+                {
+                    if (t.name == "Panel_GiveUpNormal")
+                    {
+                        t.gameObject.SetActive(false);
+                        break;
+                    }
+                }
+            }
+            GameManager.Instance?.GiveUp();
+        }
     }
 }

@@ -21,6 +21,9 @@ MonoBehaviour:
   iconBurn: {fileID: 21300000, guid: d5ba219d952a7694c8d95a89e9810512, type: 3}
   iconPoison: {fileID: 7176455043045392912, guid: eb6b9732a97c7fe45b614a46751086b5, type: 3}
   iconSaignement: {fileID: 5340757975174877884, guid: cdd785bc8fef78e4c80c9227003ba1ed, type: 3}
+  iconHealBlock: {fileID: -1049461823314036041, guid: cfd675082fd11ce4296eacb06bf5f409, type: 3}
+  iconHOT: {fileID: 3958262417687261516, guid: 39a5a9d02e8237a4aa062ab192af08cd, type: 3}
+  iconDamageAmplify: {fileID: 2685391416170041009, guid: e2adcac1d08deb64d9ba09bd34150b4f, type: 3}
   iconBulletOn: {fileID: 0}
   iconBulletOff: {fileID: 0}
   iconBuff: {fileID: 21300000, guid: 58c20788efa19b54e8fb6f725138c0d4, type: 3}

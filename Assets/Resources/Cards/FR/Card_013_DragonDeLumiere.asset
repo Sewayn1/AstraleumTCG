@@ -17,16 +17,19 @@ MonoBehaviour:
   cardNumber: 13
   element: 4
   rarity: 2
-  artwork: {fileID: 21300000, guid: a118bfa76be639a459c636f74776a3b7, type: 3}
+  artwork: {fileID: 21300000, guid: 0dee3b160980df64c809f162bd832374, type: 3}
+  hiddenFromCollection: 0
+  isTrainingDummy: 0
   maxHP: 220
-  armorPoints: 8
+  armorPoints: 0
+  critChance: 0.01
   bonusActionsGranted: 0
   skillOne:
     skillType: 0
     skillName: Rayon Divin
-    description: "Inflige 23 DGT \xE0 la cible et ignore l'Armure. Si cette carte
-      \xE0 moins de la moiti\xE9 de ses PV, gagne 5% de soins sur la dur\xE9e pendant
-      2 Tours."
+    description: "Inflige 23 DGT \xE0 la cible et ignore ARM. \nSi cette carte \xE0
+      moins de la moiti\xE9 de ses PV, gagne 5% de HEAL sur la dur\xE9e pendant 2
+      Tours."
     damage: 23
     cooldownTurns: 2
     targetType: 0
@@ -42,46 +45,64 @@ MonoBehaviour:
         compareOp: 0
         threshold: 0.5
         effectType: 0
+        conditionElement: 0
       effectType: 9
       target: 1
       valueMode: 0
       valuePercent: 0.05
       valueFlat: 0
       durationTurns: 2
-    attackVFXPrefab: {fileID: 0}
-    impactVFXPrefab: {fileID: 0}
+    isIncantation: 0
+    castDelayTurns: 1
+    attackVFXPrefab: {fileID: 7713322516035562177, guid: efdbf1c7c99ca8945a3c4d9cf8dbe547, type: 3}
+    trailVFXPrefab: {fileID: 6857069365125669762, guid: 6a276d6d96c0fba4095854c164160ab0, type: 3}
+    trailVFXScale: 1
+    attackVFXIsProjectile: 1
+    attackVFXScale: 1
+    impactVFXPrefab: {fileID: 4172968788073076066, guid: 4b8cad722f9c6d745b57297826607bc5, type: 3}
+    impactVFXScale: 1
     vfxTravelTime: 0.35
     vfxImpactDuration: 0.2
+    impactVFXOffset: {x: 0, y: 0, z: 0}
   skillTwo:
     skillType: 1
     skillName: "Aura R\xE9g\xE9n\xE9ratrice"
-    description: "Soigne tous les alli\xE9s de 15% de leurs PV max. Si cette carte
-      \xE0 moins de 30% de ses PV, le soigne de 5% suppl\xE9mentaire."
+    description: "HEAL tous les alli\xE9s de 10% de leurs PV Max. Si cette carte
+      \xE0 moins de 30% de ses PV, le HEAL de 5% suppl\xE9mentaire."
     damage: 0
     cooldownTurns: 3
     targetType: 3
     adjacentDamagePercent: 0
     effects:
     - type: 3
-      value: 0.15
+      value: 0.1
       durationTurns: 0
-      effectTarget: 2
+      effectTarget: 0
     branches:
     - condition:
         conditionType: 1
         compareOp: 0
         threshold: 0.3
         effectType: 0
+        conditionElement: 0
       effectType: 8
       target: 1
       valueMode: 0
       valuePercent: 0.05
       valueFlat: 0
       durationTurns: 0
-    attackVFXPrefab: {fileID: 0}
-    impactVFXPrefab: {fileID: 0}
+    isIncantation: 0
+    castDelayTurns: 1
+    attackVFXPrefab: {fileID: 8499795791273234962, guid: 96aeca063cc1cf1498b2e25f5deff215, type: 3}
+    trailVFXPrefab: {fileID: 0}
+    trailVFXScale: 1
+    attackVFXIsProjectile: 0
+    attackVFXScale: 0.5
+    impactVFXPrefab: {fileID: 4279378550468598859, guid: e1f088a8b318ee0439b136663df75701, type: 3}
+    impactVFXScale: 1
     vfxTravelTime: 0.35
     vfxImpactDuration: 0.2
+    impactVFXOffset: {x: 0, y: 0, z: 0}
   passive:
     passiveName: 
     passiveDescription: 

@@ -4,15 +4,18 @@ namespace Astraleum
 {
     public enum ConditionType
     {
-        TargetHPPercent,    // % PV actuel de la cible vs maxHP
-        AttackerHPPercent,  // % PV actuel de l'attaquant vs maxHP
-        TargetHasEffect,    // La cible possède un effet actif du type donné
-        AttackerHasEffect,  // L'attaquant possède un effet actif du type donné
-        TargetIsBurning,    // La cible est en état Brûlure
-        TargetIsPoisoned,   // La cible est en état Poison
-        AttackerIsBurning,  // L'attaquant est en état Brûlure
-        AttackerIsPoisoned, // L'attaquant est en état Poison
-        AlwaysTrue,         // Toujours vrai (branche inconditionnelle)
+        TargetHPPercent,        // % PV actuel de la cible vs maxHP
+        AttackerHPPercent,      // % PV actuel de l'attaquant vs maxHP
+        TargetHasEffect,        // La cible possède un effet actif du type donné
+        AttackerHasEffect,      // L'attaquant possède un effet actif du type donné
+        TargetIsBurning,        // La cible est en état Brûlure
+        TargetIsPoisoned,       // La cible est en état Poison
+        AttackerIsBurning,      // L'attaquant est en état Brûlure
+        AttackerIsPoisoned,     // L'attaquant est en état Poison
+        AlwaysTrue,             // Toujours vrai (branche inconditionnelle)
+        AttackerIsOnlyElement,  // Cette carte est la SEULE de son élément parmi les alliés vivants
+        TargetHasNoArmor,       // La cible a une armure totale de 0
+        TargetHasArmor,         // La cible a une armure totale > 0
     }
 
     public enum CompareOp
@@ -35,7 +38,15 @@ namespace Astraleum
         InstantHeal,        // Soin immédiat % PV max (pas de durée)
         HealOverTime,       // Régénération % PV max/tour pendant N tours
         InstantDamage,      // Dégâts immédiats fixes (pas de durée)
-        AttackBoostFlat,    // Bonus dégâts fixe (+N dégâts absolus) — TOUJOURS EN DERNIER
+        AttackBoostFlat,    // Bonus dégâts fixe (+N dégâts absolus)
+        AddArmor,           // Donne N points d'armure pendant N tours
+        MaxHPReduction,     // Réduit les PV Max de la cible d'un %
+        ReduceArmor,        // Réduit l'armure de la cible de N points (flat)
+        CritChanceBoost,    // Augmente la chance de coup critique (value = % additionnel, ex. 0.15 = +15%)
+        CritDamageBoost,    // Augmente le bonus DGT critique (value = % additif sur le +50% de base)
+        AttackReductionFlat, // Réduit DGT infligés de N flat (ex. -3 DGT absolus)
+        Cancel,             // Annule toutes les incantations en cours sur la cible
+        Inarretable,        // Immunité Stun et Cancel pendant N tours — TOUJOURS EN DERNIER
     }
 
     public enum BranchTarget
@@ -62,6 +73,9 @@ namespace Astraleum
 
         [Tooltip("Type d'effet requis. Utilisé pour TargetHasEffect / AttackerHasEffect.")]
         public EffectType effectType = EffectType.Stun;
+
+        [Tooltip("Élément à vérifier. Utilisé pour AttackerIsOnlyElement.")]
+        public Element conditionElement = Element.Feu;
 
         public bool Evaluate(CardInstance attacker, CardInstance target)
         {
@@ -95,6 +109,18 @@ namespace Astraleum
 
                 case ConditionType.AttackerIsPoisoned:
                     return attacker != null && attacker.activeEffects.Exists(e => e.type == EffectType.Poison);
+
+                case ConditionType.AttackerIsOnlyElement:
+                    if (attacker == null || attacker.data.element != conditionElement) return false;
+                    if (BoardManager.Instance == null) return false;
+                    var allies = BoardManager.Instance.GetAliveCards(attacker.ownerPlayerID);
+                    return !allies.Exists(a => a != attacker && a.data.element == conditionElement);
+
+                case ConditionType.TargetHasNoArmor:
+                    return target != null && target.TotalArmor == 0;
+
+                case ConditionType.TargetHasArmor:
+                    return target != null && target.TotalArmor > 0;
             }
             return false;
         }

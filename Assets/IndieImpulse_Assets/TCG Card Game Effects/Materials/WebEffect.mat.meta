@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 115543f430bf0a3449701d24b8d97633
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 2100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 277550
+  packageName: TCG Card Game Effects
+  packageVersion: 1.4
+  assetPath: Assets/IndieImpulse_Assets/TCG Card Game Effects/Materials/WebEffect.mat
+  uploadId: 897924

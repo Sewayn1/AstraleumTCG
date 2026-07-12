@@ -17,53 +17,52 @@ MonoBehaviour:
   cardNumber: 4
   element: 0
   rarity: 2
-  artwork: {fileID: 21300000, guid: ced6f18e5be7288498d4fd69e3ee10f5, type: 3}
+  artwork: {fileID: 21300000, guid: b6e146802fda98c4488f5ef68bae78fc, type: 3}
+  hiddenFromCollection: 0
+  isTrainingDummy: 0
   maxHP: 180
-  armorPoints: 3
+  armorPoints: 0
+  critChance: 0.01
   bonusActionsGranted: 0
   skillOne:
     skillType: 0
     skillName: "Ru\xE9e de Flammes"
     description: Fonce sur une cible, inflige 22DGT et 50% DGT aux cibles adjacentes.
-      Applique Brulure (10% PV Max)  pendant 2 tours.
+      Leurs applique BURN pendant 2 tours.
     damage: 22
     cooldownTurns: 3
     targetType: 4
     adjacentDamagePercent: 0.5
     effects:
     - type: 18
-      value: 0.1
+      value: 0.05
       durationTurns: 2
       effectTarget: 6
-    branches:
-    - condition:
-        conditionType: 4
-        compareOp: 0
-        threshold: 0
-        effectType: 0
-      effectType: 10
-      target: 0
-      valueMode: 1
-      valuePercent: 0
-      valueFlat: 10
-      durationTurns: 0
-    attackVFXPrefab: {fileID: 0}
-    impactVFXPrefab: {fileID: 0}
-    vfxTravelTime: 0.35
-    vfxImpactDuration: 0.2
+    branches: []
+    isIncantation: 0
+    castDelayTurns: 1
+    attackVFXPrefab: {fileID: 3994965004076699975, guid: 350fde7c27a0ed5439852b66d8ef0590, type: 3}
+    trailVFXPrefab: {fileID: 1992815801676329838, guid: bb5b4a62633a53f45835d2229c7ccf98, type: 3}
+    trailVFXScale: 1
+    attackVFXIsProjectile: 0
+    attackVFXScale: 1
+    impactVFXPrefab: {fileID: 1386483879094485057, guid: d9121a3dbed0969429d4c44e865c6dbb, type: 3}
+    impactVFXScale: 1
+    vfxTravelTime: 0.6
+    vfxImpactDuration: 0.5
+    impactVFXOffset: {x: 0, y: 0, z: 0}
   skillTwo:
     skillType: 3
     skillName: Brulure Majeure
-    description: "Applique une Brulure Majeure (20% des PV Max) \xE0 une cible pendant
-      2 Tours. Si la cible est d\xE9ja sous l'effet de \"Brulure\", elle subit 10
-      DGT. "
+    description: "Applique BURN Majeure (10% PV Max) \xE0 une cible pendant 2 Tours.
+      \nSi la cible est d\xE9ja sous l'effet BURN, elle subit 10 DGT."
     damage: 0
-    cooldownTurns: 5
+    cooldownTurns: 3
     targetType: 0
     adjacentDamagePercent: 0
     effects:
     - type: 18
-      value: 0.2
+      value: 0.1
       durationTurns: 2
       effectTarget: 0
     branches:
@@ -72,20 +71,29 @@ MonoBehaviour:
         compareOp: 0
         threshold: 0
         effectType: 0
+        conditionElement: 0
       effectType: 10
       target: 0
       valueMode: 1
       valuePercent: 0
       valueFlat: 10
       durationTurns: 0
-    attackVFXPrefab: {fileID: 0}
-    impactVFXPrefab: {fileID: 0}
+    isIncantation: 0
+    castDelayTurns: 1
+    attackVFXPrefab: {fileID: 3994965004076699975, guid: 350fde7c27a0ed5439852b66d8ef0590, type: 3}
+    trailVFXPrefab: {fileID: 0}
+    trailVFXScale: 1
+    attackVFXIsProjectile: 0
+    attackVFXScale: 0.3
+    impactVFXPrefab: {fileID: 1386483879094485057, guid: d9121a3dbed0969429d4c44e865c6dbb, type: 3}
+    impactVFXScale: 1.2
     vfxTravelTime: 0.35
-    vfxImpactDuration: 0.2
+    vfxImpactDuration: 0.4
+    impactVFXOffset: {x: 0, y: 0, z: 0}
   passive:
     passiveName: Force des Flammes
     passiveDescription: "Pour chaque carte alli\xE9es de type \"Feu\", Wolfgorn gagne
-      2% de DGT bonus et 1% de R\xE9duction des DGT subis."
+      2 de DGT bonus et 1% de R\xE9duction des DGT subis."
     trigger: 0
     triggerElement: 0
     passiveColor: {r: 1, g: 0.84, b: 0, a: 1}
@@ -93,12 +101,12 @@ MonoBehaviour:
     maxTriggerStacks: 4
     effects:
     - type: 13
-      value: 0.02
-      durationTurns: 0
+      value: 2
+      durationTurns: -1
       effectTarget: 1
     - type: 2
       value: 0.01
-      durationTurns: 0
+      durationTurns: -1
       effectTarget: 1
   loreText: "Wolgorn \xE9tait avant tout un Homme Pyromancien. Il appartenait \xE0
     un groupe de mercenaire reput\xE9, reconnu par beaucoup comme l'un des meilleurs

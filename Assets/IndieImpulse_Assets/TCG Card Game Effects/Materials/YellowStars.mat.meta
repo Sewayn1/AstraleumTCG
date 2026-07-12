@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 29afb1e7f940c7f47870bbc9e736de14
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 2100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 277550
+  packageName: TCG Card Game Effects
+  packageVersion: 1.4
+  assetPath: Assets/IndieImpulse_Assets/TCG Card Game Effects/Materials/YellowStars.mat
+  uploadId: 897924

@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 2fe8f0988fa084a42b2dc5ccdd833a75
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 7400000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 277550
+  packageName: TCG Card Game Effects
+  packageVersion: 1.4
+  assetPath: Assets/IndieImpulse_Assets/TCG Card Game Effects/Animations/GlassBroke.anim
+  uploadId: 897924
