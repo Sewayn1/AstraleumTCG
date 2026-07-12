@@ -1,12 +1,12 @@
 {
-  "version": "0.0.7",
+  "version": "0.0.7a",
   "releaseDate": "2026-07-12",
   "launcher": {
     "version": "1.2.0",
     "url": "https://github.com/Sewayn1/Astraleum-Launcher/releases/download/launcher-v1.3.0/AstraleumLauncher-Setup-1.3.0.exe"
   },
   "fullPackage": {
-    "url": "https://github.com/Sewayn1/AstraleumTCG/releases/download/0.0.7/Astraleum-v0.0.7.zip",
+    "url": "https://github.com/Sewayn1/AstraleumTCG/releases/download/0.0.7a/Astraleum-v0.0.7a.zip",
     "size": 0
   },
   "files": [
@@ -1422,6 +1422,14 @@
     }
   ],
   "changelog": [
+    {
+      "version": "Alpha 0.0.7a",
+      "date": "2026-07-10",
+      "title": "Avénement de Voragoth",
+      "entries": [
+        "Ajustement des Effets de DGT sur la durée infligés au Boss."
+      ]
+    },
     {
       "version": "Alpha 0.0.7",
       "date": "2026-07-10",
