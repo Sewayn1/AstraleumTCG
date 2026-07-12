@@ -207,7 +207,7 @@ async function promptLauncherUpdate(launcherInfo) {
     type: 'info',
     title: 'Mise à jour du Launcher',
     message: 'Mise à jour du Launcher nécessaire',
-    detail: `La version ${launcherInfo.version} est disponible.\nLe Launcher va se mettre à jour et redémarrer automatiquement.`,
+    detail: `La version ${launcherInfo.version} est disponible.\nL'assistant d'installation va s'ouvrir : suivez les étapes, l'application se relance automatiquement à la fin.`,
     buttons: ['Mettre à jour', 'Plus tard'],
     defaultId: 0,
     cancelId: 1,
@@ -229,11 +229,23 @@ async function promptLauncherUpdate(launcherInfo) {
 }
 
 async function downloadAndReplaceLauncher(launcherInfo) {
-  // Build NSIS (perMachine) : le "nouveau" téléchargement est le setup.exe complet, pas un
-  // exe portable qu'on peut simplement déplacer. On le lance en silencieux (/S), ce qui
-  // réinstalle par-dessus l'installation existante (même chemin, même raccourcis), puis on
-  // relance l'exe installé.
-  const exePath  = process.execPath;
+  // Build NSIS (perMachine) : le "nouveau" téléchargement est le setup.exe complet, pas un exe
+  // portable qu'on peut simplement déplacer.
+  //
+  // Pourquoi shell.openPath() (= ouverture "comme un double-clic Explorateur") et pas un
+  // lancement silencieux (/S) automatique en arrière-plan : le Launcher tourne toujours élevé
+  // (manifeste requireAdministrator). Trois mécanismes différents pour relancer un process
+  // silencieux depuis ce contexte élevé ont tous échoué de façon identique et silencieuse (testé
+  // le 12/07/2026) : spawn() détaché, tâche planifiée (schtasks /RL HIGHEST), et app.relaunch()
+  // — dans les trois cas, aucune ligne du script de mise à jour ne s'exécute (aucun log écrit),
+  // alors que le même script lancé manuellement depuis une session non-élevée fonctionne
+  // parfaitement du premier coup. Cause exacte non confirmée (job object ou jeton filtré liés à
+  // l'élévation UAC du Launcher lui-même), mais le point commun aux 3 échecs est clair : c'est
+  // toujours le process déjà élevé qui tente de lancer l'enfant. shell.openPath() passe par
+  // ShellExecute, le même chemin qu'un double-clic utilisateur normal — fiable de façon connue,
+  // au prix d'un assistant d'installation visible (Suivant/Installer/Terminer) au lieu d'un
+  // /S totalement invisible. La case "Lancer Astraleum Launcher" est cochée par défaut sur la
+  // page de fin NSIS, donc l'application se relance quand même automatiquement.
   const setupPath = path.join(app.getPath('temp'), `AstraleumLauncher-Setup-${launcherInfo.version}.exe`);
 
   await downloadFile(launcherInfo.url, setupPath, (p) => {
@@ -245,48 +257,10 @@ async function downloadAndReplaceLauncher(launcherInfo) {
     });
   });
 
-  const psPath = path.join(app.getPath('temp'), 'astraleum-launcher-update.ps1');
-  const q = s => s.replace(/'/g, "''");
+  const openError = await shell.openPath(setupPath);
+  if (openError) throw new Error(openError);
 
-  const releaseUrl = `https://github.com/Sewayn1/Astraleum-Launcher/releases/latest`;
-  // Le setup NSIS silencieux (/S) a besoin que l'exe cible ne soit plus verrouillé — le process
-  // courant vient d'appeler process.exit(), mais on retente quand même sur quelques secondes
-  // par sécurité (antivirus scannant le setup téléchargé, libération de handle Windows).
-  const ps = [
-    `$setup = '${q(setupPath)}'`,
-    `$exe = '${q(exePath)}'`,
-    '$success = $false',
-    'for ($i = 0; $i -lt 15; $i++) {',
-    '  Start-Sleep -Seconds 1',
-    '  try {',
-    '    Start-Process -FilePath $setup -ArgumentList "/S" -Wait -ErrorAction Stop',
-    '    $success = $true',
-    '    break',
-    '  } catch {}',
-    '}',
-    'if ($success) {',
-    '  Start-Process $exe',
-    '} else {',
-    '  Add-Type -AssemblyName System.Windows.Forms',
-    '  [System.Windows.Forms.MessageBox]::Show(' +
-      '"La mise a jour automatique du Launcher a echoue.' +
-      '`nTelechargez la derniere version manuellement.", "Astraleum Launcher", ' +
-      "'OK', 'Warning') | Out-Null",
-    `  Start-Process '${releaseUrl}'`,
-    '}',
-    `Remove-Item -Force '${q(setupPath)}' -ErrorAction SilentlyContinue`,
-    `Remove-Item -Force '${q(psPath)}' -ErrorAction SilentlyContinue`,
-  ].join('\r\n');
-
-  fs.writeFileSync(psPath, ps, 'utf8');
-  spawn('powershell.exe', [
-    '-WindowStyle', 'Hidden',
-    '-NonInteractive',
-    '-ExecutionPolicy', 'Bypass',
-    '-File', psPath,
-  ], { detached: true, stdio: 'ignore' }).unref();
-
-  setTimeout(() => process.exit(0), 500);
+  app.quit();
 }
 
 // ── Install helpers ────────────────────────────────────────────────────────────
