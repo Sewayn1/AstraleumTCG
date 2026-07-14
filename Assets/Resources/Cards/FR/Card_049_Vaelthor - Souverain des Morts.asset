@@ -1,0 +1,120 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: baa3cfc011ceea542b4a6e2212c058c1, type: 3}
+  m_Name: Card_049_Vaelthor - Souverain des Morts
+  m_EditorClassIdentifier: Assembly-CSharp::Astraleum.CardData
+  cardName: Vaelthor
+  cardTitle: Souverain des Morts
+  cardNumber: 49
+  element: 8
+  rarity: 4
+  artwork: {fileID: 21300000, guid: d6929b2406d93d844a7a7d7ec38c0e7e, type: 3}
+  hiddenFromCollection: 0
+  isTrainingDummy: 0
+  immuneToExecute: 0
+  maxHP: 320
+  armorPoints: 0
+  critChance: 0.01
+  bonusActionsGranted: 0
+  skillOne:
+    skillType: 0
+    skillName: Faux du Souverain
+    description: "Inflige 18 DGT \xE0 une cible adverse et applique N\xE9crose (4
+      DGT/tour pendant 2 tours)."
+    damage: 18
+    cooldownTurns: 2
+    targetType: 0
+    adjacentDamagePercent: 0
+    effects:
+    - type: 30
+      value: 4
+      durationTurns: 2
+      effectTarget: 0
+    branches: []
+    isIncantation: 0
+    castDelayTurns: 1
+    attackVFXPrefab: {fileID: 8758089774389977906, guid: fab71b97e44bbe64aa91b3fa0b79414c, type: 3}
+    trailVFXPrefab: {fileID: 8436336899256403242, guid: ce77327dbe6869a46a705eee863f952b, type: 3}
+    trailVFXScale: 1
+    attackVFXIsProjectile: 0
+    attackVFXScale: 1
+    impactVFXPrefab: {fileID: 4143199435437317879, guid: cca2b5eddc7f9b94d86c258ee77929a3, type: 3}
+    impactVFXScale: 1
+    vfxTravelTime: 0.35
+    vfxImpactDuration: 0.2
+    impactVFXOffset: {x: 0, y: 0, z: 0}
+  skillTwo:
+    skillType: 0
+    skillName: "D\xE9cret de Mort"
+    description: "Inflige 14 DGT \xE0 toutes les cartes adverses et r\xE9duit leurs
+      soins re\xE7us de 25% pendant 2 tours."
+    damage: 14
+    cooldownTurns: 3
+    targetType: 2
+    adjacentDamagePercent: 0
+    effects:
+    - type: 31
+      value: 0.25
+      durationTurns: 2
+      effectTarget: 0
+    branches: []
+    isIncantation: 0
+    castDelayTurns: 1
+    attackVFXPrefab: {fileID: 8758089774389977906, guid: fab71b97e44bbe64aa91b3fa0b79414c, type: 3}
+    trailVFXPrefab: {fileID: 0}
+    trailVFXScale: 1
+    attackVFXIsProjectile: 0
+    attackVFXScale: 1
+    impactVFXPrefab: {fileID: 4143199435437317879, guid: cca2b5eddc7f9b94d86c258ee77929a3, type: 3}
+    impactVFXScale: 1
+    vfxTravelTime: 0.35
+    vfxImpactDuration: 0.2
+    impactVFXOffset: {x: 0, y: 0, z: 0}
+  skillThree:
+    skillType: 0
+    skillName: 
+    description: 
+    damage: 0
+    cooldownTurns: 0
+    targetType: 0
+    adjacentDamagePercent: 0
+    effects: []
+    branches: []
+    isIncantation: 0
+    castDelayTurns: 1
+    attackVFXPrefab: {fileID: 0}
+    trailVFXPrefab: {fileID: 0}
+    trailVFXScale: 1
+    attackVFXIsProjectile: 0
+    attackVFXScale: 1
+    impactVFXPrefab: {fileID: 0}
+    impactVFXScale: 1
+    vfxTravelTime: 0.35
+    vfxImpactDuration: 0.2
+    impactVFXOffset: {x: 0, y: 0, z: 0}
+  passive:
+    passiveName: Couronne des Morts
+    passiveDescription: "Tant que des cartes N\xE9crotiques alli\xE9es sont pr\xE9sentes
+      sur le terrain, Vaelthor gagne +1 en DGT inflig\xE9s par carte."
+    trigger: 7
+    triggerElement: 8
+    passiveColor: {r: 1, g: 0.84, b: 0, a: 1}
+    stacksPerTrigger: 0
+    maxTriggerStacks: 4
+    effects:
+    - type: 21
+      value: 1
+      durationTurns: -1
+      effectTarget: 1
+  loreText: "Vainqueur, Vaelthor a rejoint les rangs des l\xE9gendes que l'on invoque
+    au combat."
+  loreQuote: "\"Les morts se souviennent de moi. Bient\xF4t, vous aussi.\""

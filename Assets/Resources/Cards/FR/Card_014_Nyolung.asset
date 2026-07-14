@@ -17,7 +17,7 @@ MonoBehaviour:
   cardNumber: 14
   element: 6
   rarity: 4
-  artwork: {fileID: -6952671694268806178, guid: dc8b66992fb9a2b4f9c5c714b7772937, type: 3}
+  artwork: {fileID: 21300000, guid: 068d7f60030bad648a56290c12c8754b, type: 3}
   hiddenFromCollection: 0
   isTrainingDummy: 0
   maxHP: 320
@@ -76,6 +76,28 @@ MonoBehaviour:
     attackVFXIsProjectile: 0
     attackVFXScale: 1
     impactVFXPrefab: {fileID: 6124575847552538670, guid: cf78cb9b6effa7c4c94f1cb20d81bccb, type: 3}
+    impactVFXScale: 1
+    vfxTravelTime: 0.35
+    vfxImpactDuration: 0.2
+    impactVFXOffset: {x: 0, y: 0, z: 0}
+  skillThree:
+    skillType: 0
+    skillName: 
+    description: 
+    damage: 0
+    cooldownTurns: 0
+    targetType: 0
+    adjacentDamagePercent: 0
+    effects: []
+    branches: []
+    isIncantation: 0
+    castDelayTurns: 1
+    attackVFXPrefab: {fileID: 0}
+    trailVFXPrefab: {fileID: 0}
+    trailVFXScale: 1
+    attackVFXIsProjectile: 0
+    attackVFXScale: 1
+    impactVFXPrefab: {fileID: 0}
     impactVFXScale: 1
     vfxTravelTime: 0.35
     vfxImpactDuration: 0.2

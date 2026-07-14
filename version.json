@@ -1,10 +1,10 @@
 {
-  "version": "0.0.7b",
-  "releaseDate": "2026-07-12",
-  "notes": "Mis à Jour et correctifs",
+  "version": "0.0.7.1",
+  "releaseDate": "2026-07-14",
+  "notes": "Vaelthor : correction de la musique de Phase 2, rotation d'IA équitable en Phase 1 (Faucheur/Vaelthor/Gardien), gardiens renforcés, ajustement Focus/Chaos Phase 2 (80/20)",
   "files": {
     "win32": {
-      "url": "https://github.com/Sewayn1/AstraleumTCG/releases/download/v0.0.7b/Astraleum-v0.0.7b.zip"
+      "url": "https://github.com/Sewayn1/AstraleumTCG/releases/download/v0.0.7.1/Astraleum-v0.0.7.1.zip"
     },
     "darwin": {
       "url": "https://github.com/YOUR_GITHUB_USERNAME/Astraleum/releases/download/v0.1.0/Astraleum-v0.1.0-mac.zip"

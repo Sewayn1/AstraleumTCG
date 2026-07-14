@@ -25,6 +25,7 @@ namespace Astraleum
             ("HEAL", "heal"),
             ("ARM",  "arm"),
             ("BURN",  "burn"),
+            ("NEC",   "nec"),
         };
 
         // ── API publique ──────────────────────────────────────────────────────

@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: baa3cfc011ceea542b4a6e2212c058c1, type: 3}
   m_Name: "Card_029_\xC9cuyerdeLiotnar"
   m_EditorClassIdentifier: Assembly-CSharp::Astraleum.CardData
-  cardName: "\xC9cuyer de Liotnar"
+  cardName: "\xC9cuy\xE8re de Liotnar"
   cardTitle: 
   cardNumber: 29
   element: 4
@@ -82,6 +82,28 @@ MonoBehaviour:
     vfxTravelTime: 0.35
     vfxImpactDuration: 0.2
     impactVFXOffset: {x: 0, y: 0, z: 0}
+  skillThree:
+    skillType: 0
+    skillName: 
+    description: 
+    damage: 0
+    cooldownTurns: 0
+    targetType: 0
+    adjacentDamagePercent: 0
+    effects: []
+    branches: []
+    isIncantation: 0
+    castDelayTurns: 1
+    attackVFXPrefab: {fileID: 0}
+    trailVFXPrefab: {fileID: 0}
+    trailVFXScale: 1
+    attackVFXIsProjectile: 0
+    attackVFXScale: 1
+    impactVFXPrefab: {fileID: 0}
+    impactVFXScale: 1
+    vfxTravelTime: 0.35
+    vfxImpactDuration: 0.2
+    impactVFXOffset: {x: 0, y: 0, z: 0}
   passive:
     passiveName: 
     passiveDescription: 
@@ -91,9 +113,9 @@ MonoBehaviour:
     stacksPerTrigger: 0
     maxTriggerStacks: 4
     effects: []
-  loreText: "Il n'a pas encore de nom de bataille. Pas encore de cicatrices. Pas
+  loreText: "Elle n'a pas encore de nom de bataille. Pas encore de cicatrices. Pas
     encore de l\xE9gendes. Mais il a quelque chose que beaucoup de guerriers ont
     perdu \xE0 force de se battre : la conviction que \xE7a vaut la peine. L'\xC9cuyer
-    de Liotnar n'est pas le plus fort sur ce terrain. Il sera peut-\xEAtre le dernier
-    debout, justement parce qu'il ne sait pas encore qu'il devrait avoir peur."
+    de Liotnar n'est pas le plus fort sur ce terrain. Elle sera peut-\xEAtre la derni\xE8re
+    debout, justement parce qu'elle ne sait pas encore qu'elle devrait avoir peur."
   loreQuote: "\"Je ne suis pas pr\xEAt. Mais je suis l\xE0.\""

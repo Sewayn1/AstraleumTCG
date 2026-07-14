@@ -3,8 +3,8 @@ guid: fb32762d4b4c31a4d974b47e7cd274e0
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -4976320883619288556
-    second: Symbole Astral_0
+      213: 598357060953281982
+    second: Icon_Astral_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -72,10 +72,10 @@ TextureImporter:
   platformSettings:
   - serializedVersion: 4
     buildTarget: DefaultTexturePlatform
-    maxTextureSize: 256
+    maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 0
+    textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -152,13 +152,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Symbole Astral_0
+      name: Icon_Astral_0
       rect:
         serializedVersion: 2
-        x: 142
-        y: 71
-        width: 739
-        height: 898
+        x: 0
+        y: 0
+        width: 2048
+        height: 2048
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -167,8 +167,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 41aa383a58e80fab0800000000000000
-      internalID: -4976320883619288556
+      spriteID: eb597f2a39acd4800800000000000000
+      internalID: 598357060953281982
       vertices: []
       indices: 
       edges: []
@@ -187,7 +187,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Symbole Astral_0: -4976320883619288556
+      Icon_Astral_0: 598357060953281982
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

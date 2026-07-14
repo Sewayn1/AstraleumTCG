@@ -1371,7 +1371,29 @@ namespace Astraleum
                 if (isSingleEnemy && enemy.IsInvisible) continue;
                 var highlight = enemy.GetComponent<CardTargetHighlight>();
                 highlight?.ActivateHighlight(HighlightType.Attack);
+
+                if (skill != null && WouldExecute(selectedCard, skill, enemy))
+                    highlight?.ActivateExecuteIndicator();
+                else
+                    highlight?.DeactivateExecuteIndicator();
             }
+        }
+
+        // Vrai si une branche BranchEffectType.Execute de la compétence tuerait cette cible
+        // maintenant (condition déjà remplie) — utilisé pour l'indicateur visuel de ciblage,
+        // pas pour l'application réelle de l'effet (voir SkillExecutor.ApplyBranches).
+        private bool WouldExecute(CardInstance attacker, CardSkill skill, CardInstance target)
+        {
+            if (skill.branches == null || target?.data == null) return false;
+            if (target.data.immuneToExecute) return false;
+
+            foreach (var branch in skill.branches)
+            {
+                if (branch.effectType != BranchEffectType.Execute) continue;
+                if (branch.target != BranchTarget.Target) continue;
+                if (branch.condition.Evaluate(attacker, target)) return true;
+            }
+            return false;
         }
 
         private void HighlightSelfTarget()
@@ -1413,6 +1435,7 @@ namespace Astraleum
                 {
                     var highlight = card.GetComponent<CardTargetHighlight>();
                     highlight?.DeactivateHighlight();
+                    highlight?.DeactivateExecuteIndicator();
                 }
             }
         }

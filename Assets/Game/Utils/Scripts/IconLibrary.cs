@@ -31,6 +31,8 @@ namespace Astraleum
         public Sprite iconHealBlock;    // blocage de soin actif sur une carte
         public Sprite iconHOT;          // régénération (HealOverTime) active sur une carte
         public Sprite iconDamageAmplify; // amplification de dégâts subis active sur une carte
+        public Sprite iconNecrose;      // Nécrose (DoT plat/tour, Nécrotique) active sur une carte
+        public Sprite iconImmortal;     // invulnérabilité totale active sur une carte (ex. Vaelthor Phase 1)
 
         [Header("Interface")]
         public Sprite iconBulletOn;     // bullet actif ✦

@@ -24,6 +24,8 @@ MonoBehaviour:
   iconHealBlock: {fileID: -1049461823314036041, guid: cfd675082fd11ce4296eacb06bf5f409, type: 3}
   iconHOT: {fileID: 3958262417687261516, guid: 39a5a9d02e8237a4aa062ab192af08cd, type: 3}
   iconDamageAmplify: {fileID: 2685391416170041009, guid: e2adcac1d08deb64d9ba09bd34150b4f, type: 3}
+  iconNecrose: {fileID: -3860951591261669285, guid: 7408e2cf2e238e046970cd38aa67ab0c, type: 3}
+  iconImmortal: {fileID: -7639645778507117517, guid: ee6db52aa450ce0438da954497b69019, type: 3}
   iconBulletOn: {fileID: 0}
   iconBulletOff: {fileID: 0}
   iconBuff: {fileID: 21300000, guid: 58c20788efa19b54e8fb6f725138c0d4, type: 3}

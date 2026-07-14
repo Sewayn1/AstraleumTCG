@@ -1,28 +1,43 @@
 fileFormatVersion: 2
-guid: 39a5a9d02e8237a4aa062ab192af08cd
+guid: a9d5320dd29f0f341a57cb58b09a981f
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 3958262417687261516
-    second: regeneration_0
+      213: -5047249129057374292
+    second: Icon_HOT 1_0
   - first:
-      213: -1202554302413612309
-    second: regeneration_1
+      213: 1030196419974587891
+    second: Icon_HOT 1_1
   - first:
-      213: -124878295008232467
-    second: regeneration_2
+      213: 8251801111361858750
+    second: Icon_HOT 1_2
   - first:
-      213: -6016684529414790648
-    second: regeneration_3
+      213: -4469121496109484314
+    second: Icon_HOT 1_3
   - first:
-      213: -2125763549949656060
-    second: regeneration_4
+      213: -940335914320853532
+    second: Icon_HOT 1_4
   - first:
-      213: 2837050040920462736
-    second: regeneration_5
+      213: 4516533756455689954
+    second: Icon_HOT 1_5
   - first:
-      213: -2317729888295075702
-    second: regeneration_6
+      213: -8956746150848443946
+    second: Icon_HOT 1_6
+  - first:
+      213: -906236979557795521
+    second: Icon_HOT 1_7
+  - first:
+      213: -3522013389968775776
+    second: Icon_HOT 1_8
+  - first:
+      213: 6881672588106130165
+    second: Icon_HOT 1_9
+  - first:
+      213: 6817911412075320567
+    second: Icon_HOT 1_10
+  - first:
+      213: 3263011605001301107
+    second: Icon_HOT 1_11
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -170,123 +185,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: regeneration_0
+      name: Icon_HOT 1_0
       rect:
         serializedVersion: 2
-        x: 17
-        y: 278
-        width: 279
-        height: 234
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: c41370672b29ee630800000000000000
-      internalID: 3958262417687261516
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: regeneration_1
-      rect:
-        serializedVersion: 2
-        x: 336
-        y: 451
-        width: 60
-        height: 60
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: bead48dbb3baf4fe0800000000000000
-      internalID: -1202554302413612309
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: regeneration_2
-      rect:
-        serializedVersion: 2
-        x: 98
-        y: 98
-        width: 316
-        height: 316
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: debb0e13ad7544ef0800000000000000
-      internalID: -124878295008232467
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: regeneration_3
-      rect:
-        serializedVersion: 2
-        x: 396
-        y: 346
-        width: 103
-        height: 103
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 802a4aa5c41708ca0800000000000000
-      internalID: -6016684529414790648
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: regeneration_4
-      rect:
-        serializedVersion: 2
-        x: 13
-        y: 63
-        width: 103
-        height: 103
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 40407c86055cf72e0800000000000000
-      internalID: -2125763549949656060
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: regeneration_5
-      rect:
-        serializedVersion: 2
-        x: 216
+        x: 0
         y: 0
-        width: 279
-        height: 234
+        width: 1527
+        height: 1024
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -295,20 +200,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 095521b1bf93f5720800000000000000
-      internalID: 2837050040920462736
+      spriteID: cafa2a998a194f9b0800000000000000
+      internalID: -5047249129057374292
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: regeneration_6
+      name: Icon_HOT 1_1
       rect:
         serializedVersion: 2
-        x: 116
-        y: 1
-        width: 60
-        height: 60
+        x: 83
+        y: 735
+        width: 6
+        height: 6
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -317,8 +222,228 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: a80cdda42f4c5dfd0800000000000000
-      internalID: -2317729888295075702
+      spriteID: 3f5e67d8f2efb4e00800000000000000
+      internalID: 1030196419974587891
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Icon_HOT 1_2
+      rect:
+        serializedVersion: 2
+        x: 82
+        y: 638
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ebca5ef0469448270800000000000000
+      internalID: 8251801111361858750
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Icon_HOT 1_3
+      rect:
+        serializedVersion: 2
+        x: 82
+        y: 622
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6e6f45e7dad7af1c0800000000000000
+      internalID: -4469121496109484314
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Icon_HOT 1_4
+      rect:
+        serializedVersion: 2
+        x: 82
+        y: 350
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4e50d51d77143f2f0800000000000000
+      internalID: -940335914320853532
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Icon_HOT 1_5
+      rect:
+        serializedVersion: 2
+        x: 81
+        y: 326
+        width: 7
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2ee1a999583fdae30800000000000000
+      internalID: 4516533756455689954
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Icon_HOT 1_6
+      rect:
+        serializedVersion: 2
+        x: 82
+        y: 246
+        width: 7
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6d9c457a4de33b380800000000000000
+      internalID: -8956746150848443946
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Icon_HOT 1_7
+      rect:
+        serializedVersion: 2
+        x: 994
+        y: 200
+        width: 7
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f39722fb4466c63f0800000000000000
+      internalID: -906236979557795521
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Icon_HOT 1_8
+      rect:
+        serializedVersion: 2
+        x: 995
+        y: 147
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0a5edb47b7b4f1fc0800000000000000
+      internalID: -3522013389968775776
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Icon_HOT 1_9
+      rect:
+        serializedVersion: 2
+        x: 82
+        y: 94
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5f2eb9a12cc908f50800000000000000
+      internalID: 6881672588106130165
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Icon_HOT 1_10
+      rect:
+        serializedVersion: 2
+        x: 82
+        y: 86
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7f4d4d27e461e9e50800000000000000
+      internalID: 6817911412075320567
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Icon_HOT 1_11
+      rect:
+        serializedVersion: 2
+        x: 82
+        y: 0
+        width: 7
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 37c641e34cb884d20800000000000000
+      internalID: 3263011605001301107
       vertices: []
       indices: 
       edges: []
@@ -337,13 +462,18 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      regeneration_0: 3958262417687261516
-      regeneration_1: -1202554302413612309
-      regeneration_2: -124878295008232467
-      regeneration_3: -6016684529414790648
-      regeneration_4: -2125763549949656060
-      regeneration_5: 2837050040920462736
-      regeneration_6: -2317729888295075702
+      Icon_HOT 1_0: -5047249129057374292
+      Icon_HOT 1_1: 1030196419974587891
+      Icon_HOT 1_10: 6817911412075320567
+      Icon_HOT 1_11: 3263011605001301107
+      Icon_HOT 1_2: 8251801111361858750
+      Icon_HOT 1_3: -4469121496109484314
+      Icon_HOT 1_4: -940335914320853532
+      Icon_HOT 1_5: 4516533756455689954
+      Icon_HOT 1_6: -8956746150848443946
+      Icon_HOT 1_7: -906236979557795521
+      Icon_HOT 1_8: -3522013389968775776
+      Icon_HOT 1_9: 6881672588106130165
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

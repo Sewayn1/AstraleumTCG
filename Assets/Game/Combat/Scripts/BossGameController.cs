@@ -40,7 +40,7 @@ namespace Astraleum
 
         private void Start()
         {
-            if (!AI.GameModeContext.IsBossMatch) { enabled = false; return; }
+            if (!AI.GameModeContext.IsBossMatch || AI.GameModeContext.BossID != 0) { enabled = false; return; }
 
             NetworkBridge.LocalPlayerID = HUMAN_PLAYER_ID;
             NetworkBridge.OpponentPlayerName = "Voragoth";

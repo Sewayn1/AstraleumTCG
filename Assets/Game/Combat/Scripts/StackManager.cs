@@ -317,6 +317,27 @@ namespace Astraleum
             return 0f;
         }
 
+        // ⚫ Nécrotique mineur → +1 DGT aux ticks Nécrose par carte Nécrotique EN JEU
+        // (les deux joueurs confondus) — toujours actif, non gated par un seuil de stack
+        public int GetNecrotiqueBoardCount()
+        {
+            if (BoardManager.Instance == null) return 0;
+            int count = 0;
+            for (int p = 0; p < 2; p++)
+                foreach (var c in BoardManager.Instance.GetAliveCards(p))
+                    if (c.data.element == Element.Necrotique) count++;
+            return count;
+        }
+
+        // ⚫ Nécrotique majeur 3/5 → chance de résurrection (cartes Nécrotique alliées uniquement)
+        public float GetNecroticReviveChance(int playerID)
+        {
+            int s = GetStacks(playerID, Element.Necrotique);
+            if (s >= 5) return 0.10f;
+            if (s >= 3) return 0.05f;
+            return 0f;
+        }
+
         // 🌌 Astral → copie élément carte à gauche
         public Element? GetAstralElement(CardInstance astralCard)
         {

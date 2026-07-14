@@ -57,6 +57,8 @@ namespace Astraleum
         public Image healBlockIcon;    // ← icône HealBlock actif sur la carte
         public Image hotIcon;          // ← icône HealOverTime actif sur la carte
         public Image damageAmplifyIcon; // ← icône DamageAmplify actif sur la carte
+        public Image necroseIcon;      // ← icône Nécrose (DoT plat/tour, Nécrotique) active sur la carte
+        public Image immortalIcon;     // ← icône invulnérabilité totale (CardInstance.isImmortal)
         public Image invisibleOverlay; // ← overlay bleu semi-transparent état Invisible
 
         [Header("VFX Soins")]
@@ -153,6 +155,16 @@ namespace Astraleum
             if (damageAmplifyIcon != null) damageAmplifyIcon.gameObject.SetActive(false);
             else ForceDisableChild("DamageAmplify");
 
+            if (necroseIcon == null)
+                necroseIcon = FindChildImage("Necrose");
+            if (necroseIcon != null) necroseIcon.gameObject.SetActive(false);
+            else ForceDisableChild("Necrose");
+
+            if (immortalIcon == null)
+                immortalIcon = FindChildImage("Immortal");
+            if (immortalIcon != null) immortalIcon.gameObject.SetActive(false);
+            else ForceDisableChild("Immortal");
+
             // Désactive les descriptions directement sur la carte — affichées dans le tooltip à la place
             transform.Find("SkillZone/Skill1_Row/Skill1_InfoCol/Skill1_Desc")?.gameObject.SetActive(false);
             transform.Find("SkillZone/Skill2_Row/Skill2_InfoCol/Skill2_Desc")?.gameObject.SetActive(false);
@@ -179,6 +191,8 @@ namespace Astraleum
             UpdateHealBlockIcon();
             UpdateHotIcon();
             UpdateDamageAmplifyIcon();
+            UpdateNecroseIcon();
+            UpdateImmortalIcon();
             UpdateAstralArrow();
             UpdateStunVFX();
             UpdateIncantationVFX();
@@ -306,6 +320,27 @@ namespace Astraleum
             if (isAmplified && damageAmplifyIcon.sprite == null && IconLibrary.Instance != null)
                 damageAmplifyIcon.sprite = IconLibrary.Instance.iconDamageAmplify;
             damageAmplifyIcon.gameObject.SetActive(isAmplified && damageAmplifyIcon.sprite != null);
+        }
+
+        private void UpdateNecroseIcon()
+        {
+            if (necroseIcon == null || cardInstance == null) return;
+
+            bool hasNecrose = cardInstance.activeEffects.Any(e => e.type == EffectType.Necrose);
+            if (hasNecrose && necroseIcon.sprite == null && IconLibrary.Instance != null)
+                necroseIcon.sprite = IconLibrary.Instance.iconNecrose;
+            necroseIcon.gameObject.SetActive(hasNecrose && necroseIcon.sprite != null);
+        }
+
+        private void UpdateImmortalIcon()
+        {
+            if (immortalIcon == null || cardInstance == null) return;
+
+            // isImmortal n'est pas un ActiveEffect — simple bool sur CardInstance (ex. Vaelthor Phase 1).
+            bool isImmortal = cardInstance.isImmortal;
+            if (isImmortal && immortalIcon.sprite == null && IconLibrary.Instance != null)
+                immortalIcon.sprite = IconLibrary.Instance.iconImmortal;
+            immortalIcon.gameObject.SetActive(isImmortal && immortalIcon.sprite != null);
         }
 
         public void TriggerHitShake()
@@ -545,6 +580,7 @@ namespace Astraleum
                 Element.Tenebres => new Color(0.6f, 0.2f, 0.8f),
                 Element.Astral   => new Color(0.5f, 0.7f, 1f),
                 Element.Corrosif => new Color(0.55f, 0.85f, 0.35f),
+                Element.Necrotique => new Color(0.15f, 0.45f, 0.35f),
                 _ => Color.white
             };
         }

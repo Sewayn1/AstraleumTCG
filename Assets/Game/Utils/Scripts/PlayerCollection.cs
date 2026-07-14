@@ -18,7 +18,7 @@ namespace Astraleum
 
         // Cartes de récompense (ex. Voragoth - Dernière Calamité) : jamais concernées par
         // ALPHA_ALL_OWNED, leur possession est toujours conditionnée à un vrai déblocage persisté.
-        private static readonly HashSet<int> REWARD_CARD_NUMBERS = new HashSet<int> { 48 };
+        private static readonly HashSet<int> REWARD_CARD_NUMBERS = new HashSet<int> { 48, 49, 50, 51 };
         private const string UNLOCK_KEY_PREFIX = "Unlock_Card_";
 
         private HashSet<int> ownedCardNumbers = new HashSet<int>();
@@ -28,10 +28,11 @@ namespace Astraleum
             if (Instance != null && Instance != this) { Destroy(gameObject); return; }
             Instance = this;
             DontDestroyOnLoad(gameObject);
-        }
 
-        private void Start()
-        {
+            // Chargé en Awake (pas Start) : d'autres composants (ex. RaidPanelController.OnEnable)
+            // appellent OwnsCard() dès leur propre OnEnable, qui s'exécute AVANT le Start() de tous
+            // les scripts de la frame — un chargement en Start() lirait alors un état pas encore prêt
+            // (ex. trophée de boss vaincu invisible au premier affichage du panneau).
             GrantAllCards();
             LoadUnlockedRewardCards();
         }

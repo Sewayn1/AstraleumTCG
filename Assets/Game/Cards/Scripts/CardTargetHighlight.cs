@@ -15,14 +15,24 @@ namespace Astraleum
         public float bounceHeight = 8f;
         public float bounceSpeed  = 3.5f;
 
+        [Header("Indicateur d'Exécution")]
+        [Tooltip("GameObject ExecuteIndicator (croix rouge diagonale) — affiché si la cible satisfait une branche BranchEffectType.Execute de la compétence sélectionnée.")]
+        public GameObject executeIndicator;
+        public float executeIndicatorPulseSpeed = 4f;
+        public float executeIndicatorMinAlpha   = 0.55f;
+        public float executeIndicatorMaxAlpha   = 1f;
+
         private Image     cardImage;
         private Vector3   originalScale;
         private Color     originalColor;
         private Vector3   originalLocalPos;
         private Coroutine pulseCoroutine;
         private Coroutine bounceCoroutine;
+        private Coroutine executeIndicatorCoroutine;
+        private CanvasGroup executeIndicatorCanvasGroup;
         private bool      isHighlighted = false;
         private bool      isBouncing    = false;
+        private bool      isExecuteIndicatorActive = false;
 
         // Couleurs de highlight
         private static readonly Color attackColor    = new Color(1f,    0.55f, 0.45f, 1f);
@@ -38,6 +48,14 @@ namespace Astraleum
             originalScale   = transform.localScale;
             originalColor   = cardImage != null ? cardImage.color : Color.white;
             originalLocalPos = transform.localPosition;
+
+            if (executeIndicator == null)
+                executeIndicator = transform.Find("ExecuteIndicator")?.gameObject;
+            if (executeIndicator != null)
+            {
+                executeIndicatorCanvasGroup = executeIndicator.GetComponent<CanvasGroup>();
+                executeIndicator.SetActive(false);
+            }
         }
 
         // ── Highlight de ciblage (pulse échelle + teinte) ─────────────────
@@ -88,6 +106,44 @@ namespace Astraleum
             isBouncing = false;
             if (bounceCoroutine != null) { StopCoroutine(bounceCoroutine); bounceCoroutine = null; }
             StartCoroutine(ResetBounceRoutine());
+        }
+
+        // ── Indicateur d'Exécution (croix diagonale, indépendant du pulse d'Attack) ──
+
+        public void ActivateExecuteIndicator()
+        {
+            if (isExecuteIndicatorActive || executeIndicator == null) return;
+            isExecuteIndicatorActive = true;
+
+            executeIndicator.SetActive(true);
+            if (executeIndicatorCoroutine != null) StopCoroutine(executeIndicatorCoroutine);
+            executeIndicatorCoroutine = StartCoroutine(ExecuteIndicatorPulseRoutine());
+        }
+
+        public void DeactivateExecuteIndicator()
+        {
+            if (!isExecuteIndicatorActive || executeIndicator == null) return;
+            isExecuteIndicatorActive = false;
+
+            if (executeIndicatorCoroutine != null)
+            {
+                StopCoroutine(executeIndicatorCoroutine);
+                executeIndicatorCoroutine = null;
+            }
+            executeIndicator.SetActive(false);
+        }
+
+        private IEnumerator ExecuteIndicatorPulseRoutine()
+        {
+            float t = 0f;
+            while (true)
+            {
+                t += Time.deltaTime * executeIndicatorPulseSpeed;
+                float factor = (Mathf.Sin(t) + 1f) / 2f;
+                if (executeIndicatorCanvasGroup != null)
+                    executeIndicatorCanvasGroup.alpha = Mathf.Lerp(executeIndicatorMinAlpha, executeIndicatorMaxAlpha, factor);
+                yield return null;
+            }
         }
 
         // ── Coroutines ────────────────────────────────────────────────────

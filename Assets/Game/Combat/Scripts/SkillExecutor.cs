@@ -390,8 +390,11 @@ namespace Astraleum
 
         // ── Mort d'une carte ─────────────────────────────────────────
 
-        private static void HandleCardDeath(CardInstance target, CardInstance killer)
+        internal static void HandleCardDeath(CardInstance target, CardInstance killer)
         {
+            if (NecroticReviveHandler.TryRevive(target)) return;
+            NecroticExplosionHandler.TriggerExplosionIfApplicable(target);
+
             target.pendingIncantations?.Clear();
             // DestroyCard appelle déjà PassiveManager.OnCardDestroyed en interne
             BoardManager.Instance.DestroyCard(target);
@@ -835,6 +838,29 @@ namespace Astraleum
                         CombatLogManager.Instance?.AddEntry(
                             $"{branchTarget.data.cardName} +{heal} PV (branche)", playerID: attacker.ownerPlayerID);
                     }
+                    continue;
+                }
+
+                // Exécution → tue directement la cible (ignore l'armure), pas stocké comme
+                // ActiveEffect. Contrairement à InstantDamage/InstantHeal ci-dessus, HandleCardDeath
+                // est appelé explicitement : Execute garantit toujours la mort (branché derrière une
+                // condition IF déjà vérifiée), donc laisser la carte à 0 PV sans nettoyage serait un
+                // bug visible immédiat, pas un cas limite.
+                if (branch.effectType == BranchEffectType.Execute)
+                {
+                    if (branchTarget.data.immuneToExecute)
+                    {
+                        CombatLogManager.Instance?.AddEntry(
+                            $"{branchTarget.data.cardName} est immunisé à l'Exécution", playerID: attacker.ownerPlayerID);
+                        continue;
+                    }
+                    int lethal = branchTarget.currentHP;
+                    branchTarget.TakeDamage(lethal, ignoreArmor: true);
+                    branchTarget.GetComponent<CombatPopupHandler>()?.ShowDamagePopup(lethal);
+                    CombatLogManager.Instance?.AddEntry(
+                        $"{branchTarget.data.cardName} achevé ! (branche)", playerID: attacker.ownerPlayerID);
+                    if (!branchTarget.IsAlive)
+                        HandleCardDeath(branchTarget, attacker);
                     continue;
                 }
 

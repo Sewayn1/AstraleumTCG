@@ -9,7 +9,8 @@ namespace Astraleum
         Lumiere,
         Tenebres,
         Astral,
-        Corrosif
+        Corrosif,
+        Necrotique
     }
 
     public enum TriggerElement
@@ -22,7 +23,8 @@ namespace Astraleum
         Tenebres,
         Astral,
         Corrosif,
-        Any  // ← N'importe quel élément sauf Astral
+        Any,  // ← N'importe quel élément sauf Astral
+        Necrotique  // ← ajouté après Any pour ne pas décaler sa valeur sérialisée (=8)
     }
 
     public enum CardRarity
@@ -86,7 +88,9 @@ namespace Astraleum
         AttackReductionFlat, // Réduit DGT infligés de N flat (ex. -3 DGT absolus)
         Cancel,             // Annule immédiatement toutes les incantations en cours
         Inarretable,        // Immunité Stun et Cancel pendant N tours
-        SelfDamageAmplify,  // Amplifie les dégâts INFLIGÉS par la carte (lu côté attaquant, ≠ DamageAmplify qui amplifie les dégâts subis) — TOUJOURS EN DERNIER
+        SelfDamageAmplify,  // Amplifie les dégâts INFLIGÉS par la carte (lu côté attaquant, ≠ DamageAmplify qui amplifie les dégâts subis)
+        Necrose,            // Nécrotique : DGT plat/tour, empile en instances indépendantes (aucune fusion par source)
+        HealReduction,      // Nécrotique : réduit les soins reçus d'un % (cumulatif additif, plafonné) — TOUJOURS EN DERNIER
     }
 
     public enum EffectTarget

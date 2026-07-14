@@ -19,3 +19,5 @@ MonoBehaviour:
   iconLumiere: {fileID: 8156424763737457524, guid: 4ac74e9405c98fe498bf11be110ac531, type: 3}
   iconTenebres: {fileID: 6736565455538941897, guid: 2d3df3f940cacf045a6df1c1948941b5, type: 3}
   iconAstral: {fileID: -4976320883619288556, guid: fb32762d4b4c31a4d974b47e7cd274e0, type: 3}
+  iconCorrosif: {fileID: 0}
+  iconNecrotique: {fileID: -3860951591261669285, guid: a1e25b56acf178341883d65e9ffae9af, type: 3}

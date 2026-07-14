@@ -270,6 +270,12 @@ namespace Astraleum
                 && card.ownerPlayerID == BossPhaseController.Instance.humanPlayerID)
                 mod += 0.05f;
 
+            // Nécrotique — réduction de soins reçus
+            float healReduction = 0f;
+            foreach (var eff in card.activeEffects)
+                if (eff.type == EffectType.HealReduction) healReduction += eff.value;
+            mod *= Mathf.Max(0f, 1f - healReduction);
+
             return mod;
         }
     }

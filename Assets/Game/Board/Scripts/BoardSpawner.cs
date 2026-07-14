@@ -135,6 +135,43 @@ namespace Astraleum
             StartCoroutine(RefreshStacksNextFrame());
         }
 
+        /// <summary>
+        /// Spawn pour le combat Vaelthor (Phase 1 uniquement — 3 cartes côté Boss) :
+        /// Vaelthor au centre (slot 3, index 2, prefab Boss 3 compétences), Faucheur des Âmes
+        /// et Gardien des Âmes en soutien (slots 2/4, index 1/3, prefab standard CardPrefab2 —
+        /// ce sont des cartes 2 compétences normales, pas des "Boss"). Les slots 1 et 5
+        /// (index 0/4) restent vides. Ne passe pas par NumbersToCardData côté Boss (les CardData
+        /// de Vaelthor/gardiens partagent toutes cardNumber=0).
+        /// </summary>
+        public void SpawnVaelthorEncounter(List<int> playerNumbers, CardData vaelthorData, CardData faucheurData, CardData gardienData)
+        {
+            if (cardPrefab == null || CardDatabase.Instance == null || vaelthorData == null || faucheurData == null || gardienData == null)
+            {
+                Debug.LogError("[BoardSpawner] Dépendances manquantes pour le spawn Vaelthor !");
+                return;
+            }
+
+            var playerCards = NumbersToCardData(playerNumbers);
+            if (playerCards.Count == 0)
+            {
+                Debug.LogError("[BoardSpawner] Deck joueur invalide pour le combat Vaelthor !");
+                return;
+            }
+
+            SpawnCardsForPlayer(playerCards, 0, BoardManager.Instance.player1Slots);
+
+            var bossPrefab = bossCardPrefab != null ? bossCardPrefab : cardPrefab;
+            var p2Slots = BoardManager.Instance.player2Slots;
+
+            // Gardiens — cartes standard 2 compétences (CardPrefab2)
+            SpawnCardsForPlayer(new List<CardData> { null, faucheurData, null, null, null }, 1, p2Slots, cardPrefab);
+            SpawnCardsForPlayer(new List<CardData> { null, null, null, gardienData, null }, 1, p2Slots, cardPrefab);
+            // Vaelthor — carte Boss 3 compétences (CardPrefabBoss)
+            SpawnCardsForPlayer(new List<CardData> { null, null, vaelthorData, null, null }, 1, p2Slots, bossPrefab);
+
+            StartCoroutine(RefreshStacksNextFrame());
+        }
+
         private List<CardData> NumbersToCardData(List<int> numbers)
         {
             var cards = new List<CardData>();

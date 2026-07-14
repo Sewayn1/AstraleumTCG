@@ -61,6 +61,7 @@ namespace Astraleum
             UpdateIcon(group.tenebres, playerID, Element.Tenebres);
             UpdateIcon(group.astral, playerID, Element.Astral);
             UpdateIcon(group.corrosif, playerID, Element.Corrosif);
+            UpdateIcon(group.necrotique, playerID, Element.Necrotique);
         }
 
         private void UpdateIcon(StackIcon icon, int playerID, Element element)
@@ -351,6 +352,29 @@ namespace Astraleum
                         break;
                     }
 
+                case Element.Necrotique:
+                    {
+                        int boardCount = StackManager.Instance?.GetNecrotiqueBoardCount() ?? 0;
+                        tooltipLines.AddLine(lib?.iconDeath, LocalizationManager.Get("stack_necrotique_minor", boardCount), activeColor);
+
+                        tooltipLines.AddSeparator();
+
+                        if (stacks >= 5)
+                            tooltipLines.AddLine(lib?.iconBulletOff, LocalizationManager.Get("stack_necrotique_3_on"), inactiveColor);
+                        else if (stacks >= 3)
+                            tooltipLines.AddLine(lib?.iconDeath, LocalizationManager.Get("stack_necrotique_3_on"), activeColor);
+                        else
+                            tooltipLines.AddLine(lib?.iconBulletOff, LocalizationManager.Get("stack_necrotique_3_off", 3 - stacks), inactiveColor);
+
+                        tooltipLines.AddSeparator();
+
+                        if (stacks >= 5)
+                            tooltipLines.AddLine(lib?.iconDeath, LocalizationManager.Get("stack_necrotique_5_on"), goldColor);
+                        else
+                            tooltipLines.AddLine(lib?.iconBulletOff, LocalizationManager.Get("stack_necrotique_5_off", 5 - stacks), inactiveColor);
+                        break;
+                    }
+
                 case Element.Astral:
                     {
                         var astralCard = GetAstralCard(playerID);
@@ -399,6 +423,7 @@ namespace Astraleum
         public StackIcon tenebres;
         public StackIcon astral;
         public StackIcon corrosif;
+        public StackIcon necrotique;
     }
 
     [System.Serializable]

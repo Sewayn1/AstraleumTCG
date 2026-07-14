@@ -40,6 +40,7 @@ namespace Astraleum.Editor
             ("heal", Load("Icon_Heal")),
             ("arm",  Load("Icon_Armor")),
             ("burn",  Load("Icon_Burn")),
+            ("nec",   Load("Icon_Necrotic")),
         };
 
         static Texture2D Load(string fileName)

@@ -2348,6 +2348,114 @@ MonoBehaviour:
   effectType: 17
   titleKey: status_title_poison
   descriptionKey: codex_states_poison
+--- !u!1 &4699767183456686194
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6174066166597647049}
+  - component: {fileID: 79663292111634374}
+  - component: {fileID: 3746582329625916739}
+  - component: {fileID: 1653718585126723805}
+  - component: {fileID: 699042034694589813}
+  m_Layer: 5
+  m_Name: Immortal
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &6174066166597647049
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4699767183456686194}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1482293045197208102}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 1}
+  m_AnchorMax: {x: 0.5, y: 1}
+  m_AnchoredPosition: {x: 15, y: -15}
+  m_SizeDelta: {x: 30, y: 30}
+  m_Pivot: {x: 1, y: 0.5}
+--- !u!222 &79663292111634374
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4699767183456686194}
+  m_CullTransparentMesh: 1
+--- !u!114 &3746582329625916739
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4699767183456686194}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: -7639645778507117517, guid: ee6db52aa450ce0438da954497b69019, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!114 &1653718585126723805
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4699767183456686194}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b224d5b4941d3a744b9b1fa6a00e0504, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Astraleum.TooltipTrigger
+  tooltipTitle: 
+  tooltipBody: 
+  triggerMode: 0
+  hoverDelay: 0.4
+  anchor: 4
+--- !u!114 &699042034694589813
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4699767183456686194}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8fffbca56bdd558449d4ef7e64538ddc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Astraleum.ImmortalTooltip
+  titleKey: status_title_immortal
+  descriptionKey: codex_states_immortal
 --- !u!1 &4814565599972242934
 GameObject:
   m_ObjectHideFlags: 0
@@ -3778,6 +3886,7 @@ RectTransform:
   - {fileID: 806276597299873441}
   - {fileID: 4390271474649966770}
   - {fileID: 7918444451368219270}
+  - {fileID: 6174066166597647049}
   - {fileID: 2008940256408547044}
   - {fileID: 5953112012663055101}
   - {fileID: 6137805447012771287}
@@ -3913,6 +4022,7 @@ MonoBehaviour:
   healBlockIcon: {fileID: 7931002434086489465}
   hotIcon: {fileID: 651820891981263758}
   damageAmplifyIcon: {fileID: 0}
+  immortalIcon: {fileID: 0}
   invisibleOverlay: {fileID: 0}
   healVFXPrefab: {fileID: 4279378550468598859, guid: e1f088a8b318ee0439b136663df75701, type: 3}
   stunLoopVFXPrefab: {fileID: 9213946109603714380, guid: f9556cbf13e032b4cb24b97c3ac985b6, type: 3}

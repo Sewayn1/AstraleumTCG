@@ -63,6 +63,7 @@ namespace Astraleum.UI
                 { Astraleum.Element.Tenebres, new Color(0.30f, 0.10f, 0.45f, 0.85f) },
                 { Astraleum.Element.Astral,    new Color(0.50f, 0.20f, 0.75f, 0.85f) },
                 { Astraleum.Element.Corrosif,  new Color(0.35f, 0.75f, 0.10f, 0.85f) },
+                { Astraleum.Element.Necrotique, new Color(0.15f, 0.45f, 0.35f, 0.85f) },
             };
 
         // ── Init ──────────────────────────────────────────────────────

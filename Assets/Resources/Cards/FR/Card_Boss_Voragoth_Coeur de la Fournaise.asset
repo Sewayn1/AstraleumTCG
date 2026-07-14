@@ -20,6 +20,7 @@ MonoBehaviour:
   artwork: {fileID: 21300000, guid: bde9a1b090537104c92a2f30127cffd1, type: 3}
   hiddenFromCollection: 1
   isTrainingDummy: 0
+  immuneToExecute: 1
   maxHP: 3000
   armorPoints: 0
   critChance: 0.1

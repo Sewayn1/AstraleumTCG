@@ -59,16 +59,20 @@ namespace Astraleum.UI
         [Header("Fond dynamique — Panel_Raid")]
         [Tooltip("Fond vidéo animé par défaut — coupé sur Panel_Raid pour économiser des performances.")]
         public GameObject bgAnimated;
-        [Tooltip("Fond dédié à Voragoth — actif uniquement sur Panel_Raid.")]
+        [Tooltip("Fond dédié à Voragoth — actif quand ce Boss est sélectionné sur Panel_Raid.")]
         public GameObject bgVoragoth;
-        [Tooltip("Durée du fondu enchaîné entre les deux fonds (secondes).")]
+        [Tooltip("Fond dédié à Vaelthor — actif quand ce Boss est sélectionné sur Panel_Raid.")]
+        public GameObject bgVaelthor;
+        [Tooltip("Durée du fondu enchaîné entre les fonds (secondes).")]
         public float bgFadeDuration = 1.5f;
 
         [Header("Musique — Panel_Raid")]
         [Tooltip("AudioSource unique du menu (Canvas) — sa piste est remplacée à l'entrée/sortie de Panel_Raid.")]
         public AudioSource musicSource;
-        [Tooltip("Musique jouée sur Panel_Raid.")]
+        [Tooltip("Musique jouée sur Panel_Raid par défaut (Boss sans piste dédiée, ex. Voragoth).")]
         public AudioClip bossSelectionMusic;
+        [Tooltip("Musique dédiée jouée quand Vaelthor est sélectionné sur Panel_Raid — remplace bossSelectionMusic.")]
+        public AudioClip vaelthorSelectMusic;
         [Tooltip("Durée du fondu sortant avant la bascule de piste (secondes).")]
         public float musicFadeDuration = 1f;
 
@@ -82,8 +86,12 @@ namespace Astraleum.UI
         private Coroutine musicFadeRoutine;
         private VideoPlayer bgAnimatedVP;
         private VideoPlayer bgVoragothVP;
+        private VideoPlayer bgVaelthorVP;
         private Coroutine bgFadeRoutine;
         private bool isOnRaidBackground; // évite de relancer le fondu sur chaque changement de panel hors Raid
+        private GameObject currentRaidBossBg;   // fond Boss actuellement actif sur Panel_Raid (bgVoragoth/bgVaelthor)
+        private VideoPlayer currentRaidBossBgVP;
+        private AudioClip currentRaidMusic;     // piste Boss actuellement sélectionnée sur Panel_Raid
 
         private void Awake() => Instance = this;
 
@@ -108,6 +116,7 @@ namespace Astraleum.UI
 
             bgAnimatedVP = bgAnimated != null ? bgAnimated.GetComponent<VideoPlayer>() : null;
             bgVoragothVP = bgVoragoth != null ? bgVoragoth.GetComponent<VideoPlayer>() : null;
+            bgVaelthorVP = bgVaelthor != null ? bgVaelthor.GetComponent<VideoPlayer>() : null;
 
             // BossBG.mp4 (366 Mo) vit dans StreamingAssets/ plutôt qu'importé comme VideoClip —
             // évite qu'il soit fondu dans les fichiers sharedassetsN.resource du build (Application.
@@ -117,6 +126,14 @@ namespace Astraleum.UI
                 bgVoragothVP.source = VideoSource.Url;
                 bgVoragothVP.url = System.IO.Path.Combine(Application.streamingAssetsPath, "BossBG.mp4");
             }
+            // bgVaelthorVP utilise directement son VideoClip assigné en Inspector (fichier plus léger,
+            // pas besoin du contournement StreamingAssets).
+
+            // Fond par défaut affiché en entrant sur Panel_Raid avant toute sélection — premier Boss
+            // de la liste, cohérent avec le comportement historique (Voragoth était le seul Boss).
+            currentRaidBossBg   = bgVoragoth;
+            currentRaidBossBgVP = bgVoragothVP;
+            currentRaidMusic    = bossSelectionMusic;
 
             ShowPanel(panelMainMenu);
 
@@ -192,17 +209,40 @@ namespace Astraleum.UI
             if (onRaidPanel == isOnRaidBackground) return; // déjà dans le bon état — pas de transition à jouer
             isOnRaidBackground = onRaidPanel;
 
+            GameObject  fadeInGO  = onRaidPanel ? currentRaidBossBg   : bgAnimated;
+            VideoPlayer fadeInVP  = onRaidPanel ? currentRaidBossBgVP : bgAnimatedVP;
+            GameObject  fadeOutGO = onRaidPanel ? bgAnimated          : currentRaidBossBg;
+            VideoPlayer fadeOutVP = onRaidPanel ? bgAnimatedVP        : currentRaidBossBgVP;
+
             if (bgFadeRoutine != null) StopCoroutine(bgFadeRoutine);
-            bgFadeRoutine = StartCoroutine(FadeBackgrounds(onRaidPanel));
+            bgFadeRoutine = StartCoroutine(FadeBackgrounds(fadeInGO, fadeInVP, fadeOutGO, fadeOutVP));
         }
 
-        private IEnumerator FadeBackgrounds(bool onRaidPanel)
+        /// <summary>
+        /// Appelé par RaidPanelController quand un Boss est sélectionné dans le sélecteur multi-boss
+        /// — bascule le fond vidéo vers celui du Boss choisi, avec le même fondu enchaîné que
+        /// l'entrée/sortie de Panel_Raid. Sans effet si on n'est pas actuellement sur Panel_Raid
+        /// (le nouveau fond sera simplement celui utilisé à la prochaine entrée sur le panel).
+        /// </summary>
+        public void SetRaidBossBackground(int bossID)
         {
-            GameObject fadeInGO   = onRaidPanel ? bgVoragoth   : bgAnimated;
-            GameObject fadeOutGO  = onRaidPanel ? bgAnimated   : bgVoragoth;
-            VideoPlayer fadeInVP  = onRaidPanel ? bgVoragothVP : bgAnimatedVP;
-            VideoPlayer fadeOutVP = onRaidPanel ? bgAnimatedVP : bgVoragothVP;
+            GameObject  newBg = bossID == 1 ? bgVaelthor   : bgVoragoth;
+            VideoPlayer newVP = bossID == 1 ? bgVaelthorVP : bgVoragothVP;
+            if (newBg == currentRaidBossBg) return; // déjà actif, rien à faire
 
+            GameObject  oldBg = currentRaidBossBg;
+            VideoPlayer oldVP = currentRaidBossBgVP;
+            currentRaidBossBg   = newBg;
+            currentRaidBossBgVP = newVP;
+
+            if (!isOnRaidBackground) return; // pas encore affiché — pris en compte à la prochaine UpdateRaidBackground(true)
+
+            if (bgFadeRoutine != null) StopCoroutine(bgFadeRoutine);
+            bgFadeRoutine = StartCoroutine(FadeBackgrounds(newBg, newVP, oldBg, oldVP));
+        }
+
+        private IEnumerator FadeBackgrounds(GameObject fadeInGO, VideoPlayer fadeInVP, GameObject fadeOutGO, VideoPlayer fadeOutVP)
+        {
             if (fadeInGO != null)
             {
                 fadeInGO.SetActive(true);
@@ -221,8 +261,10 @@ namespace Astraleum.UI
 
             if (fadeInVP != null) fadeInVP.targetCameraAlpha = 1f;
 
-            // Coupé après le fondu (perf) — alpha remis à 1 pour la prochaine activation.
-            if (fadeOutGO != null) fadeOutGO.SetActive(false);
+            // Coupé après le fondu (perf) — alpha remis à 1 pour la prochaine activation. Ignoré si
+            // fadeOutGO == fadeInGO (cas SetRaidBossBackground appelé avant toute entrée sur le panel).
+            if (fadeOutGO != null && fadeOutGO != fadeInGO)
+                fadeOutGO.SetActive(false);
             if (fadeOutVP != null) fadeOutVP.targetCameraAlpha = 1f;
 
             bgFadeRoutine = null;
@@ -232,7 +274,27 @@ namespace Astraleum.UI
         {
             if (musicSource == null) return;
 
-            AudioClip target = onRaidPanel ? bossSelectionMusic : defaultMusic;
+            AudioClip target = onRaidPanel ? currentRaidMusic : defaultMusic;
+            if (target == null || musicSource.clip == target) return;
+
+            if (musicFadeRoutine != null) StopCoroutine(musicFadeRoutine);
+            musicFadeRoutine = StartCoroutine(FadeToMusic(target));
+        }
+
+        /// <summary>
+        /// Appelé par RaidPanelController quand un Boss est sélectionné dans le sélecteur multi-boss
+        /// — bascule la musique vers celle du Boss choisi (vaelthorSelectMusic pour Vaelthor,
+        /// bossSelectionMusic générique sinon), avec le même fondu que l'entrée/sortie de Panel_Raid.
+        /// Sans effet si on n'est pas actuellement sur Panel_Raid (prise en compte à la prochaine entrée).
+        /// </summary>
+        public void SetRaidBossMusic(int bossID)
+        {
+            AudioClip target = (bossID == 1 && vaelthorSelectMusic != null) ? vaelthorSelectMusic : bossSelectionMusic;
+            if (target == currentRaidMusic) return; // déjà actif, rien à faire
+
+            currentRaidMusic = target;
+
+            if (!isOnRaidBackground || musicSource == null) return; // pas encore audible — pris en compte à la prochaine UpdateRaidMusic(true)
             if (target == null || musicSource.clip == target) return;
 
             if (musicFadeRoutine != null) StopCoroutine(musicFadeRoutine);

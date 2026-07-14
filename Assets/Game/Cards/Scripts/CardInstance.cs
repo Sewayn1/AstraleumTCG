@@ -232,6 +232,11 @@ namespace Astraleum
             if (StackManager.Instance != null)
                 healBonusMultiplier = 1f + StackManager.Instance.GetHealBonus(ownerPlayerID);
 
+            float healReduction = 0f;
+            foreach (var eff in activeEffects)
+                if (eff.type == EffectType.HealReduction) healReduction += eff.value;
+            healBonusMultiplier *= Mathf.Max(0f, 1f - healReduction);
+
             int boostedAmount = Mathf.RoundToInt(amount * healBonusMultiplier);
             int before = currentHP;
             currentHP = Mathf.Min(currentHP + boostedAmount, EffectiveMaxHP);
@@ -251,6 +256,7 @@ namespace Astraleum
 
         private const float MAX_DAMAGE_REDUCTION      = 0.5f;   // % — DamageReduction
         private const float MAX_ATTACK_REDUCTION_FLAT = 50f;   // flat — AttackReduction
+        private const float MAX_HEAL_REDUCTION        = 0.5f;   // % — HealReduction (Nécrotique)
 
         public void ApplyEffect(ActiveEffect newEffect)
         {
@@ -315,6 +321,32 @@ namespace Astraleum
                 }
                 // Premier effet : plafonne quand même la valeur initiale
                 newEffect.value = Mathf.Min(newEffect.value, MAX_DAMAGE_REDUCTION);
+            }
+
+            // ── HealReduction (Nécrotique) — cumulatif, plafonné à 50% ────
+            if (newEffect.type == EffectType.HealReduction)
+            {
+                var existing = activeEffects.Find(e => e.type == EffectType.HealReduction);
+                if (existing != null)
+                {
+                    existing.value          = Mathf.Min(existing.value + newEffect.value, MAX_HEAL_REDUCTION);
+                    existing.remainingTurns = Mathf.Max(existing.remainingTurns, newEffect.remainingTurns);
+                    if (newEffect.sourcePassiveTrigger.HasValue)
+                    {
+                        existing.sourcePassiveTrigger = newEffect.sourcePassiveTrigger;
+                        existing.sourceElement        = newEffect.sourceElement;
+                    }
+                    if (!string.IsNullOrEmpty(newEffect.sourceName))
+                    {
+                        if (!string.IsNullOrEmpty(existing.sourceName)
+                            && existing.sourceName != newEffect.sourceName)
+                            existing.sourceName += " + " + newEffect.sourceName;
+                        else
+                            existing.sourceName = newEffect.sourceName;
+                    }
+                    return;
+                }
+                newEffect.value = Mathf.Min(newEffect.value, MAX_HEAL_REDUCTION);
             }
 
             // ── AttackReduction — cumulatif flat, plafonné à MAX_ATTACK_REDUCTION_FLAT ─
@@ -442,6 +474,7 @@ namespace Astraleum
         {
             int dotTotal = 0;
             int hotTotal = 0;
+            bool necroseBonusApplied = false;
             bool healBlocked = activeEffects.Any(e => e.type == EffectType.HealBlock);
 
             // Calcul unique de la réduction dégâts pour ce tour
@@ -535,6 +568,23 @@ namespace Astraleum
                             break;
                         }
 
+                    case EffectType.Necrose:
+                        {
+                            // Nécrotique : DGT plat/tour (pas % PV max) — bonus mineur (+1 DGT
+                            // par carte Nécrotique en jeu, tous joueurs) ajouté une seule fois par tick,
+                            // pas par instance empilée
+                            float mineurBonus = necroseBonusApplied
+                                ? 0f
+                                : (StackManager.Instance?.GetNecrotiqueBoardCount() ?? 0);
+                            necroseBonusApplied = true;
+                            int necroDmg = Mathf.RoundToInt((effect.value + mineurBonus) * dmgReductMult);
+                            int actualNecro = TakeDamage(necroDmg, ignoreArmor: true);
+                            dotTotal += actualNecro;
+                            CombatLogManager.Instance?.AddEntry(
+                                $"{data.cardName} -{actualNecro} DGT (Nécrose)", playerID: ownerPlayerID);
+                            break;
+                        }
+
                     case EffectType.HealOverTime:
                         {
                             if (!healBlocked)
@@ -566,9 +616,13 @@ namespace Astraleum
 
             if (!IsAlive)
             {
-                BoardManager.Instance?.DestroyCard(this);
-                CombatLogManager.Instance?.AddEntry(
-                    $"{data.cardName} est détruit !", isDeathEntry: true, playerID: ownerPlayerID);
+                if (!NecroticReviveHandler.TryRevive(this))
+                {
+                    NecroticExplosionHandler.TriggerExplosionIfApplicable(this);
+                    BoardManager.Instance?.DestroyCard(this);
+                    CombatLogManager.Instance?.AddEntry(
+                        $"{data.cardName} est détruit !", isDeathEntry: true, playerID: ownerPlayerID);
+                }
             }
         }
 

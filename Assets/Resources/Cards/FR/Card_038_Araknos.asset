@@ -82,10 +82,10 @@ MonoBehaviour:
     - condition:
         conditionType: 0
         compareOp: 0
-        threshold: 0.25
+        threshold: 0.2
         effectType: 0
         conditionElement: 0
-      effectType: 10
+      effectType: 20
       target: 0
       valueMode: 1
       valuePercent: 0.05
@@ -99,6 +99,28 @@ MonoBehaviour:
     attackVFXIsProjectile: 0
     attackVFXScale: 1
     impactVFXPrefab: {fileID: 7057540923041086895, guid: 8b9ceaed4a59ab84d8933689282e5ba0, type: 3}
+    impactVFXScale: 1
+    vfxTravelTime: 0.35
+    vfxImpactDuration: 0.2
+    impactVFXOffset: {x: 0, y: 0, z: 0}
+  skillThree:
+    skillType: 0
+    skillName: 
+    description: 
+    damage: 0
+    cooldownTurns: 0
+    targetType: 0
+    adjacentDamagePercent: 0
+    effects: []
+    branches: []
+    isIncantation: 0
+    castDelayTurns: 1
+    attackVFXPrefab: {fileID: 0}
+    trailVFXPrefab: {fileID: 0}
+    trailVFXScale: 1
+    attackVFXIsProjectile: 0
+    attackVFXScale: 1
+    impactVFXPrefab: {fileID: 0}
     impactVFXScale: 1
     vfxTravelTime: 0.35
     vfxImpactDuration: 0.2

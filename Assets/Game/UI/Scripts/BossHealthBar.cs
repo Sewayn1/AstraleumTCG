@@ -38,16 +38,28 @@ namespace Astraleum
             if (barRoot != null) barRoot.SetActive(false);
         }
 
-        /// <summary>Appelé une fois par BossGameController juste après le spawn du Boss.</summary>
-        public void Bind(CardInstance boss, int maxHP)
+        /// <summary>
+        /// Appelé une fois par BossGameController/VaelthorGameController juste après le spawn/bascule.
+        /// showPhaseMarkers=false ignore les marqueurs de seuil (non pertinents pour un Boss sans
+        /// transition par pourcentage de PV, ex. Vaelthor dont la transition est événementielle).
+        /// </summary>
+        public void Bind(CardInstance boss, int maxHP, bool showPhaseMarkers = true)
         {
             bossCard = boss;
             totalMaxHP = maxHP;
 
             if (barRoot != null) barRoot.SetActive(true);
 
-            SetMarkerX(phase2Marker, BossPhaseController.Instance != null ? BossPhaseController.Instance.phase2Threshold : 2f / 3f);
-            SetMarkerX(phase3Marker, BossPhaseController.Instance != null ? BossPhaseController.Instance.phase3Threshold : 1f / 3f);
+            if (showPhaseMarkers)
+            {
+                SetMarkerX(phase2Marker, BossPhaseController.Instance != null ? BossPhaseController.Instance.phase2Threshold : 2f / 3f);
+                SetMarkerX(phase3Marker, BossPhaseController.Instance != null ? BossPhaseController.Instance.phase3Threshold : 1f / 3f);
+            }
+            else
+            {
+                if (phase2Marker != null) phase2Marker.gameObject.SetActive(false);
+                if (phase3Marker != null) phase3Marker.gameObject.SetActive(false);
+            }
 
             // Pas d'animation au premier affichage — la jauge démarre directement au bon ratio.
             displayedRatio = totalMaxHP > 0 ? Mathf.Clamp01((float)bossCard.currentHP / totalMaxHP) : 1f;

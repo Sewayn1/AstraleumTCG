@@ -39,7 +39,7 @@ namespace Astraleum.UI
         public UnityEngine.UI.Button btnAllElements;
         [Tooltip("Un bouton par élément, index = valeur enum Element (0=Feu,1=Eau,2=Terre,3=Air,4=Lumiere,5=Tenebres,6=Astral…).")]
         public UnityEngine.UI.Button[] elementFilterButtons;
-        // Ordre boutons : Feu, Eau, Terre, Air, Tenebres, Lumiere, Corrosif, Astral
+        // Ordre boutons : Feu, Eau, Terre, Air, Tenebres, Lumiere, Corrosif, Astral, Necrotique
         // → index bouton ≠ valeur enum, d'où le mapping explicite
         private static readonly Astraleum.Element[] BtnToElement =
         {
@@ -51,6 +51,7 @@ namespace Astraleum.UI
             Astraleum.Element.Lumiere,   // bouton 5
             Astraleum.Element.Corrosif,  // bouton 6
             Astraleum.Element.Astral,    // bouton 7
+            Astraleum.Element.Necrotique, // bouton 8
         };
 
         private List<GameObject> spawnedCards;

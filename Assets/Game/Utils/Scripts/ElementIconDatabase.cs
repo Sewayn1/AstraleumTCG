@@ -26,20 +26,22 @@ namespace Astraleum
         public Sprite iconTenebres;
         public Sprite iconAstral;
         public Sprite iconCorrosif;
+        public Sprite iconNecrotique;
 
         public Sprite GetIcon(Element element)
         {
             return element switch
             {
-                Element.Feu      => iconFeu,
-                Element.Eau      => iconEau,
-                Element.Terre    => iconTerre,
-                Element.Air      => iconAir,
-                Element.Lumiere  => iconLumiere,
-                Element.Tenebres => iconTenebres,
-                Element.Astral   => iconAstral,
-                Element.Corrosif => iconCorrosif,
-                _                => null
+                Element.Feu        => iconFeu,
+                Element.Eau        => iconEau,
+                Element.Terre      => iconTerre,
+                Element.Air        => iconAir,
+                Element.Lumiere    => iconLumiere,
+                Element.Tenebres   => iconTenebres,
+                Element.Astral     => iconAstral,
+                Element.Corrosif   => iconCorrosif,
+                Element.Necrotique => iconNecrotique,
+                _                  => null
             };
         }
     }

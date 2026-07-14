@@ -17,7 +17,9 @@ MonoBehaviour:
   cardNumber: 39
   element: 1
   rarity: 3
-  artwork: {fileID: -1937621546347813621, guid: b0a9a257ab3afc24cb9a1535dc7cf2a9, type: 3}
+  artwork: {fileID: 21300000, guid: b0a9a257ab3afc24cb9a1535dc7cf2a9, type: 3}
+  hiddenFromCollection: 0
+  isTrainingDummy: 0
   maxHP: 240
   armorPoints: 0
   critChance: 0.01
@@ -25,10 +27,10 @@ MonoBehaviour:
   skillOne:
     skillType: 0
     skillName: Emprise Tentaculaire
-    description: "Saisit sa cible, lui inflige 12 DGT et l'\xE9tourdie pendant 1
-      Tour."
-    damage: 12
-    cooldownTurns: 1
+    description: "Saisit sa cible, lui inflige 13 DGT et l'\xE9tourdie pendant 1
+      Tour.\n\nSi la cible \xE0 15% de ses PV Max ou moins, elle se fait ex\xE9cuter."
+    damage: 13
+    cooldownTurns: 2
     targetType: 0
     adjacentDamagePercent: 0
     effects:
@@ -36,7 +38,19 @@ MonoBehaviour:
       value: 1
       durationTurns: 1
       effectTarget: 0
-    branches: []
+    branches:
+    - condition:
+        conditionType: 0
+        compareOp: 0
+        threshold: 0.15
+        effectType: 0
+        conditionElement: 0
+      effectType: 20
+      target: 0
+      valueMode: 0
+      valuePercent: 0
+      valueFlat: 0
+      durationTurns: 0
     isIncantation: 0
     castDelayTurns: 1
     attackVFXPrefab: {fileID: 0}
@@ -52,9 +66,11 @@ MonoBehaviour:
   skillTwo:
     skillType: 4
     skillName: "Contr\u020Fle Mental"
-    description: "Etourdie la cible pendant 1 Tour, et lui g\xE8le ses Temps de
-      Recharge jusqu'\xE0 la fin de son prochain tour. \n\nLui inflige 5 DGT."
-    damage: 5
+    description: 'Etourdie la cible pendant 1 Tour.
+
+
+      Lui inflige 15 DGT.'
+    damage: 15
     cooldownTurns: 3
     targetType: 0
     adjacentDamagePercent: 0
@@ -62,10 +78,6 @@ MonoBehaviour:
     - type: 16
       value: 1
       durationTurns: 1
-      effectTarget: 0
-    - type: 12
-      value: 1
-      durationTurns: 0
       effectTarget: 0
     branches: []
     isIncantation: 0
@@ -76,6 +88,28 @@ MonoBehaviour:
     attackVFXIsProjectile: 0
     attackVFXScale: 1
     impactVFXPrefab: {fileID: 8758089774389977906, guid: fab71b97e44bbe64aa91b3fa0b79414c, type: 3}
+    impactVFXScale: 1
+    vfxTravelTime: 0.35
+    vfxImpactDuration: 0.2
+    impactVFXOffset: {x: 0, y: 0, z: 0}
+  skillThree:
+    skillType: 0
+    skillName: 
+    description: 
+    damage: 0
+    cooldownTurns: 0
+    targetType: 0
+    adjacentDamagePercent: 0
+    effects: []
+    branches: []
+    isIncantation: 0
+    castDelayTurns: 1
+    attackVFXPrefab: {fileID: 0}
+    trailVFXPrefab: {fileID: 0}
+    trailVFXScale: 1
+    attackVFXIsProjectile: 0
+    attackVFXScale: 1
+    impactVFXPrefab: {fileID: 0}
     impactVFXScale: 1
     vfxTravelTime: 0.35
     vfxImpactDuration: 0.2

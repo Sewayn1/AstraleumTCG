@@ -22,7 +22,7 @@ MonoBehaviour:
   isTrainingDummy: 0
   maxHP: 350
   armorPoints: 0
-  critChance: 0
+  critChance: 0.01
   bonusActionsGranted: 0
   skillOne:
     skillType: 4

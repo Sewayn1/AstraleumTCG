@@ -1,0 +1,123 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: baa3cfc011ceea542b4a6e2212c058c1, type: 3}
+  m_Name: "Card_054_Arm\xE9e des Damn\xE9s"
+  m_EditorClassIdentifier: Assembly-CSharp::Astraleum.CardData
+  cardName: "Arm\xE9e des Damn\xE9s"
+  cardTitle: 
+  cardNumber: 54
+  element: 8
+  rarity: 2
+  artwork: {fileID: 21300000, guid: 34b0341cbf7407149867ff24c904592c, type: 3}
+  hiddenFromCollection: 0
+  isTrainingDummy: 0
+  immuneToExecute: 0
+  maxHP: 230
+  armorPoints: 0
+  critChance: 0.01
+  bonusActionsGranted: 0
+  skillOne:
+    skillType: 3
+    skillName: Attrape Ames
+    description: "Touche toutes les cartes adverses, r\xE9duisant leurs HEAL re\xE7u
+      de 8% pendant 2 Tours. \n\nAugmente leurs DGT re\xE7u de 5% pendant 2 tours."
+    damage: 0
+    cooldownTurns: 3
+    targetType: 2
+    adjacentDamagePercent: 0
+    effects:
+    - type: 31
+      value: 0.08
+      durationTurns: 2
+      effectTarget: 3
+    - type: 1
+      value: 0.05
+      durationTurns: 2
+      effectTarget: 3
+    branches: []
+    isIncantation: 0
+    castDelayTurns: 2
+    attackVFXPrefab: {fileID: 4560534324245121887, guid: 5d751cb322afd6249bf8dfe9a207b6ed, type: 3}
+    trailVFXPrefab: {fileID: 0}
+    trailVFXScale: 1
+    attackVFXIsProjectile: 0
+    attackVFXScale: 1
+    impactVFXPrefab: {fileID: 7057540923041086895, guid: 8b9ceaed4a59ab84d8933689282e5ba0, type: 3}
+    impactVFXScale: 1
+    vfxTravelTime: 0.35
+    vfxImpactDuration: 0.2
+    impactVFXOffset: {x: 0, y: 0, z: 0}
+  skillTwo:
+    skillType: 0
+    skillName: Marche de la Mort
+    description: "Incantation - 2 Tours :\n\nAttaque une cible, lui inflige 32 DGT.\nApplique
+      NEC \xE0 la cible et aux cibles adjacentes pendant 2 tours (5 DGT / tour)."
+    damage: 32
+    cooldownTurns: 4
+    targetType: 0
+    adjacentDamagePercent: 0
+    effects:
+    - type: 30
+      value: 5
+      durationTurns: 2
+      effectTarget: 6
+    branches: []
+    isIncantation: 1
+    castDelayTurns: 2
+    attackVFXPrefab: {fileID: 6248376004168057411, guid: ca1aaa1eb7639aa468258fd7d9af2c74, type: 3}
+    trailVFXPrefab: {fileID: 8711812988126153232, guid: 40ede7e69297ffa4a8b614c96222ef43, type: 3}
+    trailVFXScale: 1
+    attackVFXIsProjectile: 1
+    attackVFXScale: 1
+    impactVFXPrefab: {fileID: 7057540923041086895, guid: 8b9ceaed4a59ab84d8933689282e5ba0, type: 3}
+    impactVFXScale: 1
+    vfxTravelTime: 0.35
+    vfxImpactDuration: 0.2
+    impactVFXOffset: {x: 0, y: 0, z: 0}
+  skillThree:
+    skillType: 0
+    skillName: 
+    description: 
+    damage: 0
+    cooldownTurns: 0
+    targetType: 0
+    adjacentDamagePercent: 0
+    effects: []
+    branches: []
+    isIncantation: 0
+    castDelayTurns: 1
+    attackVFXPrefab: {fileID: 0}
+    trailVFXPrefab: {fileID: 0}
+    trailVFXScale: 1
+    attackVFXIsProjectile: 0
+    attackVFXScale: 1
+    impactVFXPrefab: {fileID: 0}
+    impactVFXScale: 1
+    vfxTravelTime: 0.35
+    vfxImpactDuration: 0.2
+    impactVFXOffset: {x: 0, y: 0, z: 0}
+  passive:
+    passiveName: Aura de mort
+    passiveDescription: "Quand une carte est d\xE9truite, applique N\xE9crose \xE0
+      un ennemi al\xE9atoire, permanent ( 3 DGT / Tour )."
+    trigger: 1
+    triggerElement: 8
+    passiveColor: {r: 1, g: 0.84, b: 0, a: 1}
+    stacksPerTrigger: 1
+    maxTriggerStacks: 9
+    effects:
+    - type: 30
+      value: 3
+      durationTurns: -1
+      effectTarget: 5
+  loreText: 
+  loreQuote: 

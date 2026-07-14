@@ -218,6 +218,7 @@ Déclaré dans `CardSkill.branches` (List<ConditionalBranch>) — fichier `Asset
 | `AttackerIsBurning` / `AttackerIsPoisoned` | aucun |
 | `AlwaysTrue` | aucun |
 | `TargetHasNoArmor` / `TargetHasArmor` | aucun |
+| `TargetHasNecrose` | aucun |
 
 ### Effets de branche (BranchEffectType)
 | Effet | Moment | Stocké |
@@ -355,13 +356,15 @@ Passif OnTurnStart : effect type=Invisible, value=1, durationTurns=-1, effectTar
 - Le passif re-applique Invisible au début de chaque tour du joueur
 - `CardInstance.IsInvisible` → propriété booléenne de vérification rapide
 
-### Saignement / Burn / Poison / HealBlock / HOT / DamageAmplify — Icônes de statut
+### Saignement / Burn / Poison / HealBlock / HOT / DamageAmplify / Necrose — Icônes de statut
 - **Burn** : affectée armure + DamageReduction. Icône `BurnIcon` via `CardVisualUpdater.burnIcon` + `IconLibrary.iconBurn`
 - **Poison** : ignore armure. Icône `Poison` via `CardVisualUpdater.poisonIcon` + `IconLibrary.iconPoison`
 - **Saignement** : dégâts % PV max/tour, empile par source. Icône `Bleed` via `CardVisualUpdater.saignementIcon` + `IconLibrary.iconSaignement`
 - **HealBlock** : icône `HealBlock` via `CardVisualUpdater.healBlockIcon` + `IconLibrary.iconHealBlock`
 - **HOT** : icône `HOT` via `CardVisualUpdater.hotIcon` + `IconLibrary.iconHOT`
 - **DamageAmplify** (2026-07-10) : uniquement pour un `EffectType.DamageAmplify` **stocké** (skill à `durationTurns > 0`) — la version branche conditionnelle (`BranchEffectType.DamageAmplify`) est consommée pré-damage en one-shot et n'est jamais stockée, donc jamais affichée par cette icône (comportement voulu). Icône `DamageAmplify` via `CardVisualUpdater.damageAmplifyIcon` + `IconLibrary.iconDamageAmplify`
+- **Necrose** (2026-07-14) : dégâts **plat**/tour (pas %, contrairement à Burn/Poison/Saignement). Icône `Necrose` via `CardVisualUpdater.necroseIcon` + `IconLibrary.iconNecrose` (sprite `Icon_Necrotic.png`). `StatusIconTooltip.effectType = 30` (`EffectType.Necrose`), clés `status_title_necrose`/`codex_states_necrose`. `BuffTooltipManager.FormatActiveEffect` a un case dédié (`buff_necrose_line`, valeur flat `{0:0}`, pas `{0:0}%`)
+- ⚠️ **Bug trouvé en cours de route (2026-07-14, PAS corrigé)** : le `StatusIconTooltip` de l'icône `DamageAmplify` dans `CardPrefab2.prefab` a encore les valeurs copiées-collées de `HOT` (`effectType: 4`, `status_title_healovertime`, `codex_states_hot`) — jamais corrigé après duplication. Hors scope de la tâche Necrose, signalé à l'utilisateur.
 - Toutes ces icônes sont auto-trouvées par nom exact via `FindChildImage`/`ForceDisableChild` (`FindReferences`) — le nom du GameObject dans le prefab doit correspondre exactement (`Poison`, `Bleed`, `HealBlock`, `HOT`, `DamageAmplify`)
 - Multi-source Saignement/Burn : même source → durée/valeur rafraîchie ; source différente → nouvelle instance empilée
 - Tooltip Burn : clé `buff_burn_line` (FR/EN)
@@ -407,6 +410,29 @@ durationTurns ignoré — effet immédiat
 - `effect.value` ignoré — la durée du blocage est toujours fixe (1 tour de la cible), seul le +1 sur les deux cooldowns est fixe
 - Textes UI/log renommés de "Recharge gelée" → "Recharge +1 tour" (`buff_cdinc_line`, `preview_cd_inc_fx`, `CombatLogManager.DescribeEffect`)
 
+### CardData.immuneToExecute — immunité Boss à l'Exécution (2026-07-14)
+```
+CardData.immuneToExecute = true → BranchEffectType.Execute ne fait rien sur cette carte
+(log "immunisé à l'Exécution", pas de dégâts, pas de HandleCardDeath)
+```
+- Coché sur les 5 CardData Boss : `Card_Boss_Voragoth_{Coeur de la Fournaise,Dernière Calamité,Empereur Noir}` (3 phases) + `Card_Boss_Vaelthor_{Souverain,Monarque}` (2 phases) — jamais sur les gardiens (`Faucheur des Âmes`/`Gardien des Âmes`), volontairement exclus de la demande utilisateur
+- Vérifié dans `SkillExecutor.ApplyBranches`, AVANT le kill — check ajouté au tout début du bloc `BranchEffectType.Execute`
+- **Pas de miroir serveur** : les combats Boss sont 100% locaux (`BossGameController`/`VaelthorGameController` réutilisent `NetworkBridge.IsActive` SANS connexion SignalR réelle, jamais de PvP contre un Boss) — `AstraleumCore` n'est jamais impliqué dans un combat de Boss, donc aucune synchronisation requise ici contrairement aux autres mécaniques de combat
+- Vaelthor Phase 1 était déjà protégé par un mécanisme différent et préexistant (`CardInstance.isImmortal` bloque `TakeDamage` entièrement) — `immuneToExecute` sur Vaelthor Phase 1 est donc redondant avec `isImmortal` mais reste cohérent/inoffensif si `isImmortal` est un jour retiré par erreur
+- Vérifié via `execute_code` en Play Mode : `Resources.Load<CardData>()` sur les 5 assets Boss confirme `immuneToExecute=true`, sur les 2 gardiens confirme `immuneToExecute=false`
+
+### Execute — Effet de Branche Conditionnelle (2026-07-14)
+```
+BranchEffectType.Execute — achève la cible directement, sans % ni durée qui lui soient propres.
+Le seuil PV vient de la condition IF de la branche (ConditionType.TargetHPPercent, compareOp
+LessOrEqual, threshold = ex. 0.25). N'est jamais stocké comme ActiveEffect.
+```
+- Card design : `ConditionalBranch { condition = TargetHPPercent ≤ X%, effectType = Execute }` — "si la cible a ≤X% PV, achève-la"
+- `SkillExecutor.ApplyBranches` : branché comme cas spécial avant `ToEffectType()` (même famille que `InstantDamage`/`InstantHeal`) — `TakeDamage(branchTarget.currentHP, ignoreArmor:true)` puis `HandleCardDeath` appelé explicitement (les autres cas spéciaux de branche ne l'appellent pas côté client — lacune préexistante ; Execute y échappe car sans lui la carte resterait à 0 PV sur le plateau)
+- `ConditionalBranchDrawer` : `Execute` traité comme `Cancel` dans l'inspecteur — aucun champ valeur/durée affiché (le seuil est déjà dans la condition IF)
+- Ajouté **en dernier** dans `BranchEffectType` (client `SkillBranch.cs` + serveur `AstraleumCore/Models/ConditionalBranch.cs`) — n'affecte aucune carte existante
+- Pas de preview pré-attaque (les branches n'ont globalement pas de preview dans `CombatUIManager` actuellement, cohérent avec l'existant)
+
 ### CooldownReduction — jamais sur la carte qui lance la compétence (2026-07-10)
 - `SkillExecutor.ApplyEffectToCard` : guard `if (target == source) break;` — un CooldownReduction ciblé sur soi-même (SingleAlly) n'a aucun effet
 - `SkillExecutor.ApplyEffect` (dispatch AllAllies / RandomAllies) : la source est exclue de la liste des alliés avant application/tirage, uniquement pour `EffectType.CooldownReduction` (les autres effets AllAllies/RandomAllies continuent d'inclure le lanceur normalement)
@@ -417,6 +443,47 @@ durationTurns ignoré — effet immédiat
 - `BoardManager.DestroyCard` appelle déjà `PassiveManager.OnCardDestroyed` en interne → ne jamais rappeler `OnCardDestroyed` directement après `DestroyCard` (double déclenchement)
 - **OnAllyDestroyed** : filtre `triggerElement` appliqué ; `resolvedSource = card` (la carte détruite n'est plus alive, ne jamais la passer comme cible d'effet)
 - Compétences `Self` : `HighlightValidTargets` surligne uniquement la carte sélectionnée via `HighlightSelfTarget()`
+
+### PlayerCollection — chargement en Awake, pas Start (2026-07-14)
+```
+GrantAllCards() + LoadUnlockedRewardCards() appelés dans Awake(), pas Start()
+```
+- **Why** : d'autres composants (`RaidPanelController.OnEnable`) appellent `PlayerCollection.Instance.OwnsCard(...)` dès leur propre `OnEnable`, qui s'exécute AVANT le `Start()` de **tous** les scripts de la frame (ordre Unity : tous les `Awake()` → tous les `OnEnable()` → tous les `Start()`). Un chargement en `Start()` faisait lire un état pas encore prêt au tout premier affichage d'un panneau (ex. `VoragothTrophy` invisible au premier clic sur Panel_Raid même si Voragoth déjà vaincu, jusqu'à un second clic) — bug reproduit et corrigé en Play Mode le 2026-07-14, voir [[project_raid_trophy]]
+- Tout futur composant qui lit `PlayerCollection.OwnsCard`/`REWARD_CARD_NUMBERS` dans son propre `Awake`/`OnEnable` est maintenant safe par construction (plus de dépendance à l'ordre d'exécution des scripts)
+
+### Panel_Raid — Trophées de Boss vaincu (2026-07-14)
+```
+RaidPanelController.BossEncounterConfig.trophyObject   → GameObject Trophy (ex. VoragothTrophy/VaelthorTrophy)
+RaidPanelController.BossEncounterConfig.rewardCardNumber → carte récompense du Boss (48=Voragoth, 49=Vaelthor)
+```
+- `SelectBoss()` : au clic sur un Boss, affiche le trophée de CE Boss uniquement si `PlayerCollection.Instance.OwnsCard(rewardCardNumber)` est vrai (= Boss déjà vaincu, carte récompense débloquée) ; masque tous les autres trophées (même pattern one-at-a-time que `descPanel`)
+- Art trophées déjà en place dans la scène (`Assets/Game/UI/Trophy/*.png`), objets `VoragothTrophy`/`VaelthorTrophy` enfants de `Panel_Raid` (PAS de `Panel_Decks`), assignés via `SerializedObject` (références cross-hiérarchie comme `gamemodeTitle`/`warningText`)
+- Cartes 049/050/051 (récompenses Vaelthor) verrouillées dans Panel_Collection : déjà géré par `PlayerCollection.REWARD_CARD_NUMBERS = {48, 49, 50, 51}`, générique — aucune modification nécessaire pour ce ticket
+
+### ExecuteIndicator — croix diagonale MPImage, aperçu de ciblage Execute (2026-07-14)
+```
+CardPrefab2/ExecuteIndicator (full-card, anchors 0,0-1,1) + CanvasGroup
+├── DiagonalA (MPImage DrawShape=Rectangle, rotation +54.9524°)
+└── DiagonalB (MPImage DrawShape=Rectangle, rotation -54.9524°)
+```
+- Première utilisation de **MPImage** (MPUIKit) dans le projet — aucun autre precedent à copier. `DrawShape` enum : `None=0, Circle=1, Triangle=2, Rectangle=3, ChamferBox=4, Parallelogram=5, Pentagon=6, Hexagon=7, NStarPolygon=8`. Pas de forme "ligne/croix" native — composé de 2 rectangles fins (417.235×8, `Rectangle.CornerRadius`=4 sur les 4 coins) pivotés pour relier chaque coin de la carte (239.6×341.58) à son opposé, angle calculé via `atan2(hauteur, largeur)` = 54.9524°. `raycastTarget=false` sur les deux (ne doit jamais intercepter les clics carte).
+- Construit via `manage_prefabs open_prefab_stage` + `manage_gameobject`/`manage_components` (pas d'édition YAML manuelle) — `components_to_add` accepte le nom qualifié `MPUIKIT.MPImage`. Piège rencontré : `manage_gameobject modify` sur un instanceID négatif fraîchement créé échoue en `search_method` par défaut, nécessite `search_method: "by_id"` explicite.
+- **`CardTargetHighlight.cs`** : nouveau toggle indépendant `ActivateExecuteIndicator()`/`DeactivateExecuteIndicator()` (pattern identique à `ActivateBounce`/`DeactivateBounce` déjà existant — coexiste avec le pulse `Attack` sans le remplacer, PAS un nouveau `HighlightType`). Pulse propre via `CanvasGroup.alpha` (0.55↔1, indépendant du pulse d'échelle/teinte du highlight principal). `Awake()` résout `executeIndicator` via `transform.Find("ExecuteIndicator")` (même pattern que `ExhaustedOverlay`/`DestroyedOverlay`).
+- **`CombatUIManager.WouldExecute(attacker, skill, target)`** (privée) : parcourt `skill.branches`, ne considère que `BranchEffectType.Execute` + `BranchTarget.Target`, évalue `branch.condition.Evaluate(attacker, target)`, respecte `target.data.immuneToExecute` (mêmes règles que `SkillExecutor.ApplyBranches` à l'exécution réelle — cohérence garantie car même méthode `SkillCondition.Evaluate` réutilisée, pas de logique dupliquée). Appelée depuis `HighlightEnemyTargets()` (déclenché une fois à la sélection de compétence, PAS un aperçu au survol en temps réel — cohérent avec le reste du projet où les branches n'ont pas de preview live). Nettoyé dans `ClearAllHighlights()`.
+- Pas de câblage équivalent pour `HighlightAlliedTargets()` — Execute cible quasi-toujours `BranchTarget.Target` sur un ennemi, scope volontairement limité au cas réel.
+- Vérifié en Play Mode via `execute_code` + réflexion sur `WouldExecute` (privée) : cible à 20% PV (seuil ≤30%) → `true` ; cible à 100% PV → `false` ; Boss `immuneToExecute=true` à 5% PV → `false`. `ActivateExecuteIndicator`/`DeactivateExecuteIndicator` testés sur une instance réelle de `CardPrefab2` (GameObject + CanvasGroup résolus correctement).
+
+### VFX Nécrotique — duplication depuis Poison, vert-teal maladif (2026-07-14)
+```
+Base : Materials/Void & Universe/M_VFX_Cardgame_Missiles_Poison_* (11 mats)
+     + CardGameVFX/Prefabs/Elemental Missiles/Poison/VFX_CardMissile_Poison_{WindUp,Projectile,Impact}
+```
+- Même patron que Corrosif (duplication depuis Water) : duplication 1:1 (mêmes textures/shader `UberFXSG`), seules `_FresnelColor`/`_MidColor`/`_WhiteColor` retintées — calcul HSV (teinte cible 160° = vert-teal, tirée de `DeckCardSlot.cs` `Element.Necrotique → Color(0.15,0.45,0.35,0.85)`, saturation = max(saturation d'origine, 0.55), valeur/luminosité préservée par matériau)
+- Poison n'a **pas** de set `CardSpawn_x`/`ActivateAbility_x` (contrairement à Water) — seul le trio Elemental Missiles existe pour cette base, donc le set Nécrotique reproduit uniquement ce qui existe réellement (11 mats + 3 prefabs) ; pas un manque fonctionnel puisque `ActivateAbility_x` n'est de toute façon consommé nulle part dans le code et `CardSpawn_x` est réservé aux VFX d'entrée de Boss (non pertinent ici)
+- Repointage des guids de matériaux dans les 3 prefabs (38k-78k lignes chacun) fait via `sed` ciblé sur les guids exacts plutôt que Read/Edit (fichiers trop volumineux pour l'un ou l'autre) — matériaux "Shared" non retintés (référencés tels quels par plusieurs éléments, ex. guid `735245ba256c01648818ee7ac945c3d1` répété dans les 3 prefabs)
+- Câblé sur `Card_050_Faucheur des Ames.asset` skillTwo (Moisson Sombre, seul skill avec `EffectType.Necrose`) : `attackVFXPrefab`→WindUp, `trailVFXPrefab`→Projectile, `impactVFXPrefab`→Impact — **PAS** sur `Card_051_Gardien des Ames.asset` : ce card est bien élément Nécrotique mais aucun de ses 2 skills n'utilise Nécrose (Regard Glacial=HealReduction, Rempart Spectral=GiveArmor self-buff) — pas de compétence pertinente à habiller
+- ⚠️ Erreur commise puis corrigée en cours de tâche : wiring initial appliqué par erreur sur `Card_051.skillTwo` (en supposant à tort que les 2 cartes partagent la même structure de skill) — un skill self-buff sans cible/déplacement n'a aucun sens avec un VFX projectile ; corrigé en vidant les 3 champs (`value: null` via `manage_scriptable_object`, PAS `instanceID: 0` qui échoue avec "No object found")
+- Vérifié : refresh Unity sans erreur, instanciation + `Play(true)` des 3 prefabs en Play Mode sans exception, valeurs couleur finales confirmées vert/teal par grep sur les 11 fichiers
 
 ### VFX — Positionnement sur carte (CardVFXHandler)
 - `AnchorPos` utilise `rt.TransformPoint(rt.rect.center)` si `vfxAnchor` non assigné → centre visuel exact indépendant du pivot

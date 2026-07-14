@@ -34,6 +34,8 @@ namespace Astraleum
         public bool hiddenFromCollection = false;
         [Tooltip("Si coché : PV masqués à l'affichage (case vierge) et régénération complète à chaque tour. Réservé aux cartes d'entraînement (ex. Card_AITraining).")]
         public bool isTrainingDummy = false;
+        [Tooltip("Si coché, cette carte ignore totalement BranchEffectType.Execute (compétences d'exécution). Réservé aux Boss de Raid (ex. Voragoth, Vaelthor — toutes leurs phases).")]
+        public bool immuneToExecute = false;
 
         [Header("Stats")]
         public int maxHP = 100;

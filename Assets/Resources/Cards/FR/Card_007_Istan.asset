@@ -18,6 +18,8 @@ MonoBehaviour:
   element: 5
   rarity: 0
   artwork: {fileID: 21300000, guid: 8c80698f96d149844aac0656324c9163, type: 3}
+  hiddenFromCollection: 0
+  isTrainingDummy: 0
   maxHP: 95
   armorPoints: 0
   critChance: 0.01
@@ -92,6 +94,28 @@ MonoBehaviour:
     vfxTravelTime: 0.35
     vfxImpactDuration: 0.4
     impactVFXOffset: {x: 0, y: -150, z: 0}
+  skillThree:
+    skillType: 0
+    skillName: 
+    description: 
+    damage: 0
+    cooldownTurns: 0
+    targetType: 0
+    adjacentDamagePercent: 0
+    effects: []
+    branches: []
+    isIncantation: 0
+    castDelayTurns: 1
+    attackVFXPrefab: {fileID: 0}
+    trailVFXPrefab: {fileID: 0}
+    trailVFXScale: 1
+    attackVFXIsProjectile: 0
+    attackVFXScale: 1
+    impactVFXPrefab: {fileID: 0}
+    impactVFXScale: 1
+    vfxTravelTime: 0.35
+    vfxImpactDuration: 0.2
+    impactVFXOffset: {x: 0, y: 0, z: 0}
   passive:
     passiveName: Voile de l'Assassin
     passiveDescription: "Tant que cette carte n'attaque pas, elle devient \"Invisible\"

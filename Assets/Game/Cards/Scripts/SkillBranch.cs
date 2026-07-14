@@ -16,6 +16,7 @@ namespace Astraleum
         AttackerIsOnlyElement,  // Cette carte est la SEULE de son élément parmi les alliés vivants
         TargetHasNoArmor,       // La cible a une armure totale de 0
         TargetHasArmor,         // La cible a une armure totale > 0
+        TargetHasNecrose,       // La cible est en état Nécrose
     }
 
     public enum CompareOp
@@ -46,7 +47,8 @@ namespace Astraleum
         CritDamageBoost,    // Augmente le bonus DGT critique (value = % additif sur le +50% de base)
         AttackReductionFlat, // Réduit DGT infligés de N flat (ex. -3 DGT absolus)
         Cancel,             // Annule toutes les incantations en cours sur la cible
-        Inarretable,        // Immunité Stun et Cancel pendant N tours — TOUJOURS EN DERNIER
+        Inarretable,        // Immunité Stun et Cancel pendant N tours
+        Execute,            // Achève directement la cible (pas de %/durée propres — utiliser la condition IF, ex. TargetHPPercent ≤ X%) — TOUJOURS EN DERNIER
     }
 
     public enum BranchTarget
@@ -121,6 +123,9 @@ namespace Astraleum
 
                 case ConditionType.TargetHasArmor:
                     return target != null && target.TotalArmor > 0;
+
+                case ConditionType.TargetHasNecrose:
+                    return target != null && target.activeEffects.Exists(e => e.type == EffectType.Necrose);
             }
             return false;
         }

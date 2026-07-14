@@ -27,6 +27,11 @@ namespace Astraleum.AI
         // CardData de la Phase 1 du Boss (ex. Voragoth) — utilisé uniquement quand Mode == GameMode.Boss.
         public static CardData BossEncounterData;
 
+        // Identifiant du Boss sélectionné (0 = Voragoth, 1 = Vaelthor) — permet à
+        // BossGameController/VaelthorGameController de savoir lequel des deux s'active
+        // dans la scène Combat (les deux coexistent, mutuellement exclusifs).
+        public static int BossID = 0;
+
         public static bool IsAIMatch => Mode != GameMode.PvP;
         public static bool IsBossMatch => Mode == GameMode.Boss;
 
@@ -37,6 +42,7 @@ namespace Astraleum.AI
             AIDeckNumbers = null;
             AIDisplayName = "IA";
             BossEncounterData = null;
+            BossID = 0;
         }
     }
 }
