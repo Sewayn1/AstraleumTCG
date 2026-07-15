@@ -420,7 +420,16 @@ function compareVersions(a, b) {
     if (na !== nb) return na > nb ? 1 : -1;
     const sufA = sa.replace(/^\d+/, '');
     const sufB = sb.replace(/^\d+/, '');
-    if (sufA !== sufB) return sufA > sufB ? 1 : -1;
+    if (sufA !== sufB) {
+      // Une version avec un segment supplémentaire à ce niveau (ex. "0.0.7.1", segment "1"
+      // après l'index courant) est plus récente qu'une version qui s'arrête sur un suffixe
+      // lettré au même niveau (ex. "0.0.7b") — sinon "" < "b" lexicographiquement ferait
+      // passer "0.0.7.1" pour plus ancien que "0.0.7b", cassant la détection de mise à jour.
+      const hasMoreA = i + 1 < pa.length;
+      const hasMoreB = i + 1 < pb.length;
+      if (hasMoreA !== hasMoreB) return hasMoreA ? 1 : -1;
+      return sufA > sufB ? 1 : -1;
+    }
   }
   return 0;
 }

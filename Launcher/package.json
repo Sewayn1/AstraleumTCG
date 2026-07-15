@@ -1,6 +1,6 @@
 {
   "name": "astraleum-launcher",
-  "version": "1.4.0",
+  "version": "1.4.1",
   "description": "Astraleum TCG Game Launcher",
   "author": "Sewayn1",
   "main": "src/main.js",
