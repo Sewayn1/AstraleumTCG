@@ -1471,18 +1471,6 @@
   ],
   "changelog": [
     {
-      "version": "0.0.7.1",
-      "date": "2026-07-15",
-      "title": "Boss Vaelthor et élément Nécrotique",
-      "entries": [
-        "Boss Vaelthor (2 phases, gardiens, transition, trophée)",
-        "Élément Nécrotique + VFX + 6 nouvelles cartes",
-        "Fix musique Phase 2 (bug Awake/OnEnable)",
-        "Rééquilibrage Phase 1 (rotation IA + gardiens renforcés)",
-        "Ratio Focus/Chaos Phase 2 ajusté à 80/20"
-      ]
-    },
-    {
       "version": "Alpha 0.0.7.1",
       "date": "2026-07-12",
       "title": "Voragoth et équilibrage",
