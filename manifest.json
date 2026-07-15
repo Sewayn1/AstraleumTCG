@@ -1,6 +1,6 @@
 {
   "version": "0.0.7.1",
-  "releaseDate": "2026-07-14",
+  "releaseDate": "2026-07-15",
   "launcher": {
     "version": "1.4.0",
     "url": "https://github.com/Sewayn1/Astraleum-Launcher/releases/download/launcher-v1.4.0/AstraleumLauncher-Setup-1.4.0.exe"
@@ -30,20 +30,20 @@
     },
     {
       "path": "Astraleum_Data/boot.config",
-      "sha256": "727daafe27682f7550b4850d2e34893bf606edc0616934a747ae7ea4713230b1",
+      "sha256": "2de60a3a07c2af933f318ef1d8fc794c4ecef75ef765a129d002a59e1256ed42",
       "size": 183,
       "url": "https://pub-7a3fbfeeb8954a7b8248153ed3cd9f4a.r2.dev/gamebuild/Astraleum_Data/boot.config"
     },
     {
       "path": "Astraleum_Data/globalgamemanagers",
-      "sha256": "3080e4015cf473aa7cee4fc3b5071809915e7c358de7e75f41770f4a2f15a9c0",
-      "size": 338212,
+      "sha256": "e681cf5357473390b2c5660cd64e1c5c93305fb0d269c93e2867ef00cdfa81f4",
+      "size": 347412,
       "url": "https://pub-7a3fbfeeb8954a7b8248153ed3cd9f4a.r2.dev/gamebuild/Astraleum_Data/globalgamemanagers"
     },
     {
       "path": "Astraleum_Data/globalgamemanagers.assets",
-      "sha256": "4dc7935a4cd3314a73c683394bf0505d567ec5a8ee794a6f6706df317b558ec1",
-      "size": 1482532,
+      "sha256": "eea06592a685417dbf8a0f87ad9fda93389d557a42e680147bcf11279e027632",
+      "size": 1483332,
       "url": "https://pub-7a3fbfeeb8954a7b8248153ed3cd9f4a.r2.dev/gamebuild/Astraleum_Data/globalgamemanagers.assets"
     },
     {
@@ -54,14 +54,14 @@
     },
     {
       "path": "Astraleum_Data/level0",
-      "sha256": "c30b9bc202b448a62a086eb310e5c25158feadfefd01e85e8e33bdb12ec82e26",
-      "size": 735832,
+      "sha256": "e6cfaca6cd6ceb0f4914747504a8a9ce6df4920e03a08e951eb83cd28669dfbe",
+      "size": 807544,
       "url": "https://pub-7a3fbfeeb8954a7b8248153ed3cd9f4a.r2.dev/gamebuild/Astraleum_Data/level0"
     },
     {
       "path": "Astraleum_Data/level1",
-      "sha256": "3fdd362d2427b6ce2c95a366db34aba1be001948b1985c47ad256964dc114018",
-      "size": 274932,
+      "sha256": "ddcc1500b1ca25f2a75b0bc7340d4fa4ea9c00d1659cdfa9507e925a1a1ffc79",
+      "size": 284756,
       "url": "https://pub-7a3fbfeeb8954a7b8248153ed3cd9f4a.r2.dev/gamebuild/Astraleum_Data/level1"
     },
     {
@@ -72,8 +72,8 @@
     },
     {
       "path": "Astraleum_Data/Managed/Assembly-CSharp.dll",
-      "sha256": "3926c3cfc2d9b927574f7ecbbafa9ab7c5f439e2fdadd907e46d76a9580c34e0",
-      "size": 339456,
+      "sha256": "a25975b4539e7a8cad8c7eef8f37545ef77bce796df1965ce83263b21968c7cd",
+      "size": 360448,
       "url": "https://pub-7a3fbfeeb8954a7b8248153ed3cd9f4a.r2.dev/gamebuild/Astraleum_Data/Managed/Assembly-CSharp.dll"
     },
     {
@@ -1254,14 +1254,14 @@
     },
     {
       "path": "Astraleum_Data/resources.assets",
-      "sha256": "73f7993454104d2d8e7ddb4d4f608828df6b82ca896fa6f65d60edce415b2a15",
-      "size": 4719640,
+      "sha256": "066b43ce9c569f5ac137bc451f1cfa8d349915d42219f75d33ddc291c483306c",
+      "size": 4912200,
       "url": "https://pub-7a3fbfeeb8954a7b8248153ed3cd9f4a.r2.dev/gamebuild/Astraleum_Data/resources.assets"
     },
     {
       "path": "Astraleum_Data/resources.assets.resS",
-      "sha256": "a6a4bf93627056e0282a0342a4fd2f571a07eb0ad454fe9ac21e8877172fe497",
-      "size": 227093856,
+      "sha256": "672a07831a28914a6c361191be56f8dde696db1cf2fc581d181ca7a56077abe2",
+      "size": 235922208,
       "url": "https://pub-7a3fbfeeb8954a7b8248153ed3cd9f4a.r2.dev/gamebuild/Astraleum_Data/resources.assets.resS"
     },
     {
@@ -1278,38 +1278,38 @@
     },
     {
       "path": "Astraleum_Data/sharedassets0.assets",
-      "sha256": "d54a26dcf6343fd43ef1dfb6e3012b9547fed63f2cfdbf70cca68553deb6de40",
-      "size": 1541488,
+      "sha256": "b790f404d2d31bad67a0e01b3c5ccf843c338a8ef4d55b2adb64f576686ee881",
+      "size": 6263760,
       "url": "https://pub-7a3fbfeeb8954a7b8248153ed3cd9f4a.r2.dev/gamebuild/Astraleum_Data/sharedassets0.assets"
     },
     {
       "path": "Astraleum_Data/sharedassets0.assets.resS",
-      "sha256": "cb1407f1f44b84df53e164dfdd617f92bdce8f39b621aab43722345c6a7a8d39",
-      "size": 46382368,
+      "sha256": "fff5c8309cfb622e9e21fa5417e640f128a4f67edf7bd619f70853de8b3ac1ae",
+      "size": 67325648,
       "url": "https://pub-7a3fbfeeb8954a7b8248153ed3cd9f4a.r2.dev/gamebuild/Astraleum_Data/sharedassets0.assets.resS"
     },
     {
       "path": "Astraleum_Data/sharedassets0.resource",
-      "sha256": "a2ae9fafcf03c1891e49c60df8da3d5eeb2f531a0c10bcdfbea60a91daa18040",
-      "size": 41237655,
+      "sha256": "95abd31ae9005cff9f0a01e1c02d923761d0510fddaac539b7349276ef9d4b7d",
+      "size": 113017549,
       "url": "https://pub-7a3fbfeeb8954a7b8248153ed3cd9f4a.r2.dev/gamebuild/Astraleum_Data/sharedassets0.resource"
     },
     {
       "path": "Astraleum_Data/sharedassets1.assets",
-      "sha256": "a5a5676bf962c483fa773e63494f0eee209139914a857bbe12c09a7cd7cee485",
-      "size": 395072,
+      "sha256": "59351b2a5378cadc72cff72772d783c432f30d2331c4727487fe3f115f4880f4",
+      "size": 333760,
       "url": "https://pub-7a3fbfeeb8954a7b8248153ed3cd9f4a.r2.dev/gamebuild/Astraleum_Data/sharedassets1.assets"
     },
     {
       "path": "Astraleum_Data/sharedassets1.assets.resS",
-      "sha256": "77f18b291c762e76aeb426c1652e52770feb49a2a272556d48fd971794cdb890",
-      "size": 65374672,
+      "sha256": "f5268579fc6099a01b999df82bf0ce62fa3c7de033ca78bbf8255f9bc4a164e8",
+      "size": 68296352,
       "url": "https://pub-7a3fbfeeb8954a7b8248153ed3cd9f4a.r2.dev/gamebuild/Astraleum_Data/sharedassets1.assets.resS"
     },
     {
       "path": "Astraleum_Data/sharedassets1.resource",
-      "sha256": "0f7b68bacde4a3fd371c015057baae047bab46fcdd9825c8a34d63f3aba8c472",
-      "size": 15213792,
+      "sha256": "f4703390df95ba7c617bae1117a36790414a1026a20a13e13001945cda8d3472",
+      "size": 24700480,
       "url": "https://pub-7a3fbfeeb8954a7b8248153ed3cd9f4a.r2.dev/gamebuild/Astraleum_Data/sharedassets1.resource"
     },
     {
@@ -1470,6 +1470,53 @@
     }
   ],
   "changelog": [
+    {
+      "version": "0.0.7.1",
+      "date": "2026-07-15",
+      "title": "Boss Vaelthor et élément Nécrotique",
+      "entries": [
+        "Boss Vaelthor (2 phases, gardiens, transition, trophée)",
+        "Élément Nécrotique + VFX + 6 nouvelles cartes",
+        "Fix musique Phase 2 (bug Awake/OnEnable)",
+        "Rééquilibrage Phase 1 (rotation IA + gardiens renforcés)",
+        "Ratio Focus/Chaos Phase 2 ajusté à 80/20"
+      ]
+    },
+    {
+      "version": "Alpha 0.0.7.1",
+      "date": "2026-07-12",
+      "title": "Voragoth et équilibrage",
+      "entries": [
+        "Ajout d’un nouvel élément : Nécrotique ! → Infligez des Dégâts sur la durée fixes à vos adversaires et réduisez leurs soins reçu pour contrôler le terrain à votre avantage ! Attention.. Si vous êtes sous l’effet d’une carte nécrotique… Vous pouvez exploser et faire des dégâts aux cartes proches !",
+        "Introduction du deuxième Boss de Raid axé sur la Nécromancie : Vaelthor.",
+        "Mis à jour du Codex pour l’élément Nécrotique",
+        "Mis à jour de la collection pour les cartes Nécrotiques",
+        "Ajout de 7 Cartes Nécrotiques ( Dont 3 Obtenable via = ? )",
+        "Ajout d’une nouvelle carte Astral → Nyxara Gardienne du Cycle Astral",
+        "Ajout de la mécanique de Réduction des Effets de Soin",
+        "---",
+        "Ajout de 2 nouvelles Icones → Immortel et Soins sur la durée (Rework)",
+        "Optimisation du Launcher ( V 1.4.0) : désormais les futures mis à jour téléchargerons les fichiers modifiés ou manquant plutôt que de vous refaire télécharger tout le jeu",
+        "Ajustement des cartes utilisant le système de Stun ou Augmentation des Temps de Recharge : Désormais, les Temps de Recharge pour ces compétences sont au minimum de 2 Tours, pour éviter les abus et les boucles ",
+        "Rework du système d’exécution → s’applique directement sur le % de PV restant",
+        "---",
+        "Rework Illustration de Mage de Sang",
+        "Rework Illustration de Élémentaire de Feu",
+        "Rework Illustration de Élémentaire d’Eau",
+        "Rework Illustration de Wolfgorn",
+        "Rework Illustration de Zuln - Péché de l’Envie",
+        "Rework Illustration de Gobelin Pyromane",
+        "Rework Illustration de Lyoness - Chevalière Errante",
+        "Rework Illustration de Paladin de Liotnar",
+        "Rework Illustration de Chevalier de Liotnar",
+        "Rework Illustration de l’Ecuyer de Liotnar",
+        "Rework Illustration de Djormund Nordique Céleste",
+        "Rework Illustration de Eldrich l’Astre Mage",
+        "Rework de l’icone Astrale",
+        "Rework Illustration de Adala Chamane Fulgurante",
+        "Rework Illustration de Adelia Maitresse du Vent"
+      ]
+    },
     {
       "version": "0.0.7b",
       "date": "2026-07-12",
