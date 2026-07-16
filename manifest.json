@@ -17,12 +17,6 @@
       "url": "https://pub-7a3fbfeeb8954a7b8248153ed3cd9f4a.r2.dev/gamebuild/Astraleum.exe"
     },
     {
-      "path": "Astraleum_BurstDebugInformation_DoNotShip/Data/Plugins/x86_64/lib_burst_generated.txt",
-      "sha256": "8c55b80a5fc85b32a73b84c50b93197cde3089605bf261f3b9eecbb1684c1e4c",
-      "size": 244566,
-      "url": "https://pub-7a3fbfeeb8954a7b8248153ed3cd9f4a.r2.dev/gamebuild/Astraleum_BurstDebugInformation_DoNotShip/Data/Plugins/x86_64/lib_burst_generated.txt"
-    },
-    {
       "path": "Astraleum_Data/app.info",
       "sha256": "75f48e15c1b44c8c64453794ea7deb23bdcb9e91abf4ae94152fb053b002dd3e",
       "size": 23,
@@ -30,13 +24,13 @@
     },
     {
       "path": "Astraleum_Data/boot.config",
-      "sha256": "2de60a3a07c2af933f318ef1d8fc794c4ecef75ef765a129d002a59e1256ed42",
+      "sha256": "e569e3f5d7ef5cab1ab5f2979483f030e083188d41d4246d85d9c468a6caea43",
       "size": 183,
       "url": "https://pub-7a3fbfeeb8954a7b8248153ed3cd9f4a.r2.dev/gamebuild/Astraleum_Data/boot.config"
     },
     {
       "path": "Astraleum_Data/globalgamemanagers",
-      "sha256": "e681cf5357473390b2c5660cd64e1c5c93305fb0d269c93e2867ef00cdfa81f4",
+      "sha256": "bff27ce1e0cc0a214dfbd3cc3aec7c21aedf4e30c6f1dfaec87bb3de5e4dd7b8",
       "size": 347412,
       "url": "https://pub-7a3fbfeeb8954a7b8248153ed3cd9f4a.r2.dev/gamebuild/Astraleum_Data/globalgamemanagers"
     },
@@ -54,32 +48,32 @@
     },
     {
       "path": "Astraleum_Data/level0",
-      "sha256": "e6cfaca6cd6ceb0f4914747504a8a9ce6df4920e03a08e951eb83cd28669dfbe",
-      "size": 807544,
+      "sha256": "bf86d1fbc6174aa88a73c96b02772fc4d282b32692d5cd7944cd52040d303c6f",
+      "size": 808232,
       "url": "https://pub-7a3fbfeeb8954a7b8248153ed3cd9f4a.r2.dev/gamebuild/Astraleum_Data/level0"
     },
     {
       "path": "Astraleum_Data/level1",
-      "sha256": "ddcc1500b1ca25f2a75b0bc7340d4fa4ea9c00d1659cdfa9507e925a1a1ffc79",
-      "size": 284756,
+      "sha256": "6b40beb1e625f4f2b6f4bb06d01bd3490a3128dc2b13af1a75375136950a5315",
+      "size": 285652,
       "url": "https://pub-7a3fbfeeb8954a7b8248153ed3cd9f4a.r2.dev/gamebuild/Astraleum_Data/level1"
     },
     {
       "path": "Astraleum_Data/Managed/Assembly-CSharp-firstpass.dll",
-      "sha256": "b06de4be586e346fbbe7efdb7eb43be85a4c43baf9ad1acec82f380b1239577c",
+      "sha256": "5de036940a73625f69e70d8d457580fdf9b8e4e990ee6d2f0b5d6e340c74500c",
       "size": 50176,
       "url": "https://pub-7a3fbfeeb8954a7b8248153ed3cd9f4a.r2.dev/gamebuild/Astraleum_Data/Managed/Assembly-CSharp-firstpass.dll"
     },
     {
       "path": "Astraleum_Data/Managed/Assembly-CSharp.dll",
-      "sha256": "a25975b4539e7a8cad8c7eef8f37545ef77bce796df1965ce83263b21968c7cd",
+      "sha256": "89bea3596f0d0094ce31104b5e58ba59c5073773a3645b660965d7af330c9641",
       "size": 360448,
       "url": "https://pub-7a3fbfeeb8954a7b8248153ed3cd9f4a.r2.dev/gamebuild/Astraleum_Data/Managed/Assembly-CSharp.dll"
     },
     {
       "path": "Astraleum_Data/Managed/Astraleum.Core.dll",
-      "sha256": "36748878478c6bdfd99bad8bfabd5ce845840b9e7fe8da2e2e0d1a2d533553f4",
-      "size": 64000,
+      "sha256": "128cf89c1b4eb56e426870407bfa42bcd59b2c18b78a15ef5e8cc9c8b00f5071",
+      "size": 66560,
       "url": "https://pub-7a3fbfeeb8954a7b8248153ed3cd9f4a.r2.dev/gamebuild/Astraleum_Data/Managed/Astraleum.Core.dll"
     },
     {
@@ -90,13 +84,13 @@
     },
     {
       "path": "Astraleum_Data/Managed/kcp2k.dll",
-      "sha256": "5f1ce7f3ae6b064240b721286e9aa89af7ad1bd2a4104441ec395c0d8cb90bf2",
+      "sha256": "d19c03c325280f37049343b60adb693057a96a4223f4b4218531491651b60c59",
       "size": 38400,
       "url": "https://pub-7a3fbfeeb8954a7b8248153ed3cd9f4a.r2.dev/gamebuild/Astraleum_Data/Managed/kcp2k.dll"
     },
     {
       "path": "Astraleum_Data/Managed/MCPForUnity.Runtime.dll",
-      "sha256": "d51f9f7e5821a21d26cda3d7d2057d72394d5a98a53c2bb36f87e3173a38ffee",
+      "sha256": "f5c8b393a5f6b451cec3c9cbc5550f4264f6fe6285303757a9a91edef14685d7",
       "size": 31232,
       "url": "https://pub-7a3fbfeeb8954a7b8248153ed3cd9f4a.r2.dev/gamebuild/Astraleum_Data/Managed/MCPForUnity.Runtime.dll"
     },
@@ -210,7 +204,7 @@
     },
     {
       "path": "Astraleum_Data/Managed/Mirror.Authenticators.dll",
-      "sha256": "e09dc1688cef859251eced5e4877e1bcde443a15b9fb5c79a34b7aa951482add",
+      "sha256": "bc3b4fbab94be3f9fa89539deb7fb1f857ece09d4ec020b55f59a30bf1ec17c9",
       "size": 31744,
       "url": "https://pub-7a3fbfeeb8954a7b8248153ed3cd9f4a.r2.dev/gamebuild/Astraleum_Data/Managed/Mirror.Authenticators.dll"
     },
@@ -222,25 +216,25 @@
     },
     {
       "path": "Astraleum_Data/Managed/Mirror.Components.dll",
-      "sha256": "ede3d99292af7562e0d940f8bf72c65c592a9fd1125f77d336f01a7b00fa7ce6",
+      "sha256": "c337f8e51123994d59e3261a3b05cab34116078776d6c3184a268f03390627bb",
       "size": 176128,
       "url": "https://pub-7a3fbfeeb8954a7b8248153ed3cd9f4a.r2.dev/gamebuild/Astraleum_Data/Managed/Mirror.Components.dll"
     },
     {
       "path": "Astraleum_Data/Managed/Mirror.dll",
-      "sha256": "95291339baf351d4bf30acfcb76727a487c2e32b69b15df50357ed3983b15cbf",
+      "sha256": "f11df53579c7a4de42f4d3f078538a196e2edd4b5a3e4569a17129d2c8fc5676",
       "size": 226816,
       "url": "https://pub-7a3fbfeeb8954a7b8248153ed3cd9f4a.r2.dev/gamebuild/Astraleum_Data/Managed/Mirror.dll"
     },
     {
       "path": "Astraleum_Data/Managed/Mirror.Examples.dll",
-      "sha256": "dcaa245eb180ad1f21d3bd84753f4e7a4617140acec8713675fd74600659d541",
+      "sha256": "d7de631a2d16ffcad4e0e13571993d89f6467222813b8b2c59fa222a9c754f6a",
       "size": 263680,
       "url": "https://pub-7a3fbfeeb8954a7b8248153ed3cd9f4a.r2.dev/gamebuild/Astraleum_Data/Managed/Mirror.Examples.dll"
     },
     {
       "path": "Astraleum_Data/Managed/Mirror.Transports.dll",
-      "sha256": "3c8dab093dd124ae92f32191fc8a3981eaca07940d48dbd05a23d3095af95018",
+      "sha256": "317a36cdc52bd47f23ed83d9134e9ecc8f2813c9ef97969f5b388df5cb28cee7",
       "size": 95232,
       "url": "https://pub-7a3fbfeeb8954a7b8248153ed3cd9f4a.r2.dev/gamebuild/Astraleum_Data/Managed/Mirror.Transports.dll"
     },
@@ -252,7 +246,7 @@
     },
     {
       "path": "Astraleum_Data/Managed/MPUIKit.dll",
-      "sha256": "63e96b061a131d04a22b950d722ef14fea6670acc01b1a27f827b0a24b991de1",
+      "sha256": "e825c943a044863141cbc682643b56e2b6fcb08c46abdd91a257553404a51ec9",
       "size": 47616,
       "url": "https://pub-7a3fbfeeb8954a7b8248153ed3cd9f4a.r2.dev/gamebuild/Astraleum_Data/Managed/MPUIKit.dll"
     },
@@ -276,13 +270,13 @@
     },
     {
       "path": "Astraleum_Data/Managed/Nobi.UiRoundedCorners.dll",
-      "sha256": "0d78209d7d06e53fd157d58252c8f90a843674fe44de52627a3f8bb7b48d5b39",
+      "sha256": "5b4c820b5a1eb79d0daf8f010a213b9ca6133ee534f9bddde167ab390d974614",
       "size": 8192,
       "url": "https://pub-7a3fbfeeb8954a7b8248153ed3cd9f4a.r2.dev/gamebuild/Astraleum_Data/Managed/Nobi.UiRoundedCorners.dll"
     },
     {
       "path": "Astraleum_Data/Managed/SimpleWebTransport.dll",
-      "sha256": "b1a29db430e432b658524db382aaf9f9c6932691feadc5123b58f0a3e0012d21",
+      "sha256": "2aca7cecd3e0455fdb2a8b707eb0f425c6144e28a73cb5ed512f7113cda1154c",
       "size": 48128,
       "url": "https://pub-7a3fbfeeb8954a7b8248153ed3cd9f4a.r2.dev/gamebuild/Astraleum_Data/Managed/SimpleWebTransport.dll"
     },
@@ -498,37 +492,37 @@
     },
     {
       "path": "Astraleum_Data/Managed/Telepathy.dll",
-      "sha256": "a0c2ff6f80e0387f1963a552088d2d7bad1bb1d976dba74c465036968b187511",
+      "sha256": "1ab09109d65a76a72398e69c3c5a775b0e2e4708076f9ea86a09c40da63f1b50",
       "size": 20992,
       "url": "https://pub-7a3fbfeeb8954a7b8248153ed3cd9f4a.r2.dev/gamebuild/Astraleum_Data/Managed/Telepathy.dll"
     },
     {
       "path": "Astraleum_Data/Managed/Unity.2D.Animation.Runtime.dll",
-      "sha256": "4548fe3695f2318bbeee1be37b23ca1ce2abb13bf3ef992370d9eb2448471bca",
+      "sha256": "9d8a054738f243cb909f93cb91e2f5fa0c391d3659609a6008f88abbbc54a878",
       "size": 94720,
       "url": "https://pub-7a3fbfeeb8954a7b8248153ed3cd9f4a.r2.dev/gamebuild/Astraleum_Data/Managed/Unity.2D.Animation.Runtime.dll"
     },
     {
       "path": "Astraleum_Data/Managed/Unity.2D.Common.Runtime.dll",
-      "sha256": "d51ffd24a596eb634452838c207684b149cef802817b9532eac1ac36f838028d",
+      "sha256": "81f65f8f85debd82d0909e8541a8a9a43e362d0fe8cdd89398b527945927732a",
       "size": 58880,
       "url": "https://pub-7a3fbfeeb8954a7b8248153ed3cd9f4a.r2.dev/gamebuild/Astraleum_Data/Managed/Unity.2D.Common.Runtime.dll"
     },
     {
       "path": "Astraleum_Data/Managed/Unity.2D.IK.Runtime.dll",
-      "sha256": "0673efb8a01936669ce498b3e14479a2b793c9d8fa5f11d183fd3ff3341e915b",
+      "sha256": "6e6ea722e2ae465c880cc3500b0ad1769ab6b98dcfe701b415ccc71e9a5586ff",
       "size": 41472,
       "url": "https://pub-7a3fbfeeb8954a7b8248153ed3cd9f4a.r2.dev/gamebuild/Astraleum_Data/Managed/Unity.2D.IK.Runtime.dll"
     },
     {
       "path": "Astraleum_Data/Managed/Unity.2D.SpriteShape.Runtime.dll",
-      "sha256": "6e9b9c91220fd8d4f8fc6ae72442698d86c30495d0befd44b8f04c1db54334ba",
+      "sha256": "2a3f7c62d500792ab2030dd8c7eda96d99974c6ee1e12c0942227ba78d4a699b",
       "size": 113152,
       "url": "https://pub-7a3fbfeeb8954a7b8248153ed3cd9f4a.r2.dev/gamebuild/Astraleum_Data/Managed/Unity.2D.SpriteShape.Runtime.dll"
     },
     {
       "path": "Astraleum_Data/Managed/Unity.2D.Tilemap.Extras.dll",
-      "sha256": "2929c327ac404dbc7b6a8225034c538b6a8ccc1fddc66128bc29f6a68c564eed",
+      "sha256": "370843990365e3200ca5ebdf3ece83c5e95e29a13bf5a1f909066263a9ca5c83",
       "size": 39936,
       "url": "https://pub-7a3fbfeeb8954a7b8248153ed3cd9f4a.r2.dev/gamebuild/Astraleum_Data/Managed/Unity.2D.Tilemap.Extras.dll"
     },
@@ -546,7 +540,7 @@
     },
     {
       "path": "Astraleum_Data/Managed/Unity.Collections.dll",
-      "sha256": "02010affbae4f5042f5d441d78bb406b5f35bc6f8253ede64fed4834d7e0148f",
+      "sha256": "f3801124b8b9fc42906f8484cf98c99da583cc5a7897ed030b69a4fbdd9f4b24",
       "size": 452096,
       "url": "https://pub-7a3fbfeeb8954a7b8248153ed3cd9f4a.r2.dev/gamebuild/Astraleum_Data/Managed/Unity.Collections.dll"
     },
@@ -558,115 +552,115 @@
     },
     {
       "path": "Astraleum_Data/Managed/Unity.DedicatedServer.MultiplayerRoles.dll",
-      "sha256": "4ff23e789be646d6f04c80ab9ddf48fa80f0855a032d19c82cd027b76d8621f2",
+      "sha256": "cada999b6b8b319b427c271a5e53084510c32337dddc304c3316c6670fd3470d",
       "size": 5632,
       "url": "https://pub-7a3fbfeeb8954a7b8248153ed3cd9f4a.r2.dev/gamebuild/Astraleum_Data/Managed/Unity.DedicatedServer.MultiplayerRoles.dll"
     },
     {
       "path": "Astraleum_Data/Managed/Unity.InputSystem.dll",
-      "sha256": "5d1f031ba9c59ce0f1e3d97ef1134e3b8d50d36c6f127cd11ab78a8be6771a15",
+      "sha256": "aeae652790af55c5a350875a79492aaa892b01929e8eda9ca8caaf60bfd7a0e3",
       "size": 1137152,
       "url": "https://pub-7a3fbfeeb8954a7b8248153ed3cd9f4a.r2.dev/gamebuild/Astraleum_Data/Managed/Unity.InputSystem.dll"
     },
     {
       "path": "Astraleum_Data/Managed/Unity.InputSystem.ForUI.dll",
-      "sha256": "d86296c801d157ddf4c749aa47c9e96d1cc0e872e17846e759cbf503f451deff",
+      "sha256": "e49caa03538bb89624a068a3ccdf754094c651ea62db0570e1f5b843ae32f897",
       "size": 16384,
       "url": "https://pub-7a3fbfeeb8954a7b8248153ed3cd9f4a.r2.dev/gamebuild/Astraleum_Data/Managed/Unity.InputSystem.ForUI.dll"
     },
     {
       "path": "Astraleum_Data/Managed/Unity.InternalAPIEngineBridge.001.dll",
-      "sha256": "b1110980d014f7c0134587d9b8803bdc16a3c4537d3b6b122a6917684f6e3dfb",
+      "sha256": "26b03a3f3318793fd726511c8d8641d8902ef51458d60cbf8f4e0d4e00b2ee76",
       "size": 6656,
       "url": "https://pub-7a3fbfeeb8954a7b8248153ed3cd9f4a.r2.dev/gamebuild/Astraleum_Data/Managed/Unity.InternalAPIEngineBridge.001.dll"
     },
     {
       "path": "Astraleum_Data/Managed/Unity.InternalAPIEngineBridge.004.dll",
-      "sha256": "e456c44d1eb4d141dbc243075ebc2018b3912ec7fdb3019abbc4f1c64e7a3184",
+      "sha256": "cbb282885b9972fa662f47f004cc6dc2d4d37e94be2f362988aeb59aaceee7cf",
       "size": 5120,
       "url": "https://pub-7a3fbfeeb8954a7b8248153ed3cd9f4a.r2.dev/gamebuild/Astraleum_Data/Managed/Unity.InternalAPIEngineBridge.004.dll"
     },
     {
       "path": "Astraleum_Data/Managed/Unity.InternalAPIEngineBridge.RenderPipelines.Core.Runtime.Shared.dll",
-      "sha256": "8e0a20c489a423f143b46a7508daa3f4b02f090fa31aa23700ca3f86c8058820",
+      "sha256": "f00fb1fd5dbeea6bdd264bdb10180d22ecd77e6d14865e88867402f0330ed226",
       "size": 4096,
       "url": "https://pub-7a3fbfeeb8954a7b8248153ed3cd9f4a.r2.dev/gamebuild/Astraleum_Data/Managed/Unity.InternalAPIEngineBridge.RenderPipelines.Core.Runtime.Shared.dll"
     },
     {
       "path": "Astraleum_Data/Managed/Unity.Mathematics.dll",
-      "sha256": "72b54ae9a046add393e8489b989522d8d3565106f3478eb3727b8a87aeeba73e",
+      "sha256": "196a2ed5086282bd5fa79489d2c2a2b314633600306e1dd1777a618a56d9d82d",
       "size": 752640,
       "url": "https://pub-7a3fbfeeb8954a7b8248153ed3cd9f4a.r2.dev/gamebuild/Astraleum_Data/Managed/Unity.Mathematics.dll"
     },
     {
       "path": "Astraleum_Data/Managed/Unity.Multiplayer.Center.Common.dll",
-      "sha256": "7697ebaa476924dec7169fa0a4c0c8a85d719708e5e991ac76bbb8507dd0f0f6",
+      "sha256": "827e53683a209313e11cb6cba75a8d6859e770e6e3ef01680db1daf26c5a85f4",
       "size": 10752,
       "url": "https://pub-7a3fbfeeb8954a7b8248153ed3cd9f4a.r2.dev/gamebuild/Astraleum_Data/Managed/Unity.Multiplayer.Center.Common.dll"
     },
     {
       "path": "Astraleum_Data/Managed/Unity.PathTracing.Runtime.dll",
-      "sha256": "312ba0da760d1ad226c9001ba732733030c5f2bb9eae1b9217fa388728ae6d9d",
+      "sha256": "c1b97765c977af6780b1eecd1247bcf90332e289f50d6804a6b61dd07ed9e2e0",
       "size": 152064,
       "url": "https://pub-7a3fbfeeb8954a7b8248153ed3cd9f4a.r2.dev/gamebuild/Astraleum_Data/Managed/Unity.PathTracing.Runtime.dll"
     },
     {
       "path": "Astraleum_Data/Managed/Unity.RenderPipeline.Universal.ShaderLibrary.dll",
-      "sha256": "b585392814853ca35ff63f98dbb41e970a575ee37d7f451566705c5886738b99",
+      "sha256": "27372fda9f403d7a7a418bf01d4f4b886d563e8a3e3ea43cb035633753da9a41",
       "size": 9216,
       "url": "https://pub-7a3fbfeeb8954a7b8248153ed3cd9f4a.r2.dev/gamebuild/Astraleum_Data/Managed/Unity.RenderPipeline.Universal.ShaderLibrary.dll"
     },
     {
       "path": "Astraleum_Data/Managed/Unity.RenderPipelines.Core.Runtime.dll",
-      "sha256": "848c200cee6c808253c504694d8f6010ebdbf450b0456fd7963906d9c5958649",
+      "sha256": "7d4a0b71c327cc8c5daa896b7eddcfad3bda53f7829e41ef496899f61e182430",
       "size": 1207808,
       "url": "https://pub-7a3fbfeeb8954a7b8248153ed3cd9f4a.r2.dev/gamebuild/Astraleum_Data/Managed/Unity.RenderPipelines.Core.Runtime.dll"
     },
     {
       "path": "Astraleum_Data/Managed/Unity.RenderPipelines.Core.Runtime.Shared.dll",
-      "sha256": "3619ee3b07251da8a3914c9e408a4e5b8f031b3bcd9ddb9f5af809879d8c1b06",
+      "sha256": "563fc7834b7bb01ea0cad8c345f1ea68f6b7ec5ac5b050b457761b16ce622b10",
       "size": 5632,
       "url": "https://pub-7a3fbfeeb8954a7b8248153ed3cd9f4a.r2.dev/gamebuild/Astraleum_Data/Managed/Unity.RenderPipelines.Core.Runtime.Shared.dll"
     },
     {
       "path": "Astraleum_Data/Managed/Unity.RenderPipelines.Core.ShaderLibrary.dll",
-      "sha256": "ecd1de5cbdaec2c9c6294c5899b5df536d2d48eb288e31c89aa8a2025af538d1",
+      "sha256": "618626274fbba96076d8fe292ac90bc8e425cf77c1a6bc2d45f36dabce73b706",
       "size": 4608,
       "url": "https://pub-7a3fbfeeb8954a7b8248153ed3cd9f4a.r2.dev/gamebuild/Astraleum_Data/Managed/Unity.RenderPipelines.Core.ShaderLibrary.dll"
     },
     {
       "path": "Astraleum_Data/Managed/Unity.RenderPipelines.GPUDriven.Runtime.dll",
-      "sha256": "74ecc30baebc78c8517618b4a819ebb009ab65abb9eab471e26e0c2b66c010cc",
+      "sha256": "b2a711617c87de809903a3b1411659c45a02dcc6ac3e39dc2b925e449ed923ca",
       "size": 236032,
       "url": "https://pub-7a3fbfeeb8954a7b8248153ed3cd9f4a.r2.dev/gamebuild/Astraleum_Data/Managed/Unity.RenderPipelines.GPUDriven.Runtime.dll"
     },
     {
       "path": "Astraleum_Data/Managed/Unity.RenderPipelines.ShaderGraph.ShaderGraphLibrary.dll",
-      "sha256": "fa8792317a20fd64ecc966774d87f803c18531fb6139435a2b55509ed153b65d",
+      "sha256": "58a281be1a6abbbb86fc0d604c50e30212949dd96c5b8950f7a35dd9bc5b117d",
       "size": 4608,
       "url": "https://pub-7a3fbfeeb8954a7b8248153ed3cd9f4a.r2.dev/gamebuild/Astraleum_Data/Managed/Unity.RenderPipelines.ShaderGraph.ShaderGraphLibrary.dll"
     },
     {
       "path": "Astraleum_Data/Managed/Unity.RenderPipelines.Universal.2D.Runtime.dll",
-      "sha256": "75ae2d742f14416f5121de9867c3285e443f39165a7685e30fdbf2e843e6329e",
+      "sha256": "c0812c6d5013cb6ea7f6d5d262a4328df1c87e4e858e655dcf6444098471206a",
       "size": 238080,
       "url": "https://pub-7a3fbfeeb8954a7b8248153ed3cd9f4a.r2.dev/gamebuild/Astraleum_Data/Managed/Unity.RenderPipelines.Universal.2D.Runtime.dll"
     },
     {
       "path": "Astraleum_Data/Managed/Unity.RenderPipelines.Universal.Config.Runtime.dll",
-      "sha256": "ef391efd59d3a6650df5e954a8d48a5b1d2f03e078a4bb8c7febf0ea269e57c7",
+      "sha256": "7a27b28051f25bf204b131d3230a8f2657daee6801c47c58e2553084e55b9bcf",
       "size": 5632,
       "url": "https://pub-7a3fbfeeb8954a7b8248153ed3cd9f4a.r2.dev/gamebuild/Astraleum_Data/Managed/Unity.RenderPipelines.Universal.Config.Runtime.dll"
     },
     {
       "path": "Astraleum_Data/Managed/Unity.RenderPipelines.Universal.Runtime.dll",
-      "sha256": "c0de7eef8880970e17b2341f03d47c6296ce261a75450f6fcb09548d20e4267c",
+      "sha256": "f02f9ad65dfe4e3d3f47f9e65b4b464cb73fc111316263ffbd8814e330f83b24",
       "size": 769024,
       "url": "https://pub-7a3fbfeeb8954a7b8248153ed3cd9f4a.r2.dev/gamebuild/Astraleum_Data/Managed/Unity.RenderPipelines.Universal.Runtime.dll"
     },
     {
       "path": "Astraleum_Data/Managed/Unity.RenderPipelines.Universal.Shaders.dll",
-      "sha256": "066249d660db6476e8aff08ed220b726e47f5ba4218af00a3f41996ed293107e",
+      "sha256": "6a8005392ef699d920efd5f6fd1f182d6fb81ca572b77eadd96b289c5f0cefe2",
       "size": 4608,
       "url": "https://pub-7a3fbfeeb8954a7b8248153ed3cd9f4a.r2.dev/gamebuild/Astraleum_Data/Managed/Unity.RenderPipelines.Universal.Shaders.dll"
     },
@@ -678,31 +672,31 @@
     },
     {
       "path": "Astraleum_Data/Managed/Unity.SurfaceCache.Runtime.dll",
-      "sha256": "ca9656692ab2d9a629226edbbcb121781df1f5d8c5d666f3c5b24d4ccf5bdd13",
+      "sha256": "718cd594947d160344f1c4ce9c1370cc6ec07dc6fb0d15d9b22aabb9633a73e6",
       "size": 4096,
       "url": "https://pub-7a3fbfeeb8954a7b8248153ed3cd9f4a.r2.dev/gamebuild/Astraleum_Data/Managed/Unity.SurfaceCache.Runtime.dll"
     },
     {
       "path": "Astraleum_Data/Managed/Unity.TextMeshPro.dll",
-      "sha256": "33ad1f963d03fe993aab1a0f8635fb32e6c8e53d91e0e8943091c027277472a0",
+      "sha256": "edd8eb416a34c083e267d7b4fc1be2cd6eaca16ec7ed8355c5df3e23154ccc74",
       "size": 448000,
       "url": "https://pub-7a3fbfeeb8954a7b8248153ed3cd9f4a.r2.dev/gamebuild/Astraleum_Data/Managed/Unity.TextMeshPro.dll"
     },
     {
       "path": "Astraleum_Data/Managed/Unity.Timeline.dll",
-      "sha256": "e6ae7f201c5b908d8bb99090ed7f8c043d021acdca892c1f21c34984f5a72198",
+      "sha256": "71124203bfe9727f053ff9f61ea733a95b179d8688e7292341fec388cc164c7d",
       "size": 134656,
       "url": "https://pub-7a3fbfeeb8954a7b8248153ed3cd9f4a.r2.dev/gamebuild/Astraleum_Data/Managed/Unity.Timeline.dll"
     },
     {
       "path": "Astraleum_Data/Managed/Unity.UnifiedRayTracing.Runtime.dll",
-      "sha256": "92f3c4586772b219d7a47501dddcf447d599f6d74f9c810591bc07488c1cbc5a",
+      "sha256": "7fa387bdb95b31d6b31f3849ddb16dbe6a9500f61976a7ce3a167a85f547009e",
       "size": 101376,
       "url": "https://pub-7a3fbfeeb8954a7b8248153ed3cd9f4a.r2.dev/gamebuild/Astraleum_Data/Managed/Unity.UnifiedRayTracing.Runtime.dll"
     },
     {
       "path": "Astraleum_Data/Managed/Unity.VisualEffectGraph.Runtime.dll",
-      "sha256": "dd7ff49b2c3ae18358b0d1092484a5ea2f345517e64bf3a331b76d47d1e62d80",
+      "sha256": "2b0b6b0d1b4bddece545679042b2ec7ad167292a05f6393ca2c8b81c4de99d75",
       "size": 104448,
       "url": "https://pub-7a3fbfeeb8954a7b8248153ed3cd9f4a.r2.dev/gamebuild/Astraleum_Data/Managed/Unity.VisualEffectGraph.Runtime.dll"
     },
@@ -714,7 +708,7 @@
     },
     {
       "path": "Astraleum_Data/Managed/Unity.VisualScripting.Core.dll",
-      "sha256": "1149e7e6f6bd0523970442d8b12dd516c84299072d52ac8a5c912e55bc4b9f45",
+      "sha256": "8d199e3bdd3acdf99f28d86c361e42a865e5526eb1d4d1c4c0ad8989f87ef653",
       "size": 629760,
       "url": "https://pub-7a3fbfeeb8954a7b8248153ed3cd9f4a.r2.dev/gamebuild/Astraleum_Data/Managed/Unity.VisualScripting.Core.dll"
     },
@@ -726,13 +720,13 @@
     },
     {
       "path": "Astraleum_Data/Managed/Unity.VisualScripting.Flow.dll",
-      "sha256": "265c3a3803a321d65576bfe2aad1cdbc650c969cc28dcbe5681b3a214656d878",
+      "sha256": "70ec2b7084647c70c7f962e096fd66f9ba403e925a02672ed009055e8392ce48",
       "size": 407552,
       "url": "https://pub-7a3fbfeeb8954a7b8248153ed3cd9f4a.r2.dev/gamebuild/Astraleum_Data/Managed/Unity.VisualScripting.Flow.dll"
     },
     {
       "path": "Astraleum_Data/Managed/Unity.VisualScripting.State.dll",
-      "sha256": "acb04c77933ef590e91153618cf362cc7af4141d3e1775f3408c8fe37232a882",
+      "sha256": "d6268e59aa26ad36bb96893c1a41f2ec51342ffdce927c84e0a585c7dc1093e4",
       "size": 32256,
       "url": "https://pub-7a3fbfeeb8954a7b8248153ed3cd9f4a.r2.dev/gamebuild/Astraleum_Data/Managed/Unity.VisualScripting.State.dll"
     },
@@ -1104,7 +1098,7 @@
     },
     {
       "path": "Astraleum_Data/Managed/UnityEngine.UI.dll",
-      "sha256": "c3b09f20b075664839cd6e2b16bf161294e46109307436398b2177bb61b568ce",
+      "sha256": "2278f22e7f699f262dcf9775b7fe0e1fa0569f604da32ebc3e8b1b1c58e64bf3",
       "size": 277504,
       "url": "https://pub-7a3fbfeeb8954a7b8248153ed3cd9f4a.r2.dev/gamebuild/Astraleum_Data/Managed/UnityEngine.UI.dll"
     },
@@ -1254,14 +1248,14 @@
     },
     {
       "path": "Astraleum_Data/resources.assets",
-      "sha256": "066b43ce9c569f5ac137bc451f1cfa8d349915d42219f75d33ddc291c483306c",
-      "size": 4912200,
+      "sha256": "3d53f2e39de726453ddbd0d46a2420daaec16946310d47578d2edd510a7b2840",
+      "size": 4912440,
       "url": "https://pub-7a3fbfeeb8954a7b8248153ed3cd9f4a.r2.dev/gamebuild/Astraleum_Data/resources.assets"
     },
     {
       "path": "Astraleum_Data/resources.assets.resS",
-      "sha256": "672a07831a28914a6c361191be56f8dde696db1cf2fc581d181ca7a56077abe2",
-      "size": 235922208,
+      "sha256": "8ea6a51c7b3f5c52b9caa4ac6d8c9d9a879f0bfe2a60d36fe87e02ae13f75d22",
+      "size": 235938592,
       "url": "https://pub-7a3fbfeeb8954a7b8248153ed3cd9f4a.r2.dev/gamebuild/Astraleum_Data/resources.assets.resS"
     },
     {
@@ -1278,8 +1272,8 @@
     },
     {
       "path": "Astraleum_Data/sharedassets0.assets",
-      "sha256": "b790f404d2d31bad67a0e01b3c5ccf843c338a8ef4d55b2adb64f576686ee881",
-      "size": 6263760,
+      "sha256": "29b8c0e65844a7083667755166d48b02204f77cd9b417842e89a853facda7439",
+      "size": 6001520,
       "url": "https://pub-7a3fbfeeb8954a7b8248153ed3cd9f4a.r2.dev/gamebuild/Astraleum_Data/sharedassets0.assets"
     },
     {
@@ -1296,14 +1290,14 @@
     },
     {
       "path": "Astraleum_Data/sharedassets1.assets",
-      "sha256": "59351b2a5378cadc72cff72772d783c432f30d2331c4727487fe3f115f4880f4",
-      "size": 333760,
+      "sha256": "a2ea294aee3a2bf586c358c5e34bd1c27230649d51c9d02857865e46086b64d9",
+      "size": 335024,
       "url": "https://pub-7a3fbfeeb8954a7b8248153ed3cd9f4a.r2.dev/gamebuild/Astraleum_Data/sharedassets1.assets"
     },
     {
       "path": "Astraleum_Data/sharedassets1.assets.resS",
-      "sha256": "f5268579fc6099a01b999df82bf0ce62fa3c7de033ca78bbf8255f9bc4a164e8",
-      "size": 68296352,
+      "sha256": "3c3616bdb625ffd727db0503403e51fe53ebd04467916f1cd6eba9645d09f414",
+      "size": 66761824,
       "url": "https://pub-7a3fbfeeb8954a7b8248153ed3cd9f4a.r2.dev/gamebuild/Astraleum_Data/sharedassets1.assets.resS"
     },
     {
