@@ -1,12 +1,12 @@
 {
-  "version": "0.0.7.2",
+  "version": "0.0.7.3",
   "releaseDate": "2026-07-16",
   "launcher": {
     "version": "1.4.1",
     "url": "https://github.com/Sewayn1/Astraleum-Launcher/releases/download/launcher-v1.4.1/AstraleumLauncher-Setup-1.4.1.exe"
   },
   "fullPackage": {
-    "url": "https://github.com/Sewayn1/AstraleumTCG/releases/download/0.0.7.2/Astraleum-v0.0.7.2.zip",
+    "url": "https://github.com/Sewayn1/AstraleumTCG/releases/download/0.0.7.3/Astraleum-v0.0.7.3.zip",
     "size": 0
   },
   "files": [
@@ -24,13 +24,13 @@
     },
     {
       "path": "Astraleum_Data/boot.config",
-      "sha256": "e569e3f5d7ef5cab1ab5f2979483f030e083188d41d4246d85d9c468a6caea43",
+      "sha256": "b47a82c0450ca362172fe2f3d712028851510305cc194f0b4992b2c128bbfdc6",
       "size": 183,
       "url": "https://pub-7a3fbfeeb8954a7b8248153ed3cd9f4a.r2.dev/gamebuild/Astraleum_Data/boot.config"
     },
     {
       "path": "Astraleum_Data/globalgamemanagers",
-      "sha256": "bff27ce1e0cc0a214dfbd3cc3aec7c21aedf4e30c6f1dfaec87bb3de5e4dd7b8",
+      "sha256": "b7148fe955d919439787356534cf061543c5ec7c61edd73c01a920abd362282c",
       "size": 347412,
       "url": "https://pub-7a3fbfeeb8954a7b8248153ed3cd9f4a.r2.dev/gamebuild/Astraleum_Data/globalgamemanagers"
     },
@@ -48,7 +48,7 @@
     },
     {
       "path": "Astraleum_Data/level0",
-      "sha256": "bf86d1fbc6174aa88a73c96b02772fc4d282b32692d5cd7944cd52040d303c6f",
+      "sha256": "5b5334c7fb279cf856c5e9c2e0f8e8663e43cd68b064c6998bf4746cedd05e25",
       "size": 808232,
       "url": "https://pub-7a3fbfeeb8954a7b8248153ed3cd9f4a.r2.dev/gamebuild/Astraleum_Data/level0"
     },
@@ -1272,7 +1272,7 @@
     },
     {
       "path": "Astraleum_Data/sharedassets0.assets",
-      "sha256": "29b8c0e65844a7083667755166d48b02204f77cd9b417842e89a853facda7439",
+      "sha256": "bd571484951f611f64b0ed9ac027f06dc1fe2a3b214d3b5c6cf6e15525fd4990",
       "size": 6001520,
       "url": "https://pub-7a3fbfeeb8954a7b8248153ed3cd9f4a.r2.dev/gamebuild/Astraleum_Data/sharedassets0.assets"
     },
@@ -1464,6 +1464,15 @@
     }
   ],
   "changelog": [
+    {
+      "version": "0.0.7.3",
+      "date": "2026-07-16",
+      "title": "Correctif technique 0.0.7.3",
+      "entries": [
+        "Correction du build 0.0.7.2 qui n'avait pas été recompilé correctement, empêchant le Launcher de détecter la mise à jour",
+        "Aucun changement de gameplay par rapport à la 0.0.7.2"
+      ]
+    },
     {
       "version": "Alpha 0.0.7.2",
       "date": "2026-07-16",

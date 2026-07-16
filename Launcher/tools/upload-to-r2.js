@@ -11,8 +11,9 @@
  *   node tools/upload-to-r2.js --dir "G:/Unity/Project/Astraleum/gamebuild" [--prefix gamebuild]
  */
 
-const fs   = require('fs');
-const path = require('path');
+const fs     = require('fs');
+const path   = require('path');
+const crypto = require('crypto');
 require('dotenv').config({ path: path.join(__dirname, '..', '.env') });
 
 const { S3Client, PutObjectCommand, HeadObjectCommand } = require('@aws-sdk/client-s3');
@@ -64,12 +65,22 @@ function contentType(rel) {
   }[ext] || 'application/octet-stream';
 }
 
-// Objet déjà présent sur R2 avec la même taille → on saute (évite de retransférer les
+function md5(filePath) {
+  return crypto.createHash('md5').update(fs.readFileSync(filePath)).digest('hex');
+}
+
+// Objet déjà présent sur R2 avec le même contenu → on saute (évite de retransférer les
 // centaines de Mo inchangés à chaque release, seuls les fichiers modifiés sont réuploadés).
-async function alreadyUploaded(key, localSize) {
+// Compare l'ETag (MD5 du contenu pour un PutObject simple, non multipart) plutôt que la seule
+// taille — un bug précédent (taille identique mais contenu différent, ex. bump de version dans
+// globalgamemanagers) faisait passer un fichier modifié pour "déjà à jour" et resservait
+// silencieusement l'ancien contenu depuis R2.
+async function alreadyUploaded(key, localPath) {
   try {
     const head = await s3.send(new HeadObjectCommand({ Bucket: R2_BUCKET_NAME, Key: key }));
-    return head.ContentLength === localSize;
+    const remoteEtag = (head.ETag || '').replace(/"/g, '');
+    if (remoteEtag.includes('-')) return false; // ETag multipart (non-MD5) → pas fiable, on réuploade par sécurité
+    return remoteEtag === md5(localPath);
   } catch {
     return false; // 404 ou autre erreur → pas encore présent, on upload
   }
@@ -91,7 +102,7 @@ async function alreadyUploaded(key, localSize) {
 
     process.stdout.write(`[${i + 1}/${relPaths.length}] ${rel} `);
 
-    if (await alreadyUploaded(key, size)) {
+    if (await alreadyUploaded(key, full)) {
       console.log('(déjà à jour, ignoré)');
       skipped++;
       continue;

@@ -1,10 +1,10 @@
 {
-  "version": "0.0.7.2",
+  "version": "0.0.7.3",
   "releaseDate": "2026-07-16",
-  "notes": "Correctifs et Ajustements",
+  "notes": "Correctif technique (build 0.0.7.2 non recompilé)",
   "files": {
     "win32": {
-      "url": "https://github.com/Sewayn1/AstraleumTCG/releases/download/0.0.7.2/Astraleum-v0.0.7.2.zip"
+      "url": "https://github.com/Sewayn1/AstraleumTCG/releases/download/0.0.7.3/Astraleum-v0.0.7.3.zip"
     },
     "darwin": {
       "url": "https://github.com/YOUR_GITHUB_USERNAME/Astraleum/releases/download/v0.1.0/Astraleum-v0.1.0-mac.zip"
