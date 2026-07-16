@@ -53,3 +53,8 @@ Thumbs.db
 Assets/StreamingAssets/BossBG.mp4
 Assets/Game/UI/Videos/Classic Space Galaxy*.mp4
 gamebuild/
+
+# Captures d'écran de debug (outil MCP) et artefacts de test de performance
+Assets/Screenshots/
+Assets/Resources/PerformanceTestRunInfo.json*
+Assets/Resources/PerformanceTestRunSettings.json*

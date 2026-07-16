@@ -111,7 +111,7 @@ MonoBehaviour:
     effects:
     - type: 22
       value: 0.05
-      durationTurns: -1
+      durationTurns: 1
       effectTarget: 1
   loreText: "Lib\xE9r\xE9 du service de Vaelthor, le Faucheur continue de moissonner
     les \xE2mes pour son propre compte."

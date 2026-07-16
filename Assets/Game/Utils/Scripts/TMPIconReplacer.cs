@@ -26,6 +26,7 @@ namespace Astraleum
             ("ARM",  "arm"),
             ("BURN",  "burn"),
             ("NEC",   "nec"),
+            ("HOT",   "hot"),
         };
 
         // ── API publique ──────────────────────────────────────────────────────

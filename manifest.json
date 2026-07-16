@@ -1,12 +1,12 @@
 {
-  "version": "0.0.7.1",
-  "releaseDate": "2026-07-15",
+  "version": "0.0.7.2",
+  "releaseDate": "2026-07-16",
   "launcher": {
     "version": "1.4.1",
     "url": "https://github.com/Sewayn1/Astraleum-Launcher/releases/download/launcher-v1.4.1/AstraleumLauncher-Setup-1.4.1.exe"
   },
   "fullPackage": {
-    "url": "https://github.com/Sewayn1/AstraleumTCG/releases/download/0.0.7.1/Astraleum-v0.0.7.1.zip",
+    "url": "https://github.com/Sewayn1/AstraleumTCG/releases/download/0.0.7.2/Astraleum-v0.0.7.2.zip",
     "size": 0
   },
   "files": [
@@ -1471,9 +1471,21 @@
   ],
   "changelog": [
     {
+      "version": "Alpha 0.0.7.2",
+      "date": "2026-07-16",
+      "title": "Ajustements et Équilibrage",
+      "entries": [
+        "Ajustement de Vaelthor : Augmentation de deux compétences en terme de DGT",
+        "Correction d’un bug causé par la nouvelle mécanique de Réduction des Soins → S’applique désormais correctement sur les Soins sur la Durée et le passif des cartes Lumières",
+        "Ajustement de la taille des cartes en combat, elles sont plus grandes, plus lisible et plus facile à reluquer ! ",
+        "Modification des deux plateaux de combat contre Vaelthor",
+        "Correction de plusieurs compétences / Passif de cartes, causant parfois des effets inattendu"
+      ]
+    },
+    {
       "version": "Alpha 0.0.7.1",
-      "date": "2026-07-12",
-      "title": "Voragoth et équilibrage",
+      "date": "2026-07-15",
+      "title": "Éveil des Morts",
       "entries": [
         "Ajout d’un nouvel élément : Nécrotique ! → Infligez des Dégâts sur la durée fixes à vos adversaires et réduisez leurs soins reçu pour contrôler le terrain à votre avantage ! Attention.. Si vous êtes sous l’effet d’une carte nécrotique… Vous pouvez exploser et faire des dégâts aux cartes proches !",
         "Introduction du deuxième Boss de Raid axé sur la Nécromancie : Vaelthor.",

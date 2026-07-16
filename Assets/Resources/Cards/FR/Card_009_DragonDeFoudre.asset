@@ -35,7 +35,7 @@ MonoBehaviour:
     adjacentDamagePercent: 0.4
     effects:
     - type: 22
-      value: 0.03
+      value: 0.05
       durationTurns: 3
       effectTarget: 1
     branches: []

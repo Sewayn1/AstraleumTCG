@@ -59,8 +59,7 @@ MonoBehaviour:
     skillType: 0
     skillName: Infamie
     description: "Attaque une cible et les deux ajdacentes, infligeant 23DGT \xE0
-      la cible et 50% aux cibles adjacentes.\n\nSe HEAL de 40% des DGT inflig\xE9s.\n\nSe
-      HEAL de 40% des DGT inflig\xE9s.\n\nLeurs vole 3DGT et 5% de r\xE9sistance,
+      la cible et 50% aux cibles adjacentes.\n\nSe HEAL de 40% des DGT inflig\xE9s.\n\nLeurs vole 3DGT et 5% de r\xE9sistance,
       et les donnes \xE0 Zulln pendant 2 Tours."
     damage: 23
     cooldownTurns: 4

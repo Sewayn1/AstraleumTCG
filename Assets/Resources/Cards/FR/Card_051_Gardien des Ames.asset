@@ -112,7 +112,7 @@ MonoBehaviour:
     effects:
     - type: 2
       value: 0.03
-      durationTurns: -1
+      durationTurns: 1
       effectTarget: 1
   loreText: "Lib\xE9r\xE9 du service de Vaelthor, le Gardien continue de veiller,
     par habitude autant que par devoir."

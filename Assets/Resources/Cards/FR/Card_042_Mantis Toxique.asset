@@ -43,11 +43,11 @@ MonoBehaviour:
         threshold: 0.2
         effectType: 0
         conditionElement: 0
-      effectType: 10
+      effectType: 20
       target: 0
       valueMode: 1
-      valuePercent: 0.2
-      valueFlat: 100
+      valuePercent: 0
+      valueFlat: 0
       durationTurns: 0
     isIncantation: 0
     castDelayTurns: 1

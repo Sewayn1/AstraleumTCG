@@ -104,11 +104,11 @@ MonoBehaviour:
     effects:
     - type: 2
       value: 0.1
-      durationTurns: 0
+      durationTurns: -1
       effectTarget: 2
     - type: 1
       value: 0.05
-      durationTurns: 0
+      durationTurns: -1
       effectTarget: 3
   loreText: "Adelia est une sorci\xE8re des Vents. Depuis petite, elle a su montrer
     ses dons exceptionnels de la maitrise du Vent, au point que de nombreux fermiers

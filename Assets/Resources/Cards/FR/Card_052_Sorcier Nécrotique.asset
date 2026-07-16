@@ -77,18 +77,6 @@ MonoBehaviour:
       valueFlat: 0
       durationTurns: 0
     - condition:
-        conditionType: 0
-        compareOp: 0
-        threshold: 0.15
-        effectType: 0
-        conditionElement: 0
-      effectType: 20
-      target: 0
-      valueMode: 0
-      valuePercent: 0.15
-      valueFlat: 0
-      durationTurns: 0
-    - condition:
         conditionType: 12
         compareOp: 0
         threshold: 0.15

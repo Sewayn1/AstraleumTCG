@@ -398,7 +398,7 @@ namespace Astraleum
             if (nameText != null)
             {
                 nameText.text = skill.skillName;
-                nameText.fontSize = 8f;
+                nameText.fontSize = 11f;
                 nameText.alignment = TMPro.TextAlignmentOptions.Center;
                 nameText.color = cooldown > 0
                     ? new Color(0.5f, 0.5f, 0.5f)
@@ -519,7 +519,7 @@ namespace Astraleum
                 if (armor > 0)
                 {
                     armorText.text = armor.ToString();
-                    armorText.color = new Color(0.6f, 0.85f, 1f);
+                    armorText.color = Color.white;
                 }
                 else
                 {

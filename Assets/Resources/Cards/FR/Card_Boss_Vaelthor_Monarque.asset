@@ -83,13 +83,13 @@ MonoBehaviour:
     skillName: "Souffle des \xC2mes Perdues"
     description: "Inflige des d\xE9g\xE2ts \xE0 toute l'\xE9quipe adverse et applique
       N\xE9crose."
-    damage: 8
+    damage: 12
     cooldownTurns: 3
     targetType: 2
     adjacentDamagePercent: 0
     effects:
     - type: 30
-      value: 3
+      value: 4
       durationTurns: 2
       effectTarget: 0
     branches: []

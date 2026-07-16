@@ -92,14 +92,14 @@ MonoBehaviour:
     passiveName: "Col\xE9rique"
     passiveDescription: "Pour chaque Alli\xE9s de type \"Feu\" d\xE9truit au combat,
       augmente les DGT inflig\xE9s de tout les Alli\xE9s de 5% ind\xE9finiment."
-    trigger: 1
+    trigger: 2
     triggerElement: 0
     passiveColor: {r: 1, g: 0.84, b: 0, a: 1}
     stacksPerTrigger: 1
     maxTriggerStacks: 4
     effects:
     - type: 13
-      value: 0.05
+      value: 2
       durationTurns: -1
       effectTarget: 2
   loreText: "Il ne reste rien de son humanit\xE9, juste une braise \xE9ternelle aliment\xE9e

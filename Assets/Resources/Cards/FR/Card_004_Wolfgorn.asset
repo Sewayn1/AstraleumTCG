@@ -94,7 +94,7 @@ MonoBehaviour:
     passiveName: Force des Flammes
     passiveDescription: "Pour chaque carte alli\xE9es de type \"Feu\", Wolfgorn gagne
       2 de DGT bonus et 1% de R\xE9duction des DGT subis."
-    trigger: 0
+    trigger: 2
     triggerElement: 0
     passiveColor: {r: 1, g: 0.84, b: 0, a: 1}
     stacksPerTrigger: 1

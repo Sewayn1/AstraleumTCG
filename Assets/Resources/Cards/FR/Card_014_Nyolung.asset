@@ -105,8 +105,8 @@ MonoBehaviour:
   passive:
     passiveName: Voile des Astres
     passiveDescription: "Lorsqu'un \xC9l\xE9ment atteind le seuil de 5, Nyolung applique
-      8 DGT par tour aux adverdsaires. En contrepartie, les cartes alli\xE9es subissent
-      5% de DGT suppl\xE9mentaire."
+      8% des PV Max par tour aux adverdsaires. En contrepartie, les cartes alli\xE9es
+      subissent 5% de DGT suppl\xE9mentaire."
     trigger: 5
     triggerElement: 8
     passiveColor: {r: 1, g: 0.84, b: 0, a: 1}
@@ -114,7 +114,7 @@ MonoBehaviour:
     maxTriggerStacks: 4
     effects:
     - type: 0
-      value: 8
+      value: 0.08
       durationTurns: -1
       effectTarget: 3
     - type: 1

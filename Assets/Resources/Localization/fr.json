@@ -261,6 +261,7 @@
   "buff_poison_line": "Poison : -{0}% PV max/tour ({1})\n  via {2}",
   "buff_burn_line": "Brûlure : -{0}% PV max/tour ({1})\n  via {2}",
   "buff_necrose_line": "Nécrose : -{0} PV/tour ({1})\n  via {2}",
+  "buff_healreduction_line": "Réduction Soin : -{0}% HOT reçus ({1})\n  via {2}",
   "buff_hot_line": "Régén. : +{0} PV/tour  ({1}% PV max, {2})\n  via {3}",
   "buff_atk_line": "DGT d'Attaque : +{0}% ({1})\n  via {2}",
   "buff_atkflat_line": "Attaque : +{0} DGT ({1})\n  via {2}",

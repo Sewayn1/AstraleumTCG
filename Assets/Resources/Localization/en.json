@@ -261,6 +261,7 @@
   "buff_poison_line": "Poison: -{0}% max HP/turn ({1})\n  via {2}",
   "buff_burn_line": "Burn: -{0}% max HP/turn ({1})\n  via {2}",
   "buff_necrose_line": "Necrosis: -{0} DMG/turn ({1})\n  via {2}",
+  "buff_healreduction_line": "Heal Reduction: -{0}% HOT received ({1})\n  via {2}",
   "buff_hot_line": "Regen.: +{0} HP/turn  ({1}% max HP, {2})\n  via {3}",
   "buff_atk_line": "Attack DMG: +{0}% ({1})\n  via {2}",
   "buff_atkflat_line": "Attack: +{0} DMG ({1})\n  via {2}",

@@ -90,7 +90,7 @@ MonoBehaviour:
     maxTriggerStacks: 4
     effects:
     - type: 13
-      value: 0.05
+      value: 2
       durationTurns: -1
       effectTarget: 2
   loreText: "Arthurios a d\xE9fendu Liotnar contre trois invasions, deux catastrophes

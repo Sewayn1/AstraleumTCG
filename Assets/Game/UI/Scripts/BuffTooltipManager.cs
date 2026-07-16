@@ -203,6 +203,8 @@ namespace Astraleum
                     raw = LocalizationManager.Get("buff_armorred_line", $"{e.value:0}", dur, src); break;
                 case EffectType.Necrose:
                     raw = LocalizationManager.Get("buff_necrose_line", $"{e.value:0}", dur, src); break;
+                case EffectType.HealReduction:
+                    raw = LocalizationManager.Get("buff_healreduction_line", $"{e.value * 100:0}", dur, src); break;
                 default:
                     raw = $"{e.type} ({dur})\n  via {src}"; break;
             }

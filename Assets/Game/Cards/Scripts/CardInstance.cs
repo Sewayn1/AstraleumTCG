@@ -480,6 +480,13 @@ namespace Astraleum
             // Calcul unique de la réduction dégâts pour ce tour
             float dmgReductMult = GetDamageReductionMultiplier();
 
+            // HealReduction (Nécrotique) doit aussi s'appliquer à la régén. Lumière et au
+            // HealOverTime — pas seulement à Heal() (soins ponctuels) comme avant ce fix.
+            float healReduction = 0f;
+            foreach (var eff in activeEffects)
+                if (eff.type == EffectType.HealReduction) healReduction += eff.value;
+            float healReductMult = Mathf.Max(0f, 1f - healReduction);
+
             // ── Effets passifs conditionnels (seuils de stacks) ───────
             foreach (var cpe in conditionalPassiveEffects.ToList())
             {
@@ -520,7 +527,7 @@ namespace Astraleum
                 float lightHoT = StackManager.Instance.GetLightHoTPercent(ownerPlayerID);
                 if (lightHoT > 0f)
                 {
-                    int lightHeal = Mathf.RoundToInt(EffectiveMaxHP * lightHoT);
+                    int lightHeal = Mathf.RoundToInt(EffectiveMaxHP * lightHoT * healReductMult);
                     int before = currentHP;
                     currentHP = Mathf.Min(currentHP + lightHeal, EffectiveMaxHP);
                     int actualLightHeal = currentHP - before;
@@ -589,7 +596,7 @@ namespace Astraleum
                         {
                             if (!healBlocked)
                             {
-                                int hot = Mathf.RoundToInt(EffectiveMaxHP * effect.value);
+                                int hot = Mathf.RoundToInt(EffectiveMaxHP * effect.value * healReductMult);
                                 int before = currentHP;
                                 currentHP = Mathf.Min(currentHP + hot, EffectiveMaxHP);
                                 int actualHot = currentHP - before;
