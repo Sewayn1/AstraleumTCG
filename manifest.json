@@ -1,12 +1,12 @@
 {
-  "version": "0.0.7.3",
-  "releaseDate": "2026-07-16",
+  "version": "0.0.7.5",
+  "releaseDate": "2026-07-18",
   "launcher": {
     "version": "1.4.1",
     "url": "https://github.com/Sewayn1/Astraleum-Launcher/releases/download/launcher-v1.4.1/AstraleumLauncher-Setup-1.4.1.exe"
   },
   "fullPackage": {
-    "url": "https://github.com/Sewayn1/AstraleumTCG/releases/download/0.0.7.3/Astraleum-v0.0.7.3.zip",
+    "url": "https://github.com/Sewayn1/AstraleumTCG/releases/download/0.0.7.5/Astraleum-v0.0.7.5.zip",
     "size": 0
   },
   "files": [
@@ -17,6 +17,12 @@
       "url": "https://pub-7a3fbfeeb8954a7b8248153ed3cd9f4a.r2.dev/gamebuild/Astraleum.exe"
     },
     {
+      "path": "Astraleum_BurstDebugInformation_DoNotShip/Data/Plugins/x86_64/lib_burst_generated.txt",
+      "sha256": "8c55b80a5fc85b32a73b84c50b93197cde3089605bf261f3b9eecbb1684c1e4c",
+      "size": 244566,
+      "url": "https://pub-7a3fbfeeb8954a7b8248153ed3cd9f4a.r2.dev/gamebuild/Astraleum_BurstDebugInformation_DoNotShip/Data/Plugins/x86_64/lib_burst_generated.txt"
+    },
+    {
       "path": "Astraleum_Data/app.info",
       "sha256": "75f48e15c1b44c8c64453794ea7deb23bdcb9e91abf4ae94152fb053b002dd3e",
       "size": 23,
@@ -24,20 +30,20 @@
     },
     {
       "path": "Astraleum_Data/boot.config",
-      "sha256": "b47a82c0450ca362172fe2f3d712028851510305cc194f0b4992b2c128bbfdc6",
+      "sha256": "fa7e9b5fb5d8beb66c9cbb9900c8d4a9c755d9f36dfb30a31a5351d995e28e85",
       "size": 183,
       "url": "https://pub-7a3fbfeeb8954a7b8248153ed3cd9f4a.r2.dev/gamebuild/Astraleum_Data/boot.config"
     },
     {
       "path": "Astraleum_Data/globalgamemanagers",
-      "sha256": "b7148fe955d919439787356534cf061543c5ec7c61edd73c01a920abd362282c",
-      "size": 347412,
+      "sha256": "b74f44d31426cfff46f1d1cf504254439b887d15e4cd38d01c93705eac020fdc",
+      "size": 353796,
       "url": "https://pub-7a3fbfeeb8954a7b8248153ed3cd9f4a.r2.dev/gamebuild/Astraleum_Data/globalgamemanagers"
     },
     {
       "path": "Astraleum_Data/globalgamemanagers.assets",
-      "sha256": "eea06592a685417dbf8a0f87ad9fda93389d557a42e680147bcf11279e027632",
-      "size": 1483332,
+      "sha256": "5e8c117a7df43879fbefe4f900afd2b08d7ef619ce8c734fe37f5c5503cc5588",
+      "size": 1483988,
       "url": "https://pub-7a3fbfeeb8954a7b8248153ed3cd9f4a.r2.dev/gamebuild/Astraleum_Data/globalgamemanagers.assets"
     },
     {
@@ -48,26 +54,26 @@
     },
     {
       "path": "Astraleum_Data/level0",
-      "sha256": "5b5334c7fb279cf856c5e9c2e0f8e8663e43cd68b064c6998bf4746cedd05e25",
-      "size": 808232,
+      "sha256": "34bb938464c605e19f6035e2e73a2260ea0d02866f7c510686df7a8f2c33afb7",
+      "size": 815416,
       "url": "https://pub-7a3fbfeeb8954a7b8248153ed3cd9f4a.r2.dev/gamebuild/Astraleum_Data/level0"
     },
     {
       "path": "Astraleum_Data/level1",
-      "sha256": "6b40beb1e625f4f2b6f4bb06d01bd3490a3128dc2b13af1a75375136950a5315",
-      "size": 285652,
+      "sha256": "c2943343de3a48a9aadb0e922f68db76b90e986017bff38e3f77b45235162e48",
+      "size": 292980,
       "url": "https://pub-7a3fbfeeb8954a7b8248153ed3cd9f4a.r2.dev/gamebuild/Astraleum_Data/level1"
     },
     {
       "path": "Astraleum_Data/Managed/Assembly-CSharp-firstpass.dll",
-      "sha256": "5de036940a73625f69e70d8d457580fdf9b8e4e990ee6d2f0b5d6e340c74500c",
+      "sha256": "5c926a91e76f343cdcd8d3d0047f75588efe2d7a4c64d8945cc7e23560a75322",
       "size": 50176,
       "url": "https://pub-7a3fbfeeb8954a7b8248153ed3cd9f4a.r2.dev/gamebuild/Astraleum_Data/Managed/Assembly-CSharp-firstpass.dll"
     },
     {
       "path": "Astraleum_Data/Managed/Assembly-CSharp.dll",
-      "sha256": "89bea3596f0d0094ce31104b5e58ba59c5073773a3645b660965d7af330c9641",
-      "size": 360448,
+      "sha256": "cb7b235a1314257941fb81310437f39d615bf359e9edaf8b23c49f2118818233",
+      "size": 376320,
       "url": "https://pub-7a3fbfeeb8954a7b8248153ed3cd9f4a.r2.dev/gamebuild/Astraleum_Data/Managed/Assembly-CSharp.dll"
     },
     {
@@ -90,7 +96,7 @@
     },
     {
       "path": "Astraleum_Data/Managed/MCPForUnity.Runtime.dll",
-      "sha256": "f5c8b393a5f6b451cec3c9cbc5550f4264f6fe6285303757a9a91edef14685d7",
+      "sha256": "31b5472d26ee7658de128c12cbcf8b78bad00edd3d6dd2214f9bfbe03b84e04a",
       "size": 31232,
       "url": "https://pub-7a3fbfeeb8954a7b8248153ed3cd9f4a.r2.dev/gamebuild/Astraleum_Data/Managed/MCPForUnity.Runtime.dll"
     },
@@ -695,6 +701,12 @@
       "url": "https://pub-7a3fbfeeb8954a7b8248153ed3cd9f4a.r2.dev/gamebuild/Astraleum_Data/Managed/Unity.UnifiedRayTracing.Runtime.dll"
     },
     {
+      "path": "Astraleum_Data/Managed/Unity.VectorGraphics.dll",
+      "sha256": "94efae13cea5b1eed7483a86bff7582421ed3520269f5a3b14d4ebb0248c1691",
+      "size": 8192,
+      "url": "https://pub-7a3fbfeeb8954a7b8248153ed3cd9f4a.r2.dev/gamebuild/Astraleum_Data/Managed/Unity.VectorGraphics.dll"
+    },
+    {
       "path": "Astraleum_Data/Managed/Unity.VisualEffectGraph.Runtime.dll",
       "sha256": "2b0b6b0d1b4bddece545679042b2ec7ad167292a05f6393ca2c8b81c4de99d75",
       "size": 104448,
@@ -1248,14 +1260,14 @@
     },
     {
       "path": "Astraleum_Data/resources.assets",
-      "sha256": "3d53f2e39de726453ddbd0d46a2420daaec16946310d47578d2edd510a7b2840",
-      "size": 4912440,
+      "sha256": "a8939892232c3af8a32c455aa881205b776c7d247f6dd496b30964dbda75f881",
+      "size": 4750328,
       "url": "https://pub-7a3fbfeeb8954a7b8248153ed3cd9f4a.r2.dev/gamebuild/Astraleum_Data/resources.assets"
     },
     {
       "path": "Astraleum_Data/resources.assets.resS",
-      "sha256": "8ea6a51c7b3f5c52b9caa4ac6d8c9d9a879f0bfe2a60d36fe87e02ae13f75d22",
-      "size": 235938592,
+      "sha256": "a628ec0d48673044de52fbe4ead4d83f8a9968e2d9f3b1e1d4e28bacbc61cd79",
+      "size": 237818672,
       "url": "https://pub-7a3fbfeeb8954a7b8248153ed3cd9f4a.r2.dev/gamebuild/Astraleum_Data/resources.assets.resS"
     },
     {
@@ -1266,44 +1278,44 @@
     },
     {
       "path": "Astraleum_Data/ScriptingAssemblies.json",
-      "sha256": "13b5567f8abbfa7c7e41c1df12e62687f75a35242fd264ef27731481a87bdf54",
-      "size": 6306,
+      "sha256": "f86228230eb5fb527d5895f10ede2080cc3dbd6c8ed29aec1feb12a65e1bff39",
+      "size": 6336,
       "url": "https://pub-7a3fbfeeb8954a7b8248153ed3cd9f4a.r2.dev/gamebuild/Astraleum_Data/ScriptingAssemblies.json"
     },
     {
       "path": "Astraleum_Data/sharedassets0.assets",
-      "sha256": "bd571484951f611f64b0ed9ac027f06dc1fe2a3b214d3b5c6cf6e15525fd4990",
-      "size": 6001520,
+      "sha256": "1519d75b74aaea010fb910b7ca97c526b149bec82b24ca9255dfd80616d36a4d",
+      "size": 6522272,
       "url": "https://pub-7a3fbfeeb8954a7b8248153ed3cd9f4a.r2.dev/gamebuild/Astraleum_Data/sharedassets0.assets"
     },
     {
       "path": "Astraleum_Data/sharedassets0.assets.resS",
-      "sha256": "fff5c8309cfb622e9e21fa5417e640f128a4f67edf7bd619f70853de8b3ac1ae",
-      "size": 67325648,
+      "sha256": "32b8360d285411e45928c579d313da31cd719a8b46695598a32e5f01b963808f",
+      "size": 82488992,
       "url": "https://pub-7a3fbfeeb8954a7b8248153ed3cd9f4a.r2.dev/gamebuild/Astraleum_Data/sharedassets0.assets.resS"
     },
     {
       "path": "Astraleum_Data/sharedassets0.resource",
-      "sha256": "95abd31ae9005cff9f0a01e1c02d923761d0510fddaac539b7349276ef9d4b7d",
-      "size": 113017549,
+      "sha256": "cfd202e7b54a72b495de8ba63544c652c8a630e705110fb9574257fa45193582",
+      "size": 185164893,
       "url": "https://pub-7a3fbfeeb8954a7b8248153ed3cd9f4a.r2.dev/gamebuild/Astraleum_Data/sharedassets0.resource"
     },
     {
       "path": "Astraleum_Data/sharedassets1.assets",
-      "sha256": "a2ea294aee3a2bf586c358c5e34bd1c27230649d51c9d02857865e46086b64d9",
-      "size": 335024,
+      "sha256": "5f508bbc3b1a5fd5b77d56de6214ee28c752f64b24c4cc25317b060722e5de98",
+      "size": 350640,
       "url": "https://pub-7a3fbfeeb8954a7b8248153ed3cd9f4a.r2.dev/gamebuild/Astraleum_Data/sharedassets1.assets"
     },
     {
       "path": "Astraleum_Data/sharedassets1.assets.resS",
-      "sha256": "3c3616bdb625ffd727db0503403e51fe53ebd04467916f1cd6eba9645d09f414",
-      "size": 66761824,
+      "sha256": "c572bcddcc833f87cbf88e2422b209133a6a35b0818d4fd13943c13a9e7e0770",
+      "size": 60376032,
       "url": "https://pub-7a3fbfeeb8954a7b8248153ed3cd9f4a.r2.dev/gamebuild/Astraleum_Data/sharedassets1.assets.resS"
     },
     {
       "path": "Astraleum_Data/sharedassets1.resource",
-      "sha256": "f4703390df95ba7c617bae1117a36790414a1026a20a13e13001945cda8d3472",
-      "size": 24700480,
+      "sha256": "0a103354c82c644bbeae580dc0edcefa7d29df2b32028abf0442996ee308cb49",
+      "size": 146549421,
       "url": "https://pub-7a3fbfeeb8954a7b8248153ed3cd9f4a.r2.dev/gamebuild/Astraleum_Data/sharedassets1.resource"
     },
     {
@@ -1464,6 +1476,14 @@
     }
   ],
   "changelog": [
+    {
+      "version": "0.0.7.5",
+      "date": "2026-07-18",
+      "title": "Boss Thalyra + équilibrage",
+      "entries": [
+        "Nouveau Boss de Raid : Thalyra (Eau), 3e et dernier Boss de l'alpha,Nouvelle carte à débloquer : Thalyra - Souveraine des Marées,Rééquilibrage de plusieurs compétences de Vaelthor,Correctif : l'infobulle de passif ne se refermait plus toute seule après un clic"
+      ]
+    },
     {
       "version": "0.0.7.3",
       "date": "2026-07-16",
