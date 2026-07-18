@@ -1,0 +1,144 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: baa3cfc011ceea542b4a6e2212c058c1, type: 3}
+  m_Name: Card_Boss_Thalyra
+  m_EditorClassIdentifier: Assembly-CSharp::Astraleum.CardData
+  cardName: Thalyra
+  cardTitle: "Souveraine des Mar\xE9es"
+  cardNumber: 0
+  element: 1
+  rarity: 4
+  artwork: {fileID: 21300000, guid: 5c360cf8739284b488d6ba673d88d11b, type: 3}
+  hiddenFromCollection: 1
+  isTrainingDummy: 0
+  immuneToExecute: 1
+  maxHP: 2200
+  armorPoints: 0
+  critChance: 0.01
+  bonusActionsGranted: 0
+  skillOne:
+    skillType: 0
+    skillName: "\xC9treinte Abyssale"
+    description: "Inflige 22 DGT \xE0 une cible adverse et lui applique Noyade (empile,
+      permanent, max 3, 2% PV Max/tour/stack). \xC0 3 stacks de Noyade, la cible
+      est \xE9tourdie 1 tour et les stacks sont consomm\xE9s."
+    damage: 22
+    cooldownTurns: 1
+    targetType: 0
+    adjacentDamagePercent: 0
+    effects:
+    - type: 32
+      value: 1
+      durationTurns: -1
+      effectTarget: 0
+    branches:
+    - condition:
+        conditionType: 13
+        compareOp: 1
+        threshold: 0
+        effectType: 32
+        conditionElement: 0
+        requiredStacks: 3
+      effectType: 7
+      target: 0
+      valueMode: 1
+      valuePercent: 0
+      valueFlat: 1
+      durationTurns: 1
+    isIncantation: 0
+    castDelayTurns: 1
+    attackVFXPrefab: {fileID: 7506187575744691406, guid: a96e1417a637274458413fbe219678d2, type: 3}
+    trailVFXPrefab: {fileID: 4012012485805248971, guid: c090ddbb0e1b6474591846dda29d73f4, type: 3}
+    trailVFXScale: 1
+    attackVFXIsProjectile: 0
+    attackVFXScale: 1
+    impactVFXPrefab: {fileID: 3288103395530694181, guid: 9ae2ca6966132c0478d3e5f4e5c1657d, type: 3}
+    impactVFXScale: 1
+    vfxTravelTime: 0.35
+    vfxImpactDuration: 0.2
+    impactVFXOffset: {x: 0, y: 0, z: 0}
+  skillTwo:
+    skillType: 0
+    skillName: "Col\xE8re des Abysses"
+    description: "Inflige 18 DGT \xE0 toutes les cartes adverses et leur applique
+      Noyade (empile, permanent, max 3, 2% PV Max/tour/stack). Thalyra gagne 5 points
+      d'armure temporaire (2 tours)."
+    damage: 18
+    cooldownTurns: 3
+    targetType: 2
+    adjacentDamagePercent: 0
+    effects:
+    - type: 6
+      value: 5
+      durationTurns: 2
+      effectTarget: 1
+    - type: 32
+      value: 1
+      durationTurns: -1
+      effectTarget: 3
+    branches: []
+    isIncantation: 0
+    castDelayTurns: 1
+    attackVFXPrefab: {fileID: 3564256609886714696, guid: a3036ee46e4824b4d923d93f55b5ac38, type: 3}
+    trailVFXPrefab: {fileID: 0}
+    trailVFXScale: 1
+    attackVFXIsProjectile: 0
+    attackVFXScale: 1
+    impactVFXPrefab: {fileID: 6699823732153390975, guid: e1c98bd529b4cc24f857b920da3fa97f, type: 3}
+    impactVFXScale: 1
+    vfxTravelTime: 0.35
+    vfxImpactDuration: 0.2
+    impactVFXOffset: {x: 0, y: 0, z: 0}
+  skillThree:
+    skillType: 0
+    skillName: "D\xE9ferlement"
+    description: "D\xE9ferle sur toutes les cartes adverses et inflige 32 DGT \xE0
+      chacune, et applique Noyade (2% PV Max/tour/stack) \xE0 2 cibles adverses al\xE9atoires."
+    damage: 32
+    cooldownTurns: 4
+    targetType: 2
+    adjacentDamagePercent: 0
+    effects:
+    - type: 32
+      value: 1
+      durationTurns: -1
+      effectTarget: 5
+    - type: 32
+      value: 1
+      durationTurns: -1
+      effectTarget: 5
+    branches: []
+    isIncantation: 0
+    castDelayTurns: 1
+    attackVFXPrefab: {fileID: 3564256609886714696, guid: a3036ee46e4824b4d923d93f55b5ac38, type: 3}
+    trailVFXPrefab: {fileID: 0}
+    trailVFXScale: 1
+    attackVFXIsProjectile: 0
+    attackVFXScale: 1
+    impactVFXPrefab: {fileID: 6699823732153390975, guid: e1c98bd529b4cc24f857b920da3fa97f, type: 3}
+    impactVFXScale: 1.5
+    vfxTravelTime: 0.35
+    vfxImpactDuration: 0.2
+    impactVFXOffset: {x: 0, y: 0, z: 0}
+  passive:
+    passiveName: 
+    passiveDescription: 
+    trigger: 0
+    triggerElement: 0
+    passiveColor: {r: 1, g: 0.84, b: 0, a: 1}
+    stacksPerTrigger: 0
+    maxTriggerStacks: 4
+    effects: []
+  loreText: "Souveraine oubli\xE9e des abysses, Thalyra dort au fond de l'oc\xE9an
+    depuis que les hommes ont cess\xE9 de croire en elle."
+  loreQuote: "\"La mar\xE9e monte pour tous. Toi seul d\xE9cides si tu te noies avant
+    qu'elle ne redescende.\""

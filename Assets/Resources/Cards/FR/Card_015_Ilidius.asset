@@ -20,6 +20,7 @@ MonoBehaviour:
   artwork: {fileID: 21300000, guid: 160323ece7687d144aa3ec368ba1bab0, type: 3}
   hiddenFromCollection: 0
   isTrainingDummy: 0
+  immuneToExecute: 0
   maxHP: 300
   armorPoints: 0
   critChance: 0.01
@@ -36,7 +37,7 @@ MonoBehaviour:
     effects:
     - type: 8
       value: 1
-      durationTurns: 0
+      durationTurns: 1
       effectTarget: 0
     branches:
     - condition:
@@ -45,6 +46,7 @@ MonoBehaviour:
         threshold: 0.5
         effectType: 0
         conditionElement: 0
+        requiredStacks: 3
       effectType: 9
       target: 1
       valueMode: 0
@@ -86,6 +88,7 @@ MonoBehaviour:
         threshold: 0.3
         effectType: 0
         conditionElement: 0
+        requiredStacks: 3
       effectType: 0
       target: 0
       valueMode: 0
@@ -98,6 +101,7 @@ MonoBehaviour:
         threshold: 0.3
         effectType: 0
         conditionElement: 0
+        requiredStacks: 3
       effectType: 8
       target: 1
       valueMode: 0
@@ -113,6 +117,28 @@ MonoBehaviour:
     attackVFXScale: 1
     impactVFXPrefab: {fileID: 8499795791273234962, guid: 96aeca063cc1cf1498b2e25f5deff215, type: 3}
     impactVFXScale: 0.7
+    vfxTravelTime: 0.35
+    vfxImpactDuration: 0.2
+    impactVFXOffset: {x: 0, y: 0, z: 0}
+  skillThree:
+    skillType: 0
+    skillName: 
+    description: 
+    damage: 0
+    cooldownTurns: 0
+    targetType: 0
+    adjacentDamagePercent: 0
+    effects: []
+    branches: []
+    isIncantation: 0
+    castDelayTurns: 1
+    attackVFXPrefab: {fileID: 0}
+    trailVFXPrefab: {fileID: 0}
+    trailVFXScale: 1
+    attackVFXIsProjectile: 0
+    attackVFXScale: 1
+    impactVFXPrefab: {fileID: 0}
+    impactVFXScale: 1
     vfxTravelTime: 0.35
     vfxImpactDuration: 0.2
     impactVFXOffset: {x: 0, y: 0, z: 0}

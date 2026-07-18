@@ -33,6 +33,7 @@ namespace Astraleum
         public Sprite iconDamageAmplify; // amplification de dégâts subis active sur une carte
         public Sprite iconNecrose;      // Nécrose (DoT plat/tour, Nécrotique) active sur une carte
         public Sprite iconImmortal;     // invulnérabilité totale active sur une carte (ex. Vaelthor Phase 1)
+        public Sprite iconNoyade;       // Noyade (Eau, Boss Thalyra) — marqueur empilable, active sur une carte
 
         [Header("Interface")]
         public Sprite iconBulletOn;     // bullet actif ✦

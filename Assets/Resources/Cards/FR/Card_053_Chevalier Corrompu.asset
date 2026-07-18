@@ -33,7 +33,7 @@ MonoBehaviour:
       (3 DGT pendant 2 Tours )"
     damage: 0
     cooldownTurns: 2
-    targetType: 3
+    targetType: 5
     adjacentDamagePercent: 0
     effects:
     - type: 2

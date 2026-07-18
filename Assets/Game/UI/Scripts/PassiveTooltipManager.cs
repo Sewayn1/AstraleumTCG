@@ -15,10 +15,13 @@ namespace Astraleum
             if (string.IsNullOrEmpty(desc)) return;
 
             string title = ColoredTitle(card.data.passive.passiveName ?? "Passif", card.data.passive.passiveColor);
-            TooltipSystem.Instance?.ShowAtTarget(title, desc, cardRect, 10f);
+            // pinned:true — reste affiché même si un OnPointerExit de survol se déclenche juste après
+            // (ex. animation de zoom de la carte qui fait sortir le curseur de ses bornes), voir
+            // TooltipSystem._pinned. Seul PassiveTooltipManager.Hide() (fermeture délibérée) le referme.
+            TooltipSystem.Instance?.ShowAtTarget(title, desc, cardRect, 10f, pinned: true);
         }
 
-        public void Hide() => TooltipSystem.Instance?.Hide();
+        public void Hide() => TooltipSystem.Instance?.Hide(force: true);
 
         private static string ColoredTitle(string name, Color color)
         {

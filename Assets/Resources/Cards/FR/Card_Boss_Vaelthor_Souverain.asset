@@ -54,15 +54,19 @@ MonoBehaviour:
   skillTwo:
     skillType: 0
     skillName: "D\xE9cret de Mort"
-    description: "Inflige des d\xE9g\xE2ts \xE0 toute l'\xE9quipe adverse et r\xE9duit
-      fortement les soins re\xE7us."
-    damage: 20
-    cooldownTurns: 3
+    description: "Inflige des d\xE9g\xE2ts \xE0 toute l'\xE9quipe adverse, applique
+      N\xE9crose et les rend insoignables pendant 2 tours."
+    damage: 25
+    cooldownTurns: 4
     targetType: 2
     adjacentDamagePercent: 0
     effects:
-    - type: 31
-      value: 0.4
+    - type: 30
+      value: 3
+      durationTurns: -1
+      effectTarget: 3
+    - type: 5
+      value: 0
       durationTurns: 2
       effectTarget: 3
     branches: []

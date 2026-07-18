@@ -878,6 +878,27 @@ namespace Astraleum
                 CombatLogManager.Instance?.AddEntry(
                     $"{branchTarget.data.cardName} : {CombatLogManager.DescribeEffect(et, value, branch.durationTurns, branchTarget.data.maxHP)} (branche)",
                     playerID: attacker.ownerPlayerID);
+
+                // Branche déclenchée par un seuil de stacks (ex. Noyade ≥ 3) → consomme les stacks
+                // à l'origine du déclenchement, quel que soit l'effet payoff appliqué ci-dessus.
+                // Mécanisme générique (pas spécifique à Noyade) : tout futur design "accumuler N
+                // stacks puis les dépenser pour déclencher un effet" en bénéficie gratuitement.
+                if (branch.condition.conditionType == ConditionType.TargetEffectStackCount)
+                    ConsumeStacks(primaryTarget, branch.condition.effectType, branch.condition.requiredStacks);
+            }
+        }
+
+        // Retire jusqu'à `count` instances de `type` des activeEffects de `card` (pas "toutes" —
+        // seulement celles qui ont servi à déclencher la branche, cohérent avec un système de
+        // stacks qui recommence à zéro après consommation plutôt que de garder un éventuel surplus).
+        private static void ConsumeStacks(CardInstance card, EffectType type, int count)
+        {
+            if (card == null) return;
+            for (int i = 0; i < count; i++)
+            {
+                var instance = card.activeEffects.Find(e => e.type == type);
+                if (instance == null) break;
+                card.activeEffects.Remove(instance);
             }
         }
 

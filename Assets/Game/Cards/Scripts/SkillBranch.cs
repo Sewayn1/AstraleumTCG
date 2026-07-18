@@ -17,6 +17,7 @@ namespace Astraleum
         TargetHasNoArmor,       // La cible a une armure totale de 0
         TargetHasArmor,         // La cible a une armure totale > 0
         TargetHasNecrose,       // La cible est en état Nécrose
+        TargetEffectStackCount, // La cible possède au moins N instances actives d'un effet donné (voir requiredStacks) — TOUJOURS EN DERNIER
     }
 
     public enum CompareOp
@@ -79,6 +80,9 @@ namespace Astraleum
         [Tooltip("Élément à vérifier. Utilisé pour AttackerIsOnlyElement.")]
         public Element conditionElement = Element.Feu;
 
+        [Tooltip("Nombre minimum d'instances actives requis. Utilisé pour TargetEffectStackCount (compare au nombre d'ActiveEffect de type effectType présents sur la cible).")]
+        public int requiredStacks = 3;
+
         public bool Evaluate(CardInstance attacker, CardInstance target)
         {
             switch (conditionType)
@@ -126,6 +130,10 @@ namespace Astraleum
 
                 case ConditionType.TargetHasNecrose:
                     return target != null && target.activeEffects.Exists(e => e.type == EffectType.Necrose);
+
+                case ConditionType.TargetEffectStackCount:
+                    if (target == null) return false;
+                    return target.activeEffects.FindAll(e => e.type == effectType).Count >= requiredStacks;
             }
             return false;
         }

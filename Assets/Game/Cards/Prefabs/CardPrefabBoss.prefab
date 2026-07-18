@@ -2457,6 +2457,115 @@ MonoBehaviour:
   effectType: 17
   titleKey: status_title_poison
   descriptionKey: codex_states_poison
+--- !u!1 &4612259878457083311
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7995006430938099890}
+  - component: {fileID: 403739121156662902}
+  - component: {fileID: 271900274521115121}
+  - component: {fileID: 4183874999300150791}
+  - component: {fileID: 2403637155401047193}
+  m_Layer: 0
+  m_Name: Noyade
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &7995006430938099890
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4612259878457083311}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1482293045197208102}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0.5}
+  m_AnchorMax: {x: 0, y: 0.5}
+  m_AnchoredPosition: {x: 32.5543, y: 22.2495}
+  m_SizeDelta: {x: 32.5543, y: 33.3743}
+  m_Pivot: {x: 1, y: 0.5}
+--- !u!222 &403739121156662902
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4612259878457083311}
+  m_CullTransparentMesh: 1
+--- !u!114 &271900274521115121
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4612259878457083311}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 0}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!114 &4183874999300150791
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4612259878457083311}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b224d5b4941d3a744b9b1fa6a00e0504, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Astraleum.TooltipTrigger
+  tooltipTitle: 
+  tooltipBody: 
+  triggerMode: 0
+  hoverDelay: 0.4
+  anchor: 4
+--- !u!114 &2403637155401047193
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4612259878457083311}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5a4e2ac3bb04cdd45879e90968716df6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Astraleum.StatusIconTooltip
+  effectType: 32
+  titleKey: status_title_noyade
+  descriptionKey: codex_states_noyade
 --- !u!1 &4699767183456686194
 GameObject:
   m_ObjectHideFlags: 0
@@ -4005,6 +4114,7 @@ RectTransform:
   - {fileID: 4812247082833146931}
   - {fileID: 5410830937537288470}
   - {fileID: 2382190538196401894}
+  - {fileID: 7995006430938099890}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
@@ -4134,6 +4244,7 @@ MonoBehaviour:
   damageAmplifyIcon: {fileID: 0}
   necroseIcon: {fileID: 0}
   immortalIcon: {fileID: 0}
+  noyadeIcon: {fileID: 0}
   invisibleOverlay: {fileID: 0}
   healVFXPrefab: {fileID: 4279378550468598859, guid: e1f088a8b318ee0439b136663df75701, type: 3}
   stunLoopVFXPrefab: {fileID: 9213946109603714380, guid: f9556cbf13e032b4cb24b97c3ac985b6, type: 3}

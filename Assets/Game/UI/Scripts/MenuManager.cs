@@ -63,6 +63,8 @@ namespace Astraleum.UI
         public GameObject bgVoragoth;
         [Tooltip("Fond dédié à Vaelthor — actif quand ce Boss est sélectionné sur Panel_Raid.")]
         public GameObject bgVaelthor;
+        [Tooltip("Fond dédié à Thalyra — actif quand ce Boss est sélectionné sur Panel_Raid.")]
+        public GameObject bgThalyra;
         [Tooltip("Durée du fondu enchaîné entre les fonds (secondes).")]
         public float bgFadeDuration = 1.5f;
 
@@ -73,6 +75,8 @@ namespace Astraleum.UI
         public AudioClip bossSelectionMusic;
         [Tooltip("Musique dédiée jouée quand Vaelthor est sélectionné sur Panel_Raid — remplace bossSelectionMusic.")]
         public AudioClip vaelthorSelectMusic;
+        [Tooltip("Musique dédiée jouée quand Thalyra est sélectionnée sur Panel_Raid — remplace bossSelectionMusic.")]
+        public AudioClip thalyraSelectMusic;
         [Tooltip("Durée du fondu sortant avant la bascule de piste (secondes).")]
         public float musicFadeDuration = 1f;
 
@@ -87,6 +91,7 @@ namespace Astraleum.UI
         private VideoPlayer bgAnimatedVP;
         private VideoPlayer bgVoragothVP;
         private VideoPlayer bgVaelthorVP;
+        private VideoPlayer bgThalyraVP;
         private Coroutine bgFadeRoutine;
         private bool isOnRaidBackground; // évite de relancer le fondu sur chaque changement de panel hors Raid
         private GameObject currentRaidBossBg;   // fond Boss actuellement actif sur Panel_Raid (bgVoragoth/bgVaelthor)
@@ -117,6 +122,7 @@ namespace Astraleum.UI
             bgAnimatedVP = bgAnimated != null ? bgAnimated.GetComponent<VideoPlayer>() : null;
             bgVoragothVP = bgVoragoth != null ? bgVoragoth.GetComponent<VideoPlayer>() : null;
             bgVaelthorVP = bgVaelthor != null ? bgVaelthor.GetComponent<VideoPlayer>() : null;
+            bgThalyraVP  = bgThalyra  != null ? bgThalyra.GetComponent<VideoPlayer>()  : null;
 
             // BossBG.mp4 (366 Mo) vit dans StreamingAssets/ plutôt qu'importé comme VideoClip —
             // évite qu'il soit fondu dans les fichiers sharedassetsN.resource du build (Application.
@@ -226,8 +232,8 @@ namespace Astraleum.UI
         /// </summary>
         public void SetRaidBossBackground(int bossID)
         {
-            GameObject  newBg = bossID == 1 ? bgVaelthor   : bgVoragoth;
-            VideoPlayer newVP = bossID == 1 ? bgVaelthorVP : bgVoragothVP;
+            GameObject  newBg = bossID switch { 1 => bgVaelthor,   2 => bgThalyra,   _ => bgVoragoth   };
+            VideoPlayer newVP = bossID switch { 1 => bgVaelthorVP, 2 => bgThalyraVP, _ => bgVoragothVP };
             if (newBg == currentRaidBossBg) return; // déjà actif, rien à faire
 
             GameObject  oldBg = currentRaidBossBg;
@@ -284,12 +290,18 @@ namespace Astraleum.UI
         /// <summary>
         /// Appelé par RaidPanelController quand un Boss est sélectionné dans le sélecteur multi-boss
         /// — bascule la musique vers celle du Boss choisi (vaelthorSelectMusic pour Vaelthor,
-        /// bossSelectionMusic générique sinon), avec le même fondu que l'entrée/sortie de Panel_Raid.
-        /// Sans effet si on n'est pas actuellement sur Panel_Raid (prise en compte à la prochaine entrée).
+        /// thalyraSelectMusic pour Thalyra, bossSelectionMusic générique sinon), avec le même fondu
+        /// que l'entrée/sortie de Panel_Raid. Sans effet si on n'est pas actuellement sur Panel_Raid
+        /// (prise en compte à la prochaine entrée).
         /// </summary>
         public void SetRaidBossMusic(int bossID)
         {
-            AudioClip target = (bossID == 1 && vaelthorSelectMusic != null) ? vaelthorSelectMusic : bossSelectionMusic;
+            AudioClip target = bossID switch
+            {
+                1 when vaelthorSelectMusic != null => vaelthorSelectMusic,
+                2 when thalyraSelectMusic  != null => thalyraSelectMusic,
+                _ => bossSelectionMusic
+            };
             if (target == currentRaidMusic) return; // déjà actif, rien à faire
 
             currentRaidMusic = target;

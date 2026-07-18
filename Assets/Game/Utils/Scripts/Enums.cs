@@ -90,7 +90,8 @@ namespace Astraleum
         Inarretable,        // Immunité Stun et Cancel pendant N tours
         SelfDamageAmplify,  // Amplifie les dégâts INFLIGÉS par la carte (lu côté attaquant, ≠ DamageAmplify qui amplifie les dégâts subis)
         Necrose,            // Nécrotique : DGT plat/tour, empile en instances indépendantes (aucune fusion par source)
-        HealReduction,      // Nécrotique : réduit les soins reçus d'un % (cumulatif additif, plafonné) — TOUJOURS EN DERNIER
+        HealReduction,      // Nécrotique : réduit les soins reçus d'un % (cumulatif additif, plafonné)
+        Noyade,             // Eau (Boss Thalyra) : marqueur pur, empile en instances indépendantes, sert de compteur pour ConditionType.TargetEffectStackCount — TOUJOURS EN DERNIER
     }
 
     public enum EffectTarget

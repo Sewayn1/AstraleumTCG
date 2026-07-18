@@ -59,6 +59,7 @@ namespace Astraleum
         public Image damageAmplifyIcon; // ← icône DamageAmplify actif sur la carte
         public Image necroseIcon;      // ← icône Nécrose (DoT plat/tour, Nécrotique) active sur la carte
         public Image immortalIcon;     // ← icône invulnérabilité totale (CardInstance.isImmortal)
+        public Image noyadeIcon;       // ← icône Noyade (Eau, Boss Thalyra) active sur la carte
         public Image invisibleOverlay; // ← overlay bleu semi-transparent état Invisible
 
         [Header("VFX Soins")]
@@ -165,6 +166,11 @@ namespace Astraleum
             if (immortalIcon != null) immortalIcon.gameObject.SetActive(false);
             else ForceDisableChild("Immortal");
 
+            if (noyadeIcon == null)
+                noyadeIcon = FindChildImage("Noyade");
+            if (noyadeIcon != null) noyadeIcon.gameObject.SetActive(false);
+            else ForceDisableChild("Noyade");
+
             // Désactive les descriptions directement sur la carte — affichées dans le tooltip à la place
             transform.Find("SkillZone/Skill1_Row/Skill1_InfoCol/Skill1_Desc")?.gameObject.SetActive(false);
             transform.Find("SkillZone/Skill2_Row/Skill2_InfoCol/Skill2_Desc")?.gameObject.SetActive(false);
@@ -193,6 +199,7 @@ namespace Astraleum
             UpdateDamageAmplifyIcon();
             UpdateNecroseIcon();
             UpdateImmortalIcon();
+            UpdateNoyadeIcon();
             UpdateAstralArrow();
             UpdateStunVFX();
             UpdateIncantationVFX();
@@ -330,6 +337,16 @@ namespace Astraleum
             if (hasNecrose && necroseIcon.sprite == null && IconLibrary.Instance != null)
                 necroseIcon.sprite = IconLibrary.Instance.iconNecrose;
             necroseIcon.gameObject.SetActive(hasNecrose && necroseIcon.sprite != null);
+        }
+
+        private void UpdateNoyadeIcon()
+        {
+            if (noyadeIcon == null || cardInstance == null) return;
+
+            bool hasNoyade = cardInstance.activeEffects.Any(e => e.type == EffectType.Noyade);
+            if (hasNoyade && noyadeIcon.sprite == null && IconLibrary.Instance != null)
+                noyadeIcon.sprite = IconLibrary.Instance.iconNoyade;
+            noyadeIcon.gameObject.SetActive(hasNoyade && noyadeIcon.sprite != null);
         }
 
         private void UpdateImmortalIcon()

@@ -18,7 +18,7 @@ namespace Astraleum
 
         // Cartes de récompense (ex. Voragoth - Dernière Calamité) : jamais concernées par
         // ALPHA_ALL_OWNED, leur possession est toujours conditionnée à un vrai déblocage persisté.
-        private static readonly HashSet<int> REWARD_CARD_NUMBERS = new HashSet<int> { 48, 49, 50, 51 };
+        private static readonly HashSet<int> REWARD_CARD_NUMBERS = new HashSet<int> { 48, 49, 50, 51, 57 };
         private const string UNLOCK_KEY_PREFIX = "Unlock_Card_";
 
         private HashSet<int> ownedCardNumbers = new HashSet<int>();

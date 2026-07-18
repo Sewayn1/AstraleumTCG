@@ -257,6 +257,8 @@ namespace Astraleum
         private const float MAX_DAMAGE_REDUCTION      = 0.5f;   // % — DamageReduction
         private const float MAX_ATTACK_REDUCTION_FLAT = 50f;   // flat — AttackReduction
         private const float MAX_HEAL_REDUCTION        = 0.5f;   // % — HealReduction (Nécrotique)
+        private const int   MAX_NOYADE_STACKS         = 3;      // Eau (Boss Thalyra) — au-delà, la branche conditionnelle consomme les stacks
+        private const float NOYADE_DOT_PERCENT        = 0.02f;  // % PV max infligé PAR STACK ET PAR TOUR (Noyade)
 
         public void ApplyEffect(ActiveEffect newEffect)
         {
@@ -432,6 +434,19 @@ namespace Astraleum
                 return;
             }
 
+            // ── Noyade (Eau, Boss Thalyra) — instances indépendantes, plafonnées à
+            // MAX_NOYADE_STACKS. Au-delà, la nouvelle instance est ignorée : le plafond est
+            // volontairement "dur" (pas de remplacement/rafraîchissement) puisque la branche
+            // conditionnelle (TargetEffectStackCount ≥ 3) est censée consommer les 3 stacks dès
+            // qu'elles sont atteintes — voir SkillExecutor.ApplyBranches.
+            if (newEffect.type == EffectType.Noyade)
+            {
+                int count = activeEffects.FindAll(e => e.type == EffectType.Noyade).Count;
+                if (count >= MAX_NOYADE_STACKS) return;
+                activeEffects.Add(newEffect);
+                return;
+            }
+
             // ── Tous les autres effets — instances indépendantes empilables ──────────
             activeEffects.Add(newEffect);
         }
@@ -589,6 +604,20 @@ namespace Astraleum
                             dotTotal += actualNecro;
                             CombatLogManager.Instance?.AddEntry(
                                 $"{data.cardName} -{actualNecro} DGT (Nécrose)", playerID: ownerPlayerID);
+                            break;
+                        }
+
+                    case EffectType.Noyade:
+                        {
+                            // Marqueur ET DoT : chaque instance (1 par stack, plafonnées à
+                            // MAX_NOYADE_STACKS) inflige indépendamment NOYADE_DOT_PERCENT — 3 stacks
+                            // = 3 ticks de 2% ce tour-ci, soit 6% cumulé, sans recalcul dynamique.
+                            int noyadeDmg = Mathf.RoundToInt(DotReferenceMaxHP * NOYADE_DOT_PERCENT);
+                            noyadeDmg = Mathf.RoundToInt(noyadeDmg * dmgReductMult);
+                            int actualNoyade = TakeDamage(noyadeDmg, ignoreArmor: true);
+                            dotTotal += actualNoyade;
+                            CombatLogManager.Instance?.AddEntry(
+                                $"{data.cardName} -{actualNoyade} DGT (Noyade)", playerID: ownerPlayerID);
                             break;
                         }
 

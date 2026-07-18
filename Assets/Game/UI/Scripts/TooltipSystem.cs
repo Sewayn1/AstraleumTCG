@@ -22,11 +22,17 @@ namespace Astraleum
         [SerializeField] private float edgeMargin       = 10f;
 
         [Header("Typographie")]
-        [SerializeField] private float defaultBodyFontSize = 8f;
+        [SerializeField] private float defaultBodyFontSize = 10f;
 
         private TooltipAnchor _currentAnchor;
         private bool          _followCursor;
         private Canvas        _rootCanvas;
+        // Vrai tant qu'un tooltip "épinglé" (PassiveTooltipManager, déclenché par un clic carte) doit
+        // rester affiché indépendamment du survol — évite qu'un OnPointerExit de survol (ex. déclenché
+        // par l'animation de zoom de la carte qui fait sortir le curseur de ses bornes juste après le
+        // clic) referme silencieusement un tooltip qui vient tout juste de s'afficher. Seul un Hide
+        // explicite en force=true, ou un nouveau ShowAtTarget(pinned:true), peut le remplacer.
+        private bool           _pinned;
 
         private void Awake()
         {
@@ -48,6 +54,7 @@ namespace Astraleum
         public void Show(string title, string body, TooltipAnchor anchor = TooltipAnchor.NearCursor, float bodyFontSize = 0f)
         {
             if (string.IsNullOrEmpty(body)) return;
+            if (_pinned) return; // un survol ne doit jamais voler l'affichage à un tooltip épinglé
 
             SetContent(title, body, bodyFontSize);
 
@@ -60,22 +67,31 @@ namespace Astraleum
         }
 
         // Affiche le tooltip centré sur un RectTransform cible (ex : carte).
-        public void ShowAtTarget(string title, string body, RectTransform target, float bodyFontSize = 0f)
+        // pinned=true (PassiveTooltipManager uniquement) : le tooltip résiste aux Hide()/Show() non
+        // forcés déclenchés par un survol (voir _pinned) jusqu'à un Hide(force:true) explicite.
+        public void ShowAtTarget(string title, string body, RectTransform target, float bodyFontSize = 0f, bool pinned = false)
         {
             if (string.IsNullOrEmpty(body) || target == null) return;
+            if (_pinned && !pinned) return; // un survol ne doit jamais voler l'affichage à un tooltip épinglé
 
             SetContent(title, body, bodyFontSize);
 
             _currentAnchor = TooltipAnchor.AboveTarget;
             _followCursor  = false;
+            _pinned        = pinned;
 
             tooltipPanel.gameObject.SetActive(true);
             LayoutRebuilder.ForceRebuildLayoutImmediate(tooltipPanel);
             PositionAtTarget(target);
         }
 
-        public void Hide()
+        // force=true : ferme même un tooltip épinglé (fermeture délibérée — clic ailleurs, annulation).
+        // force=false (défaut, utilisé par tout Hide() déclenché par un survol) : no-op tant qu'un
+        // tooltip épinglé est affiché, pour ne pas l'effacer accidentellement.
+        public void Hide(bool force = false)
         {
+            if (_pinned && !force) return;
+            _pinned       = false;
             _followCursor = false;
             tooltipPanel.gameObject.SetActive(false);
         }
